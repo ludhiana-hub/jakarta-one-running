@@ -24,3 +24,7 @@ Thumbs.db
 # Stitch MCP debug dumps
 jkt-web/_stitch*
 jkt-web/_tw-debug.css
+
+# Graphify local cost tracking
+graphify-out/cost.json
+
