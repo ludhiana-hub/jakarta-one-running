@@ -1,7 +1,11 @@
-# Dokploy Compose — repo root
-# Compose path in Dokploy: ./docker-compose.yml
-# Domain → service `landing` / port 4000
-# Docs: https://docs.dokploy.com/docs/core/docker-compose
+# Dokploy Compose (repo root)
+# Compose Path: ./docker-compose.yml
+#
+# Domains UI MUST use:
+#   Service: landing
+#   Container Port: 4000
+# Then click Redeploy (labels are applied only at deploy time).
+# Docs: https://docs.dokploy.com/docs/core/docker-compose/domains
 
 services:
   landing:
@@ -9,27 +13,17 @@ services:
       context: ./jkt-web
       dockerfile: Dockerfile
     restart: unless-stopped
-    # Publish container port only (Dokploy / Traefik attaches domain)
+    # Same pattern as Dokploy docs — publish container port for Traefik
     ports:
       - "4000"
     environment:
       PORT: "4000"
       HOST: "0.0.0.0"
       NODE_ENV: production
+    # Dokploy Domains UI injects traefik labels + network on deploy.
+    # Keep dokploy-network so Traefik can reach this service.
     networks:
       - dokploy-network
-    healthcheck:
-      test:
-        [
-          "CMD",
-          "node",
-          "-e",
-          "fetch('http://127.0.0.1:4000/').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))",
-        ]
-      interval: 30s
-      timeout: 8s
-      retries: 5
-      start_period: 60s
 
 networks:
   dokploy-network:
