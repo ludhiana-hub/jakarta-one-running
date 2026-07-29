@@ -102,6 +102,53 @@
   z-index: -1;
 }
 
+@media (max-width: 640px) {
+  /* Mobile: reduce blur cost + disable texture overlays */
+  .glass-tier1,
+  .glass-tier-1,
+  .glass-ambient {
+    backdrop-filter: blur(10px) saturate(130%);
+    -webkit-backdrop-filter: blur(10px) saturate(130%);
+  }
+
+  .glass-tier2,
+  .glass-tier-2,
+  .glass-card {
+    backdrop-filter: blur(14px) saturate(135%);
+    -webkit-backdrop-filter: blur(14px) saturate(135%);
+  }
+
+  .glass-tier3,
+  .glass-tier-3,
+  .glass-focal {
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+  }
+
+  .glass-tier1::after,
+  .glass-tier2::after,
+  .glass-tier3::after,
+  .glass-tier-1::after,
+  .glass-tier-2::after,
+  .glass-tier-3::after,
+  .glass-ambient::after,
+  .glass-card::after,
+  .glass-focal::after,
+  .noise-overlay::before {
+    opacity: 0;
+    background-image: none;
+  }
+
+  .glass-tier2::before,
+  .glass-tier-2::before,
+  .glass-card::before,
+  .glass-tier3::before,
+  .glass-tier-3::before,
+  .glass-focal::before {
+    background: none;
+  }
+}
+
 .floating-card {
   transition:
     transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),

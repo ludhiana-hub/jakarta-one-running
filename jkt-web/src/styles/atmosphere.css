@@ -151,3 +151,32 @@
     background-position: 50% 50%;
   }
 }
+
+@media (max-width: 640px) {
+  /* Mobile: reduce expensive blending + masking to keep scroll smooth */
+  .atmosphere-mesh {
+    display: none;
+  }
+
+  .atmosphere-grid,
+  .atmosphere-noise,
+  .atmosphere-vignette {
+    display: none;
+  }
+
+  .atmosphere-orb {
+    filter: blur(55px);
+    opacity: 0.55;
+  }
+
+  .atmosphere-orb-a,
+  .atmosphere-orb-b,
+  .atmosphere-orb-c {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .atmosphere {
+    background: #e6e8ee;
+  }
+}
