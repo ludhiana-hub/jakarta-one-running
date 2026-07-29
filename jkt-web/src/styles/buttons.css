@@ -14,7 +14,7 @@ a.btn-cta,
   font-weight: 700;
   line-height: 1.25;
   padding: 0.75rem 1.75rem;
-  box-shadow: 0 0 20px rgba(255, 82, 92, 0.35);
+  box-shadow: 0 4px 16px rgba(255, 82, 92, 0.28);
   cursor: pointer;
   text-decoration: none;
   transition:
@@ -27,7 +27,7 @@ button.btn-cta:hover,
 a.btn-cta:hover,
 .btn-cta:hover {
   filter: brightness(1.08);
-  box-shadow: 0 0 28px rgba(255, 82, 92, 0.45);
+  box-shadow: 0 6px 20px rgba(255, 82, 92, 0.36);
   color: #ffffff;
 }
 
@@ -61,7 +61,7 @@ button.btn-cta:disabled,
 }
 
 .nav-link.nav-active {
-  color: #ffb3b2;
+  color: #cc0000;
   font-weight: 600;
 }
 

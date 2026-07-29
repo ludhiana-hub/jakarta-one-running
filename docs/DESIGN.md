@@ -1,30 +1,29 @@
-# DESIGN.md — Arah Visual Glassmorphism
+# DESIGN.md — Arah Visual Clean Frost (Light Glassmorphism)
 
 > Pelengkap `CONCEPT.md`. Dokumen ini menjawab "seperti apa rupanya",
 > bukan "bagaimana cara kerjanya". Berlaku untuk landing page publik
 > (`jkt-web`), bukan panel admin Filament.
+>
+> Spec detail: `docs/superpowers/specs/2026-07-29-clean-frost-light-theme-design.md`.
 
 ---
 
 ## 1. Kenapa glassmorphism cocok untuk brief ini
 
-Brief Jakarta One Running sudah punya bahan baku yang pas untuk arah ini
-tanpa dipaksakan: foto pelari dengan motion blur (sudah dipakai di deck asli
-sebagai background hitam), medali fisik yang mengkilap dan berlapis
-("etalase kaca"), dan lima warna etape yang perlu tampil sebagai lapisan
-identitas, bukan satu warna tunggal.
+Brief Jakarta One Running punya bahan baku yang pas: foto dokumentasi lari,
+medali fisik yang mengkilap ("etalase kaca"), dan lima warna etape sebagai
+lapisan identitas. Arah **Clean Frost** memakai foundation **putih /
+off-white** agar terasa clean untuk client, dengan panel kaca putih frosted
+yang tetap terbaca di canvas terang.
 
-Glassmorphism bekerja karena **butuh sesuatu yang kaya di baliknya** untuk
-diburamkan — di sini itu foto dokumentasi lari dan gradasi warna brand,
-bukan latar polos. Ini alasan fungsional, bukan tren untuk tren.
+Glassmorphism tetap bekerja karena **butuh lapisan di baliknya** — di sini
+itu atmosphere mesh ringan + foto hero + shadow lembut, bukan flat putih
+mati.
 
-**Sanity check terhadap default AI generik:** ini BUKAN "latar nyaris hitam
-dengan satu aksen neon tunggal" (pola AI generik #2) — bedanya ada di tiga
-tempat: (1) aksennya bukan satu warna dekoratif, tapi lima warna yang
-punya makna data nyata (satu warna = satu wilayah kota); (2) bahasa
-visualnya bertumpu pada lapisan kaca tembus pandang + foto, bukan bidang
-gelap datar; (3) elemen signature (§6) diturunkan langsung dari artefak
-fisik di brief (medali), bukan ditempel belakangan.
+**Sanity check terhadap default AI generik:** bukan ungu-on-white, bukan
+cream/terracotta editorial, bukan dark neon. (1) aksen = lima warna etape
+nyata + merah brand selektif; (2) bahasa visual = kaca putih frosted di atas
+base `#F7F8FA`; (3) signature medali (§6) tetap relevan sebagai artefak fisik.
 
 ---
 
@@ -32,14 +31,14 @@ fisik di brief (medali), bukan ditempel belakangan.
 
 ### Warna dasar platform (dipakai di semua situs, terlepas dari edisi)
 
-| Nama | Hex | Peran |
+| Nama | Hex / value | Peran |
 |---|---|---|
-| `void` | `#0A0A0D` | Latar dasar — nyaris hitam, memberi ruang kaca untuk "mengambang" |
-| `chalk` | `#F5F5F2` | Teks utama di atas latar gelap |
-| `mist` | `#B8B8C0` | Teks sekunder, caption |
-| `glass` | `rgba(255,255,255,0.06)` | Fill dasar permukaan kaca |
-| `glass-border` | `rgba(255,255,255,0.14)` | Border tepi permukaan kaca |
-| `ember` | `#FF3B4E` | Aksen platform (CTA utama, badge) — merah terang, beda dari merah edisi West |
+| `void` | `#F7F8FA` | Latar dasar — off-white dingin (canvas halaman) |
+| `chalk` | `#141418` | Teks utama / heading (ink gelap) |
+| `mist` | `#5C5C66` | Teks sekunder, caption |
+| `glass` | `rgba(255,255,255,0.65)` | Fill dasar permukaan kaca |
+| `glass-border` | `rgba(20,20,24,0.10)` | Border tepi kaca (terlihat di putih) |
+| `ember` | `#FF525C` | Aksen platform (CTA utama, badge) — merah terang, beda dari merah edisi West |
 
 ### Aksen per edisi (tenant override — sudah ditetapkan dari brief)
 
@@ -62,8 +61,8 @@ yang sudah dirancang di `CONCEPT.md`.
 }
 ```
 
-Warna edisi dipakai untuk **glow di balik kaca** dan border aktif, bukan
-untuk teks langsung (kontrasnya tidak semuanya aman di atas `void`).
+Warna edisi dipakai untuk **border aktif, glow lembut, dan badge**, bukan
+untuk teks body panjang (uji kontras di atas base putih / glass putih).
 
 ---
 
@@ -90,46 +89,42 @@ untuk teks langsung (kontrasnya tidak semuanya aman di atas `void`).
 ```
 
 Display pakai weight 600–800, body 400–500. Jangan pakai weight di bawah
-400 untuk body — di atas permukaan kaca yang sudah low-contrast, teks tipis
-akan sulit dibaca.
+400 untuk body — di atas glass putih soft-shadow, teks tipis kurang terbaca.
 
 ---
 
-## 4. Spesifikasi permukaan kaca
+## 4. Spesifikasi permukaan kaca (Clean Frost)
 
-Tiga tingkat elevasi, dipakai konsisten di seluruh situs — jangan improvisasi
-nilai blur/opacity baru di tiap komponen.
+Tiga tingkat elevasi — di atas base terang, fill putih harus **cukup
+opaque** agar panel terbaca (bukan 4–8% seperti tema gelap).
 
 | Elevasi | Dipakai untuk | `backdrop-filter` | `background` | `border` | `box-shadow` |
 |---|---|---|---|---|---|
-| **Tier 1 — Ambient** | Navbar, footer | `blur(12px)` | `rgba(255,255,255,0.04)` | `1px solid rgba(255,255,255,0.08)` | tidak ada |
-| **Tier 2 — Card** | `stats_counter`, `sponsor_wall`, `edition_cards` | `blur(20px)` | `rgba(255,255,255,0.07)` | `1px solid rgba(255,255,255,0.14)` | `0 8px 32px rgba(0,0,0,0.25)` |
-| **Tier 3 — Focal** | Kartu medali di hero, modal, `cta_banner` | `blur(28px)` | `rgba(255,255,255,0.10)` + glow warna edisi | `1px solid rgba(255,255,255,0.20)` | `0 16px 48px rgba(0,0,0,0.35), 0 0 60px var(--brand-primary-glow)` |
+| **Tier 1 — Ambient** | Navbar, footer | `blur(12px)` | `rgba(255,255,255,0.55)` | `1px solid rgba(20,20,24,0.08)` | sangat lembut / tidak ada |
+| **Tier 2 — Card** | `stats_counter`, `sponsor_wall`, `edition_cards` | `blur(20px)` | `rgba(255,255,255,0.68)` | `1px solid rgba(20,20,24,0.10)` | `0 8px 28px rgba(20,20,24,0.08)` |
+| **Tier 3 — Focal** | Modal, `cta_banner` | `blur(28px)` | `rgba(255,255,255,0.78)` + glow brand lembut | `1px solid rgba(20,20,24,0.12)` | `0 12px 36px rgba(20,20,24,0.10), 0 0 40px var(--brand-primary-glow)` |
 
 ```css
 .glass-card {
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid rgba(20, 20, 24, 0.10);
   border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 28px rgba(20, 20, 24, 0.08);
 }
 ```
 
-**Wajib:** tambahkan `saturate(140%)` pada tiap `backdrop-filter` — tanpa
-ini, blur di atas foto berwarna akan terlihat kusam/abu-abu, bukan
-"kaca bening".
+**Wajib:** `saturate(140%)` pada tiap `backdrop-filter`.
 
-**Tekstur noise tipis** (opsional tapi disarankan) di atas layer kaca
-mencegah kesan blur yang terlalu digital/plastik:
+**Noise tipis** di atas kaca — opacity ~0.015 agar tidak “kotor” di putih:
 
 ```css
 .glass-card::after {
   content: '';
   position: absolute; inset: 0; border-radius: inherit;
   background-image: url("data:image/svg+xml,..."); /* noise SVG tipis */
-  opacity: 0.03; mix-blend-mode: overlay; pointer-events: none;
+  opacity: 0.015; mix-blend-mode: multiply; pointer-events: none;
 }
 ```
 
@@ -139,18 +134,18 @@ mencegah kesan blur yang terlalu digital/plastik:
 
 ```
 ┌──────────────────────────────────────────────────┐
-│  [foto pelari motion-blur, full-bleed, gelap 60%] │
+│  [foto full-bleed → fade ke void off-white]        │
 │                                                    │
 │   ╭──────────────╮                                │
-│   │ EARLY BIRD   │  ← Tier 3 glass, glow edisi     │
+│   │ EARLY BIRD   │  ← badge + glass putih frosted   │
 │   ╰──────────────╯                                │
 │                                                    │
-│         JAKARTA ONE RUNNING                       │
+│         JAKARTA ONE RUNNING  (ink chalk)            │
 │         ─────────────────────                     │
 │         One City, One Celebration                 │
 │                                                    │
 │   ╭────────╮ ╭────────╮ ╭────────╮                │
-│   │ 5      │ │ 25.000 │ │ 5      │  ← Tier 2 glass │
+│   │ 5      │ │ 25.000 │ │ 5      │  ← Tier 2 frost │
 │   │ RUTE   │ │ PELARI │ │ MEDALI │    berjajar     │
 │   ╰────────╯ ╰────────╯ ╰────────╯                │
 └──────────────────────────────────────────────────┘
@@ -207,65 +202,42 @@ Hormati `prefers-reduced-motion` — matikan rotasi, sisakan glow statis.
 
 Glass paling sering gagal di sini, jadi ditulis eksplisit:
 
-- **Kontras teks**: teks di atas Tier 2/3 glass WAJIB dites dengan warna
-  latar **paling terang** yang mungkin ada di baliknya (foto siang hari),
-  bukan cuma warna glass fill-nya. Kalau perlu, tambahkan
-  `background: rgba(0,0,0,0.3)` ekstra di belakang teks penting (harga,
-  tanggal, CTA) sebelum layer glass.
+- **Kontras teks**: `chalk` ink di atas Tier 2/3 glass WAJIB tetap terbaca
+  di atas foto terang; kalau hero foto terlalu ramai, fade scrim ke `void`
+  atau zone solid lembut di belakang judul.
 - **Focus state**: outline solid 2px warna `ember`, BUKAN cuma perubahan
-  opacity — blur bisa membuat perubahan opacity tidak terlihat jelas bagi
-  pengguna low-vision.
+  opacity.
 - **`prefers-reduced-motion: reduce`**: matikan semua transform/rotate,
   sisakan fade sederhana.
-- **Fallback tanpa `backdrop-filter`**: Safari lama & beberapa Android
-  WebView tidak mendukung. Sediakan `background: rgba(15,15,18,0.85)` solid
-  sebagai fallback lewat `@supports not (backdrop-filter: blur(1px))`.
+- **Fallback tanpa `backdrop-filter`**: `background: rgba(255,255,255,0.92)`
+  solid lewat `@supports not (backdrop-filter: blur(1px))`.
 
 ---
 
-## 9. Implementasi Tailwind
+## 9. Implementasi Tailwind (via `@theme` di `tokens.css`)
 
-```js
-// tailwind.config.js
-theme: {
-  extend: {
-    colors: {
-      void: '#0A0A0D',
-      chalk: '#F5F5F2',
-      mist: '#B8B8C0',
-      ember: '#FF3B4E',
-    },
-    fontFamily: {
-      display: ['Bricolage Grotesque', 'system-ui', 'sans-serif'],
-      body: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
-      mono: ['IBM Plex Mono', 'ui-monospace', 'monospace'],
-    },
-    backdropBlur: { card: '20px', focal: '28px', ambient: '12px' },
-    boxShadow: {
-      card: '0 8px 32px rgba(0,0,0,0.25)',
-      focal: '0 16px 48px rgba(0,0,0,0.35)',
-    },
-  },
-}
-```
-
-Utility class siap pakai di komponen blok Angular:
+Token Live di `jkt-web/src/styles/tokens.css` — utility: `bg-void`,
+`text-chalk`, `text-mist`, `bg-glass`, `border-glass-border`, `glass-tier-*`.
 
 ```html
-<div class="backdrop-blur-card bg-white/[0.07] border border-white/[0.14]
-            rounded-[20px] shadow-card">
+<div class="glass-tier-2 rounded-[20px] border border-glass-border shadow-card">
   ...
 </div>
 ```
+
+Hindari `border-white/*` dan `bg-black/*` untuk chrome — gunakan
+`border-glass-border` / `hover:bg-black/5` di light theme.
 
 ---
 
 ## 10. Yang tidak boleh terjadi
 
 - Jangan pakai glass di **semua** elemen — teks panjang (`legal_document`,
-  `rich_text_media`) tetap latar solid `void` polos, kaca cuma untuk kartu
-  ringkas dan elemen fokus. Glass di teks panjang bikin lelah dibaca.
+  `rich_text_media`) boleh canvas `void` polos; kaca untuk kartu ringkas dan
+  elemen fokus.
 - Jangan biarkan warna edisi bocor ke teks body — dia cuma boleh muncul di
   glow, border, dan badge kecil.
 - Jangan tambah animasi baru tanpa alasan yang bisa dijelaskan dalam satu
   kalimat kenapa itu membantu, bukan sekadar "biar rame".
+- Jangan kembalikan base gelap tanpa keputusan produk eksplisit — arah
+  canonical sekarang Clean Frost.

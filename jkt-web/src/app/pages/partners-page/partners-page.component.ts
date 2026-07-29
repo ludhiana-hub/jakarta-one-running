@@ -23,7 +23,7 @@ interface PartnerTab {
 }
 
 /** Lightweight wordmark logo so we can demo many sponsors without real assets. */
-function dummyLogo(name: string, accent = '#F5F5F2'): string {
+function dummyLogo(name: string, accent = '#141418'): string {
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="280" height="96" viewBox="0 0 280 96" fill="none">
   <rect x="12" y="28" width="40" height="40" rx="10" stroke="${accent}" stroke-width="2" opacity="0.85"/>
   <text x="68" y="54" font-family="system-ui,sans-serif" font-size="22" font-weight="650" fill="${accent}" letter-spacing="1.5">${name}</text>
@@ -110,23 +110,23 @@ export class PartnersPageComponent {
     { id: 'gd-med', name: 'MedCare+', imageUrl: '/assets/sponsors/gold-medcare.svg', url: '#' },
     { id: 'gd-volt', name: 'Volt Ride', imageUrl: '/assets/sponsors/gold-volt.svg', url: '#' },
     { id: 'gd-metro', name: 'Metro Fuel', imageUrl: dummyLogo('METRO FUEL', '#C4D600'), url: '#' },
-    { id: 'gd-urban', name: 'UrbanStride', imageUrl: dummyLogo('URBANSTRIDE', '#F5F5F2'), url: '#' },
+    { id: 'gd-urban', name: 'UrbanStride', imageUrl: dummyLogo('URBANSTRIDE', '#141418'), url: '#' },
     { id: 'gd-coral', name: 'Coral Hydrate', imageUrl: dummyLogo('CORAL', '#4DD0E1'), url: '#' },
     { id: 'gd-apex', name: 'Apex Insoles', imageUrl: dummyLogo('APEX', '#ffb3b2'), url: '#' },
     { id: 'gd-harbor', name: 'Harbor Tel', imageUrl: dummyLogo('HARBOR', '#0072B5'), url: '#' },
     { id: 'gd-leaf', name: 'LeafFit', imageUrl: dummyLogo('LEAFFIT', '#C4D600'), url: '#' },
-    { id: 'gd-quanta', name: 'Quanta Wear', imageUrl: dummyLogo('QUANTA', '#F5F5F2'), url: '#' },
+    { id: 'gd-quanta', name: 'Quanta Wear', imageUrl: dummyLogo('QUANTA', '#141418'), url: '#' },
     { id: 'gd-zenith', name: 'Zenith Foam', imageUrl: dummyLogo('ZENITH', '#ffb3b2'), url: '#' },
   ];
 
   protected readonly official: PartnerLogo[] = [
-    { id: 'of-night', name: 'NightOwl Media', imageUrl: dummyLogo('NIGHTOWL', '#F5F5F2'), url: '#' },
+    { id: 'of-night', name: 'NightOwl Media', imageUrl: dummyLogo('NIGHTOWL', '#141418'), url: '#' },
     { id: 'of-runway', name: 'Runway Labs', imageUrl: dummyLogo('RUNWAY', '#4DD0E1'), url: '#' },
     { id: 'of-monas', name: 'Monas Photo', imageUrl: dummyLogo('MONAS PIC', '#ffb3b2'), url: '#' },
     { id: 'of-swift', name: 'Swift Print', imageUrl: dummyLogo('SWIFT PRINT', '#C4D600'), url: '#' },
     { id: 'of-bay', name: 'Bay Security', imageUrl: dummyLogo('BAY SEC', '#0072B5'), url: '#' },
     { id: 'of-orbit', name: 'Orbit Maps', imageUrl: dummyLogo('ORBIT MAPS', '#4DD0E1'), url: '#' },
-    { id: 'of-kite', name: 'Kite Events', imageUrl: dummyLogo('KITE', '#F5F5F2'), url: '#' },
+    { id: 'of-kite', name: 'Kite Events', imageUrl: dummyLogo('KITE', '#141418'), url: '#' },
     { id: 'of-ridge', name: 'Ridge Medical', imageUrl: dummyLogo('RIDGE MED', '#ffb3b2'), url: '#' },
     { id: 'of-lotus', name: 'Lotus Catering', imageUrl: dummyLogo('LOTUS', '#C4D600'), url: '#' },
     { id: 'of-nova', name: 'Nova Timing', imageUrl: dummyLogo('NOVA TIME', '#0072B5'), url: '#' },
@@ -151,7 +151,7 @@ export class PartnersPageComponent {
   ].map((name, i) => ({
     id: `cm-${i}`,
     name,
-    imageUrl: dummyLogo(name.toUpperCase().slice(0, 14), i % 2 ? '#ffb3b2' : '#F5F5F2'),
+    imageUrl: dummyLogo(name.toUpperCase().slice(0, 14), i % 2 ? '#ffb3b2' : '#141418'),
     url: '#',
   }));
 

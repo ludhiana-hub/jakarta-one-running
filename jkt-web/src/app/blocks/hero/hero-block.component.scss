@@ -8,26 +8,25 @@
 }
 
 /*
-  Dissolve the entire hero media stack (photo + darken) into transparent.
-  Page atmosphere shows through the lower hero — same backdrop as stats → no seam.
+  Dissolve hero media into the light page canvas so stats section joins cleanly.
 */
 .hero-media {
   -webkit-mask-image: linear-gradient(
     to bottom,
     #000 0%,
-    #000 38%,
-    rgba(0, 0, 0, 0.85) 52%,
-    rgba(0, 0, 0, 0.45) 68%,
-    rgba(0, 0, 0, 0.12) 85%,
+    #000 32%,
+    rgba(0, 0, 0, 0.85) 48%,
+    rgba(0, 0, 0, 0.4) 68%,
+    rgba(0, 0, 0, 0.1) 85%,
     transparent 100%
   );
   mask-image: linear-gradient(
     to bottom,
     #000 0%,
-    #000 38%,
-    rgba(0, 0, 0, 0.85) 52%,
-    rgba(0, 0, 0, 0.45) 68%,
-    rgba(0, 0, 0, 0.12) 85%,
+    #000 32%,
+    rgba(0, 0, 0, 0.85) 48%,
+    rgba(0, 0, 0, 0.4) 68%,
+    rgba(0, 0, 0, 0.1) 85%,
     transparent 100%
   );
 }

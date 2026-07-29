@@ -13,7 +13,7 @@
         @for (item of topItems(); track item.id; let i = $index) {
           <a
             [routerLink]="['/schedule']"
-            class="group relative h-full overflow-hidden rounded-2xl glass-tier-1 border-l-4 p-6 transition hover:bg-white/5"
+            class="group relative h-full overflow-hidden rounded-2xl glass-tier-1 border-l-4 p-6 transition hover:bg-black/5"
             [style.borderLeftColor]="item.theme_accent"
             [style.boxShadow]="
               'inset 0 0 20px color-mix(in srgb, ' + item.theme_accent + ' 12%, transparent)'
@@ -49,7 +49,7 @@
         @for (item of bottomItems(); track item.id; let i = $index) {
           <a
             [routerLink]="['/schedule']"
-            class="group relative h-full overflow-hidden rounded-2xl glass-tier-1 border-l-4 p-6 transition hover:bg-white/5"
+            class="group relative h-full overflow-hidden rounded-2xl glass-tier-1 border-l-4 p-6 transition hover:bg-black/5"
             [style.borderLeftColor]="item.theme_accent"
             [style.boxShadow]="
               'inset 0 0 20px color-mix(in srgb, ' + item.theme_accent + ' 12%, transparent)'

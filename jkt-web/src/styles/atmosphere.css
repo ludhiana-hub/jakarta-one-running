@@ -1,4 +1,4 @@
-/* Global atmospheric backdrop — more visible color, lighter motion cost */
+/* Global atmospheric backdrop — Clean Frost light mesh */
 
 .atmosphere {
   position: fixed;
@@ -8,10 +8,10 @@
   pointer-events: none;
   contain: strict;
   background:
-    radial-gradient(110% 70% at 15% 0%, #2a1218 0%, transparent 55%),
-    radial-gradient(90% 60% at 95% 85%, #0d1c2c 0%, transparent 55%),
-    radial-gradient(70% 50% at 50% 100%, #121820 0%, transparent 50%),
-    #0a0a0d;
+    radial-gradient(110% 70% at 12% 0%, rgba(255, 82, 92, 0.06) 0%, transparent 55%),
+    radial-gradient(90% 60% at 95% 85%, rgba(0, 114, 181, 0.05) 0%, transparent 55%),
+    radial-gradient(70% 50% at 50% 100%, rgba(77, 208, 225, 0.04) 0%, transparent 50%),
+    #f7f8fa;
 }
 
 .atmosphere-mesh {
@@ -19,12 +19,12 @@
   inset: -15%;
   background: linear-gradient(
     130deg,
-    rgba(255, 82, 92, 0.16) 0%,
+    rgba(255, 82, 92, 0.05) 0%,
     transparent 30%,
-    rgba(77, 208, 225, 0.12) 50%,
+    rgba(77, 208, 225, 0.04) 50%,
     transparent 68%,
-    rgba(0, 114, 181, 0.14) 82%,
-    rgba(196, 214, 0, 0.08) 100%
+    rgba(0, 114, 181, 0.05) 82%,
+    rgba(196, 214, 0, 0.03) 100%
   );
   background-size: 180% 180%;
   animation: atmosphere-mesh-drift 36s ease-in-out infinite alternate;
@@ -34,9 +34,8 @@
 .atmosphere-orb {
   position: absolute;
   border-radius: 9999px;
-  filter: blur(72px);
-  opacity: 0.85;
-  /* transform-only; no will-change to avoid permanent layer memory */
+  filter: blur(80px);
+  opacity: 0.55;
 }
 
 .atmosphere-orb-a {
@@ -44,7 +43,7 @@
   left: -8%;
   width: min(58vw, 580px);
   height: min(58vw, 580px);
-  background: radial-gradient(circle, rgba(255, 82, 92, 0.55) 0%, transparent 68%);
+  background: radial-gradient(circle, rgba(255, 82, 92, 0.18) 0%, transparent 68%);
   animation: atmosphere-float-a 28s ease-in-out infinite;
 }
 
@@ -53,7 +52,7 @@
   right: -12%;
   width: min(52vw, 520px);
   height: min(52vw, 520px);
-  background: radial-gradient(circle, rgba(0, 114, 181, 0.45) 0%, transparent 68%);
+  background: radial-gradient(circle, rgba(0, 114, 181, 0.14) 0%, transparent 68%);
   animation: atmosphere-float-b 32s ease-in-out infinite;
 }
 
@@ -62,44 +61,41 @@
   left: 22%;
   width: min(60vw, 600px);
   height: min(60vw, 600px);
-  background: radial-gradient(circle, rgba(77, 208, 225, 0.38) 0%, transparent 68%);
+  background: radial-gradient(circle, rgba(77, 208, 225, 0.12) 0%, transparent 68%);
   animation: atmosphere-float-c 30s ease-in-out infinite;
 }
-
-/* Dropped 4th orb + animated dots — less GPU, stronger remaining layers */
 
 .atmosphere-grid {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+    linear-gradient(rgba(20, 20, 24, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20, 20, 24, 0.04) 1px, transparent 1px);
   background-size: 72px 72px;
-  /* Soften top so grid doesn't "cut in" under the hero dissolve */
   -webkit-mask-image:
-    linear-gradient(to bottom, transparent 0%, transparent 18%, #000 42%, #000 100%),
+    linear-gradient(to bottom, transparent 0%, transparent 12%, #000 36%, #000 100%),
     radial-gradient(ellipse 85% 75% at 50% 40%, black 15%, transparent 78%);
   mask-image:
-    linear-gradient(to bottom, transparent 0%, transparent 18%, #000 42%, #000 100%),
+    linear-gradient(to bottom, transparent 0%, transparent 12%, #000 36%, #000 100%),
     radial-gradient(ellipse 85% 75% at 50% 40%, black 15%, transparent 78%);
   -webkit-mask-composite: source-in;
   mask-composite: intersect;
-  opacity: 0.7;
+  opacity: 0.85;
 }
 
 .atmosphere-noise {
   position: absolute;
   inset: 0;
-  opacity: 0.045;
-  mix-blend-mode: overlay;
+  opacity: 0.02;
+  mix-blend-mode: multiply;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 .atmosphere-vignette {
   position: absolute;
   inset: 0;
-  /* lighter vignette so color orbs stay visible */
-  background: radial-gradient(ellipse 80% 70% at 50% 40%, transparent 45%, rgba(10, 10, 13, 0.35) 100%);
+  /* Soft edge only — no dark vignette on Clean Frost */
+  background: radial-gradient(ellipse 85% 75% at 50% 40%, transparent 55%, rgba(247, 248, 250, 0.45) 100%);
 }
 
 @keyframes atmosphere-mesh-drift {

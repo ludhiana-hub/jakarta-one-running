@@ -1,4 +1,4 @@
-/* Glassmorphism surfaces — aligned with Stitch landing V2 */
+/* Glassmorphism surfaces — Clean Frost (readable on light base) */
 
 .glass-tier1,
 .glass-tier-1,
@@ -7,8 +7,8 @@
   overflow: hidden;
   backdrop-filter: blur(12px) saturate(140%);
   -webkit-backdrop-filter: blur(12px) saturate(140%);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(20, 20, 24, 0.08);
 }
 
 .glass-tier2,
@@ -18,9 +18,9 @@
   overflow: hidden;
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid rgba(20, 20, 24, 0.1);
+  box-shadow: 0 8px 28px rgba(20, 20, 24, 0.08);
 }
 
 .glass-tier3,
@@ -30,10 +30,11 @@
   overflow: hidden;
   backdrop-filter: blur(28px) saturate(140%);
   -webkit-backdrop-filter: blur(28px) saturate(140%);
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(20, 20, 24, 0.12);
   box-shadow:
-    0 16px 48px rgba(0, 0, 0, 0.35), 0 0 60px var(--brand-primary-glow);
+    0 12px 36px rgba(20, 20, 24, 0.1),
+    0 0 40px var(--brand-primary-glow);
 }
 
 .glass-tier1::after,
@@ -51,19 +52,22 @@
   inset: 0;
   border-radius: inherit;
   background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27120%27%20height%3D%27120%27%3E%3Cfilter%20id%3D%27n%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%27.8%27%20numOctaves%3D%273%27%20stitchTiles%3D%27stitch%27/%3E%3C/filter%3E%3Crect%20width%3D%27120%27%20height%3D%27120%27%20filter%3D%27url(%23n)%27%20opacity%3D%27.5%27/%3E%3C/svg%3E");
-  opacity: 0.03;
-  mix-blend-mode: overlay;
+  opacity: 0.015;
+  mix-blend-mode: multiply;
   pointer-events: none;
   z-index: 1;
 }
 
 .floating-card {
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s ease;
+  transition:
+    transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .floating-card:hover {
   transform: translateY(-8px);
-  border-color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(20, 20, 24, 0.16);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -86,6 +90,6 @@
   .glass-focal {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
-    background: rgba(15, 15, 18, 0.85);
+    background: rgba(255, 255, 255, 0.92);
   }
 }
