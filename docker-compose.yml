@@ -1,17 +1,23 @@
-# Local / nested compose (optional). Prefer root ./docker-compose.yml on Dokploy.
+# Dokploy Compose — repo root
+# Compose path in Dokploy: ./docker-compose.yml
+# Domain → service `landing` / port 4000
+# Docs: https://docs.dokploy.com/docs/core/docker-compose
 
 services:
   landing:
     build:
-      context: .
+      context: ./jkt-web
       dockerfile: Dockerfile
     restart: unless-stopped
+    # Publish container port only (Dokploy / Traefik attaches domain)
     ports:
       - "4000"
     environment:
       PORT: "4000"
       HOST: "0.0.0.0"
       NODE_ENV: production
+    networks:
+      - dokploy-network
     healthcheck:
       test:
         [
@@ -24,3 +30,7 @@ services:
       timeout: 8s
       retries: 5
       start_period: 60s
+
+networks:
+  dokploy-network:
+    external: true

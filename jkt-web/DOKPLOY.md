@@ -1,29 +1,28 @@
-# Deploy jkt-web on Dokploy
+# Deploy on Dokploy (Compose)
 
-## Option A — Dockerfile (recommended)
+Repo: https://github.com/ludhiana-hub/jakarta-one-running
 
-1. Create application → **Docker**
-2. Connect this Git repo
-3. Set **Base Directory** / build path to: `jkt-web`
-4. Dockerfile path: `Dockerfile` (inside base dir)
-5. Published port: **4000**
-6. Env (optional):
+## Recommended settings
+
+1. Service type: **Docker Compose**
+2. Branch: `main`
+3. **Compose Path:** `./docker-compose.yml` (file at **repo root**)
+4. Domain → attach to service **`landing`**, port **`4000`**
+5. Env (optional):
    - `PORT=4000`
    - `HOST=0.0.0.0`
    - `NODE_ENV=production`
 
-## Option B — Docker Compose
+Dokploy injects Traefik via `dokploy-network` (declared `external: true` in compose).
 
-1. Application type → **Docker Compose**
-2. Base directory: `jkt-web`
-3. Compose file: `docker-compose.yml`
-4. Domain → attach to service `jkt-web` port `4000`
+## If build fails (OOM)
 
-## Local test
+Raise server RAM or add build arg / swap. Dockerfile already sets
+`NODE_OPTIONS=--max-old-space-size=4096` during `ng build`.
 
-```bash
-cd jkt-web
-docker compose build
-docker compose up
-# open http://localhost:4000
-```
+## Alternative: Dockerfile-only app
+
+- Build type: Dockerfile
+- Dockerfile: `jkt-web/Dockerfile`
+- Docker context / base: `jkt-web`
+- Port: `4000`
