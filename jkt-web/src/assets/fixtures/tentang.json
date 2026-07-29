@@ -1,0 +1,123 @@
+{
+  "page": {
+    "slug": "tentang",
+    "title": {
+      "id": "Tentang"
+    },
+    "seo": {
+      "meta_title": {
+        "id": "Jakarta One Running Series | Tentang"
+      },
+      "meta_description": {
+        "id": "Platform event lari multi-etape dengan pengalaman digital yang konsisten."
+      },
+      "og_image": "https://example.com/og/tentang.png",
+      "noindex": false
+    }
+  },
+  "blocks": [
+    {
+      "id": "blk_rich_about",
+      "type": "rich_text_media",
+      "data": {
+        "title": {
+          "id": "Satu kota, satu perayaan"
+        },
+        "body": {
+          "id": "Jakarta One Running Series menghadirkan pengalaman lari yang terstruktur lewat lima etape di area berbeda. Prototype ini menampilkan bagaimana konten dan tampilan dapat diatur per tenant/etape tanpa mengubah aplikasi."
+        },
+        "media_image": "https://picsum.photos/seed/jktone-about/1400/900",
+        "media_alt": {
+          "id": "Pelari di Jakarta"
+        }
+      }
+    },
+    {
+      "id": "blk_milestone_roadmap",
+      "type": "milestone",
+      "data": {
+        "items": [
+          {
+            "id": "ms_move",
+            "year": "MOVE",
+            "title": {
+              "id": "MOVE"
+            },
+            "description": {
+              "id": "Perkenalan platform dan ekosistem konten."
+            }
+          },
+          {
+            "id": "ms_habit",
+            "year": "HABIT",
+            "title": {
+              "id": "HABIT"
+            },
+            "description": {
+              "id": "Pembentukan rutinitas lari dan komunitas."
+            }
+          },
+          {
+            "id": "ms_connect",
+            "year": "CONNECT",
+            "title": {
+              "id": "CONNECT"
+            },
+            "description": {
+              "id": "Integrasi pengalaman multi-kanal untuk peserta."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "blk_sponsor_wall_about",
+      "type": "sponsor_wall",
+      "data": {
+        "tiers": [
+          {
+            "id": "tier_platinum",
+            "name": {
+              "id": "Platinum"
+            },
+            "logos": [
+              {
+                "id": "pl_1",
+                "url": "https://example.com/platinum",
+                "image_url": "https://picsum.photos/seed/sponsor-pl01/240/120",
+                "name": {
+                  "id": "Sponsor PL 01"
+                }
+              },
+              {
+                "id": "pl_2",
+                "url": "https://example.com/platinum",
+                "image_url": "https://picsum.photos/seed/sponsor-pl02/240/120",
+                "name": {
+                  "id": "Sponsor PL 02"
+                }
+              }
+            ]
+          },
+          {
+            "id": "tier_gold",
+            "name": {
+              "id": "Gold"
+            },
+            "logos": [
+              {
+                "id": "gd_1",
+                "url": "https://example.com/gold",
+                "image_url": "https://picsum.photos/seed/sponsor-gd01/240/120",
+                "name": {
+                  "id": "Sponsor GD 01"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
+

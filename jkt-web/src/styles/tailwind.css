@@ -1,0 +1,16 @@
+/* Tailwind v4 — force content root to src/ (Vite may process CSS from a temp path) */
+
+@import 'tailwindcss' source('..');
+@import 'tailwindcss-primeui';
+@import './tokens.css';
+@import './glass.css';
+
+@layer base {
+  html,
+  body {
+    min-height: 100%;
+    background-color: var(--color-void, #0a0a0d);
+    color: var(--color-chalk, #f5f5f2);
+    font-family: var(--font-body);
+  }
+}

@@ -1,0 +1,37 @@
+@if (heroData()) {
+  <app-block-hero [data]="heroData()!" />
+} @else {
+  <div appReveal class="w-full">
+    @if (statsCounterData()) {
+      <app-block-stats-counter [data]="statsCounterData()!" />
+    } @else if (seriesTimelineData()) {
+      <app-block-series-timeline [data]="seriesTimelineData()!" />
+    } @else if (editionCardsData()) {
+      <app-block-edition-cards [data]="editionCardsData()!" />
+    } @else if (editionDetailData()) {
+      <app-block-edition-detail [data]="editionDetailData()!" />
+    } @else if (ctaBannerData()) {
+      <app-block-cta-banner [data]="ctaBannerData()!" />
+    } @else if (faqAccordionData()) {
+      <app-block-faq-accordion [data]="faqAccordionData()!" />
+    } @else if (galleryGridData()) {
+      <app-block-gallery-grid [data]="galleryGridData()!" />
+    } @else if (richTextMediaData()) {
+      <app-block-rich-text-media [data]="richTextMediaData()!" />
+    } @else if (milestoneData()) {
+      <app-block-milestone [data]="milestoneData()!" />
+    } @else if (sponsorWallData()) {
+      <app-block-sponsor-wall [data]="sponsorWallData()!" />
+    } @else if (legalDocumentData()) {
+      <app-block-legal-document [data]="legalDocumentData()!" />
+    } @else if (transportationInfoData()) {
+      <app-block-transportation-info [data]="transportationInfoData()!" />
+    } @else if (embedData()) {
+      <app-block-embed [data]="embedData()!" />
+    } @else if (interactiveMapData()) {
+      <app-block-interactive-map [data]="interactiveMapData()!" />
+    } @else {
+      <div class="my-12 px-4 text-mist">Unknown block type: {{ block().type }}</div>
+    }
+  </div>
+}

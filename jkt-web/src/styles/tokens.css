@@ -1,0 +1,61 @@
+/* Design tokens from Google Stitch — Jakarta One Glassmorphism */
+
+:root {
+  --brand-primary: #cc0000;
+  --brand-primary-glow: color-mix(in srgb, var(--brand-primary) 40%, transparent);
+  --color-primary-container: #ff525c;
+  --color-on-primary-container: #ffffff;
+  --color-ember: #ff525c;
+}
+
+@theme {
+  --color-void: #0a0a0d;
+  --color-chalk: #f5f5f2;
+  --color-mist: #b8b8c0;
+  --color-glass: rgb(255 255 255 / 0.06);
+  --color-glass-border: rgb(255 255 255 / 0.14);
+  --color-ember: #ff525c;
+  --color-primary: #ffb3b2;
+  --color-primary-container: #ff525c;
+  --color-on-primary-container: #ffffff;
+  --color-on-surface-variant: #e5bdbc;
+  --color-surface: #1f0f0f;
+  --color-east-grey: #8c8c8c;
+  --color-west-red: #cc0000;
+  --color-south-lime: #c4d600;
+  --color-north-cyan: #4dd0e1;
+  --color-central-blue: #0072b5;
+
+  --font-display: 'Bricolage Grotesque Variable', 'Bricolage Grotesque', system-ui, sans-serif;
+  --font-body: 'Plus Jakarta Sans Variable', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --shadow-focal: 0 16px 48px rgba(0, 0, 0, 0.35), 0 0 60px var(--brand-primary-glow);
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+  --text-3xl: 2.75rem;
+  --text-4xl: 3.75rem;
+  --text-5xl: 5rem;
+}
+
+:focus-visible {
+  outline: 2px solid #ff525c;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,26 @@
+# Root — jakarta-one-running / project-bms
+
+# Agent / IDE tooling (local)
+.agents/
+.claude/
+.cursor/
+skills-lock.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Node / Angular (also in jkt-web/.gitignore)
+**/node_modules/
+**/dist/
+**/.angular/
+
+# Stitch MCP debug dumps
+jkt-web/_stitch*
+jkt-web/_tw-debug.css

@@ -1,0 +1,40 @@
+<section class="my-12 px-4">
+  <div class="max-w-6xl mx-auto glass-tier1 p-7 border border-white/10">
+    <div class="font-display text-chalk text-2xl font-semibold">
+      {{ data().title | tr }}
+    </div>
+
+    <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div>
+        <div class="text-chalk font-display text-xl font-semibold">Shuttle</div>
+
+        <div class="mt-4 space-y-3">
+          @for (s of data().shuttles; track s.id) {
+            <div class="glass-tier2 p-5 rounded-[22px] border border-white/10">
+              <div class="text-chalk font-semibold">{{ s.title | tr }}</div>
+              <div class="mt-2 text-mist">{{ s.time | tr }}</div>
+              @if (s.notes) {
+                <div class="mt-2 text-mist/90">{{ s.notes | tr }}</div>
+              }
+            </div>
+          }
+        </div>
+      </div>
+
+      <div>
+        <div class="text-chalk font-display text-xl font-semibold">Parkir</div>
+
+        <div class="mt-4 space-y-3">
+          @for (p of data().parking; track p.id) {
+            <div class="glass-tier2 p-5 rounded-[22px] border border-white/10">
+              <div class="text-chalk font-semibold">{{ p.title | tr }}</div>
+              @if (p.details) {
+                <div class="mt-2 text-mist">{{ p.details | tr }}</div>
+              }
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

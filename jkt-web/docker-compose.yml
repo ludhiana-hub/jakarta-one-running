@@ -1,0 +1,32 @@
+# Local / Dokploy Compose — Angular SSR (jkt-web)
+# Dokploy: Application type = Docker Compose, or Dockerfile with this as reference.
+# Base directory: jkt-web
+
+services:
+  jkt-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: jkt-web:latest
+    container_name: jkt-web
+    restart: unless-stopped
+    ports:
+      - "${PORT:-4000}:4000"
+    environment:
+      PORT: "4000"
+      HOST: "0.0.0.0"
+      NODE_ENV: production
+      # Optional — wire when CMS API exists:
+      # API_URL: https://cms.example.com/api/v1
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:4000/').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))",
+        ]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 25s

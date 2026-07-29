@@ -1,0 +1,56 @@
+{
+  "page": {
+    "slug": "faq",
+    "title": {
+      "id": "FAQ"
+    },
+    "seo": {
+      "meta_title": {
+        "id": "Jakarta One Running Series | FAQ"
+      },
+      "meta_description": {
+        "id": "Pertanyaan yang sering diajukan seputar pendaftaran, rute, dan ketentuan."
+      },
+      "og_image": "https://example.com/og/faq.png",
+      "noindex": false
+    }
+  },
+  "blocks": [
+    {
+      "id": "blk_faq",
+      "type": "faq_accordion",
+      "data": {
+        "items": [
+          {
+            "id": "faq_1",
+            "question": {
+              "id": "Bagaimana cara memilih etape?"
+            },
+            "answer": {
+              "id": "Pada halaman Beranda, pilih kartu etape lalu klik tombol “Buka detail”."
+            }
+          },
+          {
+            "id": "faq_2",
+            "question": {
+              "id": "Apakah saya bisa mendaftar lebih dari satu etape?"
+            },
+            "answer": {
+              "id": "Ya, setiap etape memiliki tombol pendaftaran menuju platform eksternal."
+            }
+          },
+          {
+            "id": "faq_3",
+            "question": {
+              "id": "Apakah ada perubahan jadwal?"
+            },
+            "answer": {
+              "id": "Jadwal dapat menyesuaikan dengan ketentuan penyelenggara. Cek informasi pada halaman etape."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
+

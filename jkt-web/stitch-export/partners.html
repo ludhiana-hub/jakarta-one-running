@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Partners | Jakarta One 2026</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;family=Plus+Jakarta+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<!-- Shared Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "primary-fixed": "#ffdad8",
+                "on-background": "#fbdbda",
+                "mist": "#B8B8C0",
+                "secondary-container": "#454745",
+                "on-secondary": "#2f312f",
+                "surface-bright": "#483434",
+                "glass": "rgba(255, 255, 255, 0.04)",
+                "on-tertiary-container": "#003026",
+                "on-secondary-fixed": "#1a1c1b",
+                "south-lime": "#C4D600",
+                "on-tertiary-fixed-variant": "#005142",
+                "surface-container-lowest": "#190a0a",
+                "secondary-fixed-dim": "#c6c7c4",
+                "void": "#0A0A0D",
+                "surface": "#1f0f0f",
+                "inverse-primary": "#bf002a",
+                "tertiary-container": "#1aa387",
+                "primary": "#ffb3b2",
+                "east-grey": "#8C8C8C",
+                "on-primary-fixed-variant": "#92001e",
+                "surface-tint": "#ffb3b2",
+                "surface-container-low": "#281717",
+                "central-blue": "#0072B5",
+                "inverse-on-surface": "#3f2b2b",
+                "primary-container": "#ff525c",
+                "on-error": "#690005",
+                "outline-variant": "#5c3f3f",
+                "tertiary": "#64dabc",
+                "on-primary-container": "#5b000f",
+                "inverse-surface": "#fbdbda",
+                "on-surface-variant": "#e5bdbc",
+                "on-secondary-fixed-variant": "#454745",
+                "error-container": "#93000a",
+                "outline": "#ac8887",
+                "surface-container-high": "#382525",
+                "secondary-fixed": "#e2e3e0",
+                "on-primary-fixed": "#410008",
+                "tertiary-fixed-dim": "#64dabc",
+                "on-secondary-container": "#b5b5b3",
+                "west-red": "#CC0000",
+                "background": "#0A0A0D",
+                "surface-dim": "#1f0f0f",
+                "secondary": "#c6c7c4",
+                "glass-border": "rgba(255, 255, 255, 0.14)",
+                "tertiary-fixed": "#81f7d8",
+                "on-tertiary-fixed": "#002019",
+                "error": "#ffb4ab",
+                "on-tertiary": "#00382d",
+                "surface-container-highest": "#44302f",
+                "primary-fixed-dim": "#ffb3b2",
+                "surface-variant": "#44302f",
+                "on-error-container": "#ffdad6",
+                "north-cyan": "#4DD0E1",
+                "on-primary": "#680012",
+                "surface-container": "#2d1b1b",
+                "on-surface": "#fbdbda"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "gutter-grid": "1.5rem",
+                "stack-lg": "2rem",
+                "stack-sm": "0.5rem",
+                "stack-md": "1rem",
+                "margin-page": "2rem"
+            },
+            "fontFamily": {
+                "display-4xl": ["Bricolage Grotesque"],
+                "label-xs": ["JetBrains Mono"],
+                "body-xl": ["Plus Jakarta Sans"],
+                "body-lg": ["Plus Jakarta Sans"],
+                "display-5xl": ["Bricolage Grotesque"],
+                "headline-2xl": ["Bricolage Grotesque"],
+                "display-3xl": ["Bricolage Grotesque"],
+                "body-base": ["Plus Jakarta Sans"],
+                "label-sm": ["JetBrains Mono"]
+            }
+          }
+        }
+      }
+    </script>
+<style>.glass-tier-1 {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(12px) saturate(140%);
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.08)
+    }
+.glass-tier-2 {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4)
+    }
+.glass-tier-3 {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(28px) saturate(160%);
+    -webkit-backdrop-filter: blur(28px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5)
+    }
+.noise-overlay {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuA7WV5QUnacwk-KMSdcpuDRSFZkS8i7dabteSa3eB6EbanbK9kzRtKaJVtTjKkyILQYUHNORdykRvc9xKoBaUl_YZ8vADejUVeemBfRze3rFtoA8el6M5RtArqR8HB5zEuYvy4pVRLy6DzVPVqElkq-v6HXJrFmCw09S1W_BTBiAFxG08d08aYTgzxoxSRgvjhFZmjNa-IypTcnED5snh-g1un0SWbqSCdaDSS8L4a5jhnoVeOSe65Yvg);
+    opacity: 0.03;
+    pointer-events: none
+    }
+.region-glow-west {
+    filter: drop-shadow(0 0 15px rgba(204, 0, 0, 0.3))
+    }
+.region-glow-north {
+    filter: drop-shadow(0 0 15px rgba(77, 208, 225, 0.3))
+    }
+.region-glow-central {
+    filter: drop-shadow(0 0 15px rgba(0, 114, 181, 0.3))
+    }
+.animated-gradient-bg {
+    background: linear-gradient(-45deg, #1f0f0f, #0A0A0D, #281717, #0A0A0D);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite
+    }
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+        } 50% {
+        background-position: 100% 50%;
+        } 100% {
+        background-position: 0% 50%;
+        }
+    }
+.scroll-reveal {
+    opacity: 0;
+    transform: translatey(20px);
+    transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1)
+    }
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translatey(0)
+    }</style>
+</head>
+<body class="bg-background text-on-background font-body-base selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+<!-- Atmospheric Background Layer -->
+<div class="fixed inset-0 z-[-1] animated-gradient-bg"></div>
+<div class="fixed inset-0 z-[-1] noise-overlay"></div>
+
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-glass backdrop-blur-md saturate-[140%] shadow-sm border-b border-glass-border">
+<div class="flex justify-between items-center px-margin-page py-4 max-w-full">
+<div class="font-display-3xl text-display-3xl font-bold text-primary tracking-tighter">Jakarta One 2026</div>
+<div class="hidden md:flex items-center gap-stack-lg">
+<a class="font-body-base text-body-base text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Stages</a>
+<a class="font-body-base text-body-base text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Schedule</a>
+<a class="font-body-base text-body-base text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Records</a>
+<a class="font-body-base text-body-base text-primary font-bold border-b-2 border-primary pb-1" href="#">Partners</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-bold active:scale-95 transition-transform">
+                Register
+            </button>
+</div>
+</nav>
+<main class="pt-32 pb-stack-lg px-margin-page max-w-7xl mx-auto relative">
+<!-- Hero Section -->
+<header class="mb-20 text-center relative">
+<div class="absolute -top-20 left-1/2 -translate-x-1/2 w-96 h-96 bg-west-red/10 blur-[120px] rounded-full"></div>
+<h1 class="font-display-5xl text-display-5xl mb-stack-md tracking-tighter">Our <span class="text-primary">Ecosystem</span></h1>
+<p class="font-body-xl text-body-xl text-on-surface-variant max-w-2xl mx-auto">
+                Collaborating with global leaders and local visionaries to create the definitive celebration of running in Indonesia's capital.
+            </p>
+</header>
+<!-- Title Sponsor - The Anchor -->
+<section class="mb-24 scroll-reveal">
+<div class="flex items-center gap-4 mb-stack-md">
+<div class="h-[1px] flex-grow bg-glass-border"></div>
+<h2 class="font-display-3xl text-display-3xl uppercase tracking-widest text-secondary-fixed">Title Sponsor</h2>
+<div class="h-[1px] flex-grow bg-glass-border"></div>
+</div>
+<div class="flex justify-center">
+<div class="glass-tier-3 rounded-2xl p-stack-lg group cursor-pointer hover:translate-y-[-4px] transition-all duration-500 max-w-3xl w-full flex flex-col items-center gap-6">
+<div class="w-full aspect-[21/9] flex items-center justify-center p-8">
+<img class="max-h-32 object-contain opacity-90 group-hover:opacity-100 transition-opacity" data-alt="A futuristic, high-tech logo for a global athletic brand, rendered in sleek chrome and glowing red accents, floating in a dark cinematic space with soft volumetric lighting and glass reflections. High-end professional sports branding aesthetic for a premium race series." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFNBuiPH-n8-w5wt4OxOWupLBSpKvB76UKYUEPwScWAHzh3ZvcTccjsF1Gpm-XxiJh0EUZHuSHLRaedqFZEfsIVZKZMvCy4rbvzFup0nFp2Zo7ajbpXGFNj5OaB-htZOcNyKNiYa6ooNVuxldrAVaQ_rzkUoJWK-H1isoMXVpei7AtfrOKAMUTMZfgv_w79eeWB0wM6I77sXxSx6XSuqRnGCGUCSO7vYMQcAOvtIVnhNlIN7ilXzX4iQ"/>
+</div>
+<div class="text-center px-8">
+<h3 class="font-headline-2xl text-headline-2xl text-primary mb-2">OmniAthletic Global</h3>
+<p class="font-body-base text-body-base text-on-surface-variant italic">The Official Performance &amp; Technology Partner of Jakarta One 2026</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Platinum Partners - Bento Grid -->
+<section class="mb-24 scroll-reveal">
+<h2 class="font-display-3xl text-display-3xl mb-12 text-center">Platinum Partners</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter-grid">
+<!-- Card 1 -->
+<div class="glass-tier-2 rounded-xl p-10 flex flex-col items-center justify-center group hover:border-primary/40 transition-colors">
+<div class="h-24 w-full flex items-center justify-center mb-6">
+<img class="max-h-16 object-contain opacity-70 group-hover:opacity-100 transition-opacity" data-alt="A minimalist logo for a premium hydration and beverage brand, featuring clean typography and a stylized drop of water with a cyan glowing edge. Modern corporate identity for an elite marathon partner, deep dark background with glassmorphism effects." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVW4IyW4wNbJB14q-brnyNoSZovFhj11KX2gUM6-aFa7I9lDhbSutlJyh5eelZEAjWvpFRIbjcV811kI7nOP2t06kMqE30JOMCQXaCZO80SQVNBR3UWxQybjNKHC3lkiq9F4BHccV9DFrZyIN4zQGZKzfjaZwv6iDay-Fo_awdpjAloEQpQOH1CvxTp-Ed818nPcCpREX6AXVV75swTDnuQeIV8ETwG1GZEKv0Z6oaeLzAAwGXZ1coPQ"/>
+</div>
+<span class="font-label-sm text-label-sm text-north-cyan uppercase tracking-widest">Hydration Partner</span>
+</div>
+<!-- Card 2 -->
+<div class="glass-tier-2 rounded-xl p-10 flex flex-col items-center justify-center group hover:border-primary/40 transition-colors">
+<div class="h-24 w-full flex items-center justify-center mb-6">
+<img class="max-h-16 object-contain opacity-70 group-hover:opacity-100 transition-opacity" data-alt="A luxury financial institution logo with gold leaf textures and geometric sharp lines, appearing embedded in a dark glass surface. Sophisticated banking brand identity for a high-profile international sporting event in Jakarta." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa6MYU4Gz_S6RHsLFwHydqhLd9lxW66NLla-fG6qzYdP3ha6XqQAiEWp_I5yPNbIuC9L09uRbEbvPP9yISQ5bkA1uDg40AUnkO8ebRk8KYmJZQy2n1whySZgV_f6NB2GI2Y144nFP2EQOAUZZxPhV9JoYTa3FA44QaJCMYENFJ6yPgmH5wOUduJiXeIPtn7pLVl8JsTSBbgfkIo9jkf8b-PhZgQi3mONqPT4ry5ShN37BtqEtTQNymkg"/>
+</div>
+<span class="font-label-sm text-label-sm text-south-lime uppercase tracking-widest">Financial Service</span>
+</div>
+<!-- Card 3 -->
+<div class="glass-tier-2 rounded-xl p-10 flex flex-col items-center justify-center group hover:border-primary/40 transition-colors">
+<div class="h-24 w-full flex items-center justify-center mb-6">
+<img class="max-h-16 object-contain opacity-70 group-hover:opacity-100 transition-opacity" data-alt="An innovative tech logo representing a cloud computing and data analytics company, utilizing deep blues and glowing particle effects. Professional technological partner for marathon timing and data tracking." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMPJ51ica3SiSyxRlV-O3VAXRAqWSRCJ-YS5CZztxV_uNW8r8VmhIvjcUvw-gPSSvgHdIQq3eybzwyUYfbj0mKHQGLNzIVistv6qMvykmhVshAK5tY1EWs0Z_SMYxzqGTv5N8OgRRL0cthgp6TFo9WuEik63htjTP7XZNq1v2_HpONtSLPNS65MRYucxKQB9FK99_s7fJxs4aefwhLX7NAqkMQs8nqE__MWy_emVq3LiuwdXsVxarjuQ"/>
+</div>
+<span class="font-label-sm text-label-sm text-central-blue uppercase tracking-widest">Tech &amp; Timing</span>
+</div>
+</div>
+</section>
+<!-- Gold Partners - Asymmetric Grid -->
+<section class="mb-24 scroll-reveal">
+<h2 class="font-display-3xl text-display-3xl mb-12">Gold Partners</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter-grid">
+<div class="glass-tier-1 rounded-lg p-8 h-40 flex items-center justify-center hover:bg-glass/10 transition-colors">
+<img class="max-h-12 opacity-60 grayscale hover:grayscale-0 transition-all" data-alt="Minimalist logo for a luxury hotel chain, elegant sans-serif font in soft grey on a dark glass background. Premium hospitality branding for event partners." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZUvzUTKyKwLixRdqYi8w2--jbCdFiBwA8rXT5akDNPjQRaYMMz1M3GNuV4QJNNlC8J7iQWn6ZPAYEHScIfOhITk4yo1biYi7JhFBxGfGybr9NqqI51llzFrfucBY3VILE2aNRdq_QEUvCza-LQQ5zEMkRqU3v-8P3qLx_er0wS9UfL2bg8Lg4CWWBXNvMU5KYRU-4UE_Ejeu78tDGp8u7uiuwKz_-TAYrJLoCrf1fIKSSBJ94wIVkZA"/>
+</div>
+<div class="glass-tier-1 rounded-lg p-8 h-40 flex items-center justify-center hover:bg-glass/10 transition-colors mt-8 md:mt-0">
+<img class="max-h-12 opacity-60 grayscale hover:grayscale-0 transition-all" data-alt="A modern airline logo with a stylized bird wing in red and white, sleek and aerodynamic design. International aviation partner branding for a major city marathon." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4SwJwC6Rz3D4ZfaE8nozi7JPlyPRAcKxqR5uQDtVi2nzte4SfxJn3urI7IxFF7s-77dqFMT_XI038z2dpYuWYl_7BrlLxXrp-eIuwFvdBYEL_xw6-WzP7wVReIA8TbIIFCbvp_99p1YKFTYsOyCFzWcwNWk_UDsRsaewAsOMFrJNAYzB54nybrGupZ6dKz6r57k728J01yxXbFociff9HSuQuNet9zjrae1L6ODh8eDEsrxbveHzSvQ"/>
+</div>
+<div class="glass-tier-1 rounded-lg p-8 h-40 flex items-center justify-center hover:bg-glass/10 transition-colors">
+<img class="max-h-12 opacity-60 grayscale hover:grayscale-0 transition-all" data-alt="Healthcare and hospital network logo, clean medical cross icon integrated with corporate typography in deep navy and white. Professional health partner identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAu9Drq8uRqlkHJ6QpxgIILFg8DttF5z_5tji33oAHsEFQXnGX42Rylhf_kFJ7VNM5OvDBm1bf7IYUfOJrslwrWwHMbh-o7Mk_OWJq66dABM28gfd8LiT6K_m4MDXqAB5tmKVcUoV4DUO9PuHfmWYofqm6rZJav443Ej4xM6RfJhGa12Zdk8DFjvgr7VVdLyP5VMuMcGjQ5qnLk4bfgeT9LeAtny-fYjpKwDAGv20doREpWEwgVpS3M9w"/>
+</div>
+<div class="glass-tier-1 rounded-lg p-8 h-40 flex items-center justify-center hover:bg-glass/10 transition-colors mt-8 md:mt-0">
+<img class="max-h-12 opacity-60 grayscale hover:grayscale-0 transition-all" data-alt="Electric vehicle manufacturer logo, minimalist T-shape or similar futuristic emblem in brushed silver and light blue. Green mobility partner branding." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmp4F0XniX4H2Tz2Bg4I3cA7svwLrHqgZn6cZRRRdk-EdQfacTE8ASEXWTOSt6CnMdK5U2dCezytaYf4NxZUe9DUOcpAM7CJC17Bv4CxEOC23y5ug-JgJEN-xDkjw1iosiLnevw-w-vFFJ0FeO-ZZLrXz2Z-JXjctDDhiaS5J8qvN1uSF-c9YcBi-L54iVnzC8tkoIpQP2VPFLLJDdYhfB3lp5v9XI8y6eT6-tuYwx0BNTBXgoZSt4QA"/>
+</div>
+</div>
+</section>
+<!-- Community Partners - Ticker Style -->
+<section class="mb-32 scroll-reveal">
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-headline-2xl text-headline-2xl">Community &amp; Media</h2>
+<div class="flex gap-2">
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+<div class="w-2 h-2 rounded-full bg-primary/40"></div>
+</div>
+</div>
+<div class="flex flex-wrap gap-4">
+<div class="px-6 py-3 glass-tier-1 rounded-full text-on-surface-variant font-label-sm border border-glass-border hover:border-primary transition-colors cursor-default">IndoRunners</div>
+<div class="px-6 py-3 glass-tier-1 rounded-full text-on-surface-variant font-label-sm border border-glass-border hover:border-primary transition-colors cursor-default">Jakarta Post</div>
+<div class="px-6 py-3 glass-tier-1 rounded-full text-on-surface-variant font-label-sm border border-glass-border hover:border-primary transition-colors cursor-default">Detik Health</div>
+<div class="px-6 py-3 glass-tier-1 rounded-full text-on-surface-variant font-label-sm border border-glass-border hover:border-primary transition-colors cursor-default">Swift Foot Club</div>
+<div class="px-6 py-3 glass-tier-1 rounded-full text-on-surface-variant font-label-sm border border-glass-border hover:border-primary transition-colors cursor-default">Tempo Interactive</div>
+<div class="px-6 py-3 glass-tier-1 rounded-full text-on-surface-variant font-label-sm border border-glass-border hover:border-primary transition-colors cursor-default">Java Endurance</div>
+<div class="px-6 py-3 glass-tier-1 rounded-full text-on-surface-variant font-label-sm border border-glass-border hover:border-primary transition-colors cursor-default">Monas Runners</div>
+</div>
+</section>
+<!-- Call to Partnership -->
+<section class="relative rounded-[2.5rem] overflow-hidden glass-tier-2 p-12 md:p-20 scroll-reveal">
+<!-- Background Accent -->
+<div class="absolute top-0 right-0 w-[50%] h-full bg-gradient-to-l from-primary/10 to-transparent pointer-events-none"></div>
+<div class="relative z-10 max-w-3xl">
+<h2 class="font-display-4xl text-display-4xl mb-stack-md leading-none">Join the <span class="text-primary italic">Movement.</span></h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10">
+                    Be part of Jakarta's biggest athletic celebration. Align your brand with excellence, endurance, and the vibrant spirit of the capital.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary hover:bg-primary-container text-on-primary px-10 py-5 rounded-xl font-bold transition-all flex items-center justify-center gap-3">
+                        Request Prospectus
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="glass-tier-1 hover:bg-glass/20 text-on-surface border border-glass-border px-10 py-5 rounded-xl font-bold transition-all">
+                        Schedule a Call
+                    </button>
+</div>
+</div>
+<!-- Statistics Overlay -->
+<div class="mt-16 grid grid-cols-2 md:grid-cols-3 gap-8 relative z-10">
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-primary uppercase tracking-[0.2em] mb-1">Projected Reach</span>
+<span class="font-display-3xl text-display-3xl">5.2M+</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-primary uppercase tracking-[0.2em] mb-1">Participants</span>
+<span class="font-display-3xl text-display-3xl">45,000</span>
+</div>
+<div class="flex flex-col col-span-2 md:col-span-1">
+<span class="font-label-xs text-label-xs text-primary uppercase tracking-[0.2em] mb-1">Social Shares</span>
+<span class="font-display-3xl text-display-3xl">120K</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-stack-lg mt-stack-lg bg-glass backdrop-blur-md saturate-[140%] border-t border-glass-border">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-page gap-stack-md">
+<div class="flex flex-col gap-2">
+<div class="font-display-2xl text-display-2xl font-bold text-on-surface">Jakarta One 2026</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">© 2026 Jakarta One Running Series. One City, One Celebration.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-stack-lg">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-all" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-all" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-all" href="#">Race Rules</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-all" href="#">Contact Us</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-all" href="#">Sponsorship</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions and Scroll Animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+
+            // Parallax effect for glass cards
+            document.addEventListener('mousemove', (e) => {
+                const moveX = (e.clientX - window.innerWidth / 2) / 100;
+                const moveY = (e.clientY - window.innerHeight / 2) / 100;
+                
+                document.querySelectorAll('.glass-tier-3').forEach(card => {
+                    card.style.transform = `translateY(-4px) rotateX(${-moveY}deg) rotateY(${moveX}deg)`;
+                });
+            });
+        });
+    </script>
+</body></html>

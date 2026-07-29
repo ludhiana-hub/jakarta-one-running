@@ -1,0 +1,57 @@
+{
+  "page": {
+    "slug": "galeri",
+    "title": {
+      "id": "Galeri"
+    },
+    "seo": {
+      "meta_title": {
+        "id": "Jakarta One Running Series | Galeri"
+      },
+      "meta_description": {
+        "id": "Sorotan foto kegiatan dan momen penting peserta."
+      },
+      "og_image": "https://example.com/og/galeri.png",
+      "noindex": false
+    }
+  },
+  "blocks": [
+    {
+      "id": "blk_gallery_grid",
+      "type": "gallery_grid",
+      "data": {
+        "images": [
+          {
+            "id": "g1",
+            "url": "https://picsum.photos/seed/gallery-01/1200/800",
+            "alt": {
+              "id": "Galeri 01"
+            }
+          },
+          {
+            "id": "g2",
+            "url": "https://picsum.photos/seed/gallery-02/1200/800",
+            "alt": {
+              "id": "Galeri 02"
+            }
+          },
+          {
+            "id": "g3",
+            "url": "https://picsum.photos/seed/gallery-03/1200/800",
+            "alt": {
+              "id": "Galeri 03"
+            }
+          },
+          {
+            "id": "g4",
+            "url": "https://picsum.photos/seed/gallery-04/1200/800",
+            "alt": {
+              "id": "Galeri 04"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
+

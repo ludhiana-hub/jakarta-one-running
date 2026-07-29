@@ -1,0 +1,91 @@
+/* Glassmorphism surfaces — aligned with Stitch landing V2 */
+
+.glass-tier1,
+.glass-tier-1,
+.glass-ambient {
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.glass-tier2,
+.glass-tier-2,
+.glass-card {
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.glass-tier3,
+.glass-tier-3,
+.glass-focal {
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(28px) saturate(140%);
+  -webkit-backdrop-filter: blur(28px) saturate(140%);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow:
+    0 16px 48px rgba(0, 0, 0, 0.35), 0 0 60px var(--brand-primary-glow);
+}
+
+.glass-tier1::after,
+.glass-tier2::after,
+.glass-tier3::after,
+.glass-tier-1::after,
+.glass-tier-2::after,
+.glass-tier-3::after,
+.glass-ambient::after,
+.glass-card::after,
+.glass-focal::after,
+.noise-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27120%27%20height%3D%27120%27%3E%3Cfilter%20id%3D%27n%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%27.8%27%20numOctaves%3D%273%27%20stitchTiles%3D%27stitch%27/%3E%3C/filter%3E%3Crect%20width%3D%27120%27%20height%3D%27120%27%20filter%3D%27url(%23n)%27%20opacity%3D%27.5%27/%3E%3C/svg%3E");
+  opacity: 0.03;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floating-card {
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s ease;
+}
+
+.floating-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-card,
+  .floating-card:hover {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+@supports not (backdrop-filter: blur(1px)) {
+  .glass-tier1,
+  .glass-tier2,
+  .glass-tier3,
+  .glass-tier-1,
+  .glass-tier-2,
+  .glass-tier-3,
+  .glass-ambient,
+  .glass-card,
+  .glass-focal {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgba(15, 15, 18, 0.85);
+  }
+}

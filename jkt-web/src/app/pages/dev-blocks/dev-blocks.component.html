@@ -1,0 +1,13 @@
+<div class="w-full px-4 py-8 max-w-6xl mx-auto">
+  <header class="mb-10">
+    <h1 class="font-display text-chalk text-3xl font-bold">Kitchen Sink — 15 Blok</h1>
+    <p class="mt-2 text-mist">Route QA visual untuk presentasi klien.</p>
+  </header>
+
+  @for (block of blocks; track block.id) {
+    <div class="mb-6">
+      <div class="font-mono text-xs text-mist mb-2">{{ block.type }}</div>
+      <app-block-renderer [block]="block" />
+    </div>
+  }
+</div>

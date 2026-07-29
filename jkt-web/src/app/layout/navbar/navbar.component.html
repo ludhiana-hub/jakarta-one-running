@@ -1,0 +1,116 @@
+<header
+  class="fixed top-0 z-50 w-full border-b border-glass-border bg-void/55 px-4 py-3 backdrop-blur-md sm:px-6 md:px-8 md:py-4"
+>
+  <div class="mx-auto flex max-w-[1400px] items-center justify-between gap-3">
+    <a
+      routerLink="/"
+      class="min-w-0 font-display text-base font-bold tracking-tight text-primary sm:text-lg md:text-2xl"
+      (click)="closeMenu()"
+    >
+      <span class="md:hidden">Jakarta One <span class="text-chalk">’26</span></span>
+      <span class="hidden md:inline"
+        >Jakarta One Running <span class="text-chalk">2026</span></span
+      >
+    </a>
+
+    <nav class="hidden items-center gap-8 md:flex" aria-label="Primary">
+      <a
+        routerLink="/"
+        routerLinkActive="nav-active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="nav-link font-body text-sm font-medium text-on-surface-variant transition hover:text-primary"
+        >Home</a
+      >
+      <a
+        routerLink="/schedule"
+        routerLinkActive="nav-active"
+        class="nav-link font-body text-sm font-medium text-on-surface-variant transition hover:text-primary"
+        >Schedule</a
+      >
+      <a
+        routerLink="/partners"
+        routerLinkActive="nav-active"
+        class="nav-link font-body text-sm font-medium text-on-surface-variant transition hover:text-primary"
+        >Partners</a
+      >
+    </nav>
+
+    <div class="flex shrink-0 items-center gap-2 sm:gap-3">
+      <button
+        type="button"
+        class="btn-cta btn-cta-pill bg-ember text-white max-md:px-3 max-md:text-xs"
+        (click)="openExternal('https://example.com/jakarta-one/register')"
+      >
+        Register
+      </button>
+
+      <button
+        type="button"
+        class="nav-burger inline-flex md:hidden"
+        [attr.aria-expanded]="menuOpen()"
+        aria-controls="mobile-nav-drawer"
+        aria-label="Toggle menu"
+        (click)="toggleMenu()"
+      >
+        <span class="nav-burger__bar" [class.nav-burger__bar--open]="menuOpen()"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Backdrop -->
+@if (menuOpen()) {
+  <button
+    type="button"
+    class="nav-backdrop md:hidden"
+    aria-label="Close menu"
+    (click)="closeMenu()"
+  ></button>
+}
+
+<!-- Mobile drawer -->
+<aside
+  id="mobile-nav-drawer"
+  class="nav-drawer md:hidden"
+  [class.nav-drawer--open]="menuOpen()"
+  [attr.aria-hidden]="!menuOpen()"
+>
+  <nav class="flex flex-col gap-1 p-6 pt-20" aria-label="Mobile">
+    <a
+      routerLink="/"
+      routerLinkActive="nav-drawer__link--active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="nav-drawer__link"
+      (click)="closeMenu()"
+      >Home</a
+    >
+    <a
+      routerLink="/schedule"
+      routerLinkActive="nav-drawer__link--active"
+      class="nav-drawer__link"
+      (click)="closeMenu()"
+      >Schedule</a
+    >
+    <a
+      routerLink="/partners"
+      routerLinkActive="nav-drawer__link--active"
+      class="nav-drawer__link"
+      (click)="closeMenu()"
+      >Partners</a
+    >
+
+    <button
+      type="button"
+      class="btn-cta btn-cta-lg mt-6 w-full"
+      (click)="openExternal('https://example.com/jakarta-one/register')"
+    >
+      Register
+    </button>
+  </nav>
+</aside>
+
+<app-external-link-dialog
+  [visible]="dialogVisible"
+  [pendingUrl]="pendingUrl"
+  (visibleChange)="dialogVisible = $event"
+/>

@@ -1,0 +1,29 @@
+<!--
+  Home page — dedicated HTML template (same pattern as schedule / partners).
+  Layout sections live here; visual pieces reuse block components under src/app/blocks/.
+  Edit copy in home-page.component.ts, or tweak markup/structure in this file.
+-->
+<div class="home-page w-full pb-8">
+  <!-- 1. Hero -->
+  <app-block-hero [data]="hero" />
+
+  <!-- 2. Stats -->
+  <div appReveal>
+    <app-block-stats-counter [data]="stats" />
+  </div>
+
+  <!-- 3. Mascot / Jaro -->
+  <div appReveal>
+    <app-block-rich-text-media [data]="jaro" />
+  </div>
+
+  <!-- 4. The 5 Stages -->
+  <div appReveal>
+    <app-block-edition-cards [data]="stages" />
+  </div>
+
+  <!-- 5. Bottom CTA -->
+  <div appReveal>
+    <app-block-cta-banner [data]="cta" />
+  </div>
+</div>

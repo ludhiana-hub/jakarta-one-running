@@ -1,0 +1,18 @@
+<section class="my-12 px-4">
+  <div class="max-w-4xl mx-auto">
+    <div class="glass-tier2 p-7">
+      <p-accordion [multiple]="true">
+        @for (item of data().items; track item.id) {
+          <p-accordion-panel [value]="item.id">
+            <p-accordion-header>
+              <span class="text-chalk font-medium">{{ item.question | tr }}</span>
+            </p-accordion-header>
+            <p-accordion-content>
+              <p class="m-0 text-mist leading-relaxed">{{ item.answer | tr }}</p>
+            </p-accordion-content>
+          </p-accordion-panel>
+        }
+      </p-accordion>
+    </div>
+  </div>
+</section>

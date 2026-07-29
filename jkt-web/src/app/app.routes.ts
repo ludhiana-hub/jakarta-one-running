@@ -1,0 +1,56 @@
+import { Routes } from '@angular/router';
+
+import { EditionPageComponent } from './pages/edition-page/edition-page.component';
+import { DynamicPageComponent } from './pages/dynamic-page/dynamic-page.component';
+import { DevBlocksComponent } from './pages/dev-blocks/dev-blocks.component';
+import { SchedulePageComponent } from './pages/schedule-page/schedule-page.component';
+import { PartnersPageComponent } from './pages/partners-page/partners-page.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+
+export const routes: Routes = [
+  {
+    path: '',
+    component: HomePageComponent,
+  },
+  {
+    path: 'schedule',
+    component: SchedulePageComponent,
+  },
+  {
+    path: 'partners',
+    component: PartnersPageComponent,
+  },
+  {
+    path: 'tentang',
+    redirectTo: 'partners',
+    pathMatch: 'full',
+  },
+  {
+    path: 'galeri',
+    component: DynamicPageComponent,
+    data: { pageSlug: 'galeri' },
+  },
+  {
+    path: 'faq',
+    component: DynamicPageComponent,
+    data: { pageSlug: 'faq' },
+  },
+  {
+    path: 'syarat-ketentuan',
+    component: DynamicPageComponent,
+    data: { pageSlug: 'syarat-ketentuan' },
+  },
+  {
+    path: 'kontak',
+    component: DynamicPageComponent,
+    data: { pageSlug: 'kontak' },
+  },
+  {
+    path: 'dev/blocks',
+    component: DevBlocksComponent,
+  },
+  {
+    path: 'etape/:slug',
+    component: EditionPageComponent,
+  },
+];

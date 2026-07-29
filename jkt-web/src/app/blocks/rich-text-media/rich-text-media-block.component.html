@@ -1,0 +1,37 @@
+<section class="px-4 py-10 sm:px-6 sm:py-12 md:px-8">
+  <div
+    class="glass-tier-2 noise-overlay mx-auto flex max-w-[1400px] flex-col items-center overflow-hidden rounded-2xl border border-glass-border sm:rounded-3xl md:flex-row"
+  >
+    <div class="order-2 w-full p-6 sm:p-8 md:order-1 md:w-1/2 md:p-12">
+      <div
+        class="glass-tier-1 mb-4 inline-block rounded-full px-3 py-1 font-mono text-[10px] text-primary sm:mb-6 sm:px-4 sm:text-xs"
+      >
+        Meet the Legend
+      </div>
+      <h2
+        class="mb-4 whitespace-nowrap font-display text-[clamp(1.5rem,3.6vw,2.75rem)] font-bold tracking-tight text-chalk sm:mb-6"
+      >
+        {{ data().title | tr }}
+      </h2>
+      <p class="mb-6 font-body text-base leading-relaxed text-chalk/90 whitespace-pre-line sm:mb-8 sm:text-lg">
+        {{ data().body | tr }}
+      </p>
+      <div class="flex items-center gap-3 text-primary sm:gap-4">
+        <span class="text-xl" aria-hidden="true">🏃</span>
+        <span class="font-mono text-[10px] uppercase tracking-widest sm:text-xs">Always moving forward</span>
+      </div>
+    </div>
+
+    <div
+      class="order-1 flex min-h-[240px] w-full items-center justify-center bg-white/5 p-6 sm:min-h-[320px] sm:p-8 md:order-2 md:min-h-[400px] md:w-1/2"
+    >
+      <img
+        [ngSrc]="data().media_image"
+        width="800"
+        height="800"
+        class="h-auto max-h-[280px] max-w-full object-contain drop-shadow-2xl transition duration-500 hover:scale-105 sm:max-h-none sm:hover:scale-110"
+        [alt]="(data().media_alt | tr) || ''"
+      />
+    </div>
+  </div>
+</section>

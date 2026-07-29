@@ -1,0 +1,15 @@
+{
+  "page": {
+    "slug": "home",
+    "title": { "id": "Beranda" },
+    "seo": {
+      "meta_title": { "id": "Jakarta One Running 2026 | One City, One Celebration" },
+      "meta_description": {
+        "id": "500 Years, 5 Regions, 5.00 Kilometers Each. Run through history and culture in the ultimate urban series."
+      },
+      "og_image": "/assets/prototype/hero-backdrop.png",
+      "noindex": false
+    }
+  },
+  "blocks": []
+}

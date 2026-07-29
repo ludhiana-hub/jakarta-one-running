@@ -1,0 +1,19 @@
+<div class="relative flex min-h-screen flex-col font-body text-chalk">
+  <div class="atmosphere" aria-hidden="true">
+    <div class="atmosphere-mesh"></div>
+    <div class="atmosphere-orb atmosphere-orb-a"></div>
+    <div class="atmosphere-orb atmosphere-orb-b"></div>
+    <div class="atmosphere-orb atmosphere-orb-c"></div>
+    <div class="atmosphere-grid"></div>
+    <div class="atmosphere-noise"></div>
+    <div class="atmosphere-vignette"></div>
+  </div>
+
+  <div class="relative z-10 flex min-h-screen flex-col">
+    <app-navbar />
+    <main class="w-full flex-1">
+      <router-outlet />
+    </main>
+    <app-footer />
+  </div>
+</div>

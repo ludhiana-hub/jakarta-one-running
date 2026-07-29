@@ -1,0 +1,77 @@
+/* Shared CTA — hardcoded red so theme/HMR/PrimeNG cannot wipe the fill */
+
+button.btn-cta,
+a.btn-cta,
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: none;
+  border-radius: 0.75rem;
+  background-color: #ff525c;
+  color: #ffffff;
+  font-weight: 700;
+  line-height: 1.25;
+  padding: 0.75rem 1.75rem;
+  box-shadow: 0 0 20px rgba(255, 82, 92, 0.35);
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+button.btn-cta:hover,
+a.btn-cta:hover,
+.btn-cta:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 0 28px rgba(255, 82, 92, 0.45);
+  color: #ffffff;
+}
+
+button.btn-cta:active,
+a.btn-cta:active,
+.btn-cta:active {
+  transform: scale(0.97);
+}
+
+button.btn-cta:disabled,
+.btn-cta:disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.btn-cta-lg {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  border-radius: 0.5rem;
+}
+
+.btn-cta-pill {
+  border-radius: 9999px;
+  padding: 0.5rem 1.5rem;
+  font-size: 0.875rem;
+}
+
+.btn-cta-xl {
+  padding: 1rem 3rem;
+  font-size: 1rem;
+}
+
+.nav-link.nav-active {
+  color: #ffb3b2;
+  font-weight: 600;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  button.btn-cta,
+  a.btn-cta,
+  .btn-cta,
+  .btn-cta:hover,
+  .btn-cta:active {
+    transition: none;
+    transform: none;
+  }
+}

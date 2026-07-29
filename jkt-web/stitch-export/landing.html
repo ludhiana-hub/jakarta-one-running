@@ -1,0 +1,356 @@
+<!DOCTYPE html><html class="dark" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&amp;family=Bricolage+Grotesque:wght@600;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "error-container": "#93000a",
+                  "tertiary-fixed": "#81f7d8",
+                  "on-secondary": "#2f312f",
+                  "west-red": "#CC0000",
+                  "primary-fixed": "#ffdad8",
+                  "on-primary-fixed": "#410008",
+                  "secondary-fixed-dim": "#c6c7c4",
+                  "glass": "rgba(255, 255, 255, 0.04)",
+                  "outline-variant": "#5c3f3f",
+                  "glass-border": "rgba(255, 255, 255, 0.14)",
+                  "tertiary-container": "#1aa387",
+                  "on-tertiary-fixed": "#002019",
+                  "tertiary-fixed-dim": "#64dabc",
+                  "primary": "#ffb3b2",
+                  "on-primary-fixed-variant": "#92001e",
+                  "primary-fixed-dim": "#ffb3b2",
+                  "east-grey": "#8C8C8C",
+                  "on-tertiary-fixed-variant": "#005142",
+                  "inverse-surface": "#fbdbda",
+                  "surface-tint": "#ffb3b2",
+                  "on-tertiary-container": "#003026",
+                  "secondary-fixed": "#e2e3e0",
+                  "north-cyan": "#4DD0E1",
+                  "secondary-container": "#454745",
+                  "on-surface-variant": "#e5bdbc",
+                  "south-lime": "#C4D600",
+                  "void": "#0A0A0D",
+                  "outline": "#ac8887",
+                  "central-blue": "#0072B5",
+                  "on-secondary-fixed": "#1a1c1b",
+                  "on-primary-container": "#5b000f",
+                  "background": "#1f0f0f",
+                  "on-error-container": "#ffdad6",
+                  "secondary": "#c6c7c4",
+                  "surface-variant": "#44302f",
+                  "surface-container": "#2d1b1b",
+                  "on-primary": "#680012",
+                  "tertiary": "#64dabc",
+                  "on-error": "#690005",
+                  "on-tertiary": "#00382d",
+                  "inverse-on-surface": "#3f2b2b",
+                  "on-background": "#fbdbda",
+                  "surface-dim": "#1f0f0f",
+                  "surface-bright": "#483434",
+                  "surface": "#1f0f0f",
+                  "on-secondary-container": "#b5b5b3",
+                  "error": "#ffb4ab",
+                  "mist": "#B8B8C0",
+                  "surface-container-highest": "#44302f",
+                  "surface-container-high": "#382525",
+                  "on-secondary-fixed-variant": "#454745",
+                  "inverse-primary": "#bf002a",
+                  "surface-container-low": "#281717",
+                  "surface-container-lowest": "#190a0a",
+                  "primary-container": "#ff525c",
+                  "on-surface": "#fbdbda",
+                  "chalk": "#F5F5F2"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "margin-page": "2rem",
+                  "stack-sm": "0.5rem",
+                  "stack-md": "1rem",
+                  "stack-lg": "2rem",
+                  "gutter-grid": "1.5rem"
+          },
+          "fontFamily": {
+                  "body-base": ["Plus Jakarta Sans"],
+                  "display-4xl": ["Bricolage Grotesque"],
+                  "body-lg": ["Plus Jakarta Sans"],
+                  "label-xs": ["JetBrains Mono"],
+                  "display-5xl": ["Bricolage Grotesque"],
+                  "headline-2xl": ["Bricolage Grotesque"],
+                  "body-xl": ["Plus Jakarta Sans"],
+                  "display-3xl": ["Bricolage Grotesque"],
+                  "label-sm": ["JetBrains Mono"]
+          },
+          "fontSize": {
+                  "body-base": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                  "display-4xl": ["60px", {"lineHeight": "1.1", "fontWeight": "700"}],
+                  "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                  "label-xs": ["12px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                  "display-5xl": ["80px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                  "headline-2xl": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                  "body-xl": ["24px", {"lineHeight": "1.5", "fontWeight": "500"}],
+                  "display-3xl": ["44px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                  "label-sm": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body { background-color: #0A0A0D; color: #F5F5F2; overflow-x: hidden; }
+    .glass-tier-1 { backdrop-filter: blur(12px) saturate(140%); background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.14); }
+    .glass-tier-2 { backdrop-filter: blur(20px) saturate(140%); background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.14); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); }
+    .glass-tier-3 { backdrop-filter: blur(28px) saturate(140%); background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); }
+    .noise-overlay::before { content: ""; position: absolute; inset: 0; background: url('https://grainy-gradients.vercel.app/noise.svg'); opacity: 0.03; pointer-events: none; z-index: 1; }
+    .floating-card { transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+    .floating-card:hover { transform: translateY(-8px); border-color: rgba(255, 255, 255, 0.3); }
+    .medal-container { perspective: 1000px; }
+    .medal-inner { transform-style: preserve-3d; transition: transform 0.1s; }
+  </style>
+</head>
+<body class="font-body-base">
+<!-- TopNavBar Navigation Shell -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-page py-4 max-w-full bg-glass backdrop-blur-[12px] saturate-[140%] dark:bg-glass border-b border-glass-border shadow-sm">
+<div class="font-display-3xl text-display-3xl font-bold text-primary tracking-tight">Jakarta One Running 2026</div>
+<nav class="hidden md:flex gap-stack-lg items-center">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-base text-body-base hover:text-primary hover:scale-105 transition-all duration-300" href="#">Stages</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-base text-body-base font-medium hover:text-primary hover:scale-105 transition-all duration-300" href="#">Schedule</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-base text-body-base font-medium hover:text-primary hover:scale-105 transition-all duration-300" href="#">Records</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-base text-body-base font-medium hover:text-primary hover:scale-105 transition-all duration-300" href="#">Partners</a>
+</nav>
+<button class="px-6 py-2 rounded-full font-bold active:scale-95 duration-200 transition-all text-white shadow-[0_0_15px_rgba(255,59,78,0.4)] hover:scale-105" style="background-color: #FF3B4E;">Register</button>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-24 overflow-hidden">
+<!-- Full-bleed background -->
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLs5_jH8N_qkCzWV5r1lxbjhM7REY-mrS-0CJdCzfrcbczLo9ceKWO44pfXzc7cI5X9TpqWogO3Ai4BcQ6bvWsvAVWzWYBQfPqQEuoC0punnIPt8R-yc7gqbiFNxSxgrtG2eYoNlObnGwRHqlZqwpTZliLs2tWVOpZior_LH8fmF-ufx3293NwFKbAT8Z7GbUlH63Ib7QT0YfCpSI0Fri5kD83nXs_RFcJM7kTF7SjLqkvtZLYmlHbEpBuJ_')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-void via-void/40 to-transparent"></div>
+</div>
+<div class="relative z-10 px-margin-page w-full grid grid-cols-1 lg:grid-cols-12 gap-gutter-grid items-center">
+<!-- Hero Text Content -->
+<div class="lg:col-span-7 space-y-stack-md">
+<div class="inline-flex items-center gap-2 glass-tier-1 px-4 py-1.5 rounded-full border border-glass-border">
+<span class="w-2 h-2 rounded-full bg-west-red animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-chalk">Jakarta 500th Anniversary</span>
+</div>
+<h1 class="font-display-4xl text-display-4xl text-chalk max-w-2xl leading-tight">
+            ONE CITY,<br><span class="text-primary">ONE CELEBRATION</span>
+</h1>
+<p class="font-body-xl text-body-xl max-w-xl text-chalk" data-stitch-orig-opacity="0">500 Years, 5 Regions, 5.00 Kilometers Each. Run through history and culture in the ultimate urban series.</p>
+<div class="flex gap-4 pt-stack-md">
+<button class="bg-primary-container text-on-primary-container px-8 py-4 rounded-lg font-display-3xl text-headline-2xl font-bold shadow-[0_0_20px_rgba(255,82,92,0.4)] hover:scale-105 transition-transform">
+              Join the Series
+            </button>
+<button class="glass-tier-1 text-chalk px-8 py-4 rounded-lg font-display-3xl text-headline-2xl font-bold border border-glass-border hover:bg-white/10 transition-all">
+              View Routes
+            </button>
+</div>
+</div>
+<!-- Tier-3 Focal Card (Medal) -->
+<div class="lg:col-span-5 flex justify-center lg:justify-end items-center py-stack-lg">
+<div class="medal-container relative group">
+<div class="absolute -inset-10 bg-west-red/20 blur-[100px] rounded-full group-hover:bg-west-red/30 transition-all duration-700"></div>
+<div class="medal-inner glass-tier-3 p-8 rounded-3xl noise-overlay relative z-10 border-2 border-west-red/30 shadow-[0_0_50px_rgba(204,0,0,0.25)] flex flex-col items-center" style="transform: rotateX(0deg) rotateY(0deg);">
+<img alt="Finisher Medal" class="w-full max-w-[320px] drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)] pointer-events-none" src="https://lh3.googleusercontent.com/aida/AP1WRLvwqrAFVwneDKQ6hBPE6ZDxT2S4EzLUwgpNvZyurZvD67dRpRZ_Q6CHIWqZ35JuibxHOVD7H_tOBpy0szF3UQxvbGfOiucVL_T1qVdX3HFTENiZ809Cmv7B-eY6KgGfPFHipGVJQUQvfyTlAqCmY6ergz2YGMYXQfanDRMt4mlxHHfUBjut-4VWm6DTXES-pvoLeXxWrInmSSeSmSxwWrZXvFvjkKi2Bza8B6MDgYaE2fgGCo7Y0RhwK_PK">
+<div class="mt-6 text-center">
+<span class="font-label-xs text-label-xs text-west-red font-bold uppercase tracking-widest block mb-2">THE 2026 LEGACY</span>
+<h3 class="font-headline-2xl text-headline-2xl text-chalk">Forged in Five Regions</h3>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Counter Bento Grid -->
+<section class="px-margin-page py-stack-lg relative z-20 -mt-20">
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-gutter-grid">
+<!-- Floating Stats Cards with vertical offsets -->
+<div class="glass-tier-2 p-stack-lg rounded-2xl floating-card noise-overlay lg:translate-y-4 transition-all duration-700 opacity-100 translate-y-0">
+<p class="font-label-sm text-label-sm text-primary mb-2">The Challenge</p>
+<h2 class="font-display-3xl text-display-3xl text-chalk">5 <span class="text-body-lg font-body-base">Routes</span></h2>
+<p class="font-label-xs text-label-xs text-mist mt-4">Across all administrative regions of Jakarta</p>
+</div>
+<div class="glass-tier-2 p-stack-lg rounded-2xl floating-card noise-overlay transition-all duration-700 opacity-100 translate-y-0">
+<p class="font-label-sm text-label-sm text-north-cyan mb-2">Community</p>
+<h2 class="font-display-3xl text-display-3xl text-chalk">25k+ <span class="text-body-lg font-body-base">Runners</span></h2>
+<p class="font-label-xs text-label-xs text-mist mt-4">Expected participants for the series</p>
+</div>
+<div class="glass-tier-2 p-stack-lg rounded-2xl floating-card noise-overlay lg:-translate-y-4 transition-all duration-700 opacity-100 translate-y-0">
+<p class="font-label-sm text-label-sm text-south-lime mb-2">Achievement</p>
+<h2 class="font-display-3xl text-display-3xl text-chalk">5 <span class="text-body-lg font-body-base">Medals</span></h2>
+<p class="font-label-xs text-label-xs text-mist mt-4">Collect and combine to form a complete seal</p>
+</div>
+<div class="glass-tier-2 p-stack-lg rounded-2xl floating-card noise-overlay lg:translate-y-2 transition-all duration-700 opacity-100 translate-y-0">
+<p class="font-label-sm text-label-sm text-central-blue mb-2">Registration</p>
+<h2 class="font-display-3xl text-display-3xl text-chalk">Rp 195k <span class="text-body-lg font-body-base">Entry</span></h2>
+<p class="font-label-xs text-label-xs text-mist mt-4">Standard individual race entry fee</p>
+</div>
+</div>
+</section>
+<!-- Mascot Tier-2 Card -->
+<section class="px-margin-page py-stack-lg">
+<div class="glass-tier-2 rounded-3xl overflow-hidden flex flex-col md:flex-row items-center border border-glass-border noise-overlay">
+<div class="w-full md:w-1/2 p-12 order-2 md:order-1">
+<div class="inline-block px-4 py-1 glass-tier-1 rounded-full text-primary font-label-sm text-label-sm mb-6">Meet the Legend</div>
+<h2 class="font-display-4xl text-display-4xl text-chalk mb-6">JARO THE CROC</h2>
+<p class="font-body-lg text-body-lg leading-relaxed mb-8 text-chalk">
+            Jaro is the official mascot of the Jakarta One Running Series. Representing resilience, agility, and the spirit of the city's rivers, Jaro will be with you at every starting line, cheering you on through the 5 regions of Jakarta.
+          </p>
+<div class="flex items-center gap-4 text-primary">
+<span class="material-symbols-outlined">directions_run</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest">Always moving forward</span>
+</div>
+</div>
+<div class="w-full md:w-1/2 h-full min-h-[400px] flex items-center justify-center p-8 bg-white/5 order-1 md:order-2">
+<img alt="Jaro Mascot" class="max-w-full h-auto drop-shadow-2xl hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLv98jbFhf89H-_-vEPVtq4q-DGJLbAmB8sTL8fbTwGM5SmdN_nPG87qrcG2PgGtSqmzTjnKLT_QYXU4oF1k2momsLeLhAD7ih8GDNIZv3ga3fcjSPkfMNjN3yh55nH2bEv38rtt0ndRR0qSLSy90SbqQkOX_wYwC9afIm_Hs6FQh6bkevn6c87ZaClj3GrgWQjBL9Hz0CXMesTsZF93KrEMDrsjY779iTXFTrVySgaHRVDJxQPfrE6KR-Hi">
+</div>
+</div>
+</section>
+<!-- Series Timeline Stages -->
+<section class="px-margin-page py-stack-lg">
+<div class="mb-stack-lg">
+<h2 class="font-display-4xl text-display-4xl text-chalk">THE 5 STAGES</h2>
+<p class="font-body-lg text-body-lg text-chalk">Explore the unique atmosphere of each region's 5.00km race.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-stack-md">
+<!-- Stage: East -->
+<div class="group relative overflow-hidden rounded-2xl glass-tier-1 p-6 border-l-4 border-l-east-grey hover:bg-white/5 transition-all">
+<div class="absolute -right-4 -bottom-4 opacity-10 text-east-grey">
+<span class="material-symbols-outlined text-[80px]" style="font-variation-settings: 'FILL' 1;">landscape</span>
+</div>
+<span class="font-label-xs text-label-xs text-east-grey font-bold uppercase tracking-widest block mb-4">Stage 01</span>
+<h4 class="font-headline-2xl text-headline-2xl text-chalk mb-2">East Jakarta</h4>
+<p class="font-body-base text-body-base text-chalk">The Cultural Gateway</p>
+<div class="mt-8 pt-4 border-t border-glass-border flex justify-between items-center">
+<span class="text-chalk font-label-sm text-label-sm">Feb 2026</span>
+<span class="material-symbols-outlined text-east-grey group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+</div>
+<!-- Stage: West -->
+<div class="group relative overflow-hidden rounded-2xl glass-tier-1 p-6 border-l-4 border-l-west-red hover:bg-white/5 transition-all shadow-[inset_0_0_20px_rgba(204,0,0,0.1)]">
+<div class="absolute -right-4 -bottom-4 opacity-10 text-west-red">
+<span class="material-symbols-outlined text-[80px]" style="font-variation-settings: 'FILL' 1;">temple_buddhist</span>
+</div>
+<span class="font-label-xs text-label-xs text-west-red font-bold uppercase tracking-widest block mb-4">Stage 02</span>
+<h4 class="font-headline-2xl text-headline-2xl text-chalk mb-2">West Jakarta</h4>
+<p class="font-body-base text-body-base text-chalk">The Heritage Trail</p>
+<div class="mt-8 pt-4 border-t border-glass-border flex justify-between items-center">
+<span class="text-chalk font-label-sm text-label-sm">Apr 2026</span>
+<span class="material-symbols-outlined text-west-red group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+</div>
+<!-- Stage: South -->
+<div class="group relative overflow-hidden rounded-2xl glass-tier-1 p-6 border-l-4 border-l-south-lime hover:bg-white/5 transition-all shadow-[inset_0_0_20px_rgba(196,214,0,0.1)]">
+<div class="absolute -right-4 -bottom-4 opacity-10 text-south-lime">
+<span class="material-symbols-outlined text-[80px]" style="font-variation-settings: 'FILL' 1;">park</span>
+</div>
+<span class="font-label-xs text-label-xs text-south-lime font-bold uppercase tracking-widest block mb-4">Stage 03</span>
+<h4 class="font-headline-2xl text-headline-2xl text-chalk mb-2">South Jakarta</h4>
+<p class="font-body-base text-body-base text-chalk">The Green Corridor</p>
+<div class="mt-8 pt-4 border-t border-glass-border flex justify-between items-center">
+<span class="text-chalk font-label-sm text-label-sm">June 2026</span>
+<span class="material-symbols-outlined text-south-lime group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+</div>
+<!-- Stage: North -->
+<div class="group relative overflow-hidden rounded-2xl glass-tier-1 p-6 border-l-4 border-l-north-cyan hover:bg-white/5 transition-all shadow-[inset_0_0_20px_rgba(77,208,225,0.1)]">
+<div class="absolute -right-4 -bottom-4 opacity-10 text-north-cyan">
+<span class="material-symbols-outlined text-[80px]" style="font-variation-settings: 'FILL' 1;">waves</span>
+</div>
+<span class="font-label-xs text-label-xs text-north-cyan font-bold uppercase tracking-widest block mb-4">Stage 04</span>
+<h4 class="font-headline-2xl text-headline-2xl text-chalk mb-2">North Jakarta</h4>
+<p class="font-body-base text-body-base text-chalk">The Coastal Run</p>
+<div class="mt-8 pt-4 border-t border-glass-border flex justify-between items-center">
+<span class="text-chalk font-label-sm text-label-sm">Aug 2026</span>
+<span class="material-symbols-outlined text-north-cyan group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+</div>
+<!-- Stage: Central -->
+<div class="group relative overflow-hidden rounded-2xl glass-tier-1 p-6 border-l-4 border-l-central-blue hover:bg-white/5 transition-all shadow-[inset_0_0_20px_rgba(0,114,181,0.1)]">
+<div class="absolute -right-4 -bottom-4 opacity-10 text-central-blue">
+<span class="material-symbols-outlined text-[80px]" style="font-variation-settings: 'FILL' 1;">apartment</span>
+</div>
+<span class="font-label-xs text-label-xs text-central-blue font-bold uppercase tracking-widest block mb-4">Stage 05</span>
+<h4 class="font-headline-2xl text-headline-2xl text-chalk mb-2">Central Jakarta</h4>
+<p class="font-body-base text-body-base text-chalk">The Heart of City</p>
+<div class="mt-8 pt-4 border-t border-glass-border flex justify-between items-center">
+<span class="text-chalk font-label-sm text-label-sm">Oct 2026</span>
+<span class="material-symbols-outlined text-central-blue group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Navigation Shell -->
+<footer class="w-full py-stack-lg px-margin-page flex flex-col md:flex-row justify-between items-center gap-stack-md bg-glass backdrop-blur-[12px] saturate-[140%] dark:bg-glass border-t border-glass-border">
+<div class="flex flex-col items-center md:items-start gap-2">
+<div class="font-display-3xl text-display-3xl font-bold text-primary">J1RS</div>
+<p class="font-label-sm text-label-sm text-secondary dark:text-secondary-fixed">© 2026 Jakarta One Running Series. All rights reserved.</p>
+</div>
+<div class="flex gap-stack-lg">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Cookie Policy</a>
+</div>
+</footer>
+<script>
+    // Micro-interactions: Medal 3D tilt effect
+    const medalContainer = document.querySelector('.medal-container');
+    const medalInner = document.querySelector('.medal-inner');
+
+    if (medalContainer && medalInner) {
+      medalContainer.addEventListener('mousemove', (e) => {
+        const rect = medalContainer.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        const rotateX = (y - centerY) / 10;
+        const rotateY = (centerX - x) / 10;
+        
+        medalInner.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      });
+      
+      medalContainer.addEventListener('mouseleave', () => {
+        medalInner.style.transform = `rotateX(0deg) rotateY(0deg)`;
+      });
+    }
+
+    // Scroll reveal for cards
+    const observerOptions = {
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('opacity-100', 'translate-y-0');
+          entry.target.classList.remove('opacity-0', 'translate-y-10');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.floating-card').forEach(card => {
+      card.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+      observer.observe(card);
+    });
+  </script>
+
+
+</body></html>

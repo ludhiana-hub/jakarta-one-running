@@ -1,0 +1,36 @@
+<section class="px-4 py-10 sm:px-6 sm:py-12 md:px-8">
+  <div
+    class="glass-tier-3 noise-overlay mx-auto max-w-[1400px] rounded-2xl border border-white/20 p-6 text-center shadow-[0_0_60px_var(--brand-primary-glow)] sm:rounded-3xl sm:p-10 md:p-14"
+  >
+    <div class="font-display text-2xl font-semibold text-chalk sm:text-3xl md:text-4xl">
+      {{ data().title | tr }}
+    </div>
+
+    @if (data().subtitle) {
+      <p class="mx-auto mt-3 max-w-2xl font-body text-sm text-mist sm:mt-4 sm:text-base">
+        {{ data().subtitle | tr }}
+      </p>
+    }
+
+    <div class="mt-6 flex justify-center sm:mt-8">
+      @if (isInternalUrl(data().cta_url)) {
+        <a
+          [routerLink]="data().cta_url === '/#stages' ? '/' : data().cta_url"
+          [fragment]="data().cta_url === '/#stages' ? 'stages' : undefined"
+          class="btn-cta btn-cta-lg w-full max-w-xs justify-center font-display sm:w-auto sm:max-w-none"
+        >
+          {{ data().cta_label | tr }}
+        </a>
+      } @else {
+        <a
+          [href]="data().cta_url"
+          target="_blank"
+          rel="noopener"
+          class="btn-cta btn-cta-lg w-full max-w-xs justify-center font-display sm:w-auto sm:max-w-none"
+        >
+          {{ data().cta_label | tr }}
+        </a>
+      }
+    </div>
+  </div>
+</section>

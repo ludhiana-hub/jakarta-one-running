@@ -1,0 +1,45 @@
+<section class="my-12 px-4">
+  <div class="max-w-6xl mx-auto glass-tier1 p-7 border border-white/10">
+    <div class="font-display text-chalk text-2xl font-semibold">
+      Galeri
+    </div>
+
+    @defer (hydrate on viewport) {
+      <div class="mt-6">
+        <p-galleria
+          [value]="galleriaItems()"
+          [showThumbnails]="true"
+          [circular]="true"
+          [autoPlay]="false"
+          [numVisible]="5"
+          [showItemNavigators]="true"
+          [showItemNavigatorsOnHover]="false"
+          [containerStyle]="{ 'max-width': '960px', 'margin': '0 auto' }"
+        >
+          <ng-template #item let-item>
+            <img
+              [ngSrc]="item.itemImageSrc"
+              width="1200"
+              height="800"
+              class="w-full h-auto object-cover"
+              alt=""
+            />
+          </ng-template>
+          <ng-template #thumbnail let-item>
+            <img
+              [ngSrc]="item.thumbnailImageSrc"
+              width="120"
+              height="80"
+              class="w-full h-full object-cover"
+              alt=""
+            />
+          </ng-template>
+        </p-galleria>
+      </div>
+    } @placeholder {
+      <div class="mt-6 glass-tier2 rounded-[22px] min-h-[340px] flex items-center justify-center">
+        <span class="text-mist">Memuat galeri...</span>
+      </div>
+    }
+  </div>
+</section>

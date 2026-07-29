@@ -1,0 +1,20 @@
+<section class="relative z-20 mt-2 px-4 pb-8 sm:px-6 md:mt-4 md:px-8">
+  <div class="mx-auto grid max-w-[1400px] grid-cols-2 items-stretch gap-3 sm:gap-4 lg:grid-cols-4 lg:gap-6">
+    @for (item of data().items; track item.id; let i = $index) {
+      <div
+        class="glass-tier-2 noise-overlay rounded-xl p-4 stats-animate sm:rounded-2xl sm:p-6 lg:p-8"
+        [style.animationDelay.ms]="i * 80"
+      >
+        <p class="mb-2 font-mono text-[11px] sm:text-sm" [class]="accentClass(i)">
+          {{ item.label | tr }}
+        </p>
+        <h2 class="font-display text-2xl font-bold text-chalk sm:text-3xl md:text-4xl">
+          {{ item.value }}
+        </h2>
+        @if (itemHint(i); as hint) {
+          <p class="mt-4 font-mono text-xs text-mist">{{ hint }}</p>
+        }
+      </div>
+    }
+  </div>
+</section>

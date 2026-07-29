@@ -1,0 +1,19 @@
+<section class="my-12 px-4">
+  <div class="max-w-6xl mx-auto glass-tier2 p-7 border border-white/10">
+    @if (data().title) {
+      <div class="font-display text-chalk text-2xl font-semibold">
+        {{ data().title | tr }}
+      </div>
+    }
+
+    <div class="mt-5 embed-frame">
+      <iframe
+        [src]="data().url"
+        title="Embedded content"
+        class="embed-iframe"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </div>
+</section>

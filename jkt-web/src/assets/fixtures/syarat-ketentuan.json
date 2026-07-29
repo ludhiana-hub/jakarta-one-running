@@ -1,0 +1,31 @@
+{
+  "page": {
+    "slug": "syarat-ketentuan",
+    "title": {
+      "id": "Syarat & Ketentuan"
+    },
+    "seo": {
+      "meta_title": {
+        "id": "Jakarta One Running Series | Syarat & Ketentuan"
+      },
+      "meta_description": {
+        "id": "Dokumen syarat dan ketentuan untuk peserta Jakarta One Running Series."
+      },
+      "og_image": "https://example.com/og/terms.png",
+      "noindex": false
+    }
+  },
+  "blocks": [
+    {
+      "id": "blk_legal_terms",
+      "type": "legal_document",
+      "data": {
+        "title": {
+          "id": "Ringkasan Ketentuan"
+        },
+        "content_html": "<p>Dengan mendaftar, peserta menyetujui ketentuan umum penyelenggara.</p><ul><li>Prototipe ini masih bersifat fixture-first (tanpa integrasi pembayaran).</li><li>Setiap etape dapat memiliki informasi jadwal yang berbeda.</li><li>Peserta wajib mengikuti arahan panitia demi keselamatan bersama.</li></ul>"
+      }
+    }
+  ]
+}
+

@@ -1,0 +1,42 @@
+<section class="my-12 px-4">
+  <div class="max-w-6xl mx-auto">
+    <div class="glass-tier1 p-7 border border-white/10">
+      <div class="font-display text-chalk text-2xl font-semibold">Sponsor</div>
+
+      @defer (hydrate on viewport) {
+        <div class="mt-7 space-y-8">
+          @for (tier of data().tiers; track tier.id) {
+            <div>
+              <div class="text-chalk font-display text-xl font-semibold">
+                {{ tier.name | tr }}
+              </div>
+
+              <div class="mt-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+                @for (logo of tier.logos; track logo.id) {
+                  <a
+                    [href]="logo.url"
+                    target="_blank"
+                    rel="noopener"
+                    class="glass-tier2 p-3 rounded-[18px] border border-white/10 hover:brightness-110 transition"
+                  >
+                    <img
+                      [ngSrc]="logo.image_url"
+                      width="240"
+                      height="120"
+                      class="w-full h-auto object-contain"
+                      alt=""
+                    />
+                  </a>
+                }
+              </div>
+            </div>
+          }
+        </div>
+      } @placeholder {
+        <div class="mt-7 glass-tier2 rounded-[22px] min-h-[320px] flex items-center justify-center">
+          <span class="text-mist">Memuat sponsor...</span>
+        </div>
+      }
+    </div>
+  </div>
+</section>

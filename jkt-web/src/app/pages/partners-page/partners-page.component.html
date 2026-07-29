@@ -1,0 +1,222 @@
+<div class="partners-page relative overflow-x-hidden">
+  <div class="pointer-events-none fixed inset-0 -z-10" aria-hidden="true">
+    <!-- Global atmosphere handles motion; keep a light local accent only -->
+    <div
+      class="absolute top-[-10%] left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-west-red/10 blur-[100px]"
+    ></div>
+  </div>
+
+  <div class="relative mx-auto max-w-7xl px-4 pb-16 pt-24 sm:px-6 sm:pb-24 sm:pt-32 md:px-8">
+    <header class="relative mb-10 text-center sm:mb-16" appReveal>
+      <h1 class="mb-3 font-display text-4xl tracking-tighter text-chalk sm:mb-4 sm:text-5xl md:text-7xl">
+        Our <span class="text-primary">Ecosystem</span>
+      </h1>
+      <p class="mx-auto max-w-2xl font-body text-base text-on-surface-variant sm:text-lg md:text-xl">
+        Collaborating with global leaders and local visionaries to create the definitive celebration
+        of running in Indonesia's capital.
+      </p>
+    </header>
+
+    <!-- Title sponsor stays featured -->
+    <section class="mb-12 sm:mb-16" appReveal>
+      <div class="mb-5 flex items-center gap-3 sm:mb-6 sm:gap-4">
+        <div class="h-px flex-grow bg-glass-border"></div>
+        <h2 class="shrink-0 font-display text-xs uppercase tracking-widest text-chalk/70 sm:text-sm md:text-base">
+          Title Sponsor
+        </h2>
+        <div class="h-px flex-grow bg-glass-border"></div>
+      </div>
+
+      <div class="flex justify-center">
+        <a
+          href="#"
+          class="glass-tier-3 group flex w-full max-w-3xl cursor-pointer flex-col items-center gap-4 rounded-2xl p-5 transition-all duration-500 hover:-translate-y-1 sm:gap-6 sm:p-8"
+          (click)="$event.preventDefault(); openExternal(titleSponsor.url)"
+        >
+          <div class="flex aspect-[21/9] w-full items-center justify-center p-2 sm:p-4 md:p-8">
+            <img
+              [src]="titleSponsor.imageUrl"
+              width="480"
+              height="160"
+              class="max-h-20 w-auto object-contain opacity-90 transition-opacity group-hover:opacity-100 sm:max-h-28 md:max-h-32"
+              [alt]="titleSponsor.name"
+            />
+          </div>
+          <div class="px-2 text-center sm:px-4 md:px-8">
+            <h3 class="mb-2 font-display text-xl text-primary sm:text-2xl md:text-3xl">
+              {{ titleSponsor.name }}
+            </h3>
+            @if (titleSponsor.tagline) {
+              <p class="font-body text-sm text-on-surface-variant italic sm:text-base">{{ titleSponsor.tagline }}</p>
+            }
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Tabs + horizontal carousel -->
+    <section class="mb-16 sm:mb-28" appReveal>
+      <div class="mb-6 flex flex-col gap-5 sm:mb-8 sm:gap-6 md:flex-row md:items-end md:justify-between">
+        <div>
+          <h2 class="font-display text-2xl text-chalk sm:text-3xl md:text-4xl">Partners by Tier</h2>
+          <p class="mt-2 font-body text-sm text-on-surface-variant">
+            Switch tabs to browse classifications. Slide left/right when there are many logos.
+          </p>
+        </div>
+
+        <div
+          class="partner-tabs -mx-1 flex gap-2 overflow-x-auto px-1 pb-1"
+          role="tablist"
+          aria-label="Partner tiers"
+        >
+          @for (tab of tabs; track tab.id) {
+            <button
+              type="button"
+              role="tab"
+              class="partner-tab shrink-0 rounded-full border px-3 py-2 font-mono text-[10px] uppercase tracking-widest transition sm:px-4 sm:text-xs"
+              [class.partner-tab-active]="activeTab() === tab.id"
+              [attr.aria-selected]="activeTab() === tab.id"
+              (click)="selectTab(tab.id)"
+            >
+              {{ tab.label }}
+              <span class="ml-1 opacity-60">({{ logosForTab(tab.id).length }})</span>
+            </button>
+          }
+        </div>
+      </div>
+
+      <div class="glass-tier-2 relative rounded-3xl border border-glass-border p-4 md:p-6">
+        <div class="mb-4 flex items-center justify-between gap-3">
+          <p class="font-mono text-[11px] uppercase tracking-widest text-mist">
+            @switch (activeTab()) {
+              @case ('platinum') {
+                Platinum partners
+              }
+              @case ('gold') {
+                Gold partners
+              }
+              @case ('official') {
+                Official partners &amp; vendors
+              }
+              @case ('community') {
+                Community &amp; media
+              }
+            }
+          </p>
+          <div class="flex gap-2">
+            <button
+              type="button"
+              class="carousel-nav"
+              aria-label="Scroll logos left"
+              (click)="scrollTrack(-1)"
+            >
+              ←
+            </button>
+            <button
+              type="button"
+              class="carousel-nav"
+              aria-label="Scroll logos right"
+              (click)="scrollTrack(1)"
+            >
+              →
+            </button>
+          </div>
+        </div>
+
+        <div
+          #logoTrack
+          class="logo-track flex gap-4 overflow-x-auto scroll-smooth pb-2"
+          tabindex="0"
+          role="list"
+        >
+          @for (partner of logosForTab(activeTab()); track partner.id) {
+            <a
+              href="#"
+              role="listitem"
+              class="logo-card glass-tier-1 group relative flex shrink-0 snap-start flex-col items-center justify-center rounded-2xl border border-glass-border p-6 transition hover:border-primary/40 hover:bg-white/5"
+              (click)="$event.preventDefault(); openExternal(partner.url)"
+            >
+              <div class="mb-4 flex h-20 w-full items-center justify-center">
+                <img
+                  [src]="partner.imageUrl"
+                  width="240"
+                  height="96"
+                  class="max-h-14 w-auto max-w-full object-contain opacity-75 transition group-hover:opacity-100"
+                  [alt]="partner.name"
+                  loading="lazy"
+                />
+              </div>
+              <span class="text-center font-body text-sm text-chalk/90">{{ partner.name }}</span>
+              @if (partner.role) {
+                <span
+                  class="mt-2 text-center font-mono text-[10px] uppercase tracking-widest"
+                  [style.color]="partner.roleColor ?? '#ffb3b2'"
+                >
+                  {{ partner.role }}
+                </span>
+              }
+            </a>
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="glass-tier-2 relative overflow-hidden rounded-[1.5rem] p-6 sm:rounded-[2.5rem] sm:p-10 md:p-20" appReveal>
+      <div
+        class="pointer-events-none absolute top-0 right-0 h-full w-1/2 bg-gradient-to-l from-primary/10 to-transparent"
+      ></div>
+      <div class="relative z-10 max-w-3xl">
+        <h2 class="mb-3 font-display text-3xl leading-none text-chalk sm:mb-4 sm:text-4xl md:text-5xl">
+          Join the <span class="text-primary italic">Movement.</span>
+        </h2>
+        <p class="mb-8 font-body text-base text-on-surface-variant sm:mb-10 sm:text-lg">
+          Be part of Jakarta's biggest athletic celebration. Align your brand with excellence,
+          endurance, and the vibrant spirit of the capital.
+        </p>
+        <div class="flex flex-col gap-3 sm:flex-row sm:gap-4">
+          <button
+            type="button"
+            class="btn-cta btn-cta-lg w-full sm:w-auto"
+            (click)="openExternal('https://example.com/jakarta-one/sponsorship')"
+          >
+            Request Sponsorship →
+          </button>
+          <a
+            routerLink="/kontak"
+            class="glass-tier-1 rounded-xl border border-glass-border px-6 py-3.5 text-center font-bold text-chalk transition-all hover:bg-white/10 sm:px-10 sm:py-4"
+          >
+            Contact Us
+          </a>
+        </div>
+      </div>
+
+      <div class="relative z-10 mt-10 grid grid-cols-2 gap-6 sm:mt-16 sm:gap-8 md:grid-cols-3">
+        <div class="flex flex-col">
+          <span class="mb-1 font-mono text-[10px] uppercase tracking-[0.2em] text-primary"
+            >Projected Reach</span
+          >
+          <span class="font-display text-2xl text-chalk sm:text-3xl md:text-4xl">5.2M+</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="mb-1 font-mono text-[10px] uppercase tracking-[0.2em] text-primary"
+            >Participants</span
+          >
+          <span class="font-display text-2xl text-chalk sm:text-3xl md:text-4xl">45,000</span>
+        </div>
+        <div class="col-span-2 flex flex-col md:col-span-1">
+          <span class="mb-1 font-mono text-[10px] uppercase tracking-[0.2em] text-primary"
+            >Social Shares</span
+          >
+          <span class="font-display text-2xl text-chalk sm:text-3xl md:text-4xl">120K</span>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<app-external-link-dialog
+  [visible]="dialogVisible"
+  [pendingUrl]="pendingUrl"
+  (visibleChange)="dialogVisible = $event"
+/>

@@ -1,0 +1,10 @@
+<div class="w-full">
+  @if (pageSlug === 'kontak') {
+    <app-contact-form />
+  }
+  @if (page$ | async; as page) {
+    @for (block of page.blocks; track block.id) {
+      <app-block-renderer [block]="block" />
+    }
+  }
+</div>

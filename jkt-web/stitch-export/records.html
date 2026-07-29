@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Records | Jakarta One 2026</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500&amp;family=JetBrains+Mono:wght@500&amp;family=IBM+Plex+Mono:wght@500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;family=Plus+Jakarta+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<style>
+        .font-numeric { font-family: 'IBM Plex Mono', monospace; }
+        .bg-glass { background: rgba(255, 255, 255, 0.04); }
+        .border-glass { border: 1px solid rgba(255, 255, 255, 0.14); }
+        .glass-card {
+            backdrop-filter: blur(20px) saturate(140%);
+            -webkit-backdrop-filter: blur(20px) saturate(140%);
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            position: relative;
+            overflow: hidden;
+        }
+        .glass-card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('https://www.transparenttextures.com/patterns/stardust.png');
+            opacity: 0.03;
+            pointer-events: none;
+        }
+        .glow-south { box-shadow: 0 0 30px rgba(196, 214, 0, 0.15); }
+        .glow-west { box-shadow: 0 0 30px rgba(204, 0, 0, 0.15); }
+        .glow-north { box-shadow: 0 0 30px rgba(77, 208, 225, 0.15); }
+        .glow-east { box-shadow: 0 0 30px rgba(140, 140, 140, 0.15); }
+        .glow-central { box-shadow: 0 0 30px rgba(0, 114, 181, 0.15); }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); border-radius: 10px; }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#ffdad8",
+                    "on-background": "#fbdbda",
+                    "mist": "#B8B8C0",
+                    "secondary-container": "#454745",
+                    "on-secondary": "#2f312f",
+                    "surface-bright": "#483434",
+                    "glass": "rgba(255, 255, 255, 0.06)",
+                    "on-tertiary-container": "#003026",
+                    "on-secondary-fixed": "#1a1c1b",
+                    "south-lime": "#C4D600",
+                    "on-tertiary-fixed-variant": "#005142",
+                    "surface-container-lowest": "#190a0a",
+                    "secondary-fixed-dim": "#c6c7c4",
+                    "void": "#0A0A0D",
+                    "surface": "#1f0f0f",
+                    "inverse-primary": "#bf002a",
+                    "tertiary-container": "#1aa387",
+                    "primary": "#ffb3b2",
+                    "east-grey": "#8C8C8C",
+                    "on-primary-fixed-variant": "#92001e",
+                    "surface-tint": "#ffb3b2",
+                    "surface-container-low": "#281717",
+                    "central-blue": "#0072B5",
+                    "inverse-on-surface": "#3f2b2b",
+                    "primary-container": "#ff525c",
+                    "on-error": "#690005",
+                    "outline-variant": "#5c3f3f",
+                    "tertiary": "#64dabc",
+                    "on-primary-container": "#5b000f",
+                    "inverse-surface": "#fbdbda",
+                    "on-surface-variant": "#e5bdbc",
+                    "on-secondary-fixed-variant": "#454745",
+                    "error-container": "#93000a",
+                    "outline": "#ac8887",
+                    "surface-container-high": "#382525",
+                    "secondary-fixed": "#e2e3e0",
+                    "on-primary-fixed": "#410008",
+                    "tertiary-fixed-dim": "#64dabc",
+                    "on-secondary-container": "#b5b5b3",
+                    "west-red": "#CC0000",
+                    "background": "#1f0f0f",
+                    "surface-dim": "#1f0f0f",
+                    "secondary": "#c6c7c4",
+                    "glass-border": "rgba(255, 255, 255, 0.14)",
+                    "tertiary-fixed": "#81f7d8",
+                    "on-tertiary-fixed": "#002019",
+                    "error": "#ffb4ab",
+                    "on-tertiary": "#00382d",
+                    "surface-container-highest": "#44302f",
+                    "primary-fixed-dim": "#ffb3b2",
+                    "surface-variant": "#44302f",
+                    "on-error-container": "#ffdad6",
+                    "north-cyan": "#4DD0E1",
+                    "on-primary": "#680012",
+                    "surface-container": "#2d1b1b",
+                    "on-surface": "#fbdbda"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter-grid": "1.5rem",
+                    "stack-lg": "2rem",
+                    "stack-sm": "0.5rem",
+                    "stack-md": "1rem",
+                    "margin-page": "2rem"
+            },
+            "fontFamily": {
+                    "display-4xl": ["Bricolage Grotesque"],
+                    "label-xs": ["JetBrains Mono"],
+                    "body-xl": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "display-5xl": ["Bricolage Grotesque"],
+                    "headline-2xl": ["Bricolage Grotesque"],
+                    "display-3xl": ["Bricolage Grotesque"],
+                    "body-base": ["Plus Jakarta Sans"],
+                    "label-sm": ["JetBrains Mono"]
+            },
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-void text-on-surface selection:bg-primary selection:text-on-primary-container font-body-base overflow-x-hidden">
+<!-- Persistent Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-glass backdrop-blur-md saturate-[140%] border-b border-glass-border shadow-sm flex justify-between items-center px-margin-page py-4 max-w-full">
+<div class="font-display-3xl text-display-3xl font-bold text-primary">Jakarta One 2026</div>
+<div class="hidden md:flex gap-stack-lg items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-base text-body-base" href="#">Stages</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-base text-body-base" href="#">Schedule</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-base text-body-base" href="#">Records</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-base text-body-base" href="#">Partners</a>
+<button class="ml-4 px-6 py-2 bg-primary-container text-on-primary-container font-bold rounded-lg hover:scale-95 transition-transform">Register</button>
+</div>
+<button class="md:hidden material-symbols-outlined text-primary">menu</button>
+</nav>
+<main class="pt-32 pb-20 px-margin-page max-w-7xl mx-auto">
+<!-- Header Section -->
+<header class="mb-20">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<span class="font-label-sm text-label-sm text-primary-container tracking-widest uppercase mb-2 block">The Legacy</span>
+<h1 class="font-display-5xl text-display-5xl leading-tight">Historical <br/><span class="text-primary">Benchmarks</span></h1>
+</div>
+<div class="md:w-1/3 glass-card p-6 rounded-xl border-l-4 border-l-west-red">
+<p class="font-body-base text-on-surface-variant">Tracing the evolution of pace and perseverance across Jakarta's five urban landscapes since the inaugural series.</p>
+</div>
+</div>
+</header>
+<!-- Bento Grid: Stats & Growth -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter-grid mb-stack-lg">
+<!-- Participation Growth Chart Placeholder -->
+<div class="md:col-span-8 glass-card rounded-xl p-8 min-h-[400px] flex flex-col justify-between">
+<div>
+<h2 class="font-headline-2xl text-headline-2xl mb-2">Participation Growth</h2>
+<p class="text-on-surface-variant font-body-base">Year-over-year athlete engagement across all regional stages.</p>
+</div>
+<div class="relative h-64 w-full flex items-end gap-2 md:gap-4 px-2">
+<!-- Simple CSS Graph representation -->
+<div class="flex-1 flex flex-col items-center group">
+<div class="w-full bg-primary/20 rounded-t-lg transition-all duration-500 hover:bg-primary h-[30%] relative">
+<span class="absolute -top-8 left-1/2 -translate-x-1/2 font-numeric text-label-sm opacity-0 group-hover:opacity-100 transition-opacity">12.4k</span>
+</div>
+<span class="mt-4 font-numeric text-label-xs text-on-surface-variant">2022</span>
+</div>
+<div class="flex-1 flex flex-col items-center group">
+<div class="w-full bg-primary/20 rounded-t-lg transition-all duration-500 hover:bg-primary h-[45%] relative">
+<span class="absolute -top-8 left-1/2 -translate-x-1/2 font-numeric text-label-sm opacity-0 group-hover:opacity-100 transition-opacity">18.9k</span>
+</div>
+<span class="mt-4 font-numeric text-label-xs text-on-surface-variant">2023</span>
+</div>
+<div class="flex-1 flex flex-col items-center group">
+<div class="w-full bg-primary/20 rounded-t-lg transition-all duration-500 hover:bg-primary h-[65%] relative">
+<span class="absolute -top-8 left-1/2 -translate-x-1/2 font-numeric text-label-sm opacity-0 group-hover:opacity-100 transition-opacity">26.1k</span>
+</div>
+<span class="mt-4 font-numeric text-label-xs text-on-surface-variant">2024</span>
+</div>
+<div class="flex-1 flex flex-col items-center group">
+<div class="w-full bg-primary/40 rounded-t-lg border-2 border-primary transition-all duration-500 hover:bg-primary h-[90%] relative">
+<span class="absolute -top-8 left-1/2 -translate-x-1/2 font-numeric text-label-sm opacity-0 group-hover:opacity-100 transition-opacity">34.8k</span>
+</div>
+<span class="mt-4 font-numeric text-label-xs text-primary font-bold">2026 (EST)</span>
+</div>
+</div>
+</div>
+<!-- Key Metric Cards -->
+<div class="md:col-span-4 flex flex-col gap-gutter-grid">
+<div class="glass-card rounded-xl p-6 flex flex-col justify-center flex-1 glow-west border-l-4 border-l-west-red">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Series Record 42K</span>
+<span class="font-numeric text-display-3xl text-display-3xl mt-2">02:08:44</span>
+<span class="font-body-base text-west-red mt-1">E. Kipruto (2024)</span>
+</div>
+<div class="glass-card rounded-xl p-6 flex flex-col justify-center flex-1 glow-central border-l-4 border-l-central-blue">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Total Finishers</span>
+<span class="font-numeric text-display-3xl text-display-3xl mt-2">84,209</span>
+<span class="font-body-base text-central-blue mt-1">+12% from 2024</span>
+</div>
+</div>
+</section>
+<!-- Course Records: Regional Glow Cards -->
+<section class="mb-20">
+<h2 class="font-headline-2xl text-headline-2xl mb-8 flex items-center gap-4">
+                Regional Course Records
+                <span class="h-px flex-1 bg-gradient-to-r from-glass-border to-transparent"></span>
+</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+<!-- North -->
+<div class="glass-card rounded-xl p-6 glow-north group hover:scale-[1.02] transition-transform cursor-default">
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-north-cyan">waves</span>
+<span class="font-numeric text-label-xs text-on-surface-variant">2024</span>
+</div>
+<h3 class="font-body-xl text-body-xl mb-1">North Coast</h3>
+<p class="font-numeric text-headline-2xl text-north-cyan mb-4">01:02:11</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant group-hover:text-north-cyan transition-colors">Yuki Tanaka</p>
+</div>
+<!-- South -->
+<div class="glass-card rounded-xl p-6 glow-south group hover:scale-[1.02] transition-transform cursor-default">
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-south-lime">forest</span>
+<span class="font-numeric text-label-xs text-on-surface-variant">2023</span>
+</div>
+<h3 class="font-body-xl text-body-xl mb-1">South Hills</h3>
+<p class="font-numeric text-headline-2xl text-south-lime mb-4">01:04:55</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant group-hover:text-south-lime transition-colors">S. Wijaya</p>
+</div>
+<!-- West -->
+<div class="glass-card rounded-xl p-6 glow-west group hover:scale-[1.02] transition-transform cursor-default">
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-west-red">architecture</span>
+<span class="font-numeric text-label-xs text-on-surface-variant">2024</span>
+</div>
+<h3 class="font-body-xl text-body-xl mb-1">West Heritage</h3>
+<p class="font-numeric text-headline-2xl text-west-red mb-4">01:01:30</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant group-hover:text-west-red transition-colors">A. Mensah</p>
+</div>
+<!-- East -->
+<div class="glass-card rounded-xl p-6 glow-east group hover:scale-[1.02] transition-transform cursor-default">
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-east-grey">factory</span>
+<span class="font-numeric text-label-xs text-on-surface-variant">2022</span>
+</div>
+<h3 class="font-body-xl text-body-xl mb-1">East Industrial</h3>
+<p class="font-numeric text-headline-2xl text-east-grey mb-4">01:03:40</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant group-hover:text-east-grey transition-colors">M. Ibrahim</p>
+</div>
+<!-- Central -->
+<div class="glass-card rounded-xl p-6 glow-central group hover:scale-[1.02] transition-transform cursor-default">
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-central-blue">apartment</span>
+<span class="font-numeric text-label-xs text-on-surface-variant">2024</span>
+</div>
+<h3 class="font-body-xl text-body-xl mb-1">Central CBD</h3>
+<p class="font-numeric text-headline-2xl text-central-blue mb-4">00:59:58</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant group-hover:text-central-blue transition-colors">K. Bekele</p>
+</div>
+</div>
+</section>
+<!-- Fast Stage Times (Tabular Data) -->
+<section class="mb-20">
+<div class="glass-card rounded-2xl overflow-hidden">
+<div class="p-8 border-b border-glass-border flex justify-between items-center bg-white/5">
+<h2 class="font-headline-2xl text-headline-2xl">Fastest Stage Times 2022–2025</h2>
+<div class="flex gap-2">
+<button class="px-4 py-1 rounded-full border border-glass-border font-label-sm text-label-sm hover:bg-white/10">Men's</button>
+<button class="px-4 py-1 rounded-full border border-primary text-primary font-label-sm text-label-sm bg-primary/10">Women's</button>
+</div>
+</div>
+<div class="overflow-x-auto custom-scrollbar">
+<table class="w-full text-left">
+<thead class="bg-surface-container-low font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">
+<tr>
+<th class="px-8 py-5">Rank</th>
+<th class="px-8 py-5">Athlete</th>
+<th class="px-8 py-5">Stage</th>
+<th class="px-8 py-5">Year</th>
+<th class="px-8 py-5 text-right">Time</th>
+</tr>
+</thead>
+<tbody class="font-body-base divide-y divide-glass-border">
+<tr class="hover:bg-white/5 transition-colors">
+<td class="px-8 py-6 font-numeric">01</td>
+<td class="px-8 py-6">Peris Chepchirchir</td>
+<td class="px-8 py-6 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-central-blue"></span> Central CBD
+                                </td>
+<td class="px-8 py-6 font-numeric">2024</td>
+<td class="px-8 py-6 font-numeric text-right text-primary">02:16:16</td>
+</tr>
+<tr class="hover:bg-white/5 transition-colors">
+<td class="px-8 py-6 font-numeric">02</td>
+<td class="px-8 py-6">Brigid Kosgei</td>
+<td class="px-8 py-6 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-west-red"></span> West Heritage
+                                </td>
+<td class="px-8 py-6 font-numeric">2024</td>
+<td class="px-8 py-6 font-numeric text-right">02:17:01</td>
+</tr>
+<tr class="hover:bg-white/5 transition-colors">
+<td class="px-8 py-6 font-numeric">03</td>
+<td class="px-8 py-6">Triyaningsih</td>
+<td class="px-8 py-6 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-south-lime"></span> South Hills
+                                </td>
+<td class="px-8 py-6 font-numeric">2023</td>
+<td class="px-8 py-6 font-numeric text-right">02:22:15</td>
+</tr>
+<tr class="hover:bg-white/5 transition-colors">
+<td class="px-8 py-6 font-numeric">04</td>
+<td class="px-8 py-6">Ruth Chepngetich</td>
+<td class="px-8 py-6 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-north-cyan"></span> North Coast
+                                </td>
+<td class="px-8 py-6 font-numeric">2025</td>
+<td class="px-8 py-6 font-numeric text-right">02:24:10</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- Hall of Fame: Legendary Runners -->
+<section class="mb-20">
+<div class="mb-12">
+<h2 class="font-display-3xl text-display-3xl">Hall of Fame</h2>
+<p class="text-on-surface-variant font-body-lg">Honoring the athletes who defined an era of Jakarta running.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter-grid">
+<!-- Legend 1 -->
+<div class="relative group h-[500px] rounded-2xl overflow-hidden glass-card border-none">
+<div class="absolute inset-0 grayscale group-hover:grayscale-0 transition-all duration-700 bg-cover bg-center" data-alt="Cinematic portrait of a male marathon runner with sweat glistening on his forehead, focused expression, standing against a dark urban Jakarta skyline at night. The lighting is dramatic, with primary red and central blue light leaks, capturing a modern high-end sports aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBNcy1EvK6ZWlal08TkbLQrHsD88PY2AsCwuWdHd15JxBy0fRREmnUzyq8tmpnuCakGetEU9_YXm6B5Oui8uHod2sp0YRzwvImdvzq87qzk4mFfHK_9zG_eVNlTBI4sN9QwfAdlgtvV2Qs8XgyZ0x1DCPnqlNipJ3amQkEHY4MjkU5bnjHcXj5Fsdtf9efRh_NZv5PUYhVTu6lMYv7P3T8bbKy4FAFhddugNo4EH145ajk7STHpa4ly5w')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-void via-void/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<span class="font-numeric text-primary text-label-sm mb-2 block">Grand Slam Winner 2023</span>
+<h3 class="font-display-3xl text-display-3xl mb-1 leading-tight">Agus Prayogo</h3>
+<p class="text-on-surface-variant font-body-base line-clamp-2">First Indonesian athlete to sweep all five regional stages in a single calendar year.</p>
+<div class="mt-6 flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="px-3 py-1 bg-white/10 rounded-full font-numeric text-label-xs">10K</span>
+<span class="px-3 py-1 bg-white/10 rounded-full font-numeric text-label-xs">HM</span>
+<span class="px-3 py-1 bg-white/10 rounded-full font-numeric text-label-xs">FM</span>
+</div>
+</div>
+</div>
+<!-- Legend 2 -->
+<div class="relative group h-[500px] rounded-2xl overflow-hidden glass-card border-none mt-8 md:mt-16">
+<div class="absolute inset-0 grayscale group-hover:grayscale-0 transition-all duration-700 bg-cover bg-center" data-alt="Close-up action shot of a female professional runner crossing a finish line with a look of pure triumph. The background features blurred city lights and celebratory streamers in south lime and west red. High-speed photography with sharp detail and atmospheric grain." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBuMsQvyog9TkSwrl7P1Z6_fdjyXCt-bro3ZqDY1oUw5WyTKsQvN9zgP5ojiCRdkwbN0UwAAYgMKBOPNxz6-0_Vqi0kHFNrIzyb-EHbpTE-3keZoDN9GuL4rrc7eEprDFxvSK_CE3WIkEhnTSCEXgxc-OAQ_kggNjeK3e5QTZHZrbkffMuuCM9D37DEjJe-cahZ3pTjMYeImRc56aVoyj2fWbPeIZGCV_QPM5z17vZEAWikguFLiOxBNw')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-void via-void/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<span class="font-numeric text-primary text-label-sm mb-2 block">Triple Crown 2022–2024</span>
+<h3 class="font-display-3xl text-display-3xl mb-1 leading-tight">Odekta Elvina</h3>
+<p class="text-on-surface-variant font-body-base line-clamp-2">The dominant force in the South Hills and West Heritage stages for three consecutive years.</p>
+<div class="mt-6 flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="px-3 py-1 bg-white/10 rounded-full font-numeric text-label-xs">Series MVP</span>
+</div>
+</div>
+</div>
+<!-- Legend 3 -->
+<div class="relative group h-[500px] rounded-2xl overflow-hidden glass-card border-none">
+<div class="absolute inset-0 grayscale group-hover:grayscale-0 transition-all duration-700 bg-cover bg-center" data-alt="Portrait of an older, distinguished marathon runner with silver hair, wearing a high-tech running singlet with Jakarta One 2026 branding. He is looking off-camera with a serene smile. Warm, golden hour lighting hitting the side of his face against a backdrop of the Monas monument." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCrIa6wbnjnffYc0CygmlqRWxtGqCqT5hxxwqLj3aht8cY5nTyumaFC17hKTbOeKhRKdFGyj5rgVJbt8Q4BH_EDiWMTPaM6ZJgLe12VLlt2h5d1qa289Oc6ZQo-vkSlFUtxP6WURRreTr6lE7CD3eHSv7Bw1zPn3eshu282e4atwrCJIH-XJW6aTJzJoBXTW0jgMrSDB6PLDETWvvUhZR1Rb2lkeyioQcYyMcLkYawfDIbp79HLueBD6A')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-void via-void/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<span class="font-numeric text-primary text-label-sm mb-2 block">Lifetime Achievement</span>
+<h3 class="font-display-3xl text-display-3xl mb-1 leading-tight">Eduardus Nabunome</h3>
+<p class="text-on-surface-variant font-body-base line-clamp-2">Legacy record holder whose historic times served as the blueprint for the Jakarta One series.</p>
+<div class="mt-6 flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="px-3 py-1 bg-white/10 rounded-full font-numeric text-label-xs">Legend</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA: Personal Records -->
+<section class="glass-card rounded-3xl p-12 text-center relative overflow-hidden">
+
+<div class="relative z-10">
+<h2 class="font-display-4xl text-display-4xl mb-6">Want to see your own <span class="text-primary">legacy?</span></h2>
+<p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10">Connect your athlete profile to view your historical times across the series and compare them with the elites.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<button class="px-8 py-4 bg-primary text-on-primary font-bold rounded-xl hover:scale-105 transition-transform">Log in to Dashboard</button>
+<button class="px-8 py-4 bg-glass border border-glass-border font-bold rounded-xl hover:bg-white/10 transition-colors">Download Annual Report</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="w-full py-stack-lg mt-stack-lg bg-glass backdrop-blur-md saturate-[140%] border-t border-glass-border flex flex-col md:flex-row justify-between items-center px-margin-page gap-stack-md">
+<div class="flex flex-col items-center md:items-start gap-2">
+<div class="font-display-2xl text-display-2xl font-bold text-on-surface">Jakarta One</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">© 2026 Jakarta One Running Series. One City, One Celebration.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-stack-md">
+<a class="text-on-surface-variant hover:text-primary underline transition-all font-label-sm text-label-sm" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-all font-label-sm text-label-sm" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-all font-label-sm text-label-sm" href="#">Race Rules</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-all font-label-sm text-label-sm" href="#">Contact Us</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-all font-label-sm text-label-sm" href="#">Sponsorship</a>
+</div>
+</footer>
+<script>
+        // Micro-interaction for table rows
+        document.querySelectorAll('tr').forEach(row => {
+            row.addEventListener('mouseenter', () => {
+                row.style.transform = 'translateX(4px)';
+                row.style.transition = 'transform 0.2s ease-out';
+            });
+            row.addEventListener('mouseleave', () => {
+                row.style.transform = 'translateX(0px)';
+            });
+        });
+
+        // Parallax effect for Hall of Fame cards
+        document.addEventListener('mousemove', (e) => {
+            const cards = document.querySelectorAll('.glass-card');
+            const x = e.clientX / window.innerWidth - 0.5;
+            const y = e.clientY / window.innerHeight - 0.5;
+            
+            cards.forEach(card => {
+                if (card.classList.contains('border-none')) {
+                    card.style.transform = `perspective(1000px) rotateY(${x * 2}deg) rotateX(${-y * 2}deg)`;
+                }
+            });
+        });
+    </script>
+</body></html>

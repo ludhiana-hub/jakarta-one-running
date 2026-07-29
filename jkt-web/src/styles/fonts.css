@@ -1,0 +1,5 @@
+/* Self-hosted fonts — bundled with app CSS (no Google Fonts FOUT on refresh) */
+@import '@fontsource-variable/bricolage-grotesque/wght.css';
+@import '@fontsource-variable/plus-jakarta-sans/wght.css';
+@import '@fontsource/jetbrains-mono/500.css';
+@import '@fontsource/jetbrains-mono/600.css';
