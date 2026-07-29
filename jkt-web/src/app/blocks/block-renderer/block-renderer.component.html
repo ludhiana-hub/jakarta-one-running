@@ -4,12 +4,8 @@
   <div appReveal class="w-full">
     @if (statsCounterData()) {
       <app-block-stats-counter [data]="statsCounterData()!" />
-    } @else if (seriesTimelineData()) {
-      <app-block-series-timeline [data]="seriesTimelineData()!" />
     } @else if (editionCardsData()) {
       <app-block-edition-cards [data]="editionCardsData()!" />
-    } @else if (editionDetailData()) {
-      <app-block-edition-detail [data]="editionDetailData()!" />
     } @else if (ctaBannerData()) {
       <app-block-cta-banner [data]="ctaBannerData()!" />
     } @else if (faqAccordionData()) {

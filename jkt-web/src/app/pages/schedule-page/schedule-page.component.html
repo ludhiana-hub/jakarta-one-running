@@ -80,7 +80,7 @@
                   </div>
                   <p class="mb-6 font-body text-sm text-mist sm:mb-8 sm:text-base">{{ stage.venue }}</p>
                   <a
-                    [routerLink]="['/etape', stage.slug]"
+                    routerLink="/schedule"
                     class="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-chalk/70 transition-colors hover:text-chalk"
                     [class.flex-row-reverse]="stage.reverse"
                   >
@@ -163,11 +163,10 @@
             Buy Season Pass
           </button>
           <a
-            routerLink="/"
-            fragment="stages"
+            routerLink="/schedule"
             class="rounded-xl border border-white/10 bg-white/5 px-6 py-3.5 text-center font-bold text-chalk transition-all hover:bg-white/10 sm:px-12 sm:py-4"
           >
-            View Stages
+            View Schedule
           </a>
         </div>
       </div>

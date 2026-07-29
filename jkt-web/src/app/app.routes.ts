@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 
-import { EditionPageComponent } from './pages/edition-page/edition-page.component';
 import { DynamicPageComponent } from './pages/dynamic-page/dynamic-page.component';
 import { DevBlocksComponent } from './pages/dev-blocks/dev-blocks.component';
 import { SchedulePageComponent } from './pages/schedule-page/schedule-page.component';
@@ -51,6 +50,12 @@ export const routes: Routes = [
   },
   {
     path: 'etape/:slug',
-    component: EditionPageComponent,
+    redirectTo: '/schedule',
+    pathMatch: 'full',
+  },
+  {
+    path: 'etape',
+    redirectTo: '/schedule',
+    pathMatch: 'full',
   },
 ];

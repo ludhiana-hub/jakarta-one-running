@@ -46,7 +46,7 @@ export class HomePageComponent {
     },
     bg_image: '/assets/prototype/gambar.jpg',
     cta_label: { id: 'Join the Series' },
-    cta_url: '/etape/central',
+    cta_url: '/schedule',
   };
 
   protected readonly stats: StatsCounterBlockData = {
@@ -74,7 +74,7 @@ export class HomePageComponent {
         slug: 'east',
         name: { id: 'East Jakarta' },
         subtitle: { id: 'The Cultural Gateway' },
-        cta_url: '/etape/east',
+        cta_url: '/schedule',
         theme_accent: '#8C8C8C',
       },
       {
@@ -82,7 +82,7 @@ export class HomePageComponent {
         slug: 'west',
         name: { id: 'West Jakarta' },
         subtitle: { id: 'The Heritage Trail' },
-        cta_url: '/etape/west',
+        cta_url: '/schedule',
         theme_accent: '#CC0000',
       },
       {
@@ -90,7 +90,7 @@ export class HomePageComponent {
         slug: 'south',
         name: { id: 'South Jakarta' },
         subtitle: { id: 'The Green Corridor' },
-        cta_url: '/etape/south',
+        cta_url: '/schedule',
         theme_accent: '#C4D600',
       },
       {
@@ -98,7 +98,7 @@ export class HomePageComponent {
         slug: 'north',
         name: { id: 'North Jakarta' },
         subtitle: { id: 'The Coastal Run' },
-        cta_url: '/etape/north',
+        cta_url: '/schedule',
         theme_accent: '#4DD0E1',
       },
       {
@@ -106,7 +106,7 @@ export class HomePageComponent {
         slug: 'central',
         name: { id: 'Central Jakarta' },
         subtitle: { id: 'The Heart of City' },
-        cta_url: '/etape/central',
+        cta_url: '/schedule',
         theme_accent: '#0072B5',
       },
     ],
@@ -114,9 +114,9 @@ export class HomePageComponent {
 
   protected readonly cta: CtaBannerBlockData = {
     title: { id: 'Ready for Jakarta One 2026?' },
-    subtitle: { id: 'Pilih stage favorit Anda dan daftar sekarang.' },
-    cta_label: { id: 'View Stages' },
-    cta_url: '/#stages',
+    subtitle: { id: 'Lihat jadwal stage dan daftar sekarang.' },
+    cta_label: { id: 'View Schedule' },
+    cta_url: '/schedule',
   };
 
   constructor() {

@@ -1,8 +1,6 @@
 import { HeroBlockData } from './hero.block';
 import { StatsCounterBlockData } from './stats-counter.block';
-import { SeriesTimelineBlockData } from './series-timeline.block';
 import { EditionCardsBlockData } from './edition-cards.block';
-import { EditionDetailBlockData } from './edition-detail.block';
 import { RichTextMediaBlockData } from './rich-text-media.block';
 import { MilestoneBlockData } from './milestone.block';
 import { GalleryGridBlockData } from './gallery-grid.block';
@@ -17,9 +15,7 @@ import { EmbedBlockData } from './embed.block';
 export type PageBlock =
   | { id: string; type: 'hero'; data: HeroBlockData }
   | { id: string; type: 'stats_counter'; data: StatsCounterBlockData }
-  | { id: string; type: 'series_timeline'; data: SeriesTimelineBlockData }
   | { id: string; type: 'edition_cards'; data: EditionCardsBlockData }
-  | { id: string; type: 'edition_detail'; data: EditionDetailBlockData }
   | { id: string; type: 'rich_text_media'; data: RichTextMediaBlockData }
   | { id: string; type: 'milestone'; data: MilestoneBlockData }
   | { id: string; type: 'gallery_grid'; data: GalleryGridBlockData }
@@ -30,4 +26,3 @@ export type PageBlock =
   | { id: string; type: 'interactive_map'; data: InteractiveMapBlockData }
   | { id: string; type: 'transportation_info'; data: TransportationInfoBlockData }
   | { id: string; type: 'embed'; data: EmbedBlockData };
-

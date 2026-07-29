@@ -15,8 +15,7 @@
     <div class="mt-6 flex justify-center sm:mt-8">
       @if (isInternalUrl(data().cta_url)) {
         <a
-          [routerLink]="data().cta_url === '/#stages' ? '/' : data().cta_url"
-          [fragment]="data().cta_url === '/#stages' ? 'stages' : undefined"
+          [routerLink]="data().cta_url"
           class="btn-cta btn-cta-lg w-full max-w-xs justify-center font-display sm:w-auto sm:max-w-none"
         >
           {{ data().cta_label | tr }}

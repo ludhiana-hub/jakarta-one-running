@@ -12,7 +12,7 @@
       <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
         @for (item of topItems(); track item.id; let i = $index) {
           <a
-            [routerLink]="['/etape', item.slug]"
+            [routerLink]="['/schedule']"
             class="group relative h-full overflow-hidden rounded-2xl glass-tier-1 border-l-4 p-6 transition hover:bg-white/5"
             [style.borderLeftColor]="item.theme_accent"
             [style.boxShadow]="
@@ -48,7 +48,7 @@
       <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         @for (item of bottomItems(); track item.id; let i = $index) {
           <a
-            [routerLink]="['/etape', item.slug]"
+            [routerLink]="['/schedule']"
             class="group relative h-full overflow-hidden rounded-2xl glass-tier-1 border-l-4 p-6 transition hover:bg-white/5"
             [style.borderLeftColor]="item.theme_accent"
             [style.boxShadow]="

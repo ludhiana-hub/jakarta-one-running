@@ -14,7 +14,7 @@ const DEV_BLOCKS: PageBlock[] = [
       tagline: { id: 'QA visual untuk blok hero.' },
       bg_image: 'https://picsum.photos/seed/jktone-hero/1920/1080',
       cta_label: { id: 'CTA Demo' },
-      cta_url: '/etape/central',
+      cta_url: '/schedule',
     },
   },
   {
@@ -29,16 +29,6 @@ const DEV_BLOCKS: PageBlock[] = [
     },
   },
   {
-    id: 'dev_timeline',
-    type: 'series_timeline',
-    data: {
-      items: [
-        { id: 't1', title: { id: 'East' }, subtitle: { id: 'Velodrome' } },
-        { id: 't2', title: { id: 'West' }, subtitle: { id: 'Puri Kembangan' } },
-      ],
-    },
-  },
-  {
     id: 'dev_edition_cards',
     type: 'edition_cards',
     data: {
@@ -48,35 +38,10 @@ const DEV_BLOCKS: PageBlock[] = [
           slug: 'central',
           name: { id: 'Central' },
           subtitle: { id: 'Lapangan Banteng' },
-          cta_url: '/etape/central',
+          cta_url: '/schedule',
           theme_accent: '#0072B5',
         },
       ],
-    },
-  },
-  {
-    id: 'dev_edition_detail',
-    type: 'edition_detail',
-    data: {
-      edition: {
-        id: 'central',
-        slug: 'central',
-        name: { id: 'Central' },
-        race_date: '2026-07-05T06:00:00.000Z',
-        venue: { id: 'Lapangan Banteng' },
-        theme_accent: '#0072B5',
-        registration_phases: [
-          {
-            id: 'p1',
-            name: { id: 'Pendaftaran' },
-            opens_at: '2026-04-01T00:00:00.000Z',
-            closes_at: '2026-06-26T23:59:59.000Z',
-            price: 195000,
-            registration_url: 'https://example.com/register',
-          },
-        ],
-      },
-      medal_image: 'https://picsum.photos/seed/jktone-medal/512/512',
     },
   },
   {
