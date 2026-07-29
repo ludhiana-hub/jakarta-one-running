@@ -1,24 +1,25 @@
-/* Design tokens — Jakarta One Clean Frost (light glassmorphism) */
+/* Design tokens — Jakarta One Clean Frost (cool-gray canvas) */
 
 :root {
   --brand-primary: #cc0000;
-  --brand-primary-glow: color-mix(in srgb, var(--brand-primary) 28%, transparent);
+  --brand-primary-glow: color-mix(in srgb, var(--brand-primary) 22%, transparent);
   --color-primary-container: #ff525c;
   --color-on-primary-container: #ffffff;
   --color-ember: #ff525c;
 }
 
 @theme {
-  --color-void: #f7f8fa;
+  /* Cool gray page canvas — panels sit brighter on top */
+  --color-void: #e6e8ee;
   --color-chalk: #141418;
-  --color-mist: #5c5c66;
-  --color-glass: rgb(255 255 255 / 0.65);
-  --color-glass-border: rgb(20 20 24 / 0.1);
+  --color-mist: #5a5b66;
+  --color-glass: rgb(255 255 255 / 0.88);
+  --color-glass-border: rgb(20 22 32 / 0.12);
   --color-ember: #ff525c;
   --color-primary: #cc0000;
   --color-primary-container: #ff525c;
   --color-on-primary-container: #ffffff;
-  --color-on-surface-variant: #5c5c66;
+  --color-on-surface-variant: #5a5b66;
   --color-surface: #ffffff;
   --color-east-grey: #8c8c8c;
   --color-west-red: #cc0000;
@@ -30,8 +31,15 @@
   --font-body: 'Plus Jakarta Sans Variable', 'Plus Jakarta Sans', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 
-  --shadow-card: 0 8px 28px rgba(20, 20, 24, 0.08);
-  --shadow-focal: 0 12px 36px rgba(20, 20, 24, 0.1), 0 0 40px var(--brand-primary-glow);
+  --shadow-card:
+    0 1px 0 rgba(255, 255, 255, 0.85) inset,
+    0 10px 28px rgba(28, 32, 48, 0.1),
+    0 2px 6px rgba(28, 32, 48, 0.06);
+  --shadow-focal:
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 16px 40px rgba(28, 32, 48, 0.14),
+    0 4px 12px rgba(28, 32, 48, 0.08),
+    0 0 36px var(--brand-primary-glow);
 
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;

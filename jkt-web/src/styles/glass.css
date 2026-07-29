@@ -1,14 +1,19 @@
-/* Glassmorphism surfaces — Clean Frost (readable on light base) */
+/* Glassmorphism — floating white cards on cool-gray canvas */
 
 .glass-tier1,
 .glass-tier-1,
 .glass-ambient {
   position: relative;
   overflow: hidden;
-  backdrop-filter: blur(12px) saturate(140%);
-  -webkit-backdrop-filter: blur(12px) saturate(140%);
-  background: rgba(255, 255, 255, 0.55);
-  border: 1px solid rgba(20, 20, 24, 0.08);
+  backdrop-filter: blur(14px) saturate(150%);
+  -webkit-backdrop-filter: blur(14px) saturate(150%);
+  background:
+    linear-gradient(165deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.82) 100%);
+  border: 1px solid rgba(28, 32, 48, 0.1);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 6px 18px rgba(28, 32, 48, 0.07),
+    0 1px 3px rgba(28, 32, 48, 0.04);
 }
 
 .glass-tier2,
@@ -16,11 +21,21 @@
 .glass-card {
   position: relative;
   overflow: hidden;
-  backdrop-filter: blur(20px) saturate(140%);
-  -webkit-backdrop-filter: blur(20px) saturate(140%);
-  background: rgba(255, 255, 255, 0.68);
-  border: 1px solid rgba(20, 20, 24, 0.1);
-  box-shadow: 0 8px 28px rgba(20, 20, 24, 0.08);
+  backdrop-filter: blur(22px) saturate(155%);
+  -webkit-backdrop-filter: blur(22px) saturate(155%);
+  background:
+    linear-gradient(
+      160deg,
+      rgba(255, 255, 255, 0.97) 0%,
+      rgba(252, 253, 255, 0.9) 55%,
+      rgba(255, 248, 248, 0.88) 100%
+    );
+  border: 1px solid rgba(28, 32, 48, 0.11);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 12px 32px rgba(28, 32, 48, 0.11),
+    0 3px 8px rgba(28, 32, 48, 0.06),
+    0 0 0 1px rgba(255, 82, 92, 0.04);
 }
 
 .glass-tier3,
@@ -28,13 +43,22 @@
 .glass-focal {
   position: relative;
   overflow: hidden;
-  backdrop-filter: blur(28px) saturate(140%);
-  -webkit-backdrop-filter: blur(28px) saturate(140%);
-  background: rgba(255, 255, 255, 0.78);
-  border: 1px solid rgba(20, 20, 24, 0.12);
+  backdrop-filter: blur(28px) saturate(160%);
+  -webkit-backdrop-filter: blur(28px) saturate(160%);
+  background:
+    linear-gradient(
+      155deg,
+      rgba(255, 255, 255, 0.98) 0%,
+      rgba(255, 252, 252, 0.94) 45%,
+      rgba(255, 245, 245, 0.9) 100%
+    );
+  border: 1px solid rgba(28, 32, 48, 0.12);
   box-shadow:
-    0 12px 36px rgba(20, 20, 24, 0.1),
-    0 0 40px var(--brand-primary-glow);
+    0 1px 0 rgba(255, 255, 255, 1) inset,
+    0 18px 44px rgba(28, 32, 48, 0.14),
+    0 6px 14px rgba(28, 32, 48, 0.07),
+    0 0 48px color-mix(in srgb, var(--brand-primary) 18%, transparent),
+    0 0 0 1px rgba(255, 82, 92, 0.08);
 }
 
 .glass-tier1::after,
@@ -52,10 +76,30 @@
   inset: 0;
   border-radius: inherit;
   background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27120%27%20height%3D%27120%27%3E%3Cfilter%20id%3D%27n%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%27.8%27%20numOctaves%3D%273%27%20stitchTiles%3D%27stitch%27/%3E%3C/filter%3E%3Crect%20width%3D%27120%27%20height%3D%27120%27%20filter%3D%27url(%23n)%27%20opacity%3D%27.5%27/%3E%3C/svg%3E");
-  opacity: 0.015;
+  opacity: 0.02;
   mix-blend-mode: multiply;
   pointer-events: none;
   z-index: 1;
+}
+
+/* Soft top highlight sheen for depth */
+.glass-tier2::before,
+.glass-tier-2::before,
+.glass-card::before,
+.glass-tier3::before,
+.glass-tier-3::before,
+.glass-focal::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.55) 0%,
+    transparent 42%
+  );
+  pointer-events: none;
+  z-index: 0;
 }
 
 .floating-card {
@@ -66,8 +110,13 @@
 }
 
 .floating-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(20, 20, 24, 0.16);
+  transform: translateY(-6px);
+  border-color: rgba(28, 32, 48, 0.16);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 18px 40px rgba(28, 32, 48, 0.14),
+    0 4px 10px rgba(28, 32, 48, 0.07),
+    0 0 28px color-mix(in srgb, var(--brand-primary) 12%, transparent);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -90,6 +139,6 @@
   .glass-focal {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
-    background: rgba(255, 255, 255, 0.92);
+    background: #ffffff;
   }
 }

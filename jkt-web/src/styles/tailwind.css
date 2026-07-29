@@ -9,7 +9,7 @@
   html,
   body {
     min-height: 100%;
-    background-color: var(--color-void, #f7f8fa);
+    background-color: var(--color-void, #e6e8ee);
     color: var(--color-chalk, #141418);
     font-family: var(--font-body);
   }

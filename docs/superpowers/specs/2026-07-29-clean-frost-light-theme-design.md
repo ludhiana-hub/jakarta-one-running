@@ -12,7 +12,7 @@ Replace the dark-first glass system with a **Clean Frost** light theme: off-whit
 
 | Token | Clean Frost value | Role |
 |-------|-------------------|------|
-| `void` | `#F7F8FA` | Page canvas (cold off-white) |
+| `void` | `#E6E8EE` | Cool-gray page canvas (panels sit brighter on top) |
 | `chalk` | `#141418` | Primary text / headings |
 | `mist` | `#5C5C66` | Secondary text |
 | `glass` | `rgba(255,255,255,0.65)` | Default glass fill utility |
