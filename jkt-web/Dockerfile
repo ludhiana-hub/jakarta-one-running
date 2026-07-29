@@ -1,5 +1,7 @@
 # jkt-web — Angular 22 SSR
-# Build context must be the jkt-web/ directory (see root docker-compose.yml)
+# Build context: jkt-web/
+
+ARG BUILD_ID=1
 
 # ─── deps ────────────────────────────────────────────────────────────────────
 FROM node:22-bookworm-slim AS deps
@@ -9,13 +11,18 @@ RUN npm ci
 
 # ─── build ───────────────────────────────────────────────────────────────────
 FROM node:22-bookworm-slim AS build
+ARG BUILD_ID
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-# Keep devDependencies available for `ng build`
 ENV NODE_ENV=development
 ENV NODE_OPTIONS=--max-old-space-size=4096
-RUN npm run build
+RUN echo "BUILD_ID=${BUILD_ID}" \
+  && npm run build \
+  && test -f dist/jkt-web/server/server.mjs \
+  && test -d dist/jkt-web/browser \
+  && ls -la dist/jkt-web/server \
+  && ls -la dist/jkt-web/browser | head
 
 # ─── runtime ─────────────────────────────────────────────────────────────────
 FROM node:22-bookworm-slim AS runner
@@ -31,11 +38,9 @@ COPY package.json package-lock.json ./
 RUN npm ci --omit=dev && npm cache clean --force
 
 COPY --from=build /app/dist ./dist
+RUN test -f dist/jkt-web/server/server.mjs
 
 USER app
 EXPOSE 4000
-
-HEALTHCHECK --interval=30s --timeout=8s --start-period=60s --retries=5 \
-  CMD node -e "fetch('http://127.0.0.1:'+(process.env.PORT||4000)+'/').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"
 
 CMD ["node", "dist/jkt-web/server/server.mjs"]

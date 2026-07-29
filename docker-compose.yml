@@ -1,17 +1,23 @@
-# Dokploy Compose (repo root)
+# Dokploy Compose — repo root
 # Compose Path: ./docker-compose.yml
 #
-# Domains UI: Service=landing, Container Port=4000
-# Optional env override: TRAEFIK_HOST=<your-sslip-or-custom-domain>
+# Test app directly (bypasses Traefik):
+#   http://YOUR_VPS_IP:4000
+#
+# Domains UI: Service = landing, Container Port = 4000, then Redeploy
 
 services:
   landing:
     build:
       context: ./jkt-web
       dockerfile: Dockerfile
+      args:
+        # bust cache when you need a fresh ng build
+        BUILD_ID: "${BUILD_ID:-2}"
     restart: unless-stopped
     ports:
-      - "4000"
+      # host:container — proves Angular works even if Traefik is wrong
+      - "4000:4000"
     environment:
       PORT: "4000"
       HOST: "0.0.0.0"
@@ -22,11 +28,11 @@ services:
       - traefik.enable=true
       - traefik.docker.network=dokploy-network
       - traefik.http.services.jor-landing.loadbalancer.server.port=4000
-      # Default = current Dokploy sslip host (override with TRAEFIK_HOST if it changes)
-      - traefik.http.routers.jor-landing-http.rule=Host(`${TRAEFIK_HOST:-jakartaonerunning-landing-page-tvrexw-c6f4a7-103-55-37-253.sslip.io}`)
+      # Hardcoded Host (Dokploy often does NOT expand ${VAR} inside labels)
+      - traefik.http.routers.jor-landing-http.rule=Host(`jakartaonerunning-landing-page-tvrexw-c6f4a7-103-55-37-253.sslip.io`)
       - traefik.http.routers.jor-landing-http.entrypoints=web
       - traefik.http.routers.jor-landing-http.service=jor-landing
-      - traefik.http.routers.jor-landing-https.rule=Host(`${TRAEFIK_HOST:-jakartaonerunning-landing-page-tvrexw-c6f4a7-103-55-37-253.sslip.io}`)
+      - traefik.http.routers.jor-landing-https.rule=Host(`jakartaonerunning-landing-page-tvrexw-c6f4a7-103-55-37-253.sslip.io`)
       - traefik.http.routers.jor-landing-https.entrypoints=websecure
       - traefik.http.routers.jor-landing-https.tls=true
       - traefik.http.routers.jor-landing-https.service=jor-landing
