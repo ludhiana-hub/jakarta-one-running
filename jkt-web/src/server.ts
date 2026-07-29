@@ -10,19 +10,24 @@ import { join } from 'node:path';
 const browserDistFolder = join(import.meta.dirname, '../browser');
 
 const app = express();
-const angularApp = new AngularNodeAppEngine();
 
-/**
- * Example Express Rest API endpoints can be defined here.
- * Uncomment and define endpoints as necessary.
- *
- * Example:
- * ```ts
- * app.get('/api/{*splat}', (req, res) => {
- *   // Handle API request
- * });
- * ```
- */
+/** Hosts allowed for SSR (Angular host-header SSRF guard). Override via NG_ALLOWED_HOSTS. */
+function resolveAllowedHosts(): string[] {
+  const fromEnv = process.env['NG_ALLOWED_HOSTS'];
+  if (fromEnv?.trim()) {
+    return fromEnv
+      .split(',')
+      .map((h) => h.trim())
+      .filter(Boolean);
+  }
+  return ['localhost', '127.0.0.1', '*.sslip.io', '103.55.37.253'];
+}
+
+const angularApp = new AngularNodeAppEngine({
+  allowedHosts: resolveAllowedHosts(),
+  // Traefik / Dokploy forwards these; required for correct absolute URLs in SSR
+  trustProxyHeaders: ['x-forwarded-host', 'x-forwarded-proto', 'x-forwarded-port'],
+});
 
 /**
  * Serve static files from /browser
