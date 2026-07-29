@@ -1,11 +1,11 @@
 # Dokploy Compose (repo root)
 # Compose Path: ./docker-compose.yml
 #
-# Domains UI MUST use:
-#   Service: landing
-#   Container Port: 4000
-# Then click Redeploy (labels are applied only at deploy time).
-# Docs: https://docs.dokploy.com/docs/core/docker-compose/domains
+# In Dokploy → Environment, set:
+#   TRAEFIK_HOST=jakartaonerunning-landing-page-tvrexw-c6f4a7-103-55-37-253.sslip.io
+# (paste your exact Domains → Host value)
+#
+# Domains UI: Service=landing, Container Port=4000, then Redeploy.
 
 services:
   landing:
@@ -13,17 +13,28 @@ services:
       context: ./jkt-web
       dockerfile: Dockerfile
     restart: unless-stopped
-    # Same pattern as Dokploy docs — publish container port for Traefik
     ports:
       - "4000"
     environment:
       PORT: "4000"
       HOST: "0.0.0.0"
       NODE_ENV: production
-    # Dokploy Domains UI injects traefik labels + network on deploy.
-    # Keep dokploy-network so Traefik can reach this service.
     networks:
       - dokploy-network
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=dokploy-network
+      # Force backend port (fixes Traefik 404 when Domains UI still points at 80)
+      - traefik.http.services.jor-landing.loadbalancer.server.port=4000
+      # HTTP
+      - traefik.http.routers.jor-landing-http.rule=Host(`${TRAEFIK_HOST:?set TRAEFIK_HOST in Dokploy env}`)
+      - traefik.http.routers.jor-landing-http.entrypoints=web
+      - traefik.http.routers.jor-landing-http.service=jor-landing
+      # HTTPS
+      - traefik.http.routers.jor-landing-https.rule=Host(`${TRAEFIK_HOST}`)
+      - traefik.http.routers.jor-landing-https.entrypoints=websecure
+      - traefik.http.routers.jor-landing-https.tls=true
+      - traefik.http.routers.jor-landing-https.service=jor-landing
 
 networks:
   dokploy-network:
