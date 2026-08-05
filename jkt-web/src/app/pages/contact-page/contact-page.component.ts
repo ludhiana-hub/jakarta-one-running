@@ -27,6 +27,8 @@ export class ContactPageComponent {
 
   protected readonly mapsOpenUrl = `https://www.google.com/maps/search/?api=1&query=${this.mapsQuery}`;
 
+  protected readonly directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${this.mapsQuery}`;
+
   protected readonly mapsEmbedUrl: SafeResourceUrl =
     this.sanitizer.bypassSecurityTrustResourceUrl(
       `https://www.google.com/maps?q=${this.mapsQuery}&z=16&output=embed`,
