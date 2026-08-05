@@ -10,7 +10,7 @@
     },
     {
       "label": { "id": "Jadwal", "en": "Schedule" },
-      "type": "external",
+      "type": "page",
       "url": "/schedule",
       "linkable_type": null,
       "linkable_id": null,
@@ -18,8 +18,16 @@
     },
     {
       "label": { "id": "Mitra", "en": "Partners" },
-      "type": "external",
+      "type": "page",
       "url": "/partners",
+      "linkable_type": null,
+      "linkable_id": null,
+      "children": []
+    },
+    {
+      "label": { "id": "Kontak", "en": "Contact" },
+      "type": "page",
+      "url": "/kontak",
       "linkable_type": null,
       "linkable_id": null,
       "children": []

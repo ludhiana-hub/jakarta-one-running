@@ -1,6 +1,15 @@
 /* Motion — light page transitions + scroll reveal */
 
+/*
+ * No global smooth scrolling: the router scrolls to top on every navigation,
+ * and animating that scroll made page changes feel slow. In-page anchors still
+ * scroll smoothly through the opt-in class below.
+ */
 html {
+  scroll-behavior: auto;
+}
+
+.scroll-smooth-anchor {
   scroll-behavior: smooth;
 }
 
@@ -15,13 +24,15 @@ footer,
 
 ::view-transition-old(root),
 ::view-transition-new(root) {
-  animation-duration: 160ms;
+  animation-duration: 130ms;
   animation-timing-function: ease-out;
+  /* Both snapshots share the frame: no cross-fade darkening, no layout jump */
+  mix-blend-mode: normal;
 }
 
 /* Avoid double-fade fighting SSR first paint */
 ::view-transition-group(root) {
-  animation-duration: 160ms;
+  animation-duration: 130ms;
 }
 
 ::view-transition-old(root) {
@@ -69,6 +80,20 @@ footer,
 }
 .reveal-stagger > .reveal:nth-child(4) {
   --reveal-delay: 180ms;
+}
+
+@media (max-width: 767px) {
+  /* Shorter travel + duration keeps scrolling on phones feeling immediate */
+  .reveal {
+    transform: translateY(10px);
+    transition-duration: 0.28s;
+  }
+
+  .reveal-stagger > .reveal:nth-child(2),
+  .reveal-stagger > .reveal:nth-child(3),
+  .reveal-stagger > .reveal:nth-child(4) {
+    --reveal-delay: 0ms;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

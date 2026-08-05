@@ -27,11 +27,11 @@
   --color-north-cyan: #4dd0e1;
   --color-central-blue: #0072b5;
 
-  --font-display: 'Bricolage Grotesque Variable', 'Bricolage Grotesque', system-ui, sans-serif;
-  --font-body: 'Plus Jakarta Sans Variable', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-display: 'Bricolage Grotesque Variable', 'Bricolage Fallback', system-ui, sans-serif;
+  --font-body: 'Plus Jakarta Sans Variable', 'Jakarta Fallback', system-ui, sans-serif;
   /* Small UI text (labels, meta, footer): sans for legibility on marketing pages */
-  --font-label: 'Plus Jakarta Sans Variable', 'Plus Jakarta Sans', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-label: 'Plus Jakarta Sans Variable', 'Jakarta Fallback', system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
 
   --shadow-card:
     0 1px 0 rgba(255, 255, 255, 0.85) inset,

@@ -13,6 +13,7 @@ import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/ro
 import { filter, fromEvent, take } from 'rxjs';
 
 import { BlockRepository } from '../../core/api/block.repository';
+import { DEFAULT_MENU } from '../../core/data/default-menu';
 import { MenuItem } from '../../core/models/menu-response';
 import { ExternalLinkDialogComponent } from '../external-link-dialog/external-link-dialog.component';
 
@@ -34,7 +35,9 @@ export class NavbarComponent {
   protected dialogVisible = false;
   protected pendingUrl: string | null = null;
 
-  private readonly menuItems = signal<MenuItem[]>([]);
+  // Seeded with the built-in menu so the navbar is never empty, then replaced
+  // once the CMS responds with a non-empty menu.
+  private readonly menuItems = signal<MenuItem[]>(DEFAULT_MENU);
 
   // The CMS-managed header menu always ends with the CTA (e.g. "Register") —
   // everything before it renders as a plain nav link, the last item as the
@@ -47,8 +50,12 @@ export class NavbarComponent {
       .menu()
       .pipe(take(1))
       .subscribe({
-        next: (response) => this.menuItems.set(response.menu),
-        error: () => this.menuItems.set([]),
+        next: (response) => {
+          if (response?.menu?.length) {
+            this.menuItems.set(response.menu);
+          }
+        },
+        error: () => this.menuItems.set(DEFAULT_MENU),
       });
 
     this.router.events

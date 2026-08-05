@@ -69,8 +69,7 @@
   inset: 0;
   z-index: 40;
   border: none;
-  background: rgba(20, 20, 24, 0.35);
-  backdrop-filter: blur(2px);
+  background: rgba(20, 20, 24, 0.38);
   cursor: pointer;
 }
 
@@ -82,9 +81,7 @@
   height: 100dvh;
   width: min(20rem, 86vw);
   border-left: 1px solid rgba(20, 20, 24, 0.1);
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(22px) saturate(150%);
-  -webkit-backdrop-filter: blur(22px) saturate(150%);
+  background: #ffffff;
   transform: translateX(105%);
   transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: -16px 0 40px rgba(28, 32, 48, 0.14);

@@ -67,6 +67,28 @@
   }
 }
 
+@media (max-width: 767px) {
+  /*
+   * Three infinite marquees repaint continuously and cost real battery and
+   * frames on phones. On small screens the strips become plain swipeable rows.
+   */
+  .marquee {
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .marquee::-webkit-scrollbar {
+    display: none;
+  }
+
+  .marquee__track {
+    animation: none !important;
+    transform: none !important;
+    will-change: auto;
+  }
+}
+
 @keyframes marquee-scroll {
   from {
     transform: translate3d(0, 0, 0);

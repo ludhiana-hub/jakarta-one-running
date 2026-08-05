@@ -1,11 +1,13 @@
 import { Routes } from '@angular/router';
 
-import { DynamicPageComponent } from './pages/dynamic-page/dynamic-page.component';
-import { DevBlocksComponent } from './pages/dev-blocks/dev-blocks.component';
-import { SchedulePageComponent } from './pages/schedule-page/schedule-page.component';
-import { PartnersPageComponent } from './pages/partners-page/partners-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 
+/**
+ * Home stays eager (it is the LCP route). Everything else is lazy so the first
+ * paint on mobile ships as little JavaScript as possible; PreloadAllModules in
+ * app.config warms the other chunks in the background, keeping navigation
+ * instant.
+ */
 export const routes: Routes = [
   {
     path: '',
@@ -13,11 +15,13 @@ export const routes: Routes = [
   },
   {
     path: 'schedule',
-    component: SchedulePageComponent,
+    loadComponent: () =>
+      import('./pages/schedule-page/schedule-page.component').then((m) => m.SchedulePageComponent),
   },
   {
     path: 'partners',
-    component: PartnersPageComponent,
+    loadComponent: () =>
+      import('./pages/partners-page/partners-page.component').then((m) => m.PartnersPageComponent),
   },
   {
     path: 'tentang',
@@ -26,27 +30,28 @@ export const routes: Routes = [
   },
   {
     path: 'galeri',
-    component: DynamicPageComponent,
     data: { pageSlug: 'galeri' },
+    loadChildren: () => import('./pages/dynamic-page/dynamic-page.routes').then((m) => m.routes),
   },
   {
     path: 'faq',
-    component: DynamicPageComponent,
     data: { pageSlug: 'faq' },
+    loadChildren: () => import('./pages/dynamic-page/dynamic-page.routes').then((m) => m.routes),
   },
   {
     path: 'syarat-ketentuan',
-    component: DynamicPageComponent,
     data: { pageSlug: 'syarat-ketentuan' },
+    loadChildren: () => import('./pages/dynamic-page/dynamic-page.routes').then((m) => m.routes),
   },
   {
     path: 'kontak',
-    component: DynamicPageComponent,
     data: { pageSlug: 'kontak' },
+    loadChildren: () => import('./pages/dynamic-page/dynamic-page.routes').then((m) => m.routes),
   },
   {
     path: 'dev/blocks',
-    component: DevBlocksComponent,
+    loadComponent: () =>
+      import('./pages/dev-blocks/dev-blocks.component').then((m) => m.DevBlocksComponent),
   },
   {
     path: 'etape/:slug',
@@ -58,11 +63,11 @@ export const routes: Routes = [
     redirectTo: '/schedule',
     pathMatch: 'full',
   },
-  // Catch-all for CMS-authored pages — must stay LAST so it never shadows
-  // the static routes above. Lets a page created in Filament (e.g. slug
-  // "tentang-kami") go live at /tentang-kami with no Angular deploy.
+  // Catch-all for CMS-authored pages. Must stay LAST so it never shadows the
+  // static routes above. A page created in Filament (e.g. slug "tentang-kami")
+  // goes live at /tentang-kami with no Angular deploy.
   {
     path: ':slug',
-    component: DynamicPageComponent,
+    loadChildren: () => import('./pages/dynamic-page/dynamic-page.routes').then((m) => m.routes),
   },
 ];

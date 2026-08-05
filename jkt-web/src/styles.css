@@ -16,7 +16,6 @@
     background-color: var(--color-void, #e6e8ee);
     color: var(--color-chalk, #141418);
     font-family: var(--font-body);
-    text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -32,6 +31,11 @@
 
   .font-mono {
     font-family: var(--font-mono);
+    font-synthesis: none;
+  }
+
+  .font-label {
+    font-family: var(--font-label);
     font-synthesis: none;
   }
 }

@@ -3,6 +3,9 @@
 }
 
 .stage-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   transition:
     transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
     border-color 0.3s ease;
@@ -10,6 +13,190 @@
 
 .stage-card:hover {
   transform: translateY(-4px);
+}
+
+/*
+ * Decor layers sit at z-index -1 so they paint over the glass panel background
+ * but under the card content. Kept as elements (not pseudo-elements) because
+ * .glass-tier-* already owns ::before and ::after.
+ */
+.stage-card__decor {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  overflow: hidden;
+}
+
+/* Region accent wash so cards read as their stage colour, not flat white */
+.stage-card__decor::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      120% 85% at 100% 0%,
+      color-mix(in srgb, var(--stage-accent, #cc0000) 18%, transparent) 0%,
+      transparent 62%
+    ),
+    /* Brand warmth so neutral-accent stages (East) still feel alive */
+    radial-gradient(
+      95% 70% at 0% 100%,
+      color-mix(in srgb, var(--color-primary, #cc0000) 9%, transparent) 0%,
+      transparent 58%
+    );
+}
+
+/* Motion stripes: echoes the ">" route arrows used throughout the deck */
+.stage-card__decor::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    115deg,
+    color-mix(in srgb, var(--stage-accent, #cc0000) 30%, transparent) 0 2px,
+    transparent 2px 13px
+  );
+  opacity: 0.2;
+  -webkit-mask-image: radial-gradient(85% 75% at 100% 0%, #000 0%, transparent 66%);
+  mask-image: radial-gradient(85% 75% at 100% 0%, #000 0%, transparent 66%);
+}
+
+/* Oversized stage numeral, mirroring the deck's big-number typography */
+.stage-card__numeral {
+  position: absolute;
+  z-index: -1;
+  right: 0.25rem;
+  bottom: -2.5rem;
+  font-family: var(--font-display);
+  font-size: 9rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: var(--stage-accent, #cc0000);
+  opacity: 0.09;
+  pointer-events: none;
+  user-select: none;
+}
+
+.stage-card__rule {
+  height: 3px;
+  width: 3.5rem;
+  border-radius: 999px;
+  background: linear-gradient(
+    to right,
+    var(--stage-accent, #cc0000),
+    color-mix(in srgb, var(--stage-accent, #cc0000) 15%, transparent)
+  );
+}
+
+/* Race-bib shaped register button (notched corners) */
+.btn-stage {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.4rem;
+  overflow: hidden;
+  font-weight: 700;
+  color: color-mix(in srgb, var(--stage-accent, #cc0000) 72%, #141418);
+  background: color-mix(in srgb, var(--stage-accent, #cc0000) 12%, #ffffff);
+  border: 1px solid color-mix(in srgb, var(--stage-accent, #cc0000) 42%, transparent);
+  clip-path: polygon(
+    12px 0,
+    100% 0,
+    100% calc(100% - 12px),
+    calc(100% - 12px) 100%,
+    0 100%,
+    0 12px
+  );
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.btn-stage::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--stage-accent, #cc0000);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-stage:hover {
+  color: #ffffff;
+  border-color: transparent;
+}
+
+.btn-stage:hover::before {
+  transform: scaleX(1);
+}
+
+.btn-stage__arrow {
+  transition: transform 0.25s ease;
+}
+
+.btn-stage:hover .btn-stage__arrow {
+  transform: translateX(3px);
+}
+
+/* Solid bib variant for the finale card */
+.btn-bib {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--stage-accent, #0072b5);
+  box-shadow: 0 0 30px color-mix(in srgb, var(--stage-accent, #0072b5) 30%, transparent);
+  clip-path: polygon(
+    14px 0,
+    100% 0,
+    100% calc(100% - 14px),
+    calc(100% - 14px) 100%,
+    0 100%,
+    0 14px
+  );
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.btn-bib:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 42px color-mix(in srgb, var(--stage-accent, #0072b5) 45%, transparent);
+}
+
+.btn-bib:hover .btn-stage__arrow {
+  transform: translateX(3px);
+}
+
+/* Season pass panel: same motion stripes, brand red */
+.pass-panel {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.pass-panel__decor {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    115deg,
+    color-mix(in srgb, var(--color-primary, #cc0000) 26%, transparent) 0 2px,
+    transparent 2px 13px
+  );
+  opacity: 0.16;
+  -webkit-mask-image: radial-gradient(75% 130% at 50% 0%, #000 0%, transparent 70%);
+  mask-image: radial-gradient(75% 130% at 50% 0%, #000 0%, transparent 70%);
 }
 
 /* —— Timeline spine (center rail + downward flow) —— */

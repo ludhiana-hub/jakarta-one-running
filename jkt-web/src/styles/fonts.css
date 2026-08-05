@@ -1,5 +1,50 @@
-/* Self-hosted fonts — bundled with app CSS (no Google Fonts FOUT on refresh) */
-@import '@fontsource-variable/bricolage-grotesque/wght.css';
-@import '@fontsource-variable/plus-jakarta-sans/wght.css';
-@import '@fontsource/jetbrains-mono/500.css';
-@import '@fontsource/jetbrains-mono/600.css';
+/*
+ * Self-hosted variable fonts.
+ *
+ * Files are preloaded from index.html and declared with `font-display: block`,
+ * so text never paints in a fallback face and then swap (that swap was the
+ * font "glitch" on refresh). The metric-matched fallback faces below keep the
+ * reserved space identical while the woff2 is still in flight, so nothing
+ * shifts or resizes when the real font lands.
+ */
+
+@font-face {
+  font-family: 'Plus Jakarta Sans Variable';
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: block;
+  src: url('/assets/fonts/plus-jakarta-sans-latin-wght-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Bricolage Grotesque Variable';
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: block;
+  src: url('/assets/fonts/bricolage-grotesque-latin-wght-normal.woff2') format('woff2');
+}
+
+/* Metric-matched stand-ins used only while the webfonts load */
+@font-face {
+  font-family: 'Jakarta Fallback';
+  src:
+    local('Segoe UI'),
+    local('Helvetica Neue'),
+    local('Arial');
+  ascent-override: 96%;
+  descent-override: 24%;
+  line-gap-override: 0%;
+  size-adjust: 102%;
+}
+
+@font-face {
+  font-family: 'Bricolage Fallback';
+  src:
+    local('Segoe UI'),
+    local('Helvetica Neue'),
+    local('Arial');
+  ascent-override: 92%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+  size-adjust: 104%;
+}
