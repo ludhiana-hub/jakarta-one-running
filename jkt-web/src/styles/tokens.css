@@ -29,6 +29,8 @@
 
   --font-display: 'Bricolage Grotesque Variable', 'Bricolage Grotesque', system-ui, sans-serif;
   --font-body: 'Plus Jakarta Sans Variable', 'Plus Jakarta Sans', system-ui, sans-serif;
+  /* Small UI text (labels, meta, footer): sans for legibility on marketing pages */
+  --font-label: 'Plus Jakarta Sans Variable', 'Plus Jakarta Sans', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 
   --shadow-card:

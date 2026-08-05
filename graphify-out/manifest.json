@@ -1,39 +1,4 @@
 {
-  "composer.json": {
-    "mtime": 1785250574.9858978,
-    "ast_hash": "560ffb89ba9f79909e8faadd9e13ece8",
-    "semantic_hash": ""
-  },
-  "jkt-web/.postcssrc.json": {
-    "mtime": 1785291441.5808072,
-    "ast_hash": "0910552d06a7988426456203a1d9357e",
-    "semantic_hash": ""
-  },
-  "jkt-web/.vscode/extensions.json": {
-    "mtime": 1785248880.1198351,
-    "ast_hash": "66fd9e60d4633b6099fe02e06a7075ea",
-    "semantic_hash": ""
-  },
-  "jkt-web/.vscode/launch.json": {
-    "mtime": 1785248880.12185,
-    "ast_hash": "430386a2f03e9d559664c196344c121b",
-    "semantic_hash": ""
-  },
-  "jkt-web/.vscode/tasks.json": {
-    "mtime": 1785248880.12185,
-    "ast_hash": "cb7ed9a56930402d9059ea5a9773d60e",
-    "semantic_hash": ""
-  },
-  "jkt-web/angular.json": {
-    "mtime": 1785299897.3898432,
-    "ast_hash": "385a23457d2869c5a88a532c2686ab07",
-    "semantic_hash": ""
-  },
-  "jkt-web/package.json": {
-    "mtime": 1785291441.4132028,
-    "ast_hash": "3aaeaf5decd77c71e09c91dc63eb22d6",
-    "semantic_hash": ""
-  },
   "jkt-web/src/app/app.config.server.ts": {
     "mtime": 1785248880.1350129,
     "ast_hash": "f7b5c12b0dacd6692ee6042eb44f788b",
@@ -374,131 +339,6 @@
     "ast_hash": "bfc4ece898ccb60866007a9afbd09a2f",
     "semantic_hash": ""
   },
-  "jkt-web/stitch-export/req-mascot.json": {
-    "mtime": 1785291441.4790328,
-    "ast_hash": "014e0f3a87c6114f3ee1bafe40182a29",
-    "semantic_hash": ""
-  },
-  "jkt-web/stitch-export/req-medal.json": {
-    "mtime": 1785253582.423167,
-    "ast_hash": "dc15017750fade841dd25717d56dca50",
-    "semantic_hash": ""
-  },
-  "jkt-web/stitch-export/req-partners.json": {
-    "mtime": 1785253573.2461236,
-    "ast_hash": "4c9e3cc3edc7d816bb93c77bec1599e6",
-    "semantic_hash": ""
-  },
-  "jkt-web/stitch-export/req-records.json": {
-    "mtime": 1785253579.105502,
-    "ast_hash": "bb018ffef09c9d731f668db5049002ea",
-    "semantic_hash": ""
-  },
-  "jkt-web/stitch-export/req-runner.json": {
-    "mtime": 1785253584.4009116,
-    "ast_hash": "9680663403722914e8d7d5dc43c5f44c",
-    "semantic_hash": ""
-  },
-  "jkt-web/stitch-export/req-schedule.json": {
-    "mtime": 1785253576.8889072,
-    "ast_hash": "f6c217a9f6f3115d2505d66d91a09d38",
-    "semantic_hash": ""
-  },
-  "jkt-web/tsconfig.app.json": {
-    "mtime": 1785291441.4790328,
-    "ast_hash": "404f08e5f845a9065eb93af06424772b",
-    "semantic_hash": ""
-  },
-  "jkt-web/tsconfig.json": {
-    "mtime": 1785248880.1124053,
-    "ast_hash": "ecf55985f952706f3189876ac491cd8b",
-    "semantic_hash": ""
-  },
-  "jkt-web/tsconfig.spec.json": {
-    "mtime": 1785248880.1193268,
-    "ast_hash": "bd7d8d4dcf7261c37c6a35a892af2f35",
-    "semantic_hash": ""
-  },
-  "jkt-web/vitest.config.ts": {
-    "mtime": 1785291441.6086912,
-    "ast_hash": "a034b591d9cc93eb4fc6114d440d60ea",
-    "semantic_hash": ""
-  },
-  "docker-compose.yml": {
-    "mtime": 1785299900.1731665,
-    "ast_hash": "3ec66d292b07041cc790c7613a13a765",
-    "semantic_hash": ""
-  },
-  "docs/ASSETS-MANIFEST.md": {
-    "mtime": 1785291441.3275397,
-    "ast_hash": "873e020025f3946fe338bc2dadc8a229",
-    "semantic_hash": ""
-  },
-  "docs/CONCEPT.md": {
-    "mtime": 1785247575.4948194,
-    "ast_hash": "1655388b52a0014cd52542f5f1c6c76c",
-    "semantic_hash": ""
-  },
-  "docs/DESIGN.md": {
-    "mtime": 1785307430.5949783,
-    "ast_hash": "296a942e7444bf4356d090fe0e2cad00",
-    "semantic_hash": ""
-  },
-  "docs/README-ANGULAR.md": {
-    "mtime": 1785247577.1230495,
-    "ast_hash": "e296f02e464d1901d3d1b88286b6df9d",
-    "semantic_hash": ""
-  },
-  "docs/button.md": {
-    "mtime": 1785240390.4045384,
-    "ast_hash": "2e3871ec6fab2f9a97431d355b76e769",
-    "semantic_hash": ""
-  },
-  "docs/llmfull-primeng.md": {
-    "mtime": 1785240384.7213824,
-    "ast_hash": "cd11410e811c829e152f2611608e2c0d",
-    "semantic_hash": ""
-  },
-  "docs/superpowers/plans/2026-07-28-extract-angular-inline-templates.md": {
-    "mtime": 1785291441.4708319,
-    "ast_hash": "17bfa9fde7626477a8da6729577914d1",
-    "semantic_hash": ""
-  },
-  "docs/superpowers/plans/2026-07-29-mobile-responsive-scope-a.md": {
-    "mtime": 1785291441.4132028,
-    "ast_hash": "ca8779d1ea86df095623c80ea589b880",
-    "semantic_hash": ""
-  },
-  "docs/superpowers/specs/2026-07-28-glassmorphism-landing-design.md": {
-    "mtime": 1785291441.5082264,
-    "ast_hash": "201b9c7c15ec137855ed4091b0dcd508",
-    "semantic_hash": ""
-  },
-  "docs/superpowers/specs/2026-07-29-clean-frost-light-theme-design.md": {
-    "mtime": 1785313045.9085133,
-    "ast_hash": "e82297987b2011725565e273a3db5c13",
-    "semantic_hash": ""
-  },
-  "docs/superpowers/specs/2026-07-29-mobile-responsive-scope-a-design.md": {
-    "mtime": 1785291441.4899237,
-    "ast_hash": "ce3a9be13262ab9a06471b7c10524589",
-    "semantic_hash": ""
-  },
-  "jkt-web/DOKPLOY.md": {
-    "mtime": 1785295738.1606493,
-    "ast_hash": "3f6cdd7810767f4b2c5883a72a802dd3",
-    "semantic_hash": ""
-  },
-  "jkt-web/README.md": {
-    "mtime": 1785248880.110395,
-    "ast_hash": "9c5f01da8732e06016147bd61d0aafaf",
-    "semantic_hash": ""
-  },
-  "jkt-web/docker-compose.yml": {
-    "mtime": 1785295738.159655,
-    "ast_hash": "6827b23508a878d026d62f695065a807",
-    "semantic_hash": ""
-  },
   "jkt-web/src/app/app.html": {
     "mtime": 1785291441.5808072,
     "ast_hash": "57371c61d402769ab5df589b79865d93",
@@ -510,18 +350,18 @@
     "semantic_hash": ""
   },
   "jkt-web/src/app/blocks/contact-form/contact-form.component.html": {
-    "mtime": 1785336843.1856961,
-    "ast_hash": "13bd72257aaac645fdd8a50742bd0dda",
+    "mtime": 1785362463.966955,
+    "ast_hash": "548d1a98ffb4603bcfdf6af822756c6d",
     "semantic_hash": ""
   },
   "jkt-web/src/app/blocks/cta-banner/cta-banner-block.component.html": {
-    "mtime": 1785336843.1897159,
-    "ast_hash": "d3057ce65258f7d4a4a20272c700a33b",
+    "mtime": 1785362464.00839,
+    "ast_hash": "da2e2fffd90ccbb61c4bf60fc73190b5",
     "semantic_hash": ""
   },
   "jkt-web/src/app/blocks/edition-cards/edition-cards-block.component.html": {
-    "mtime": 1785336843.1934762,
-    "ast_hash": "6167e6412dc297aac3503586ee0e0174",
+    "mtime": 1785362464.0139987,
+    "ast_hash": "36bb60c01cebca8dd7eac105ebe20e67",
     "semantic_hash": ""
   },
   "jkt-web/src/app/blocks/embed/embed-block.component.html": {
@@ -535,18 +375,18 @@
     "semantic_hash": ""
   },
   "jkt-web/src/app/blocks/gallery-grid/gallery-grid-block.component.html": {
-    "mtime": 1785336843.20405,
-    "ast_hash": "7affaf7d67f02b1fdfe7374b8861c6b4",
+    "mtime": 1785362464.0254583,
+    "ast_hash": "4f2d9cf2aff9a5a01591ba3af0cb1e46",
     "semantic_hash": ""
   },
   "jkt-web/src/app/blocks/hero/hero-block.component.html": {
-    "mtime": 1785336843.2080705,
-    "ast_hash": "a9f0f0bd33a16f6f23b288ec7322f388",
+    "mtime": 1785362478.2073524,
+    "ast_hash": "d53589125d98a0bb87e680dcfc8acfd1",
     "semantic_hash": ""
   },
   "jkt-web/src/app/blocks/interactive-map/interactive-map-block.component.html": {
-    "mtime": 1785336843.211588,
-    "ast_hash": "4b7791dab35dfb74487a2d83a50e9acf",
+    "mtime": 1785362464.0375125,
+    "ast_hash": "54b8458c1a5b86c6e92a383ea6129e0f",
     "semantic_hash": ""
   },
   "jkt-web/src/app/blocks/legal-document/legal-document-block.component.html": {
@@ -555,33 +395,33 @@
     "semantic_hash": ""
   },
   "jkt-web/src/app/blocks/milestone/milestone-block.component.html": {
-    "mtime": 1785336843.2176208,
-    "ast_hash": "95e8cbb06d6e3bbd4fabd45424b483fc",
+    "mtime": 1785362464.0460656,
+    "ast_hash": "977b19bff9dd2337495abc40ba6edafe",
     "semantic_hash": ""
   },
   "jkt-web/src/app/blocks/rich-text-media/rich-text-media-block.component.html": {
-    "mtime": 1785336843.2196305,
-    "ast_hash": "1710d77995c9612c2378db013de824f9",
+    "mtime": 1785362464.0540137,
+    "ast_hash": "33e9ee65d9b7a105ecce1a4dbd66b471",
     "semantic_hash": ""
   },
   "jkt-web/src/app/blocks/sponsor-wall/sponsor-wall-block.component.html": {
-    "mtime": 1785336843.2236514,
-    "ast_hash": "d7499fd18c55d45380c9a3fe5779d4db",
+    "mtime": 1785362464.0613933,
+    "ast_hash": "f66ae488dffa8c71dceedef483886276",
     "semantic_hash": ""
   },
   "jkt-web/src/app/blocks/stats-counter/stats-counter-block.component.html": {
-    "mtime": 1785336843.2254038,
-    "ast_hash": "b40512ee4cdfa788d27a6f0706f39cb1",
+    "mtime": 1785362464.0663896,
+    "ast_hash": "d312b5017729fd5cb9b97cdbf0533a55",
     "semantic_hash": ""
   },
   "jkt-web/src/app/blocks/transportation-info/transportation-info-block.component.html": {
-    "mtime": 1785336843.2294276,
-    "ast_hash": "2b888bcb683846eea094469124e24a97",
+    "mtime": 1785362464.0743537,
+    "ast_hash": "0432ff4f78f1aadba76a662223e5d06b",
     "semantic_hash": ""
   },
   "jkt-web/src/app/layout/external-link-dialog/external-link-dialog.component.html": {
-    "mtime": 1785336843.2334507,
-    "ast_hash": "e7ca9a40719ad3d892bd4e99f7f2037c",
+    "mtime": 1785362464.0803535,
+    "ast_hash": "c3240f529fc732a53984420dc7f0861e",
     "semantic_hash": ""
   },
   "jkt-web/src/app/layout/footer/footer.component.html": {
@@ -610,138 +450,18 @@
     "semantic_hash": ""
   },
   "jkt-web/src/app/pages/partners-page/partners-page.component.html": {
-    "mtime": 1785336843.2472682,
-    "ast_hash": "3ba330c20ab6a324d568e2c24c4b2c33",
+    "mtime": 1785362464.1004565,
+    "ast_hash": "5f6bb7c6e62dfe264fbabfa9bdc7bb04",
     "semantic_hash": ""
   },
   "jkt-web/src/app/pages/schedule-page/schedule-page.component.html": {
-    "mtime": 1785336843.253299,
-    "ast_hash": "15be92cbbc6f684a45820d536e9d6b7a",
+    "mtime": 1785362464.1092865,
+    "ast_hash": "635ddfa601df4f3b3a0214e351c469ec",
     "semantic_hash": ""
   },
   "jkt-web/src/index.html": {
     "mtime": 1785291441.3420534,
     "ast_hash": "f79bf0f5b0e22f27d60c70f1badf3ce1",
-    "semantic_hash": ""
-  },
-  "jkt-web/stitch-export/landing.html": {
-    "mtime": 1785253554.5227802,
-    "ast_hash": "38d729e969c2a1d1809c91ca61f7b645",
-    "semantic_hash": ""
-  },
-  "jkt-web/stitch-export/partners.html": {
-    "mtime": 1785253576.0225422,
-    "ast_hash": "e35d7ae7dd67c481c85dc055e3e480dc",
-    "semantic_hash": ""
-  },
-  "jkt-web/stitch-export/records.html": {
-    "mtime": 1785253581.605412,
-    "ast_hash": "39a3ce6f043910e81b7de575b80b1f01",
-    "semantic_hash": ""
-  },
-  "jkt-web/stitch-export/schedule.html": {
-    "mtime": 1785253578.501688,
-    "ast_hash": "af352be0de70815e9985c9ff4c6e33d6",
-    "semantic_hash": ""
-  },
-  "docs/GENERAL JKTONE 2026 NEW GEN.pdf": {
-    "mtime": 1785229951.320871,
-    "ast_hash": "b4be4000c42d96121539de5476d284ce",
-    "semantic_hash": ""
-  },
-  "gambar.jpg": {
-    "mtime": 1785259542.8737133,
-    "ast_hash": "270b4a344670be994fc41ddf80631522",
-    "semantic_hash": ""
-  },
-  "jkt-web/public/assets/prototype/gambar.jpg": {
-    "mtime": 1785259542.8737133,
-    "ast_hash": "270b4a344670be994fc41ddf80631522",
-    "semantic_hash": ""
-  },
-  "jkt-web/public/assets/prototype/hero-backdrop.png": {
-    "mtime": 1785253586.3720517,
-    "ast_hash": "bfeff3897df2fdfe759faadbdeadbb12",
-    "semantic_hash": ""
-  },
-  "jkt-web/public/assets/prototype/hero-medal.png": {
-    "mtime": 1785253584.3939075,
-    "ast_hash": "8be5cde250851a9974891f93e0260f55",
-    "semantic_hash": ""
-  },
-  "jkt-web/public/assets/prototype/jaro-mascot.png": {
-    "mtime": 1785253721.6255019,
-    "ast_hash": "5214060784941c491d1a5854db6768b4",
-    "semantic_hash": ""
-  },
-  "jkt-web/public/assets/sponsors/gold-aria.svg": {
-    "mtime": 1785307863.7265563,
-    "ast_hash": "12cdeb77bf0ce4f359f9879c84e4666e",
-    "semantic_hash": ""
-  },
-  "jkt-web/public/assets/sponsors/gold-medcare.svg": {
-    "mtime": 1785307863.7381237,
-    "ast_hash": "a1789301472174980aaa8228dedcacec",
-    "semantic_hash": ""
-  },
-  "jkt-web/public/assets/sponsors/gold-skylink.svg": {
-    "mtime": 1785307863.7459402,
-    "ast_hash": "7723bbca50cbacd9ecf7c35b7d955e6c",
-    "semantic_hash": ""
-  },
-  "jkt-web/public/assets/sponsors/gold-volt.svg": {
-    "mtime": 1785307863.7507882,
-    "ast_hash": "f76d00535628782ea7e5daefca3f3f3f",
-    "semantic_hash": ""
-  },
-  "jkt-web/public/assets/sponsors/platinum-aqua.svg": {
-    "mtime": 1785307863.7532544,
-    "ast_hash": "9116aa4e25d5c52f7bc6667354228432",
-    "semantic_hash": ""
-  },
-  "jkt-web/public/assets/sponsors/platinum-bank.svg": {
-    "mtime": 1785307863.75527,
-    "ast_hash": "465e7200ec9917cbea6fb7e8d9f9f79a",
-    "semantic_hash": ""
-  },
-  "jkt-web/public/assets/sponsors/platinum-chrono.svg": {
-    "mtime": 1785307863.7572856,
-    "ast_hash": "7be8964e3ce402f48f57541321765db9",
-    "semantic_hash": ""
-  },
-  "jkt-web/public/assets/sponsors/title-omni.svg": {
-    "mtime": 1785291441.5808072,
-    "ast_hash": "467280a1b7ca89265962fa70ab6af5ce",
-    "semantic_hash": ""
-  },
-  "jkt-web/stitch-export/landing.png": {
-    "mtime": 1785253555.1225562,
-    "ast_hash": "8b3e34bfea36987b7da776614aef27f2",
-    "semantic_hash": ""
-  },
-  "jkt-web/stitch-export/medal.png": {
-    "mtime": 1785253584.3939075,
-    "ast_hash": "8be5cde250851a9974891f93e0260f55",
-    "semantic_hash": ""
-  },
-  "jkt-web/stitch-export/partners.png": {
-    "mtime": 1785253576.8721137,
-    "ast_hash": "36a865fc42e20f3b41eec963c971c322",
-    "semantic_hash": ""
-  },
-  "jkt-web/stitch-export/records.png": {
-    "mtime": 1785253582.4054284,
-    "ast_hash": "e9790dd9b286381b79ca2bdaef534601",
-    "semantic_hash": ""
-  },
-  "jkt-web/stitch-export/runner.png": {
-    "mtime": 1785253586.3720517,
-    "ast_hash": "bfeff3897df2fdfe759faadbdeadbb12",
-    "semantic_hash": ""
-  },
-  "jkt-web/stitch-export/schedule.png": {
-    "mtime": 1785253579.088875,
-    "ast_hash": "11e403b863626bd4347c603789e077bf",
     "semantic_hash": ""
   }
 }

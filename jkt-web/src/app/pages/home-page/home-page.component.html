@@ -1,5 +1,5 @@
 <!--
-  Home page — dedicated HTML template (same pattern as schedule / partners).
+  Home page template (same pattern as schedule / partners).
   Layout sections live here; visual pieces reuse block components under src/app/blocks/.
   Edit copy in home-page.component.ts, or tweak markup/structure in this file.
 -->
@@ -22,7 +22,31 @@
     <app-block-edition-cards [data]="stages" />
   </div>
 
-  <!-- 5. Bottom CTA -->
+  <!-- 5. RPC Mini Expo -->
+  <section class="px-4 py-10 sm:px-6 sm:py-12 md:px-8" appReveal>
+    <div class="mx-auto max-w-[1400px]">
+      <h2 class="font-display text-2xl font-bold text-chalk sm:text-3xl">Race Pack Collection</h2>
+      <p class="mt-2 max-w-2xl font-body text-sm text-chalk/80 sm:text-base">
+        Every stage comes with a Mini Expo. Pick up your race pack, then stay for the village.
+      </p>
+      <ul class="mt-6 flex flex-wrap gap-2 sm:gap-3">
+        @for (item of rpcExpo; track item.id) {
+          <li
+            class="glass-tier-1 rounded border border-glass-border px-3 py-2 font-label text-sm font-medium text-chalk/80 sm:px-4"
+          >
+            {{ item.label }}
+          </li>
+        }
+      </ul>
+    </div>
+  </section>
+
+  <!-- 6. 5-year milestone -->
+  <div appReveal>
+    <app-block-milestone [data]="milestones" />
+  </div>
+
+  <!-- 7. Bottom CTA -->
   <div appReveal>
     <app-block-cta-banner [data]="cta" />
   </div>

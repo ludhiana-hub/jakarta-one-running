@@ -9,7 +9,7 @@
           <input
             type="text"
             formControlName="name"
-            class="mt-2 w-full px-4 py-3 rounded-2xl bg-void border border-glass-border text-chalk outline-none focus:border-ember"
+            class="mt-2 w-full px-4 py-3 rounded bg-void border border-glass-border text-chalk outline-none focus:border-ember"
             autocomplete="name"
           />
           @if (ctrl('name').touched && ctrl('name').invalid) {
@@ -22,7 +22,7 @@
           <input
             type="email"
             formControlName="email"
-            class="mt-2 w-full px-4 py-3 rounded-2xl bg-void border border-glass-border text-chalk outline-none focus:border-ember"
+            class="mt-2 w-full px-4 py-3 rounded bg-void border border-glass-border text-chalk outline-none focus:border-ember"
             autocomplete="email"
           />
           @if (ctrl('email').touched && ctrl('email').invalid) {
@@ -36,7 +36,7 @@
         <textarea
           formControlName="message"
           rows="5"
-          class="mt-2 w-full px-4 py-3 rounded-2xl bg-void border border-glass-border text-chalk outline-none focus:border-ember"
+          class="mt-2 w-full px-4 py-3 rounded bg-void border border-glass-border text-chalk outline-none focus:border-ember"
         ></textarea>
         @if (ctrl('message').touched && ctrl('message').invalid) {
           <div class="mt-1 text-ember text-sm">Pesan wajib diisi.</div>

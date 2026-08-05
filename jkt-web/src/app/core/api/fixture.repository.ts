@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
 
 import siteFixture from '../../../assets/fixtures/site.json';
+import menuFixture from '../../../assets/fixtures/menu.json';
 import homeFixture from '../../../assets/fixtures/home.json';
 import tentangFixture from '../../../assets/fixtures/tentang.json';
 import galeriFixture from '../../../assets/fixtures/galeri.json';
@@ -11,6 +12,7 @@ import kontakFixture from '../../../assets/fixtures/kontak.json';
 
 import { BlockRepository } from './block.repository';
 import { Edition } from '../models/edition';
+import { MenuResponse } from '../models/menu-response';
 import { PageResponse } from '../models/page-response';
 import { SiteResponse } from '../models/site-response';
 
@@ -41,6 +43,10 @@ export class FixtureBlockRepository extends BlockRepository {
     const found = s.editions.find((e) => e.slug === slug);
     if (!found) return throwError(() => new Error(`Fixture edition not found: ${slug}`));
     return of(found);
+  }
+
+  menu(): Observable<MenuResponse> {
+    return of(menuFixture as MenuResponse);
   }
 }
 

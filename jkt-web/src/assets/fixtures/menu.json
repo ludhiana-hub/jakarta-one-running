@@ -1,0 +1,36 @@
+{
+  "menu": [
+    {
+      "label": { "id": "Beranda", "en": "Home" },
+      "type": "page",
+      "url": "/",
+      "linkable_type": null,
+      "linkable_id": null,
+      "children": []
+    },
+    {
+      "label": { "id": "Jadwal", "en": "Schedule" },
+      "type": "external",
+      "url": "/schedule",
+      "linkable_type": null,
+      "linkable_id": null,
+      "children": []
+    },
+    {
+      "label": { "id": "Mitra", "en": "Partners" },
+      "type": "external",
+      "url": "/partners",
+      "linkable_type": null,
+      "linkable_id": null,
+      "children": []
+    },
+    {
+      "label": { "id": "Daftar", "en": "Register" },
+      "type": "external",
+      "url": "https://example.com/jakarta-one/register",
+      "linkable_type": null,
+      "linkable_id": null,
+      "children": []
+    }
+  ]
+}

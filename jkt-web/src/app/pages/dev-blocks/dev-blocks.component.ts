@@ -32,14 +32,15 @@ const DEV_BLOCKS: PageBlock[] = [
     id: 'dev_edition_cards',
     type: 'edition_cards',
     data: {
+      heading: { id: 'The 5 Stages' },
       items: [
         {
-          id: 'ec1',
+          id: 'central',
           slug: 'central',
           name: { id: 'Central' },
-          subtitle: { id: 'Lapangan Banteng' },
-          cta_url: '/schedule',
-          theme_accent: '#0072B5',
+          race_date: '2026-07-05',
+          theme: { accent: '#0072B5' },
+          registration_phases: [],
         },
       ],
     },

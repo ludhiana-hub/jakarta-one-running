@@ -7,6 +7,7 @@ export interface Edition {
   slug: string; // URL slug, e.g. "east"
   name: TranslatedString;
   race_date: string; // ISO date
+  race_date_end?: string | null; // ISO date, present only for multi-day editions
   venue?: TranslatedString;
   theme: {
     /**

@@ -4,45 +4,58 @@
   <div class="mx-auto flex max-w-[1400px] items-center justify-between gap-3">
     <a
       routerLink="/"
-      class="min-w-0 font-display text-base font-bold tracking-tight text-primary sm:text-lg md:text-2xl"
+      class="flex min-w-0 items-center gap-2"
       (click)="closeMenu()"
+      aria-label="Jakarta One Running 2026 home"
     >
-      <span class="md:hidden">Jakarta One <span class="text-chalk">’26</span></span>
-      <span class="hidden md:inline"
-        >Jakarta One Running <span class="text-chalk">2026</span></span
-      >
+      <img
+        ngSrc="/assets/logo-nav.webp"
+        width="398"
+        height="128"
+        alt="Jakarta One Running 2026"
+        class="h-11 w-auto max-w-[min(70vw,16rem)] object-contain object-left sm:h-12 sm:max-w-[20rem] md:h-14 md:max-w-[24rem]"
+        priority
+      />
     </a>
 
     <nav class="hidden items-center gap-8 md:flex" aria-label="Primary">
-      <a
-        routerLink="/"
-        routerLinkActive="nav-active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        class="nav-link font-body text-sm font-medium text-on-surface-variant transition hover:text-primary"
-        >Home</a
-      >
-      <a
-        routerLink="/schedule"
-        routerLinkActive="nav-active"
-        class="nav-link font-body text-sm font-medium text-on-surface-variant transition hover:text-primary"
-        >Schedule</a
-      >
-      <a
-        routerLink="/partners"
-        routerLinkActive="nav-active"
-        class="nav-link font-body text-sm font-medium text-on-surface-variant transition hover:text-primary"
-        >Partners</a
-      >
+      @for (item of navLinks(); track item.url) {
+        @if (isInternal(item)) {
+          <a
+            [routerLink]="item.url"
+            routerLinkActive="nav-active"
+            [routerLinkActiveOptions]="{ exact: item.url === '/' }"
+            class="nav-link font-body text-sm font-medium text-on-surface-variant transition hover:text-primary"
+            >{{ item.label.en ?? item.label.id }}</a
+          >
+        } @else {
+          <button
+            type="button"
+            class="nav-link font-body text-sm font-medium text-on-surface-variant transition hover:text-primary"
+            (click)="openExternal(item.url!)"
+          >
+            {{ item.label.en ?? item.label.id }}
+          </button>
+        }
+      }
     </nav>
 
     <div class="flex shrink-0 items-center gap-2 sm:gap-3">
-      <button
-        type="button"
-        class="btn-cta btn-cta-pill bg-ember text-white max-md:px-3 max-md:text-xs"
-        (click)="openExternal('https://example.com/jakarta-one/register')"
-      >
-        Register
-      </button>
+      @if (ctaItem(); as cta) {
+        @if (isInternal(cta)) {
+          <a [routerLink]="cta.url" class="btn-cta btn-cta-pill bg-ember text-white max-md:px-3 max-md:text-xs">
+            {{ cta.label.en ?? cta.label.id }}
+          </a>
+        } @else {
+          <button
+            type="button"
+            class="btn-cta btn-cta-pill bg-ember text-white max-md:px-3 max-md:text-xs"
+            (click)="openExternal(cta.url!)"
+          >
+            {{ cta.label.en ?? cta.label.id }}
+          </button>
+        }
+      }
 
       <button
         type="button"
@@ -76,36 +89,38 @@
   [attr.aria-hidden]="!menuOpen()"
 >
   <nav class="flex flex-col gap-1 p-6 pt-20" aria-label="Mobile">
-    <a
-      routerLink="/"
-      routerLinkActive="nav-drawer__link--active"
-      [routerLinkActiveOptions]="{ exact: true }"
-      class="nav-drawer__link"
-      (click)="closeMenu()"
-      >Home</a
-    >
-    <a
-      routerLink="/schedule"
-      routerLinkActive="nav-drawer__link--active"
-      class="nav-drawer__link"
-      (click)="closeMenu()"
-      >Schedule</a
-    >
-    <a
-      routerLink="/partners"
-      routerLinkActive="nav-drawer__link--active"
-      class="nav-drawer__link"
-      (click)="closeMenu()"
-      >Partners</a
-    >
+    @for (item of navLinks(); track item.url) {
+      @if (isInternal(item)) {
+        <a
+          [routerLink]="item.url"
+          routerLinkActive="nav-drawer__link--active"
+          [routerLinkActiveOptions]="{ exact: item.url === '/' }"
+          class="nav-drawer__link"
+          (click)="closeMenu()"
+          >{{ item.label.en ?? item.label.id }}</a
+        >
+      } @else {
+        <button type="button" class="nav-drawer__link text-left" (click)="openExternal(item.url!)">
+          {{ item.label.en ?? item.label.id }}
+        </button>
+      }
+    }
 
-    <button
-      type="button"
-      class="btn-cta btn-cta-lg mt-6 w-full"
-      (click)="openExternal('https://example.com/jakarta-one/register')"
-    >
-      Register
-    </button>
+    @if (ctaItem(); as cta) {
+      @if (isInternal(cta)) {
+        <a [routerLink]="cta.url" class="btn-cta btn-cta-lg mt-6 w-full" (click)="closeMenu()">
+          {{ cta.label.en ?? cta.label.id }}
+        </a>
+      } @else {
+        <button
+          type="button"
+          class="btn-cta btn-cta-lg mt-6 w-full"
+          (click)="openExternal(cta.url!)"
+        >
+          {{ cta.label.en ?? cta.label.id }}
+        </button>
+      }
+    }
   </nav>
 </aside>
 

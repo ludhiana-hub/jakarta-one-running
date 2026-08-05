@@ -1,0 +1,63 @@
+<section class="my-12 px-4 sm:px-6 md:px-8">
+  <div class="mx-auto max-w-6xl">
+    <div class="glass-tier1 rounded border border-glass-border p-7">
+      @if (data().heading) {
+        <h2 class="font-display text-3xl font-bold text-chalk sm:text-4xl">
+          {{ data().heading | tr }}
+        </h2>
+      }
+
+      <p class="mt-2 font-mono text-sm uppercase tracking-widest text-mist">
+        {{ data().edition_slug }}
+      </p>
+
+      @if (data().route_description) {
+        <p class="mt-4 font-body leading-relaxed text-chalk/80">
+          {{ data().route_description | tr }}
+        </p>
+      }
+
+      <dl class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
+        @if (data().rpc_venue) {
+          <div>
+            <dt class="font-mono text-xs uppercase text-mist">RPC</dt>
+            <dd class="mt-1 text-chalk">{{ data().rpc_venue }}</dd>
+          </div>
+        }
+        @if (data().village_open) {
+          <div>
+            <dt class="font-mono text-xs uppercase text-mist">Village open</dt>
+            <dd class="mt-1 text-chalk">{{ data().village_open }}</dd>
+          </div>
+        }
+        @if (data().village_close) {
+          <div>
+            <dt class="font-mono text-xs uppercase text-mist">Village close</dt>
+            <dd class="mt-1 text-chalk">{{ data().village_close }}</dd>
+          </div>
+        }
+      </dl>
+
+      <div class="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
+        @if (data().medal_image) {
+          <img
+            [ngSrc]="data().medal_image!"
+            width="640"
+            height="480"
+            class="h-auto w-full rounded object-cover"
+            alt="Medal"
+          />
+        }
+        @if (data().map_image) {
+          <img
+            [ngSrc]="data().map_image!"
+            width="640"
+            height="480"
+            class="h-auto w-full rounded object-cover"
+            alt="Route map"
+          />
+        }
+      </div>
+    </div>
+  </div>
+</section>

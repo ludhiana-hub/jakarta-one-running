@@ -10,9 +10,9 @@
       "name": {
         "id": "East"
       },
-      "race_date": "2026-05-10T06:00:00.000Z",
+      "race_date": "2026-11-01T00:00:00.000Z",
       "venue": {
-        "id": "Velodrome"
+        "id": "Jakarta International Velodrome"
       },
       "theme": {
         "accent": "#8C8C8C"
@@ -23,8 +23,8 @@
           "name": {
             "id": "Pendaftaran"
           },
-          "opens_at": "2026-03-01T00:00:00.000Z",
-          "closes_at": "2026-05-01T23:59:59.000Z",
+          "opens_at": "2026-09-02T00:00:00.000Z",
+          "closes_at": "2026-10-27T00:00:00.000Z",
           "price": 195000,
           "registration_url": "https://example.com/jakarta-one/east/register"
         }
@@ -36,7 +36,7 @@
       "name": {
         "id": "West"
       },
-      "race_date": "2026-05-24T06:00:00.000Z",
+      "race_date": "2027-01-17T00:00:00.000Z",
       "venue": {
         "id": "Puri Kembangan"
       },
@@ -49,8 +49,8 @@
           "name": {
             "id": "Pendaftaran"
           },
-          "opens_at": "2026-03-10T00:00:00.000Z",
-          "closes_at": "2026-05-15T23:59:59.000Z",
+          "opens_at": "2026-11-18T00:00:00.000Z",
+          "closes_at": "2027-01-12T00:00:00.000Z",
           "price": 195000,
           "registration_url": "https://example.com/jakarta-one/west/register"
         }
@@ -62,7 +62,7 @@
       "name": {
         "id": "South"
       },
-      "race_date": "2026-06-07T06:00:00.000Z",
+      "race_date": "2027-03-21T00:00:00.000Z",
       "venue": {
         "id": "Prapanca"
       },
@@ -75,8 +75,8 @@
           "name": {
             "id": "Pendaftaran"
           },
-          "opens_at": "2026-03-20T00:00:00.000Z",
-          "closes_at": "2026-05-29T23:59:59.000Z",
+          "opens_at": "2027-01-20T00:00:00.000Z",
+          "closes_at": "2027-03-16T00:00:00.000Z",
           "price": 195000,
           "registration_url": "https://example.com/jakarta-one/south/register"
         }
@@ -88,7 +88,7 @@
       "name": {
         "id": "North"
       },
-      "race_date": "2026-06-21T06:00:00.000Z",
+      "race_date": "2027-04-25T00:00:00.000Z",
       "venue": {
         "id": "Ancol"
       },
@@ -101,8 +101,8 @@
           "name": {
             "id": "Pendaftaran"
           },
-          "opens_at": "2026-03-30T00:00:00.000Z",
-          "closes_at": "2026-06-12T23:59:59.000Z",
+          "opens_at": "2027-02-24T00:00:00.000Z",
+          "closes_at": "2027-04-20T00:00:00.000Z",
           "price": 195000,
           "registration_url": "https://example.com/jakarta-one/north/register"
         }
@@ -114,7 +114,7 @@
       "name": {
         "id": "Central"
       },
-      "race_date": "2026-07-05T06:00:00.000Z",
+      "race_date": "2027-06-06T00:00:00.000Z",
       "venue": {
         "id": "Lapangan Banteng"
       },
@@ -127,8 +127,8 @@
           "name": {
             "id": "Pendaftaran"
           },
-          "opens_at": "2026-04-01T00:00:00.000Z",
-          "closes_at": "2026-06-26T23:59:59.000Z",
+          "opens_at": "2027-04-07T00:00:00.000Z",
+          "closes_at": "2027-06-01T00:00:00.000Z",
           "price": 195000,
           "registration_url": "https://example.com/jakarta-one/central/register"
         }
@@ -136,4 +136,3 @@
     }
   ]
 }
-

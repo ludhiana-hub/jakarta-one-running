@@ -13,10 +13,12 @@
     <div class="space-y-5 sm:space-y-6 lg:col-span-7">
       @if (data().badge) {
         <div
-          class="glass-tier-1 inline-flex max-w-full items-center gap-2 rounded-full border border-glass-border px-3 py-1.5 sm:px-4"
+          class="glass-tier-1 inline-flex max-w-full items-center gap-2 rounded border border-glass-border px-3 py-1.5 sm:px-4"
         >
           <span class="h-2 w-2 shrink-0 animate-pulse rounded-full bg-west-red"></span>
-          <span class="truncate font-mono text-[10px] uppercase tracking-widest text-chalk sm:text-xs">{{
+          <span
+            class="truncate font-label text-xs font-semibold uppercase tracking-[0.12em] text-chalk sm:text-sm"
+            >{{
             data().badge | tr
           }}</span>
         </div>
@@ -53,7 +55,7 @@
         }
         <a
           routerLink="/schedule"
-          class="glass-tier-1 w-full rounded-lg border border-glass-border px-6 py-3.5 text-center font-display text-base font-bold text-chalk transition hover:bg-black/5 sm:w-auto sm:px-8 sm:py-4 sm:text-lg"
+          class="glass-tier-1 w-full rounded border border-glass-border px-6 py-3.5 text-center font-display text-base font-bold text-chalk transition hover:bg-black/5 sm:w-auto sm:px-8 sm:py-4 sm:text-lg"
         >
           View Routes
         </a>
@@ -70,7 +72,7 @@
           class="absolute -inset-6 rounded-full bg-west-red/20 blur-[80px] transition-all duration-700 group-hover:bg-west-red/30 sm:-inset-10 sm:blur-[100px]"
         ></div>
         <div
-          class="medal-inner glass-tier-3 noise-overlay relative z-10 flex flex-col items-center rounded-2xl border-2 border-west-red/30 p-5 shadow-[0_0_50px_rgba(204,0,0,0.25)] sm:rounded-3xl sm:p-8"
+          class="medal-inner glass-tier-3 noise-overlay relative z-10 flex flex-col items-center rounded border-2 border-west-red/30 p-5 shadow-[0_0_50px_rgba(204,0,0,0.25)] sm:p-8"
         >
           <img
             ngSrc="/assets/prototype/hero-medal.png"

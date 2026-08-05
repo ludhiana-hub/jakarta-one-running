@@ -5,11 +5,14 @@ import { HeroBlockComponent } from '../../blocks/hero/hero-block.component';
 import { StatsCounterBlockComponent } from '../../blocks/stats-counter/stats-counter-block.component';
 import { RichTextMediaBlockComponent } from '../../blocks/rich-text-media/rich-text-media-block.component';
 import { EditionCardsBlockComponent } from '../../blocks/edition-cards/edition-cards-block.component';
+import { MilestoneBlockComponent } from '../../blocks/milestone/milestone-block.component';
 import { CtaBannerBlockComponent } from '../../blocks/cta-banner/cta-banner-block.component';
+import { JKTONE_MILESTONES, stagesToEditions } from '../../core/data/jktone-stages';
 import { HeroBlockData } from '../../core/models/blocks/hero.block';
 import { StatsCounterBlockData } from '../../core/models/blocks/stats-counter.block';
 import { RichTextMediaBlockData } from '../../core/models/blocks/rich-text-media.block';
 import { EditionCardsBlockData } from '../../core/models/blocks/edition-cards.block';
+import { MilestoneBlockData } from '../../core/models/blocks/milestone.block';
 import { CtaBannerBlockData } from '../../core/models/blocks/cta-banner.block';
 import { SeoService } from '../../core/seo.service';
 import { JsonLdService } from '../../core/json-ld.service';
@@ -25,6 +28,7 @@ import { RevealDirective } from '../../shared/directives/reveal.directive';
     StatsCounterBlockComponent,
     RichTextMediaBlockComponent,
     EditionCardsBlockComponent,
+    MilestoneBlockComponent,
     CtaBannerBlockComponent,
     RevealDirective,
   ],
@@ -37,12 +41,12 @@ export class HomePageComponent {
   private readonly tenant = inject(TenantService);
   private readonly theme = inject(ThemeService);
 
-  /** Home section data — edit here or in the HTML bindings below. */
+  /** Home section data. Edit copy here, or markup in the HTML template. */
   protected readonly hero: HeroBlockData = {
     badge: { id: 'Jakarta 500th Anniversary' },
     title: { id: 'ONE CITY, ONE CELEBRATION' },
     tagline: {
-      id: '500 Years, 5 Regions, 5.00 Kilometers Each. Run through history and culture in the ultimate urban series.',
+      id: '500 years of Jakarta, 5 regions, 5.00 km each. One running series across the capital, with five medals to collect and one celebration to finish.',
     },
     bg_image: '/assets/prototype/gambar.jpg',
     cta_label: { id: 'Join the Series' },
@@ -52,69 +56,49 @@ export class HomePageComponent {
   protected readonly stats: StatsCounterBlockData = {
     items: [
       { id: 'stat_routes', label: { id: 'The Challenge' }, value: '5 Routes' },
-      { id: 'stat_runners', label: { id: 'Community' }, value: '25k+ Runners' },
+      { id: 'stat_runners', label: { id: 'Community' }, value: '25.000 Runners' },
       { id: 'stat_medals', label: { id: 'Achievement' }, value: '5 Medals' },
-      { id: 'stat_price', label: { id: 'Registration' }, value: 'Rp 195k' },
+      { id: 'stat_price', label: { id: 'Registration' }, value: 'Rp 195.000' },
     ],
   };
 
   protected readonly jaro: RichTextMediaBlockData = {
     title: { id: 'JARO THE CROC' },
     body: {
-      id: 'Jaro is the official mascot of the Jakarta One Running Series. Representing resilience, agility, and the spirit of the city\'s rivers, Jaro will be with you at every starting line, cheering you on through the 5 regions of Jakarta.',
+      id: 'Jaro is the official mascot of Jakarta One Running Series, a crocodile rooted in the city’s rivers and its resilience. Loyal, resilient, strong, patient and adaptive. Meet Jaro at every starting line as you run through all five regions.',
     },
     media_image: '/assets/prototype/jaro-mascot.png',
     media_alt: { id: 'Jaro the Croc mascot' },
   };
 
+  /** Brief-aligned catalog, always filled even when CMS editions are empty. */
   protected readonly stages: EditionCardsBlockData = {
-    items: [
-      {
-        id: 'ed_east',
-        slug: 'east',
-        name: { id: 'East Jakarta' },
-        subtitle: { id: 'The Cultural Gateway' },
-        cta_url: '/schedule',
-        theme_accent: '#8C8C8C',
-      },
-      {
-        id: 'ed_west',
-        slug: 'west',
-        name: { id: 'West Jakarta' },
-        subtitle: { id: 'The Heritage Trail' },
-        cta_url: '/schedule',
-        theme_accent: '#CC0000',
-      },
-      {
-        id: 'ed_south',
-        slug: 'south',
-        name: { id: 'South Jakarta' },
-        subtitle: { id: 'The Green Corridor' },
-        cta_url: '/schedule',
-        theme_accent: '#C4D600',
-      },
-      {
-        id: 'ed_north',
-        slug: 'north',
-        name: { id: 'North Jakarta' },
-        subtitle: { id: 'The Coastal Run' },
-        cta_url: '/schedule',
-        theme_accent: '#4DD0E1',
-      },
-      {
-        id: 'ed_central',
-        slug: 'central',
-        name: { id: 'Central Jakarta' },
-        subtitle: { id: 'The Heart of City' },
-        cta_url: '/schedule',
-        theme_accent: '#0072B5',
-      },
-    ],
+    heading: { id: 'THE 5 STAGES' },
+    items: stagesToEditions(),
   };
 
+  protected readonly milestones: MilestoneBlockData = {
+    items: JKTONE_MILESTONES.map((m) => ({
+      id: m.id,
+      year: m.year,
+      title: { id: m.title },
+      description: { id: m.description },
+    })),
+  };
+
+  protected readonly rpcExpo = [
+    { id: 'hydration', label: 'Hydration' },
+    { id: 'gear', label: 'Gear' },
+    { id: 'photo', label: 'Photo' },
+    { id: 'apparel', label: 'Apparel' },
+    { id: 'wall', label: 'Wall of Spirit' },
+  ] as const;
+
   protected readonly cta: CtaBannerBlockData = {
-    title: { id: 'Ready for Jakarta One 2026?' },
-    subtitle: { id: 'Lihat jadwal stage dan daftar sekarang.' },
+    title: { id: 'Ready for Jakarta One?' },
+    subtitle: {
+      id: 'East Jakarta opens the series on 1 November 2026. See the full path to the Central championship.',
+    },
     cta_label: { id: 'View Schedule' },
     cta_url: '/schedule',
   };
@@ -123,7 +107,7 @@ export class HomePageComponent {
     this.seo.apply({
       meta_title: { id: 'Jakarta One Running 2026 | One City, One Celebration' },
       meta_description: {
-        id: '500 Years, 5 Regions, 5.00 Kilometers Each. Run through history and culture in the ultimate urban series.',
+        id: '500 years of Jakarta, 5 regions, 5.00 km each. One running series from East in November 2026 to the Central championship in June 2027.',
       },
       og_image: '/assets/prototype/hero-backdrop.png',
       noindex: false,
@@ -132,7 +116,7 @@ export class HomePageComponent {
 
     this.jsonLd.setSportsEvent({
       name: 'Jakarta One Running Series',
-      startDate: '2026-05-10T06:00:00.000Z',
+      startDate: '2026-11-01T00:00:00.000Z',
       locationName: 'Jakarta',
     });
 

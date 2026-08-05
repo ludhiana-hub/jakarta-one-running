@@ -1,15 +1,9 @@
+import { Edition } from '../edition';
 import { TranslatedString } from '../translated';
 
-export interface EditionCardItem {
-  id: string;
-  slug: string;
-  name: TranslatedString;
-  subtitle?: TranslatedString;
-  cta_url: string;
-  theme_accent: string; // edition accent hex
-}
+export type EditionCardItem = Edition;
 
 export interface EditionCardsBlockData {
+  heading?: TranslatedString;
   items: EditionCardItem[];
 }
-

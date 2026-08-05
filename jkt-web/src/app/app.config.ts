@@ -1,7 +1,7 @@
 import { ApplicationConfig, provideAppInitializer, provideZonelessChangeDetection, inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser, IMAGE_LOADER, ImageLoaderConfig } from '@angular/common';
 import { provideRouter, withInMemoryScrolling, withViewTransitions } from '@angular/router';
-import { provideHttpClient, withFetch } from '@angular/common/http';
+import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
 import { provideClientHydration, withEventReplay, withIncrementalHydration } from '@angular/platform-browser';
 
 import { routes } from './app.routes';
@@ -10,7 +10,10 @@ import { PrimeNG, providePrimeNG } from 'primeng/config';
 import Aura from '@primeuix/themes/aura';
 
 import { BlockRepository } from './core/api/block.repository';
+import { cmsHostInterceptor } from './core/api/cms-host.interceptor';
 import { FixtureBlockRepository } from './core/api/fixture.repository';
+import { HttpBlockRepository } from './core/api/http-block.repository';
+import { environment } from '../environments/environment';
 
 function passthroughImageLoader(config: ImageLoaderConfig): string {
   return config.src;
@@ -37,7 +40,10 @@ function suppressPrimeLicenseBanner(): void {
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    { provide: BlockRepository, useClass: FixtureBlockRepository },
+    {
+      provide: BlockRepository,
+      useClass: environment.useCmsApi ? HttpBlockRepository : FixtureBlockRepository,
+    },
     { provide: IMAGE_LOADER, useValue: passthroughImageLoader },
     provideZonelessChangeDetection(),
     provideRouter(
@@ -45,7 +51,7 @@ export const appConfig: ApplicationConfig = {
       withInMemoryScrolling({ anchorScrolling: 'enabled', scrollPositionRestoration: 'top' }),
       withViewTransitions(),
     ),
-    provideHttpClient(withFetch()),
+    provideHttpClient(withFetch(), withInterceptors([cmsHostInterceptor])),
     provideClientHydration(withEventReplay(), withIncrementalHydration()),
     providePrimeNG({
       theme: {

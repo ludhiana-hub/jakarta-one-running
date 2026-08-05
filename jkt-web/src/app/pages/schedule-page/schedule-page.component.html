@@ -2,7 +2,7 @@
   <div class="mx-auto max-w-6xl px-4 pb-20 pt-24 sm:px-6 sm:pb-32 sm:pt-32 md:px-8">
     <header class="mb-14 text-center sm:mb-24" appReveal>
       <div
-        class="glass-tier-1 mb-6 inline-flex items-center gap-2 rounded-full px-3 py-1.5 font-mono text-[10px] uppercase tracking-widest text-primary sm:mb-8 sm:px-4 sm:text-xs"
+        class="glass-tier-1 mb-6 inline-flex items-center gap-2 rounded px-3 py-1.5 font-label text-xs font-semibold uppercase tracking-[0.12em] text-primary sm:mb-8 sm:px-4"
       >
         Race Calendar
       </div>
@@ -10,149 +10,226 @@
         Path to Championship
       </h1>
       <p class="mx-auto max-w-2xl font-body text-base text-on-surface-variant sm:text-lg">
-        Journey through five iconic stages. Each region offers a unique challenge, leading to the
-        ultimate showdown in Central Jakarta.
+        Five regions, 5.00 km each, one series. It starts in East Jakarta and ends with the
+        championship at Lapangan Banteng.
       </p>
     </header>
 
-    @if (stages$ | async; as stages) {
-      <div class="timeline relative space-y-10 sm:space-y-16">
-        <!-- Vertical spine: connects every stage marker -->
-        <div class="timeline-spine" aria-hidden="true">
-          <div class="timeline-spine__track"></div>
-          <div class="timeline-spine__flow"></div>
-        </div>
-
-        @for (stage of stages; track stage.slug) {
-          @if (!stage.isFinale) {
-            <div
-              class="group relative flex flex-col items-center gap-6 sm:gap-8 md:gap-16"
-              appReveal
-              [class.timeline-reverse]="stage.reverse"
-              [class.timeline-forward]="!stage.reverse"
-            >
-              <div
-                class="hidden flex-1 md:block"
-                [class.text-right]="!stage.reverse"
-                [class.text-left]="stage.reverse"
-              >
-                <div class="font-mono text-3xl font-bold opacity-40" [style.color]="stage.accent">
-                  {{ stage.pad }}
-                </div>
-              </div>
-
-              <div
-                class="timeline-dot relative z-10 hidden md:flex"
-                [style.--dot-accent]="stage.accent"
-              >
-                <span class="timeline-dot__core"></span>
-                <span class="timeline-dot__ring"></span>
-              </div>
-
-              <div class="w-full min-w-0 flex-1">
-                <div
-                  class="stage-card glass-tier-2 rounded-2xl border-transparent p-5 sm:p-8"
-                  [class.border-l-4]="!stage.reverse"
-                  [class.border-r-4]="stage.reverse"
-                  [class.text-right-md]="stage.reverse"
-                  [style.borderLeftColor]="!stage.reverse ? stage.accent + '80' : null"
-                  [style.borderRightColor]="stage.reverse ? stage.accent + '80' : null"
-                >
-                  <div
-                    class="mb-5 flex items-start justify-between gap-3 sm:mb-6"
-                    [class.flex-row-reverse]="stage.reverse"
-                  >
-                    <div class="min-w-0" [class.md-align-end]="stage.reverse">
-                      <div
-                        class="mb-1 font-mono text-xs uppercase tracking-tighter sm:text-sm"
-                        [style.color]="stage.accent"
-                      >
-                        {{ stage.monthLabel }}
-                      </div>
-                      <h3 class="font-display text-2xl text-chalk/90 sm:text-3xl">{{ stage.title }}</h3>
-                    </div>
-                    <span
-                      class="shrink-0 font-mono text-xl opacity-40 sm:text-2xl md:hidden"
-                      [style.color]="stage.accent"
-                      aria-hidden="true"
-                      >{{ stage.pad }}</span
-                    >
-                  </div>
-                  <p class="mb-6 font-body text-sm text-mist sm:mb-8 sm:text-base">{{ stage.venue }}</p>
-                  <a
-                    routerLink="/schedule"
-                    class="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-chalk/70 transition-colors hover:text-chalk"
-                    [class.flex-row-reverse]="stage.reverse"
-                  >
-                    Details <span aria-hidden="true">→</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          } @else {
-            <div class="flex justify-center pt-4 sm:pt-8" appReveal>
-              <div
-                class="stage-card glass-tier-3 w-full max-w-4xl overflow-hidden rounded-[1.5rem] border border-central-blue/30 p-1 sm:rounded-[2rem]"
-              >
-                <div class="flex flex-col items-center gap-8 p-5 sm:gap-12 sm:p-8 md:flex-row md:p-12">
-                  <div class="flex-1 text-center md:text-left">
-                    <div
-                      class="mb-4 inline-flex items-center gap-2 rounded-full bg-central-blue/20 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-central-blue sm:mb-6"
-                    >
-                      The Grand Finale
-                    </div>
-                    <h2 class="mb-3 font-display text-3xl text-chalk sm:mb-4 sm:text-4xl md:text-6xl">
-                      {{ stage.title }}
-                    </h2>
-                    <p class="mb-6 font-mono text-sm uppercase text-mist sm:mb-8 sm:text-lg">
-                      {{ stage.monthLabel }} · {{ stage.venue }}
-                    </p>
-                    <button
-                      type="button"
-                      class="w-full rounded-xl bg-central-blue px-6 py-3.5 font-bold text-white shadow-[0_0_30px_rgba(0,114,181,0.3)] transition-all hover:scale-105 sm:w-auto sm:px-10 sm:py-4"
-                      (click)="openExternal(stage.registrationUrl)"
-                    >
-                      Register for Championship
-                    </button>
-                  </div>
-                  <div
-                    class="relative aspect-square w-full max-w-[16rem] overflow-hidden rounded-2xl border border-glass-border sm:w-64"
-                  >
-                    <img
-                      ngSrc="/assets/prototype/hero-medal.png"
-                      width="512"
-                      height="512"
-                      class="h-full w-full object-cover"
-                      alt="Championship Medal"
-                    />
-                    <div
-                      class="absolute inset-0 bg-gradient-to-t from-chalk/70 to-transparent opacity-70"
-                    ></div>
-                    <div
-                      class="absolute right-4 bottom-4 left-4 text-center font-mono text-[10px] uppercase tracking-widest text-white"
-                    >
-                      Championship Medal
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          }
-        }
+    <div class="timeline relative space-y-10 sm:space-y-16">
+      <!-- Vertical spine: connects every stage marker -->
+      <div class="timeline-spine" aria-hidden="true">
+        <div class="timeline-spine__track"></div>
+        <div class="timeline-spine__flow"></div>
       </div>
-    }
+
+      @for (stage of stages; track stage.slug) {
+        @if (!stage.isFinale) {
+          <div
+            class="group relative flex flex-col items-center gap-6 sm:gap-8 md:gap-16"
+            appReveal
+            [class.timeline-reverse]="stage.reverse"
+            [class.timeline-forward]="!stage.reverse"
+          >
+            <div
+              class="hidden flex-1 md:block"
+              [class.text-right]="!stage.reverse"
+              [class.text-left]="stage.reverse"
+            >
+              <div class="font-display text-3xl font-bold opacity-40" [style.color]="stage.accent">
+                {{ stage.pad }}
+              </div>
+            </div>
+
+            <div
+              class="timeline-dot relative z-10 hidden md:flex"
+              [style.--dot-accent]="stage.accent"
+            >
+              <span class="timeline-dot__core"></span>
+              <span class="timeline-dot__ring"></span>
+            </div>
+
+            <div class="w-full min-w-0 flex-1">
+              <div
+                class="stage-card glass-tier-2 rounded border-transparent p-5 sm:p-8"
+                [class.border-l-4]="!stage.reverse"
+                [class.border-r-4]="stage.reverse"
+                [style.borderLeftColor]="!stage.reverse ? stage.accent + '80' : null"
+                [style.borderRightColor]="stage.reverse ? stage.accent + '80' : null"
+              >
+                <div class="mb-4 flex items-start justify-between gap-3 sm:mb-5">
+                  <div class="min-w-0">
+                    <div
+                      class="mb-1 font-label text-xs font-semibold uppercase tracking-[0.12em] sm:text-sm"
+                      [style.color]="stage.accent"
+                    >
+                      {{ stage.monthLabel }}
+                    </div>
+                    <h3 class="font-display text-2xl text-chalk/90 sm:text-3xl">{{ stage.title }}</h3>
+                  </div>
+                  <span
+                    class="shrink-0 font-display text-xl opacity-40 sm:text-2xl md:hidden"
+                    [style.color]="stage.accent"
+                    aria-hidden="true"
+                    >{{ stage.pad }}</span
+                  >
+                </div>
+
+                <p class="mb-6 font-body text-base leading-relaxed text-mist">
+                  {{ stage.description }}
+                </p>
+
+                <div class="mb-6 grid grid-cols-1 gap-4 border-t border-glass-border pt-5 sm:grid-cols-2">
+                  <div>
+                    <p class="font-label text-xs font-semibold uppercase tracking-[0.12em] text-on-surface-variant">
+                      Start Line
+                    </p>
+                    <p class="mt-1 font-body text-sm font-semibold text-chalk">{{ stage.venue }}</p>
+                    <p class="font-body text-sm text-mist">{{ stage.venueAddress }}</p>
+                  </div>
+                  <div>
+                    <p class="font-label text-xs font-semibold uppercase tracking-[0.12em] text-on-surface-variant">
+                      Race Pack Collection
+                    </p>
+                    <p class="mt-1 font-body text-sm font-semibold text-chalk">{{ stage.rpcVenue }}</p>
+                    <p class="font-body text-sm text-mist">{{ stage.rpcAddress }}</p>
+                  </div>
+                </div>
+
+                <dl
+                  class="mb-6 grid grid-cols-2 gap-x-4 gap-y-4 border-t border-glass-border pt-5 sm:grid-cols-4"
+                >
+                  <div>
+                    <dt class="font-label text-xs font-semibold uppercase tracking-[0.12em] text-on-surface-variant">
+                      Race Village
+                    </dt>
+                    <dd class="mt-1 font-body text-sm text-chalk">{{ stage.raceVillage }}</dd>
+                  </div>
+                  <div>
+                    <dt class="font-label text-xs font-semibold uppercase tracking-[0.12em] text-on-surface-variant">
+                      Start
+                    </dt>
+                    <dd class="mt-1 font-body text-sm text-chalk">{{ stage.raceStart }}</dd>
+                  </div>
+                  <div>
+                    <dt class="font-label text-xs font-semibold uppercase tracking-[0.12em] text-on-surface-variant">
+                      Cut-off
+                    </dt>
+                    <dd class="mt-1 font-body text-sm text-chalk">{{ stage.cot }}</dd>
+                  </div>
+                  <div>
+                    <dt class="font-label text-xs font-semibold uppercase tracking-[0.12em] text-on-surface-variant">
+                      Entry
+                    </dt>
+                    <dd class="mt-1 font-body text-sm text-chalk">{{ stage.priceLabel }}</dd>
+                  </div>
+                </dl>
+
+                <div class="mb-6 border-t border-glass-border pt-5">
+                  <p class="font-label text-xs font-semibold uppercase tracking-[0.12em] text-on-surface-variant">
+                    The Route
+                  </p>
+                  <p class="mt-1 font-body text-sm leading-relaxed text-mist">{{ stage.routeSummary }}</p>
+                </div>
+
+                <a
+                  [href]="stage.registrationUrl"
+                  class="inline-flex items-center gap-2 font-label text-sm font-semibold text-chalk/80 transition-colors hover:text-primary"
+                  (click)="$event.preventDefault(); openExternal(stage.registrationUrl)"
+                >
+                  Register for this stage <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        } @else {
+          <div class="flex justify-center pt-4 sm:pt-8" appReveal>
+            <div
+              class="stage-card glass-tier-3 w-full max-w-4xl overflow-hidden rounded border border-central-blue/30 p-1 "
+            >
+              <div class="flex flex-col items-center gap-8 p-5 sm:gap-12 sm:p-8 md:flex-row md:p-12">
+                <div class="flex-1 text-center md:text-left">
+                  <div
+                    class="mb-4 inline-flex items-center gap-2 rounded bg-central-blue/20 px-3 py-1 font-label text-xs font-semibold uppercase tracking-[0.12em] text-central-blue sm:mb-6"
+                  >
+                    The Grand Finale
+                  </div>
+                  <h2 class="mb-3 font-display text-3xl text-chalk sm:mb-4 sm:text-4xl md:text-6xl">
+                    {{ stage.title }}
+                  </h2>
+                  <p class="mb-5 font-label text-base font-semibold text-mist sm:text-lg">
+                    {{ stage.monthLabel }}
+                  </p>
+                  <p class="mb-6 font-body text-base leading-relaxed text-mist">
+                    {{ stage.description }}
+                  </p>
+
+                  <div class="mb-6 grid grid-cols-1 gap-4 border-t border-glass-border pt-5 text-left sm:grid-cols-2">
+                    <div>
+                      <p class="font-label text-xs font-semibold uppercase tracking-[0.12em] text-on-surface-variant">
+                        Start Line
+                      </p>
+                      <p class="mt-1 font-body text-sm font-semibold text-chalk">{{ stage.venue }}</p>
+                      <p class="font-body text-sm text-mist">{{ stage.venueAddress }}</p>
+                    </div>
+                    <div>
+                      <p class="font-label text-xs font-semibold uppercase tracking-[0.12em] text-on-surface-variant">
+                        Race Pack Collection
+                      </p>
+                      <p class="mt-1 font-body text-sm font-semibold text-chalk">{{ stage.rpcVenue }}</p>
+                      <p class="font-body text-sm text-mist">{{ stage.rpcAddress }}</p>
+                    </div>
+                  </div>
+
+                  <p class="mb-6 border-t border-glass-border pt-5 text-left font-body text-sm text-mist sm:mb-8">
+                    Race village {{ stage.raceVillage }}, start {{ stage.raceStart }}, cut-off
+                    {{ stage.cot }}, entry {{ stage.priceLabel }}.
+                  </p>
+
+                  <button
+                    type="button"
+                    class="w-full rounded bg-central-blue px-6 py-3.5 font-bold text-white shadow-[0_0_30px_rgba(0,114,181,0.3)] transition-all hover:scale-105 sm:w-auto sm:px-10 sm:py-4"
+                    (click)="openExternal(stage.registrationUrl)"
+                  >
+                    Register for Championship
+                  </button>
+                </div>
+                <div
+                  class="relative aspect-square w-full max-w-[16rem] overflow-hidden rounded border border-glass-border sm:w-64"
+                >
+                  <img
+                    ngSrc="/assets/prototype/hero-medal.png"
+                    width="512"
+                    height="512"
+                    class="h-full w-full object-cover"
+                    alt="Championship Medal"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-chalk/70 to-transparent opacity-70"
+                  ></div>
+                  <div
+                    class="absolute right-4 bottom-4 left-4 text-center font-label text-xs font-semibold uppercase tracking-[0.12em] text-white"
+                  >
+                    Championship Medal
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        }
+      }
+    </div>
 
     <section class="mt-16 sm:mt-32" appReveal>
       <div
-        class="glass-tier-2 relative overflow-hidden rounded-2xl border border-glass-border p-6 text-center sm:rounded-3xl sm:p-12"
+        class="glass-tier-2 relative overflow-hidden rounded border border-glass-border p-6 text-center sm:p-12"
       >
         <div
           class="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-transparent via-ember to-transparent"
         ></div>
         <h2 class="mb-4 font-display text-3xl text-chalk sm:mb-6 sm:text-4xl">One Pass. All Stages.</h2>
         <p class="mx-auto mb-8 max-w-xl font-body text-base text-on-surface-variant sm:mb-10 sm:text-lg">
-          Simplify your season. The JORS Season Pass grants access to all five stages, priority
-          corral placement, and the exclusive 2026 Series Jacket.
+          Simplify your season. The Season Pass covers all five stages, priority corral placement,
+          and the exclusive series jacket.
         </p>
         <div class="flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-6">
           <button
@@ -163,10 +240,10 @@
             Buy Season Pass
           </button>
           <a
-            routerLink="/schedule"
-            class="rounded-xl border border-glass-border bg-black/5 px-6 py-3.5 text-center font-bold text-chalk transition-all hover:bg-black/10 sm:px-12 sm:py-4"
+            routerLink="/kontak"
+            class="rounded border border-glass-border bg-black/5 px-6 py-3.5 text-center font-bold text-chalk transition-all hover:bg-black/10 sm:px-12 sm:py-4"
           >
-            View Schedule
+            Ask a Question
           </a>
         </div>
       </div>

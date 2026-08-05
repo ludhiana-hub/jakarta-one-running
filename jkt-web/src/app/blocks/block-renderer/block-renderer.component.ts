@@ -3,7 +3,9 @@ import { Component, input } from '@angular/core';
 import { PageBlock } from '../../core/models/blocks/page-block';
 import { HeroBlockData } from '../../core/models/blocks/hero.block';
 import { StatsCounterBlockData } from '../../core/models/blocks/stats-counter.block';
+import { SeriesTimelineBlockData } from '../../core/models/blocks/series-timeline.block';
 import { EditionCardsBlockData } from '../../core/models/blocks/edition-cards.block';
+import { EditionDetailBlockData } from '../../core/models/blocks/edition-detail.block';
 import { RichTextMediaBlockData } from '../../core/models/blocks/rich-text-media.block';
 import { MilestoneBlockData } from '../../core/models/blocks/milestone.block';
 import { GalleryGridBlockData } from '../../core/models/blocks/gallery-grid.block';
@@ -17,7 +19,9 @@ import { EmbedBlockData } from '../../core/models/blocks/embed.block';
 
 import { HeroBlockComponent } from '../hero/hero-block.component';
 import { StatsCounterBlockComponent } from '../stats-counter/stats-counter-block.component';
+import { SeriesTimelineBlockComponent } from '../series-timeline/series-timeline-block.component';
 import { EditionCardsBlockComponent } from '../edition-cards/edition-cards-block.component';
+import { EditionDetailBlockComponent } from '../edition-detail/edition-detail-block.component';
 import { CtaBannerBlockComponent } from '../cta-banner/cta-banner-block.component';
 import { FaqAccordionBlockComponent } from '../faq-accordion/faq-accordion-block.component';
 import { GalleryGridBlockComponent } from '../gallery-grid/gallery-grid-block.component';
@@ -36,7 +40,9 @@ import { RevealDirective } from '../../shared/directives/reveal.directive';
   imports: [
     HeroBlockComponent,
     StatsCounterBlockComponent,
+    SeriesTimelineBlockComponent,
     EditionCardsBlockComponent,
+    EditionDetailBlockComponent,
     CtaBannerBlockComponent,
     FaqAccordionBlockComponent,
     GalleryGridBlockComponent,
@@ -64,9 +70,19 @@ export class BlockRendererComponent {
     return b.type === 'stats_counter' ? b.data : null;
   }
 
+  seriesTimelineData(): SeriesTimelineBlockData | null {
+    const b = this.block();
+    return b.type === 'series_timeline' ? b.data : null;
+  }
+
   editionCardsData(): EditionCardsBlockData | null {
     const b = this.block();
     return b.type === 'edition_cards' ? b.data : null;
+  }
+
+  editionDetailData(): EditionDetailBlockData | null {
+    const b = this.block();
+    return b.type === 'edition_detail' ? b.data : null;
   }
 
   ctaBannerData(): CtaBannerBlockData | null {

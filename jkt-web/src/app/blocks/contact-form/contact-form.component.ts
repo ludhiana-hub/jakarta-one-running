@@ -2,9 +2,9 @@ import { Component, inject } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { catchError, of } from 'rxjs';
 
 import { RevealDirective } from '../../shared/directives/reveal.directive';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-contact-form',
@@ -42,22 +42,23 @@ export class ContactFormComponent {
     this.submitting = true;
     const payload = this.form.getRawValue();
 
-    this.http
-      .post('/leads', payload)
-      .pipe(
-        catchError(() => of({ ok: true })),
-      )
-      .subscribe({
-        next: () => {
-          this.submitting = false;
-          this.success = true;
-          this.form.reset();
-        },
-        error: () => {
-          this.submitting = false;
-          this.errorMsg = 'Gagal mengirim. Coba lagi.';
-        },
-      });
+    // Must be the absolute CMS API URL, not a relative path — a relative
+    // '/leads' resolves against this Angular server's own origin (404),
+    // not Laravel. Previously also had a catchError() that reported every
+    // failure (including that 404) as success — a real bug, since it meant
+    // this form could tell a user their lead was submitted when it never
+    // reached the CMS. Real failures must surface as errorMsg.
+    this.http.post(`${environment.apiUrl}/leads`, payload).subscribe({
+      next: () => {
+        this.submitting = false;
+        this.success = true;
+        this.form.reset();
+      },
+      error: () => {
+        this.submitting = false;
+        this.errorMsg = 'Gagal mengirim. Coba lagi.';
+      },
+    });
   }
 }
 

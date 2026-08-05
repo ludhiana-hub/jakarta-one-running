@@ -58,4 +58,11 @@ export const routes: Routes = [
     redirectTo: '/schedule',
     pathMatch: 'full',
   },
+  // Catch-all for CMS-authored pages — must stay LAST so it never shadows
+  // the static routes above. Lets a page created in Filament (e.g. slug
+  // "tentang-kami") go live at /tentang-kami with no Angular deploy.
+  {
+    path: ':slug',
+    component: DynamicPageComponent,
+  },
 ];

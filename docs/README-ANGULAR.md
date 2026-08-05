@@ -197,11 +197,17 @@ export abstract class BlockRepository {
   abstract page(slug: string): Observable<PageResponse>;
 }
 
-// Fase 1
-{ provide: BlockRepository, useClass: FixtureBlockRepository }
-// Fase 2
-{ provide: BlockRepository, useClass: HttpBlockRepository }
-```
+## Hybrid landings (multi-event)
+
+Satu deploy `jkt-web` melayani semua event. Saat Event dibuat di Filament CMS,
+folder `src/app/landings/{event-slug}/` di-scaffold otomatis (theme override,
+fixtures lokal, README). **Konten runtime tetap dari API CMS** — folder landing
+hanya untuk manageability per event, bukan app/deploy terpisah.
+
+Registry: `src/app/landings/index.ts` (di-generate ulang oleh scaffolder).
+
+Set `environment.useCmsApi = true` dan `apiUrl` ke Laravel untuk konsumsi live CMS.
+Preview Filament memakai query `?preview_token=` (draft-aware).
 
 ---
 

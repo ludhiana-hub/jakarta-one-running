@@ -1,4 +1,4 @@
-import { Component, ElementRef, inject, signal, viewChild } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { SeoService } from '../../core/seo.service';
@@ -13,13 +13,6 @@ export interface PartnerLogo {
   role?: string;
   roleColor?: string;
   tagline?: string;
-}
-
-export type PartnerTabId = 'platinum' | 'gold' | 'official' | 'community';
-
-interface PartnerTab {
-  id: PartnerTabId;
-  label: string;
 }
 
 /** Lightweight wordmark logo so we can demo many sponsors without real assets. */
@@ -40,19 +33,9 @@ function dummyLogo(name: string, accent = '#141418'): string {
 })
 export class PartnersPageComponent {
   private readonly seo = inject(SeoService);
-  private readonly track = viewChild<ElementRef<HTMLElement>>('logoTrack');
 
   protected dialogVisible = false;
   protected pendingUrl: string | null = null;
-  protected readonly activeTab = signal<PartnerTabId>('platinum');
-
-  protected readonly tabs: PartnerTab[] = [
-    { id: 'platinum', label: 'Platinum' },
-    { id: 'gold', label: 'Gold' },
-    { id: 'official', label: 'Official' },
-    { id: 'community', label: 'Community' },
-  ];
-
   protected readonly titleSponsor: PartnerLogo = {
     id: 'title',
     name: 'OmniAthletic Global',
@@ -155,7 +138,30 @@ export class PartnersPageComponent {
     url: '#',
   }));
 
+  /** Auto-marquee bands (logos filled in constructor). */
+  protected readonly marqueeRows: {
+    id: string;
+    label: string;
+    reverse: boolean;
+    logos: PartnerLogo[];
+    loop: PartnerLogo[];
+  }[] = [];
+
   constructor() {
+    const band = (id: string, label: string, reverse: boolean, logos: PartnerLogo[]) => ({
+      id,
+      label,
+      reverse,
+      logos,
+      loop: [...logos, ...logos],
+    });
+
+    this.marqueeRows.push(
+      band('gold', 'Gold Partners', false, this.gold),
+      band('official', 'Official Partners', true, this.official),
+      band('community', 'Community & Media', false, this.community),
+    );
+
     this.seo.apply({
       meta_title: { id: 'Partners | Jakarta One Running 2026' },
       meta_description: {
@@ -165,35 +171,6 @@ export class PartnersPageComponent {
       noindex: false,
       canonical_url: '/partners',
     });
-  }
-
-  logosForTab(tab: PartnerTabId): PartnerLogo[] {
-    switch (tab) {
-      case 'platinum':
-        return this.platinum;
-      case 'gold':
-        return this.gold;
-      case 'official':
-        return this.official;
-      case 'community':
-        return this.community;
-    }
-  }
-
-  selectTab(tab: PartnerTabId): void {
-    this.activeTab.set(tab);
-    // Reset scroll when switching classification
-    queueMicrotask(() => {
-      const el = this.track()?.nativeElement;
-      if (el) el.scrollTo({ left: 0, behavior: 'smooth' });
-    });
-  }
-
-  scrollTrack(direction: -1 | 1): void {
-    const el = this.track()?.nativeElement;
-    if (!el) return;
-    const amount = Math.min(el.clientWidth * 0.75, 420);
-    el.scrollBy({ left: direction * amount, behavior: 'smooth' });
   }
 
   openExternal(url: string): void {
