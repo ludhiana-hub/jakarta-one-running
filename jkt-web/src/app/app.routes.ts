@@ -45,8 +45,8 @@ export const routes: Routes = [
   },
   {
     path: 'kontak',
-    data: { pageSlug: 'kontak' },
-    loadChildren: () => import('./pages/dynamic-page/dynamic-page.routes').then((m) => m.routes),
+    loadComponent: () =>
+      import('./pages/contact-page/contact-page.component').then((m) => m.ContactPageComponent),
   },
   {
     path: 'dev/blocks',

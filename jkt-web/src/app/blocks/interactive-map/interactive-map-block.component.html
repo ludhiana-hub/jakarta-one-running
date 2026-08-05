@@ -1,15 +1,28 @@
 <section class="my-12 px-4">
   <div class="max-w-6xl mx-auto">
-    <div class="glass-tier1 p-7 border border-glass-border">
-      <div class="font-display text-chalk text-2xl font-semibold">
-        {{ data().title | tr }}
+    <div class="glass-tier1 overflow-hidden border border-glass-border">
+      <div class="flex flex-wrap items-center justify-between gap-3 px-5 py-5 sm:px-7">
+        <div class="font-display text-chalk text-2xl font-semibold">
+          {{ data().title | tr }}
+        </div>
+        <a
+          [href]="mapsOpenUrl()"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-label text-sm font-semibold text-primary underline-offset-4 hover:underline"
+        >
+          Open in Google Maps
+        </a>
       </div>
 
-      <div
-        class="mt-6 rounded glass-tier2 overflow-hidden border border-glass-border"
-        #mapHost
-      >
-        <div class="p-8 text-mist">Memuat peta...</div>
+      <div class="map-embed border-t border-glass-border">
+        <iframe
+          [src]="mapsEmbedUrl()"
+          title="Location map"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen
+        ></iframe>
       </div>
     </div>
   </div>

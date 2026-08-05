@@ -1,4 +1,5 @@
-import { Component, input } from '@angular/core';
+import { Component, computed, inject, input } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 import { TrPipe } from '../../shared/pipes/tr.pipe';
 import { EmbedBlockData } from '../../core/models/blocks/embed.block';
@@ -11,6 +12,12 @@ import { EmbedBlockData } from '../../core/models/blocks/embed.block';
   styleUrl: './embed-block.component.scss',
 })
 export class EmbedBlockComponent {
-  data = input.required<EmbedBlockData>();
-}
+  private readonly sanitizer = inject(DomSanitizer);
 
+  data = input.required<EmbedBlockData>();
+
+  /** Angular blocks iframe [src] unless the URL is explicitly trusted. */
+  readonly safeUrl = computed<SafeResourceUrl>(() =>
+    this.sanitizer.bypassSecurityTrustResourceUrl(this.data().url),
+  );
+}

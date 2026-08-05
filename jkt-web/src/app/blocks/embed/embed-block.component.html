@@ -8,7 +8,7 @@
 
     <div class="mt-5 embed-frame">
       <iframe
-        [src]="data().url"
+        [src]="safeUrl()"
         title="Embedded content"
         class="embed-iframe"
         loading="lazy"

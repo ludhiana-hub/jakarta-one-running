@@ -2,14 +2,15 @@
   "page": {
     "slug": "kontak",
     "title": {
-      "id": "Kontak"
+      "id": "Kontak",
+      "en": "Contact"
     },
     "seo": {
       "meta_title": {
         "id": "Jakarta One Running Series | Kontak"
       },
       "meta_description": {
-        "id": "Info transportasi, akses lokasi, dan kebutuhan komunikasi untuk peserta."
+        "id": "Hubungi tim Jakarta One Running Series. Cek lokasi championship dan buka Google Maps."
       },
       "og_image": "https://example.com/og/kontak.png",
       "noindex": false
@@ -17,73 +18,29 @@
   },
   "blocks": [
     {
-      "id": "blk_transport",
-      "type": "transportation_info",
-      "data": {
-        "title": {
-          "id": "Lokasi & Transportasi"
-        },
-        "shuttles": [
-          {
-            "id": "sh_1",
-            "title": {
-              "id": "Shuttle dari Stasiun"
-            },
-            "time": {
-              "id": "05.00 - 11.00 WIB"
-            },
-            "notes": {
-              "id": "Titik kumpul: area utama parkir."
-            }
-          }
-        ],
-        "parking": [
-          {
-            "id": "pk_1",
-            "title": {
-              "id": "Area Parkir Utama"
-            },
-            "details": {
-              "id": "Akses dari sisi timur venue."
-            }
-          }
-        ]
-      }
-    },
-    {
       "id": "blk_map",
       "type": "interactive_map",
       "data": {
         "title": {
-          "id": "Peta Lokasi"
+          "id": "Peta Lokasi",
+          "en": "Location Map"
         },
         "center": {
-          "lat": -6.1751,
-          "lng": 106.865
+          "lat": -6.1702,
+          "lng": 106.835
         },
-        "zoom": 13,
+        "zoom": 16,
         "markers": [
           {
             "id": "mk_1",
             "label": {
-              "id": "Lapangan Banteng"
+              "id": "Lapangan Banteng, Jakarta Pusat"
             },
-            "lat": -6.1751,
-            "lng": 106.865
+            "lat": -6.1702,
+            "lng": 106.835
           }
         ]
-      }
-    },
-    {
-      "type": "embed",
-      "data": {
-        "title": {
-          "id": "Peta Ringkas"
-        },
-        "url": "https://www.google.com/maps?q=Jakarta&output=embed",
-        "kind": "iframe"
       }
     }
   ]
 }
-

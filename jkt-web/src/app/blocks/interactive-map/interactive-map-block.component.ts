@@ -1,5 +1,5 @@
-import { Component, ElementRef, afterNextRender, input, PLATFORM_ID, ViewChild, inject, OnDestroy } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { Component, computed, inject, input } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 import { TrPipe } from '../../shared/pipes/tr.pipe';
 import { InteractiveMapBlockData } from '../../core/models/blocks/interactive-map.block';
@@ -9,56 +9,31 @@ import { InteractiveMapBlockData } from '../../core/models/blocks/interactive-ma
   standalone: true,
   imports: [TrPipe],
   templateUrl: './interactive-map-block.component.html',
+  styleUrl: './interactive-map-block.component.scss',
 })
-export class InteractiveMapBlockComponent implements OnDestroy {
+export class InteractiveMapBlockComponent {
+  private readonly sanitizer = inject(DomSanitizer);
+
   data = input.required<InteractiveMapBlockData>();
 
-  @ViewChild('mapHost', { static: true }) private readonly mapHostRef!: ElementRef<HTMLDivElement>;
+  readonly mapsOpenUrl = computed(() => {
+    const d = this.data();
+    const marker = d.markers[0];
+    const query = marker?.label?.id
+      ? encodeURIComponent(marker.label.id)
+      : `${d.center.lat},${d.center.lng}`;
+    return `https://www.google.com/maps/search/?api=1&query=${query}`;
+  });
 
-  private mapInstance: any | null = null;
-
-  private readonly platformId = inject(PLATFORM_ID);
-
-  constructor() {
-    afterNextRender(() => {
-      // Leaflet must only be initialized in the browser.
-      if (!isPlatformBrowser(this.platformId)) return;
-      void this.initLeaflet();
-    });
-  }
-
-  private async initLeaflet(): Promise<void> {
-    if (this.mapInstance) return;
-
-    const leafletMod = await import('leaflet');
-    const L = (leafletMod as any).default ?? leafletMod;
-
-    const el = this.mapHostRef.nativeElement;
-    // Ensure the container has height for Leaflet.
-    el.style.height = '520px';
-    el.innerHTML = '';
-
-    this.mapInstance = L.map(el).setView(
-      [this.data().center.lat, this.data().center.lng],
-      this.data().zoom,
+  readonly mapsEmbedUrl = computed<SafeResourceUrl>(() => {
+    const d = this.data();
+    const marker = d.markers[0];
+    const query = marker?.label?.id
+      ? encodeURIComponent(marker.label.id)
+      : `${d.center.lat},${d.center.lng}`;
+    const zoom = d.zoom || 15;
+    return this.sanitizer.bypassSecurityTrustResourceUrl(
+      `https://www.google.com/maps?q=${query}&z=${zoom}&output=embed`,
     );
-
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; OpenStreetMap contributors',
-      maxZoom: 19,
-    }).addTo(this.mapInstance);
-
-    for (const m of this.data().markers) {
-      const marker = L.marker([m.lat, m.lng]).addTo(this.mapInstance);
-      if (m.label?.id) marker.bindPopup(m.label.id);
-    }
-  }
-
-  ngOnDestroy(): void {
-    if (this.mapInstance) {
-      this.mapInstance.remove();
-      this.mapInstance = null;
-    }
-  }
+  });
 }
-

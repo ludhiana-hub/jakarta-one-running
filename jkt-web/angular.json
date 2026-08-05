@@ -61,7 +61,6 @@
               }
             ],
             "styles": [
-              "node_modules/leaflet/dist/leaflet.css",
               "src/styles.css"
             ],
             "server": "src/main.server.ts",
@@ -76,8 +75,7 @@
             },
             "ssr": {
               "entry": "src/server.ts"
-            },
-            "allowedCommonJsDependencies": ["leaflet"]
+            }
           },
           "configurations": {
             "production": {

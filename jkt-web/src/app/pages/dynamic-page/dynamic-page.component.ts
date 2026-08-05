@@ -10,7 +10,6 @@ import { TenantService } from '../../core/tenant.service';
 import { ThemeService } from '../../core/theme.service';
 import { PageResponse } from '../../core/models/page-response';
 import { BlockRendererComponent } from '../../blocks/block-renderer/block-renderer.component';
-import { ContactFormComponent } from '../../blocks/contact-form/contact-form.component';
 import { JsonLdService } from '../../core/json-ld.service';
 import { environment } from '../../../environments/environment';
 
@@ -20,7 +19,7 @@ const TRUSTED_PREVIEW_ORIGINS = [environment.apiUrl.replace(/\/api\/v1\/?$/, '')
 @Component({
   standalone: true,
   selector: 'app-dynamic-page',
-  imports: [BlockRendererComponent, ContactFormComponent],
+  imports: [BlockRendererComponent],
   templateUrl: './dynamic-page.component.html',
 })
 export class DynamicPageComponent {

@@ -3,13 +3,12 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
-import { RevealDirective } from '../../shared/directives/reveal.directive';
 import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-contact-form',
   standalone: true,
-  imports: [ReactiveFormsModule, RevealDirective],
+  imports: [ReactiveFormsModule],
   templateUrl: './contact-form.component.html',
 })
 export class ContactFormComponent {
