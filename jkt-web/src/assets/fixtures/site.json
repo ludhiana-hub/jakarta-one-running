@@ -11,88 +11,6 @@
   },
   "editions": [
     {
-      "id": "east",
-      "slug": "east",
-      "name": {
-        "id": "East"
-      },
-      "race_date": "2027-04-25T00:00:00.000Z",
-      "venue": {
-        "id": "Jakarta International Velodrome"
-      },
-      "venue_address": "Jl. Pemuda, Rawamangun, Jakarta Timur",
-      "theme": {
-        "accent": "#8C8C8C"
-      },
-      "rpc_venue": "Hotel Borobudur",
-      "rpc_address": "Jl. Lapangan Banteng Selatan, Sawah Besar, Jakarta Pusat",
-      "description": "A fast, iconic 5.00 km loop designed to kick your run into high gear, with the Velodrome grandstand waiting at the finish.",
-      "village_open": "04:30:00",
-      "village_close": "11:00:00",
-      "race_start": "06:30:00",
-      "race_finish": "08:00:00",
-      "cot_minutes": 90,
-      "distance_km": "5.00",
-      "quota": 10000,
-      "route_description": {
-        "id": "Start at the Velodrome, run through Jakarta’s eastern corridors, and return for a fast finish at the Velodrome.",
-        "en": "Start at the Velodrome, run through Jakarta’s eastern corridors, and return for a fast finish at the Velodrome."
-      },
-      "registration_phases": [
-        {
-          "id": "phase-1",
-          "name": {
-            "id": "Pendaftaran"
-          },
-          "opens_at": "2027-02-24T00:00:00.000Z",
-          "closes_at": "2027-04-20T00:00:00.000Z",
-          "price": 195000,
-          "registration_url": "https://jkt499k.bigtix.io/en"
-        }
-      ]
-    },
-    {
-      "id": "west",
-      "slug": "west",
-      "name": {
-        "id": "West"
-      },
-      "race_date": "2027-03-21T00:00:00.000Z",
-      "venue": {
-        "id": "Puri Kembangan"
-      },
-      "venue_address": "Jl. Puri Agung, Puri Indah, Jakarta Barat",
-      "theme": {
-        "accent": "#CC0000"
-      },
-      "rpc_venue": "Hotel Borobudur",
-      "rpc_address": "Jl. Lapangan Banteng Selatan, Sawah Besar, Jakarta Pusat",
-      "description": "A bright 5.00 km journey through Puri, built for smooth strides and steady pace, with a strong finish at the Puri start area.",
-      "village_open": "04:30:00",
-      "village_close": "11:00:00",
-      "race_start": "06:30:00",
-      "race_finish": "08:00:00",
-      "cot_minutes": 90,
-      "distance_km": "5.00",
-      "quota": 10000,
-      "route_description": {
-        "id": "Start in Puri, follow a 5.00 km loop through West Jakarta corridors, then finish back at the Puri start area.",
-        "en": "Start in Puri, follow a 5.00 km loop through West Jakarta corridors, then finish back at the Puri start area."
-      },
-      "registration_phases": [
-        {
-          "id": "phase-1",
-          "name": {
-            "id": "Pendaftaran"
-          },
-          "opens_at": "2027-01-20T00:00:00.000Z",
-          "closes_at": "2027-03-16T00:00:00.000Z",
-          "price": 195000,
-          "registration_url": "https://jkt499k.bigtix.io/en"
-        }
-      ]
-    },
-    {
       "id": "south",
       "slug": "south",
       "name": {
@@ -169,6 +87,88 @@
           },
           "opens_at": "2026-11-18T00:00:00.000Z",
           "closes_at": "2027-01-12T00:00:00.000Z",
+          "price": 195000,
+          "registration_url": "https://jkt499k.bigtix.io/en"
+        }
+      ]
+    },
+    {
+      "id": "west",
+      "slug": "west",
+      "name": {
+        "id": "West"
+      },
+      "race_date": "2027-03-21T00:00:00.000Z",
+      "venue": {
+        "id": "Puri Kembangan"
+      },
+      "venue_address": "Jl. Puri Agung, Puri Indah, Jakarta Barat",
+      "theme": {
+        "accent": "#CC0000"
+      },
+      "rpc_venue": "Hotel Borobudur",
+      "rpc_address": "Jl. Lapangan Banteng Selatan, Sawah Besar, Jakarta Pusat",
+      "description": "A bright 5.00 km journey through Puri, built for smooth strides and steady pace, with a strong finish at the Puri start area.",
+      "village_open": "04:30:00",
+      "village_close": "11:00:00",
+      "race_start": "06:30:00",
+      "race_finish": "08:00:00",
+      "cot_minutes": 90,
+      "distance_km": "5.00",
+      "quota": 10000,
+      "route_description": {
+        "id": "Start in Puri, follow a 5.00 km loop through West Jakarta corridors, then finish back at the Puri start area.",
+        "en": "Start in Puri, follow a 5.00 km loop through West Jakarta corridors, then finish back at the Puri start area."
+      },
+      "registration_phases": [
+        {
+          "id": "phase-1",
+          "name": {
+            "id": "Pendaftaran"
+          },
+          "opens_at": "2027-01-20T00:00:00.000Z",
+          "closes_at": "2027-03-16T00:00:00.000Z",
+          "price": 195000,
+          "registration_url": "https://jkt499k.bigtix.io/en"
+        }
+      ]
+    },
+    {
+      "id": "east",
+      "slug": "east",
+      "name": {
+        "id": "East"
+      },
+      "race_date": "2027-04-25T00:00:00.000Z",
+      "venue": {
+        "id": "Jakarta International Velodrome"
+      },
+      "venue_address": "Jl. Pemuda, Rawamangun, Jakarta Timur",
+      "theme": {
+        "accent": "#8C8C8C"
+      },
+      "rpc_venue": "Hotel Borobudur",
+      "rpc_address": "Jl. Lapangan Banteng Selatan, Sawah Besar, Jakarta Pusat",
+      "description": "A fast, iconic 5.00 km loop designed to kick your run into high gear, with the Velodrome grandstand waiting at the finish.",
+      "village_open": "04:30:00",
+      "village_close": "11:00:00",
+      "race_start": "06:30:00",
+      "race_finish": "08:00:00",
+      "cot_minutes": 90,
+      "distance_km": "5.00",
+      "quota": 10000,
+      "route_description": {
+        "id": "Start at the Velodrome, run through Jakarta’s eastern corridors, and return for a fast finish at the Velodrome.",
+        "en": "Start at the Velodrome, run through Jakarta’s eastern corridors, and return for a fast finish at the Velodrome."
+      },
+      "registration_phases": [
+        {
+          "id": "phase-1",
+          "name": {
+            "id": "Pendaftaran"
+          },
+          "opens_at": "2027-02-24T00:00:00.000Z",
+          "closes_at": "2027-04-20T00:00:00.000Z",
           "price": 195000,
           "registration_url": "https://jkt499k.bigtix.io/en"
         }

@@ -48,6 +48,11 @@ export class EditionCardsBlockComponent {
     return this.data().items.slice(2, 5);
   }
 
+  stageIndex(item: Edition): string {
+    const idx = this.data().items.findIndex((e) => e.id === item.id);
+    return String(Math.max(idx, 0) + 1).padStart(2, '0');
+  }
+
   // Single day: "15 Mar 2026". Multi-day within the same month: "15 - 20 Mar
   // 2026". Multi-day spanning months: "28 Feb - 3 Mar 2026".
   dateRangeLabel(item: Edition): string {

@@ -97,7 +97,7 @@ export class HomePageComponent {
   protected readonly cta: CtaBannerBlockData = {
     title: { id: 'Ready for Jakarta One?' },
     subtitle: {
-      id: 'East Jakarta opens the series on 1 November 2026. See the full path to the Central championship.',
+      id: 'South Jakarta opens the series on 1 November 2026. See the full path to the Central championship on 6 June 2027.',
     },
     cta_label: { id: 'View Schedule' },
     cta_url: '/schedule',
@@ -107,7 +107,7 @@ export class HomePageComponent {
     this.seo.apply({
       meta_title: { id: 'Jakarta One Running 2026 | One City, One Celebration' },
       meta_description: {
-        id: '500 years of Jakarta, 5 regions, 5.00 km each. One running series from East in November 2026 to the Central championship in June 2027.',
+        id: '500 years of Jakarta, 5 regions, 5.00 km each. One running series from South in November 2026 to the Central championship in June 2027.',
       },
       og_image: '/assets/prototype/hero-home-bg.jpg',
       noindex: false,
