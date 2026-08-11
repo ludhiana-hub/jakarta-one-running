@@ -41,7 +41,7 @@ export const DEFAULT_MENU: MenuItem[] = [
   {
     label: { id: 'Daftar', en: 'Register' },
     type: 'external',
-    url: 'https://example.com/jakarta-one/register',
+    url: 'https://jkt499k.bigtix.io/en',
     linkable_type: null,
     linkable_id: null,
     children: [],

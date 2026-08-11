@@ -48,7 +48,7 @@ export class HomePageComponent {
     tagline: {
       id: '500 years of Jakarta, 5 regions, 5.00 km each. One running series across the capital, with five medals to collect and one celebration to finish.',
     },
-    bg_image: '/assets/prototype/gambar.jpg',
+    bg_image: '/assets/prototype/hero-home-bg.jpg',
     cta_label: { id: 'Join the Series' },
     cta_url: '/schedule',
   };
@@ -109,7 +109,7 @@ export class HomePageComponent {
       meta_description: {
         id: '500 years of Jakarta, 5 regions, 5.00 km each. One running series from East in November 2026 to the Central championship in June 2027.',
       },
-      og_image: '/assets/prototype/hero-backdrop.png',
+      og_image: '/assets/prototype/hero-home-bg.jpg',
       noindex: false,
       canonical_url: '/',
     });

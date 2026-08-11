@@ -113,7 +113,7 @@ const DEV_BLOCKS: PageBlock[] = [
       title: { id: 'CTA Banner' },
       subtitle: { id: 'Tier 3 glass focal.' },
       cta_label: { id: 'Daftar' },
-      cta_url: 'https://example.com/register',
+        cta_url: 'https://jkt499k.bigtix.io/en',
     },
   },
   {

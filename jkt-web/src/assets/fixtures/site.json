@@ -3,6 +3,12 @@
   "title": {
     "id": "Jakarta One Running Series"
   },
+  "tracking": {
+    "gtm_id": null,
+    "meta_pixel_id": null,
+    "ga4_id": null,
+    "custom_head_script": null
+  },
   "editions": [
     {
       "id": "east",
@@ -10,90 +16,27 @@
       "name": {
         "id": "East"
       },
-      "race_date": "2026-11-01T00:00:00.000Z",
+      "race_date": "2027-04-25T00:00:00.000Z",
       "venue": {
         "id": "Jakarta International Velodrome"
       },
+      "venue_address": "Jl. Pemuda, Rawamangun, Jakarta Timur",
       "theme": {
         "accent": "#8C8C8C"
       },
-      "registration_phases": [
-        {
-          "id": "phase-1",
-          "name": {
-            "id": "Pendaftaran"
-          },
-          "opens_at": "2026-09-02T00:00:00.000Z",
-          "closes_at": "2026-10-27T00:00:00.000Z",
-          "price": 195000,
-          "registration_url": "https://example.com/jakarta-one/east/register"
-        }
-      ]
-    },
-    {
-      "id": "west",
-      "slug": "west",
-      "name": {
-        "id": "West"
-      },
-      "race_date": "2027-01-17T00:00:00.000Z",
-      "venue": {
-        "id": "Puri Kembangan"
-      },
-      "theme": {
-        "accent": "#CC0000"
-      },
-      "registration_phases": [
-        {
-          "id": "phase-1",
-          "name": {
-            "id": "Pendaftaran"
-          },
-          "opens_at": "2026-11-18T00:00:00.000Z",
-          "closes_at": "2027-01-12T00:00:00.000Z",
-          "price": 195000,
-          "registration_url": "https://example.com/jakarta-one/west/register"
-        }
-      ]
-    },
-    {
-      "id": "south",
-      "slug": "south",
-      "name": {
-        "id": "South"
-      },
-      "race_date": "2027-03-21T00:00:00.000Z",
-      "venue": {
-        "id": "Prapanca"
-      },
-      "theme": {
-        "accent": "#C4D600"
-      },
-      "registration_phases": [
-        {
-          "id": "phase-1",
-          "name": {
-            "id": "Pendaftaran"
-          },
-          "opens_at": "2027-01-20T00:00:00.000Z",
-          "closes_at": "2027-03-16T00:00:00.000Z",
-          "price": 195000,
-          "registration_url": "https://example.com/jakarta-one/south/register"
-        }
-      ]
-    },
-    {
-      "id": "north",
-      "slug": "north",
-      "name": {
-        "id": "North"
-      },
-      "race_date": "2027-04-25T00:00:00.000Z",
-      "venue": {
-        "id": "Ancol"
-      },
-      "theme": {
-        "accent": "#4DD0E1"
+      "rpc_venue": "Hotel Borobudur",
+      "rpc_address": "Jl. Lapangan Banteng Selatan, Sawah Besar, Jakarta Pusat",
+      "description": "A fast, iconic 5.00 km loop designed to kick your run into high gear, with the Velodrome grandstand waiting at the finish.",
+      "village_open": "04:30:00",
+      "village_close": "11:00:00",
+      "race_start": "06:30:00",
+      "race_finish": "08:00:00",
+      "cot_minutes": 90,
+      "distance_km": "5.00",
+      "quota": 10000,
+      "route_description": {
+        "id": "Start at the Velodrome, run through Jakarta’s eastern corridors, and return for a fast finish at the Velodrome.",
+        "en": "Start at the Velodrome, run through Jakarta’s eastern corridors, and return for a fast finish at the Velodrome."
       },
       "registration_phases": [
         {
@@ -104,7 +47,130 @@
           "opens_at": "2027-02-24T00:00:00.000Z",
           "closes_at": "2027-04-20T00:00:00.000Z",
           "price": 195000,
-          "registration_url": "https://example.com/jakarta-one/north/register"
+          "registration_url": "https://jkt499k.bigtix.io/en"
+        }
+      ]
+    },
+    {
+      "id": "west",
+      "slug": "west",
+      "name": {
+        "id": "West"
+      },
+      "race_date": "2027-03-21T00:00:00.000Z",
+      "venue": {
+        "id": "Puri Kembangan"
+      },
+      "venue_address": "Jl. Puri Agung, Puri Indah, Jakarta Barat",
+      "theme": {
+        "accent": "#CC0000"
+      },
+      "rpc_venue": "Hotel Borobudur",
+      "rpc_address": "Jl. Lapangan Banteng Selatan, Sawah Besar, Jakarta Pusat",
+      "description": "A bright 5.00 km journey through Puri, built for smooth strides and steady pace, with a strong finish at the Puri start area.",
+      "village_open": "04:30:00",
+      "village_close": "11:00:00",
+      "race_start": "06:30:00",
+      "race_finish": "08:00:00",
+      "cot_minutes": 90,
+      "distance_km": "5.00",
+      "quota": 10000,
+      "route_description": {
+        "id": "Start in Puri, follow a 5.00 km loop through West Jakarta corridors, then finish back at the Puri start area.",
+        "en": "Start in Puri, follow a 5.00 km loop through West Jakarta corridors, then finish back at the Puri start area."
+      },
+      "registration_phases": [
+        {
+          "id": "phase-1",
+          "name": {
+            "id": "Pendaftaran"
+          },
+          "opens_at": "2027-01-20T00:00:00.000Z",
+          "closes_at": "2027-03-16T00:00:00.000Z",
+          "price": 195000,
+          "registration_url": "https://jkt499k.bigtix.io/en"
+        }
+      ]
+    },
+    {
+      "id": "south",
+      "slug": "south",
+      "name": {
+        "id": "South"
+      },
+      "race_date": "2026-11-01T00:00:00.000Z",
+      "venue": {
+        "id": "SCBD"
+      },
+      "venue_address": "SCBD, Jakarta Selatan",
+      "theme": {
+        "accent": "#C4D600"
+      },
+      "rpc_venue": "Hotel Borobudur",
+      "rpc_address": "Jl. Lapangan Banteng Selatan, Sawah Besar, Jakarta Pusat",
+      "description": "Begin your 5.00 km journey at SCBD’s city pulse, then run your way through lively streets with a finish that keeps you ready for the next stage.",
+      "village_open": "04:30:00",
+      "village_close": "11:00:00",
+      "race_start": "06:30:00",
+      "race_finish": "08:00:00",
+      "cot_minutes": 90,
+      "distance_km": "5.00",
+      "quota": 10000,
+      "route_description": {
+        "id": "Start at SCBD, follow a smooth city loop across South Jakarta, and return to SCBD for your finish.",
+        "en": "Start at SCBD, follow a smooth city loop across South Jakarta, and return to SCBD for your finish."
+      },
+      "registration_phases": [
+        {
+          "id": "phase-1",
+          "name": {
+            "id": "Pendaftaran"
+          },
+          "opens_at": "2026-09-02T00:00:00.000Z",
+          "closes_at": "2026-10-27T00:00:00.000Z",
+          "price": 195000,
+          "registration_url": "https://jkt499k.bigtix.io/en"
+        }
+      ]
+    },
+    {
+      "id": "north",
+      "slug": "north",
+      "name": {
+        "id": "North"
+      },
+      "race_date": "2027-01-17T00:00:00.000Z",
+      "venue": {
+        "id": "Ancol"
+      },
+      "venue_address": "Jl. Lodan Raya, Ancol, Pademangan, Jakarta Utara",
+      "theme": {
+        "accent": "#4DD0E1"
+      },
+      "rpc_venue": "Hotel Borobudur",
+      "rpc_address": "Jl. Lapangan Banteng Selatan, Sawah Besar, Jakarta Pusat",
+      "description": "Sea breeze, waterfront skyline and a flat coastal course. The easiest stage to fall in love with running.",
+      "village_open": "04:30:00",
+      "village_close": "11:00:00",
+      "race_start": "06:30:00",
+      "race_finish": "08:00:00",
+      "cot_minutes": 90,
+      "distance_km": "5.00",
+      "quota": 10000,
+      "route_description": {
+        "id": "Start at Ancol, head east on Jl. Lodan Raya toward Jl. R.E. Martadinata, loop through Ancol Selatan, Griya Utama and Benyamin Sueb, then finish at Ancol.",
+        "en": "Start at Ancol, head east on Jl. Lodan Raya toward Jl. R.E. Martadinata, loop through Ancol Selatan, Griya Utama and Benyamin Sueb, then finish at Ancol."
+      },
+      "registration_phases": [
+        {
+          "id": "phase-1",
+          "name": {
+            "id": "Pendaftaran"
+          },
+          "opens_at": "2026-11-18T00:00:00.000Z",
+          "closes_at": "2027-01-12T00:00:00.000Z",
+          "price": 195000,
+          "registration_url": "https://jkt499k.bigtix.io/en"
         }
       ]
     },
@@ -118,8 +184,23 @@
       "venue": {
         "id": "Lapangan Banteng"
       },
+      "venue_address": "Jl. Lapangan Banteng Utara, Sawah Besar, Jakarta Pusat",
       "theme": {
         "accent": "#0072B5"
+      },
+      "rpc_venue": "Hotel Borobudur",
+      "rpc_address": "Jl. Lapangan Banteng Selatan, Sawah Besar, Jakarta Pusat",
+      "description": "The grand finale in the heart of the capital, finishing where 500 years of Jakarta history still stands.",
+      "village_open": "04:30:00",
+      "village_close": "11:00:00",
+      "race_start": "06:30:00",
+      "race_finish": "08:00:00",
+      "cot_minutes": 90,
+      "distance_km": "5.00",
+      "quota": 10000,
+      "route_description": {
+        "id": "Start at Lapangan Banteng toward Jl. Gambir Raya and Jl. Ir. H. Juanda, U-turn at Harmoni, return past Pasar Baru and the Central Post Office, then finish at Lapangan Banteng.",
+        "en": "Start at Lapangan Banteng toward Jl. Gambir Raya and Jl. Ir. H. Juanda, U-turn at Harmoni, return past Pasar Baru and the Central Post Office, then finish at Lapangan Banteng."
       },
       "registration_phases": [
         {
@@ -130,7 +211,7 @@
           "opens_at": "2027-04-07T00:00:00.000Z",
           "closes_at": "2027-06-01T00:00:00.000Z",
           "price": 195000,
-          "registration_url": "https://example.com/jakarta-one/central/register"
+          "registration_url": "https://jkt499k.bigtix.io/en"
         }
       ]
     }

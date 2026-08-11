@@ -91,6 +91,75 @@
   );
 }
 
+.stage-badge {
+  display: inline-flex;
+  max-width: 100%;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--stage-accent, #cc0000) 22%, transparent);
+  background: color-mix(in srgb, var(--stage-accent, #cc0000) 8%, #ffffff);
+  font-family: var(--font-label);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--stage-accent, #cc0000) 75%, #141418);
+  vertical-align: middle;
+}
+
+.stage-badge--date {
+  color: var(--stage-accent, #cc0000);
+  background: color-mix(in srgb, var(--stage-accent, #cc0000) 12%, #ffffff);
+  border-color: color-mix(in srgb, var(--stage-accent, #cc0000) 28%, transparent);
+}
+
+.stage-badge--ghost {
+  padding: 0.25rem 0.55rem;
+  color: #6b7280;
+  background: rgba(0, 0, 0, 0.03);
+  border-color: rgba(0, 0, 0, 0.08);
+  letter-spacing: 0.1em;
+}
+
+.stage-badge--stat {
+  gap: 0.55rem;
+  white-space: nowrap;
+}
+
+.stage-badge--price {
+  gap: 0.55rem;
+  white-space: nowrap;
+  color: #ffffff;
+  background: var(--stage-accent, #cc0000);
+  border-color: transparent;
+}
+
+.stage-badge--price .stage-badge__k {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.stage-badge__k {
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #6b7280;
+}
+
+.stage-badge__v {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+  color: #141418;
+  white-space: nowrap;
+}
+
+.stage-badge--price .stage-badge__v {
+  color: #ffffff;
+}
+
 /* Race-bib shaped register button (notched corners) */
 .btn-stage {
   position: relative;
