@@ -141,7 +141,7 @@ export class SchedulePageComponent {
     this.seo.apply({
       meta_title: { id: 'Schedule | Jakarta One Running 2026' },
       meta_description: {
-        id: 'Race calendar for five Jakarta One stages, from East in November 2026 to the Central championship in June 2027.',
+        id: 'Race calendar for five Jakarta One stages, from South on 1 November 2026 to the Central championship on 6 June 2027.',
       },
       og_image: '/assets/prototype/hero-medal.png',
       noindex: false,

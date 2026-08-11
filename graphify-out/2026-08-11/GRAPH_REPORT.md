@@ -1,11 +1,11 @@
 # Graph Report - project-bms  (2026-08-11)
 
 ## Corpus Check
-- 117 files · ~559,406 words
+- 119 files · ~560,031 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2623 nodes · 3032 edges · 182 communities (172 shown, 10 thin omitted)
+- 2637 nodes · 3059 edges · 188 communities (178 shown, 10 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 2 edges (avg confidence: 0.65)
 - Token cost: 0 input · 0 output
 
@@ -37,7 +37,7 @@
 - Angular InputMask Component
 - home-page.component.ts
 - Angular AutoComplete Component
-- translated.ts
+- Edition
 - Angular InputTags Component
 - Angular Dialog Component
 - Angular InputPassword Component
@@ -49,7 +49,7 @@
 - Angular Checkbox Component
 - Angular RadioButton Component
 - Angular Icon Library - PrimeNG
-- JsonLdService
+- dev-blocks.component.ts
 - Angular InputText Component
 - Angular ToggleSwitch Component
 - Angular Menu Component
@@ -127,7 +127,7 @@
 - Angular ImageCompare Component
 - Angular Scroll Top Component
 - Angular Terminal Component
-- RevealDirective
+- BlockRendererComponent
 - Angular Ifta Label Component
 - Tailwind CSS - PrimeNG
 - ASSETS-MANIFEST.md — Prototype Landing Page Images
@@ -145,7 +145,7 @@
 - Animations - PrimeNG
 - Angular Dynamic Dialog Component
 - Angular StyleClass Component
-- ExternalLinkDialogComponent
+- RevealDirective
 - Angular Animate On Scroll Directive
 - Migration - PrimeNG v20
 - Global Constraints
@@ -156,7 +156,7 @@
 - server.ts
 - Angular Drag and Drop Component
 - Unstyled Mode
-- Migration - PrimeNG v21
+- app.config.ts
 - Migration - PrimeNG
 - Custom Icons - PrimeNG
 - Select
@@ -174,7 +174,8 @@
 - Table
 - Toast
 - Overlay
-- PartnersPageComponent
+- TrackingService
+- stats-counter.block.ts
 - require
 - Theming
 - Theming
@@ -185,6 +186,9 @@
 - Theming
 - Theming
 - navbar.component.ts
+- edition-cards-block.component.ts
+- HttpBlockRepository
+- legal-document-block.component.ts
 - FilterService - PrimeNG
 - production
 - jkt-web
@@ -196,6 +200,8 @@
 - _template/landing.config.ts
 - _template/README.md
 - environment.prod.ts
+- Migration - PrimeNG v22
+- TenantService
 
 ## God Nodes (most connected - your core abstractions)
 1. `Angular Table Component` - 60 edges
@@ -210,21 +216,21 @@
 10. `Angular InputNumber Component` - 24 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `GalleryImageItem` --references--> `TranslatedString`  [EXTRACTED]
-  jkt-web/src/app/core/models/blocks/gallery-grid.block.ts → jkt-web/src/app/core/models/translated.ts
-- `MapMarkerItem` --references--> `TranslatedString`  [EXTRACTED]
-  jkt-web/src/app/core/models/blocks/interactive-map.block.ts → jkt-web/src/app/core/models/translated.ts
-- `MilestoneItem` --references--> `TranslatedString`  [EXTRACTED]
-  jkt-web/src/app/core/models/blocks/milestone.block.ts → jkt-web/src/app/core/models/translated.ts
 - `StatsCounterItem` --references--> `TranslatedString`  [EXTRACTED]
   jkt-web/src/app/core/models/blocks/stats-counter.block.ts → jkt-web/src/app/core/models/translated.ts
+- `HttpBlockRepository` --inherits--> `BlockRepository`  [EXTRACTED]
+  jkt-web/src/app/core/api/http-block.repository.ts → jkt-web/src/app/core/api/block.repository.ts
 - `CtaBannerBlockData` --references--> `TranslatedString`  [EXTRACTED]
   jkt-web/src/app/core/models/blocks/cta-banner.block.ts → jkt-web/src/app/core/models/translated.ts
+- `HomePageComponent` --references--> `EditionCardsBlockData`  [EXTRACTED]
+  jkt-web/src/app/pages/home-page/home-page.component.ts → jkt-web/src/app/core/models/blocks/edition-cards.block.ts
+- `EditionDetailBlockData` --references--> `TranslatedString`  [EXTRACTED]
+  jkt-web/src/app/core/models/blocks/edition-detail.block.ts → jkt-web/src/app/core/models/translated.ts
 
 ## Import Cycles
 - None detected.
 
-## Communities (182 total, 10 thin omitted)
+## Communities (188 total, 10 thin omitted)
 
 ### Community 0 - "Angular Table Component"
 Cohesion: 0.04
@@ -251,8 +257,8 @@ Cohesion: 0.05
 Nodes (39): @angular/common, @angular/compiler, @angular/core, @angular/forms, @angular/platform-browser, @angular/platform-server, @angular/router, @angular/ssr (+31 more)
 
 ### Community 6 - "seo.service.ts"
-Cohesion: 0.14
-Nodes (9): ContactFormComponent, Component, SeoData, SeoService, Inject, Injectable, upsertMeta(), ContactPageComponent (+1 more)
+Cohesion: 0.21
+Nodes (7): SeoData, SeoService, Inject, Injectable, upsertMeta(), ContactPageComponent, Component
 
 ### Community 7 - "Angular Tree Component"
 Cohesion: 0.06
@@ -267,7 +273,7 @@ Cohesion: 0.06
 Nodes (31): Architecture, Basefontsize, Bootstrap, Colors, Colorscheme, Component, Darkmode, Definepreset (+23 more)
 
 ### Community 10 - "app.ts"
-Cohesion: 0.19
+Cohesion: 0.17
 Nodes (8): App, appConfig, config, serverConfig, serverRoutes, Component, FooterComponent, Component
 
 ### Community 11 - "Angular DatePicker Component"
@@ -307,16 +313,16 @@ Cohesion: 0.07
 Nodes (27): Accessibility, Angular InputMask Component, AutoClear, Basic, clearicon-doc, CSS Classes, Disabled, Emits (+19 more)
 
 ### Community 20 - "home-page.component.ts"
-Cohesion: 0.08
-Nodes (22): CtaBannerBlockComponent, Component, EditionCardsBlockComponent, formatDate(), SHORT_MONTHS_ID, Component, MilestoneBlockComponent, Component (+14 more)
+Cohesion: 0.12
+Nodes (11): CtaBannerBlockComponent, Component, HeroBlockComponent, Component, MilestoneBlockComponent, Component, CtaBannerBlockData, HeroBlockData (+3 more)
 
 ### Community 21 - "Angular AutoComplete Component"
 Cohesion: 0.09
 Nodes (23): Accessibility, Angular AutoComplete Component, Basic, clear-icon-doc, custom-group-doc, custom-option-doc, Disabled, Dropdown (+15 more)
 
-### Community 22 - "translated.ts"
-Cohesion: 0.11
-Nodes (15): routes, BlockRepository, cmsHostInterceptor(), FixtureBlockRepository, Injectable, HttpBlockRepository, Injectable, Edition (+7 more)
+### Community 22 - "Edition"
+Cohesion: 0.24
+Nodes (8): BlockRepository, FixtureBlockRepository, Injectable, Edition, MenuResponse, PageResponse, RegistrationPhase, SiteResponse
 
 ### Community 23 - "Angular InputTags Component"
 Cohesion: 0.08
@@ -362,9 +368,9 @@ Nodes (22): Accessibility, Angular RadioButton Component, Basic, Card, CSS Class
 Cohesion: 0.09
 Nodes (22): Accessibility, Angular Icon Library - PrimeNG, Angular Stepper Component, basic-doc, Color, CSS Classes, Design Tokens, Download (+14 more)
 
-### Community 34 - "JsonLdService"
-Cohesion: 0.29
-Nodes (4): JsonLdService, SportsEventJsonLd, Inject, Injectable
+### Community 34 - "dev-blocks.component.ts"
+Cohesion: 0.17
+Nodes (8): JsonLdService, SportsEventJsonLd, Inject, Injectable, PageBlock, DEV_BLOCKS, DevBlocksComponent, Component
 
 ### Community 35 - "Angular InputText Component"
 Cohesion: 0.10
@@ -391,8 +397,8 @@ Cohesion: 0.10
 Nodes (20): Accessibility, Angular ToggleButton Component, Basic, CSS Classes, Customized, Design Tokens, Disabled, Emits (+12 more)
 
 ### Community 41 - "tr.pipe.ts"
-Cohesion: 0.10
-Nodes (13): HeroBlockComponent, Component, SponsorWallBlockComponent, Component, TransportationInfoBlockComponent, Component, AppLocale, LocaleService (+5 more)
+Cohesion: 0.11
+Nodes (16): FaqAccordionBlockComponent, Component, InteractiveMapBlockComponent, Component, RichTextMediaBlockComponent, Component, SeriesTimelineBlockComponent, Component (+8 more)
 
 ### Community 42 - "Angular FileUpload Component"
 Cohesion: 0.11
@@ -659,8 +665,8 @@ Cohesion: 0.18
 Nodes (11): options, assets, browser, inlineStyleLanguage, outputMode, server, ssr, styles (+3 more)
 
 ### Community 108 - "llmfull-primeng.md"
-Cohesion: 0.14
-Nodes (13): Components, Configuration, Deprecations, Guide Pages, LLMs.txt - PrimeNG, Llmsfulltxt, Llmstxt, Markdownextension (+5 more)
+Cohesion: 0.13
+Nodes (14): Breaking, Components, Configuration, Deprecations, Guide Pages, LLMs.txt - PrimeNG, Llmsfulltxt, Llmstxt (+6 more)
 
 ### Community 109 - "Angular ImageCompare Component"
 Cohesion: 0.18
@@ -673,6 +679,10 @@ Nodes (11): Accessibility, Angular Scroll Top Component, Basic, CSS Classes, Pas
 ### Community 111 - "Angular Terminal Component"
 Cohesion: 0.18
 Nodes (11): Accessibility, Angular Terminal Component, Basic, CSS Classes, Design Tokens, File System, Pass Through Options, preview-doc (+3 more)
+
+### Community 112 - "BlockRendererComponent"
+Cohesion: 0.12
+Nodes (6): BlockRendererComponent, Component, GalleryGridBlockComponent, Component, FaqAccordionBlockData, GalleryGridBlockData
 
 ### Community 113 - "Angular Ifta Label Component"
 Cohesion: 0.20
@@ -715,8 +725,8 @@ Cohesion: 0.25
 Nodes (7): Atmosphere, Clean Frost — White Base Light Theme, Glass tiers, Goal, Out of scope, Principles, Token remap (keep Tailwind class names)
 
 ### Community 123 - "block-renderer.component.ts"
-Cohesion: 0.07
-Nodes (27): BlockRendererComponent, Component, EditionDetailBlockComponent, Component, EmbedBlockComponent, Component, FaqAccordionBlockComponent, Component (+19 more)
+Cohesion: 0.19
+Nodes (9): EditionDetailBlockComponent, Component, EmbedBlockComponent, Component, SponsorWallBlockComponent, Component, EditionDetailBlockData, EmbedBlockData (+1 more)
 
 ### Community 124 - "JktWeb"
 Cohesion: 0.25
@@ -724,7 +734,7 @@ Nodes (7): Additional Resources, Building, Code scaffolding, Development server,
 
 ### Community 125 - "TranslatedString"
 Cohesion: 0.18
-Nodes (11): SeriesTimelineBlockComponent, Component, FaqItem, SeriesTimelineBlockData, SeriesTimelineItem, SponsorLogoItem, SponsorTierItem, ParkingInfoItem (+3 more)
+Nodes (15): EditionCardsBlockData, FaqItem, GalleryImageItem, InteractiveMapBlockData, MapMarkerItem, MilestoneItem, RichTextMediaBlockData, SeriesTimelineBlockData (+7 more)
 
 ### Community 126 - "Accessibility - PrimeNG"
 Cohesion: 0.29
@@ -742,9 +752,9 @@ Nodes (7): Angular Dynamic Dialog Component, Closing a Dialog, Customization, Ex
 Cohesion: 0.29
 Nodes (7): Angular StyleClass Component, Animation, Basic, Hide On Resize, preview-doc, Selector, Toggle Class
 
-### Community 130 - "ExternalLinkDialogComponent"
-Cohesion: 0.18
-Nodes (6): Input, ExternalLinkDialogComponent, Component, Inject, PartnerLogo, Output
+### Community 130 - "RevealDirective"
+Cohesion: 0.10
+Nodes (10): Directive, Input, ExternalLinkDialogComponent, Component, Inject, PartnerLogo, PartnersPageComponent, Component (+2 more)
 
 ### Community 131 - "Angular Animate On Scroll Directive"
 Cohesion: 0.33
@@ -786,9 +796,9 @@ Nodes (5): Angular Drag and Drop Component, Basic, DataTable, Drag Handle, Drop 
 Cohesion: 0.40
 Nodes (5): Architecture, Example, Global, Setup, Unstyled Mode
 
-### Community 141 - "Migration - PrimeNG v21"
-Cohesion: 0.40
-Nodes (5): Breaking, Deprecations, Migration - PrimeNG v21, Removals, Whatsnew
+### Community 141 - "app.config.ts"
+Cohesion: 0.23
+Nodes (5): routes, ContactFormComponent, Component, cmsHostInterceptor(), environment
 
 ### Community 142 - "Migration - PrimeNG"
 Cohesion: 0.40
@@ -858,6 +868,14 @@ Nodes (4): Emits, Props, Templates, Toast
 Cohesion: 0.50
 Nodes (4): Emits, Overlay, Props, Templates
 
+### Community 159 - "TrackingService"
+Cohesion: 0.24
+Nodes (4): SiteTracking, TrackingService, Inject, Injectable
+
+### Community 160 - "stats-counter.block.ts"
+Cohesion: 0.25
+Nodes (4): StatsCounterBlockComponent, Component, StatsCounterBlockData, StatsCounterItem
+
 ### Community 162 - "Theming"
 Cohesion: 0.67
 Nodes (3): CSS Classes, Design Tokens, Theming
@@ -890,6 +908,14 @@ Nodes (3): CSS Classes, Design Tokens, Theming
 Cohesion: 0.27
 Nodes (4): DEFAULT_MENU, MenuItem, NavbarComponent, Component
 
+### Community 172 - "edition-cards-block.component.ts"
+Cohesion: 0.31
+Nodes (5): EditionCardsBlockComponent, formatDate(), SHORT_MONTHS_ID, Component, EditionCardItem
+
+### Community 174 - "legal-document-block.component.ts"
+Cohesion: 0.40
+Nodes (3): LegalDocumentBlockComponent, Component, LegalDocumentBlockData
+
 ### Community 175 - "FilterService - PrimeNG"
 Cohesion: 0.40
 Nodes (5): Built-in Constraints, Custom Constraints, FilterService API, FilterService - PrimeNG, tableintegration-doc
@@ -910,6 +936,10 @@ Nodes (3): CSS Classes, Design Tokens, Theming
 Cohesion: 0.67
 Nodes (3): skipTests, style, @schematics/angular:component
 
+### Community 186 - "Migration - PrimeNG v22"
+Cohesion: 0.50
+Nodes (4): Deprecations, Migration - PrimeNG v22, Overview, Removals
+
 ## Knowledge Gaps
 - **1886 isolated node(s):** `laravel/mcp`, `$schema`, `version`, `packageManager`, `newProjectRoot` (+1881 more)
   These have ≤1 connection - possible missing edges or undocumented components.
@@ -919,11 +949,11 @@ Nodes (3): skipTests, style, @schematics/angular:component
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Angular Table Component` connect `Angular Table Component` to `Angular TreeTable Component`, `Angular Tree Component`, `Theming`, `llmfull-primeng.md`, `Angular MultiSelect Component`, `Table`?**
-  _High betweenness centrality (0.039) - this node is a cross-community bridge._
+  _High betweenness centrality (0.047) - this node is a cross-community bridge._
 - **Why does `Angular DatePicker Component` connect `Angular DatePicker Component` to `Theming`, `llmfull-primeng.md`, `Select`, `Angular AutoComplete Component`, `Angular InputTags Component`, `Auto Complete`, `Date Picker`?**
-  _High betweenness centrality (0.034) - this node is a cross-community bridge._
-- **Why does `Angular CascadeSelect Component` connect `Angular CascadeSelect Component` to `llmfull-primeng.md`?**
-  _High betweenness centrality (0.029) - this node is a cross-community bridge._
+  _High betweenness centrality (0.041) - this node is a cross-community bridge._
+- **Why does `Angular Menu Component` connect `Angular Menu Component` to `llmfull-primeng.md`?**
+  _High betweenness centrality (0.028) - this node is a cross-community bridge._
 - **What connects `laravel/mcp`, `$schema`, `version` to the rest of the system?**
   _1886 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Angular Table Component` be split into smaller, more focused modules?**

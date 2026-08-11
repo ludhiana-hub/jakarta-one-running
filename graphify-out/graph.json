@@ -153,8 +153,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "jkt_web_angular_schematics_schematics_angular_component",
-      "community": 179,
-      "community_name": "@schematics/angular:component",
+      "community": 55,
+      "community_name": "schematics",
       "norm_label": "@schematics/angular:component"
     },
     {
@@ -164,8 +164,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "jkt_web_angular_schematics_angular_component_style",
-      "community": 179,
-      "community_name": "@schematics/angular:component",
+      "community": 55,
+      "community_name": "schematics",
       "norm_label": "style"
     },
     {
@@ -175,8 +175,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "jkt_web_angular_schematics_angular_component_skiptests",
-      "community": 179,
-      "community_name": "@schematics/angular:component",
+      "community": 55,
+      "community_name": "schematics",
       "norm_label": "skiptests"
     },
     {
@@ -565,10 +565,21 @@
       "norm_label": "103.55.37.253"
     },
     {
+      "label": "jakartaonerunningseries.com",
+      "file_type": "concept",
+      "source_file": "jkt-web/angular.json",
+      "source_location": "L69",
+      "_origin": "ast",
+      "id": "ref_jakartaonerunningseries_com",
+      "community": 136,
+      "community_name": "allowedHosts",
+      "norm_label": "jakartaonerunningseries.com"
+    },
+    {
       "label": "ssr",
       "file_type": "code",
       "source_file": "jkt-web/angular.json",
-      "source_location": "L76",
+      "source_location": "L78",
       "_origin": "ast",
       "id": "jkt_web_angular_options_ssr",
       "community": 107,
@@ -579,7 +590,7 @@
       "label": "entry",
       "file_type": "code",
       "source_file": "jkt-web/angular.json",
-      "source_location": "L77",
+      "source_location": "L79",
       "_origin": "ast",
       "id": "jkt_web_angular_ssr_entry",
       "community": 107,
@@ -590,7 +601,7 @@
       "label": "configurations",
       "file_type": "code",
       "source_file": "jkt-web/angular.json",
-      "source_location": "L80",
+      "source_location": "L82",
       "_origin": "ast",
       "id": "jkt_web_angular_build_configurations",
       "community": 54,
@@ -601,7 +612,7 @@
       "label": "production",
       "file_type": "code",
       "source_file": "jkt-web/angular.json",
-      "source_location": "L81",
+      "source_location": "L83",
       "_origin": "ast",
       "id": "jkt_web_angular_configurations_production",
       "community": 176,
@@ -612,7 +623,7 @@
       "label": "fileReplacements",
       "file_type": "code",
       "source_file": "jkt-web/angular.json",
-      "source_location": "L82",
+      "source_location": "L84",
       "_origin": "ast",
       "id": "jkt_web_angular_production_filereplacements",
       "community": 176,
@@ -623,7 +634,7 @@
       "label": "budgets",
       "file_type": "code",
       "source_file": "jkt-web/angular.json",
-      "source_location": "L88",
+      "source_location": "L90",
       "_origin": "ast",
       "id": "jkt_web_angular_production_budgets",
       "community": 176,
@@ -634,7 +645,7 @@
       "label": "outputHashing",
       "file_type": "code",
       "source_file": "jkt-web/angular.json",
-      "source_location": "L100",
+      "source_location": "L102",
       "_origin": "ast",
       "id": "jkt_web_angular_production_outputhashing",
       "community": 176,
@@ -645,7 +656,7 @@
       "label": "development",
       "file_type": "code",
       "source_file": "jkt-web/angular.json",
-      "source_location": "L102",
+      "source_location": "L104",
       "_origin": "ast",
       "id": "jkt_web_angular_configurations_development",
       "community": 54,
@@ -656,7 +667,7 @@
       "label": "optimization",
       "file_type": "code",
       "source_file": "jkt-web/angular.json",
-      "source_location": "L103",
+      "source_location": "L105",
       "_origin": "ast",
       "id": "jkt_web_angular_development_optimization",
       "community": 54,
@@ -667,7 +678,7 @@
       "label": "extractLicenses",
       "file_type": "code",
       "source_file": "jkt-web/angular.json",
-      "source_location": "L104",
+      "source_location": "L106",
       "_origin": "ast",
       "id": "jkt_web_angular_development_extractlicenses",
       "community": 54,
@@ -678,7 +689,7 @@
       "label": "sourceMap",
       "file_type": "code",
       "source_file": "jkt-web/angular.json",
-      "source_location": "L105",
+      "source_location": "L107",
       "_origin": "ast",
       "id": "jkt_web_angular_development_sourcemap",
       "community": 54,
@@ -689,7 +700,7 @@
       "label": "defaultConfiguration",
       "file_type": "code",
       "source_file": "jkt-web/angular.json",
-      "source_location": "L108",
+      "source_location": "L110",
       "_origin": "ast",
       "id": "jkt_web_angular_build_defaultconfiguration",
       "community": 54,
@@ -700,7 +711,7 @@
       "label": "serve",
       "file_type": "code",
       "source_file": "jkt-web/angular.json",
-      "source_location": "L110",
+      "source_location": "L112",
       "_origin": "ast",
       "id": "jkt_web_angular_architect_serve",
       "community": 54,
@@ -711,7 +722,7 @@
       "label": "builder",
       "file_type": "code",
       "source_file": "jkt-web/angular.json",
-      "source_location": "L111",
+      "source_location": "L113",
       "_origin": "ast",
       "id": "jkt_web_angular_serve_builder",
       "community": 54,
@@ -722,7 +733,7 @@
       "label": "configurations",
       "file_type": "code",
       "source_file": "jkt-web/angular.json",
-      "source_location": "L112",
+      "source_location": "L114",
       "_origin": "ast",
       "id": "jkt_web_angular_serve_configurations",
       "community": 54,
@@ -733,7 +744,7 @@
       "label": "buildTarget",
       "file_type": "code",
       "source_file": "jkt-web/angular.json",
-      "source_location": "L114",
+      "source_location": "L116",
       "_origin": "ast",
       "id": "jkt_web_angular_production_buildtarget",
       "community": 176,
@@ -744,7 +755,7 @@
       "label": "buildTarget",
       "file_type": "code",
       "source_file": "jkt-web/angular.json",
-      "source_location": "L117",
+      "source_location": "L119",
       "_origin": "ast",
       "id": "jkt_web_angular_development_buildtarget",
       "community": 54,
@@ -755,7 +766,7 @@
       "label": "defaultConfiguration",
       "file_type": "code",
       "source_file": "jkt-web/angular.json",
-      "source_location": "L120",
+      "source_location": "L122",
       "_origin": "ast",
       "id": "jkt_web_angular_serve_defaultconfiguration",
       "community": 54,
@@ -769,8 +780,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "jkt_web_package",
-      "community": 3,
-      "community_name": "devDependencies",
+      "community": 179,
+      "community_name": "package.json",
       "norm_label": "package.json"
     },
     {
@@ -780,8 +791,8 @@
       "source_location": "L2",
       "_origin": "ast",
       "id": "jkt_web_package_name",
-      "community": 3,
-      "community_name": "devDependencies",
+      "community": 179,
+      "community_name": "package.json",
       "norm_label": "name"
     },
     {
@@ -791,8 +802,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "jkt_web_package_version",
-      "community": 3,
-      "community_name": "devDependencies",
+      "community": 179,
+      "community_name": "package.json",
       "norm_label": "version"
     },
     {
@@ -802,8 +813,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "jkt_web_package_scripts",
-      "community": 3,
-      "community_name": "devDependencies",
+      "community": 179,
+      "community_name": "package.json",
       "norm_label": "scripts"
     },
     {
@@ -813,8 +824,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "jkt_web_package_scripts_ng",
-      "community": 3,
-      "community_name": "devDependencies",
+      "community": 179,
+      "community_name": "package.json",
       "norm_label": "ng"
     },
     {
@@ -824,8 +835,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "jkt_web_package_scripts_start",
-      "community": 3,
-      "community_name": "devDependencies",
+      "community": 179,
+      "community_name": "package.json",
       "norm_label": "start"
     },
     {
@@ -835,8 +846,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "jkt_web_package_scripts_build",
-      "community": 3,
-      "community_name": "devDependencies",
+      "community": 179,
+      "community_name": "package.json",
       "norm_label": "build"
     },
     {
@@ -846,8 +857,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "jkt_web_package_scripts_watch",
-      "community": 3,
-      "community_name": "devDependencies",
+      "community": 179,
+      "community_name": "package.json",
       "norm_label": "watch"
     },
     {
@@ -857,8 +868,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "jkt_web_package_scripts_test",
-      "community": 3,
-      "community_name": "devDependencies",
+      "community": 179,
+      "community_name": "package.json",
       "norm_label": "test"
     },
     {
@@ -868,8 +879,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "jkt_web_package_scripts_serve_ssr_jkt_web",
-      "community": 3,
-      "community_name": "devDependencies",
+      "community": 179,
+      "community_name": "package.json",
       "norm_label": "serve:ssr:jkt-web"
     },
     {
@@ -879,8 +890,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "jkt_web_package_private",
-      "community": 3,
-      "community_name": "devDependencies",
+      "community": 179,
+      "community_name": "package.json",
       "norm_label": "private"
     },
     {
@@ -890,8 +901,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "jkt_web_package_packagemanager",
-      "community": 3,
-      "community_name": "devDependencies",
+      "community": 179,
+      "community_name": "package.json",
       "norm_label": "packagemanager"
     },
     {
@@ -934,8 +945,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "jkt_web_package_dependencies_angular_compiler",
-      "community": 5,
-      "community_name": "dependencies",
+      "community": 187,
+      "community_name": "@angular/compiler",
       "norm_label": "@angular/compiler"
     },
     {
@@ -945,8 +956,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "angular_compiler",
-      "community": 5,
-      "community_name": "dependencies",
+      "community": 187,
+      "community_name": "@angular/compiler",
       "norm_label": "@angular/compiler"
     },
     {
@@ -1000,8 +1011,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "jkt_web_package_dependencies_angular_platform_browser",
-      "community": 5,
-      "community_name": "dependencies",
+      "community": 188,
+      "community_name": "@angular/platform-browser",
       "norm_label": "@angular/platform-browser"
     },
     {
@@ -1011,8 +1022,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "angular_platform_browser",
-      "community": 5,
-      "community_name": "dependencies",
+      "community": 188,
+      "community_name": "@angular/platform-browser",
       "norm_label": "@angular/platform-browser"
     },
     {
@@ -1110,8 +1121,8 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "jkt_web_package_dependencies_fontsource_variable_plus_jakarta_sans",
-      "community": 5,
-      "community_name": "dependencies",
+      "community": 191,
+      "community_name": "@fontsource-variable/plus-jakarta-sans",
       "norm_label": "@fontsource-variable/plus-jakarta-sans"
     },
     {
@@ -1121,8 +1132,8 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "fontsource_variable_plus_jakarta_sans",
-      "community": 5,
-      "community_name": "dependencies",
+      "community": 191,
+      "community_name": "@fontsource-variable/plus-jakarta-sans",
       "norm_label": "@fontsource-variable/plus-jakarta-sans"
     },
     {
@@ -1132,8 +1143,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "jkt_web_package_dependencies_fontsource_jetbrains_mono",
-      "community": 5,
-      "community_name": "dependencies",
+      "community": 190,
+      "community_name": "@fontsource/jetbrains-mono",
       "norm_label": "@fontsource/jetbrains-mono"
     },
     {
@@ -1143,8 +1154,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "fontsource_jetbrains_mono",
-      "community": 5,
-      "community_name": "dependencies",
+      "community": 190,
+      "community_name": "@fontsource/jetbrains-mono",
       "norm_label": "@fontsource/jetbrains-mono"
     },
     {
@@ -1176,8 +1187,8 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "jkt_web_package_dependencies_primeuix_themes",
-      "community": 5,
-      "community_name": "dependencies",
+      "community": 193,
+      "community_name": "@primeuix/themes",
       "norm_label": "@primeuix/themes"
     },
     {
@@ -1187,8 +1198,8 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "primeuix_themes",
-      "community": 5,
-      "community_name": "dependencies",
+      "community": 193,
+      "community_name": "@primeuix/themes",
       "norm_label": "@primeuix/themes"
     },
     {
@@ -1198,8 +1209,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "jkt_web_package_dependencies_express",
-      "community": 5,
-      "community_name": "dependencies",
+      "community": 189,
+      "community_name": "express",
       "norm_label": "express"
     },
     {
@@ -1209,8 +1220,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "express",
-      "community": 5,
-      "community_name": "dependencies",
+      "community": 189,
+      "community_name": "express",
       "norm_label": "express"
     },
     {
@@ -1220,8 +1231,8 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "jkt_web_package_dependencies_leaflet",
-      "community": 5,
-      "community_name": "dependencies",
+      "community": 192,
+      "community_name": "leaflet",
       "norm_label": "leaflet"
     },
     {
@@ -1231,8 +1242,8 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "leaflet",
-      "community": 5,
-      "community_name": "dependencies",
+      "community": 192,
+      "community_name": "leaflet",
       "norm_label": "leaflet"
     },
     {
@@ -1286,8 +1297,8 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "jkt_web_package_dependencies_rxjs",
-      "community": 5,
-      "community_name": "dependencies",
+      "community": 194,
+      "community_name": "rxjs",
       "norm_label": "rxjs"
     },
     {
@@ -1297,8 +1308,8 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "rxjs",
-      "community": 5,
-      "community_name": "dependencies",
+      "community": 194,
+      "community_name": "rxjs",
       "norm_label": "rxjs"
     },
     {
@@ -1627,8 +1638,8 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "jkt_web_package_devdependencies_vitest",
-      "community": 3,
-      "community_name": "devDependencies",
+      "community": 195,
+      "community_name": "vitest",
       "norm_label": "vitest"
     },
     {
@@ -1638,8 +1649,8 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "vitest",
-      "community": 3,
-      "community_name": "devDependencies",
+      "community": 195,
+      "community_name": "vitest",
       "norm_label": "vitest"
     },
     {
@@ -1704,8 +1715,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "jkt_web_src_app_app_config_appconfig",
-      "community": 10,
-      "community_name": "app.ts",
+      "community": 141,
+      "community_name": "app.config.ts",
       "norm_label": "appconfig"
     },
     {
@@ -2012,8 +2023,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "jkt_web_src_app_blocks_contact_form_contact_form_component_contactformcomponent",
-      "community": 141,
-      "community_name": "app.config.ts",
+      "community": 173,
+      "community_name": "RevealDirective",
       "norm_label": "contactformcomponent"
     },
     {
@@ -2023,8 +2034,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "jkt_web_src_app_blocks_contact_form_contact_form_component_ts_component",
-      "community": 141,
-      "community_name": "app.config.ts",
+      "community": 173,
+      "community_name": "RevealDirective",
       "norm_label": "component"
     },
     {
@@ -2034,8 +2045,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "jkt_web_src_app_blocks_contact_form_contact_form_component_contactformcomponent_ctrl",
-      "community": 141,
-      "community_name": "app.config.ts",
+      "community": 173,
+      "community_name": "RevealDirective",
       "norm_label": ".ctrl()"
     },
     {
@@ -2045,8 +2056,8 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "jkt_web_src_app_blocks_contact_form_contact_form_component_contactformcomponent_submit",
-      "community": 141,
-      "community_name": "app.config.ts",
+      "community": 173,
+      "community_name": "RevealDirective",
       "norm_label": ".submit()"
     },
     {
@@ -2171,10 +2182,21 @@
       "norm_label": ".bottomitems()"
     },
     {
+      "label": ".stageIndex()",
+      "file_type": "code",
+      "source_file": "jkt-web/src/app/blocks/edition-cards/edition-cards-block.component.ts",
+      "source_location": "L51",
+      "_origin": "ast",
+      "id": "jkt_web_src_app_blocks_edition_cards_edition_cards_block_component_editioncardsblockcomponent_stageindex",
+      "community": 22,
+      "community_name": "Edition",
+      "norm_label": ".stageindex()"
+    },
+    {
       "label": ".dateRangeLabel()",
       "file_type": "code",
       "source_file": "jkt-web/src/app/blocks/edition-cards/edition-cards-block.component.ts",
-      "source_location": "L53",
+      "source_location": "L58",
       "_origin": "ast",
       "id": "jkt_web_src_app_blocks_edition_cards_edition_cards_block_component_editioncardsblockcomponent_daterangelabel",
       "community": 172,
@@ -2683,8 +2705,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "jkt_web_src_app_core_api_block_repository",
-      "community": 22,
-      "community_name": "Edition",
+      "community": 6,
+      "community_name": "dynamic-page.component.ts",
       "norm_label": "block.repository.ts"
     },
     {
@@ -2694,8 +2716,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "jkt_web_src_app_core_api_block_repository_blockrepository",
-      "community": 22,
-      "community_name": "Edition",
+      "community": 6,
+      "community_name": "dynamic-page.component.ts",
       "norm_label": "blockrepository"
     },
     {
@@ -2710,10 +2732,21 @@
       "norm_label": "cms-host.interceptor.ts"
     },
     {
+      "label": "resolveTenantHost()",
+      "file_type": "code",
+      "source_file": "jkt-web/src/app/core/api/cms-host.interceptor.ts",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "jkt_web_src_app_core_api_cms_host_interceptor_resolvetenanthost",
+      "community": 141,
+      "community_name": "app.config.ts",
+      "norm_label": "resolvetenanthost()"
+    },
+    {
       "label": "cmsHostInterceptor()",
       "file_type": "code",
       "source_file": "jkt-web/src/app/core/api/cms-host.interceptor.ts",
-      "source_location": "L15",
+      "source_location": "L45",
       "_origin": "ast",
       "id": "jkt_web_src_app_core_api_cms_host_interceptor_cmshostinterceptor",
       "community": 141,
@@ -2782,8 +2815,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "jkt_web_src_app_core_api_fixture_repository_fixtureblockrepository_page",
-      "community": 22,
-      "community_name": "Edition",
+      "community": 6,
+      "community_name": "dynamic-page.component.ts",
       "norm_label": ".page()"
     },
     {
@@ -2826,8 +2859,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "jkt_web_src_app_core_api_http_block_repository",
-      "community": 22,
-      "community_name": "Edition",
+      "community": 141,
+      "community_name": "app.config.ts",
       "norm_label": "http-block.repository.ts"
     },
     {
@@ -2837,8 +2870,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "jkt_web_src_app_core_api_http_block_repository_httpblockrepository",
-      "community": 173,
-      "community_name": "HttpBlockRepository",
+      "community": 22,
+      "community_name": "Edition",
       "norm_label": "httpblockrepository"
     },
     {
@@ -2848,8 +2881,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "jkt_web_src_app_core_api_http_block_repository_ts_injectable",
-      "community": 173,
-      "community_name": "HttpBlockRepository",
+      "community": 22,
+      "community_name": "Edition",
       "norm_label": "injectable"
     },
     {
@@ -2859,8 +2892,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "jkt_web_src_app_core_api_http_block_repository_httpblockrepository_baseurl",
-      "community": 173,
-      "community_name": "HttpBlockRepository",
+      "community": 22,
+      "community_name": "Edition",
       "norm_label": ".baseurl()"
     },
     {
@@ -2870,8 +2903,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "jkt_web_src_app_core_api_http_block_repository_httpblockrepository_previewtoken",
-      "community": 173,
-      "community_name": "HttpBlockRepository",
+      "community": 22,
+      "community_name": "Edition",
       "norm_label": ".previewtoken()"
     },
     {
@@ -2881,8 +2914,8 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "jkt_web_src_app_core_api_http_block_repository_httpblockrepository_site",
-      "community": 173,
-      "community_name": "HttpBlockRepository",
+      "community": 22,
+      "community_name": "Edition",
       "norm_label": ".site()"
     },
     {
@@ -2892,8 +2925,8 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "jkt_web_src_app_core_api_http_block_repository_httpblockrepository_page",
-      "community": 173,
-      "community_name": "HttpBlockRepository",
+      "community": 22,
+      "community_name": "Edition",
       "norm_label": ".page()"
     },
     {
@@ -2903,8 +2936,8 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "jkt_web_src_app_core_api_http_block_repository_httpblockrepository_editions",
-      "community": 173,
-      "community_name": "HttpBlockRepository",
+      "community": 22,
+      "community_name": "Edition",
       "norm_label": ".editions()"
     },
     {
@@ -2914,8 +2947,8 @@
       "source_location": "L46",
       "_origin": "ast",
       "id": "jkt_web_src_app_core_api_http_block_repository_httpblockrepository_edition",
-      "community": 173,
-      "community_name": "HttpBlockRepository",
+      "community": 22,
+      "community_name": "Edition",
       "norm_label": ".edition()"
     },
     {
@@ -2925,8 +2958,8 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "jkt_web_src_app_core_api_http_block_repository_httpblockrepository_menu",
-      "community": 173,
-      "community_name": "HttpBlockRepository",
+      "community": 22,
+      "community_name": "Edition",
       "norm_label": ".menu()"
     },
     {
@@ -3021,7 +3054,7 @@
       "label": "formatPriceIdr()",
       "file_type": "code",
       "source_file": "jkt-web/src/app/core/data/jktone-stages.ts",
-      "source_location": "L231",
+      "source_location": "L242",
       "_origin": "ast",
       "id": "jkt_web_src_app_core_data_jktone_stages_formatpriceidr",
       "community": 154,
@@ -3695,8 +3728,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "jkt_web_src_app_core_models_page_response",
-      "community": 22,
-      "community_name": "Edition",
+      "community": 6,
+      "community_name": "dynamic-page.component.ts",
       "norm_label": "page-response.ts"
     },
     {
@@ -3706,8 +3739,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "jkt_web_src_app_core_models_page_response_pageresponse",
-      "community": 22,
-      "community_name": "Edition",
+      "community": 6,
+      "community_name": "dynamic-page.component.ts",
       "norm_label": "pageresponse"
     },
     {
@@ -3740,7 +3773,7 @@
       "_origin": "ast",
       "id": "jkt_web_src_app_core_models_seo",
       "community": 6,
-      "community_name": "seo.service.ts",
+      "community_name": "dynamic-page.component.ts",
       "norm_label": "seo.ts"
     },
     {
@@ -3751,7 +3784,7 @@
       "_origin": "ast",
       "id": "jkt_web_src_app_core_models_seo_seodata",
       "community": 6,
-      "community_name": "seo.service.ts",
+      "community_name": "dynamic-page.component.ts",
       "norm_label": "seodata"
     },
     {
@@ -3783,8 +3816,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "jkt_web_src_app_core_models_site_tracking",
-      "community": 159,
-      "community_name": "TrackingService",
+      "community": 22,
+      "community_name": "Edition",
       "norm_label": "site-tracking.ts"
     },
     {
@@ -3794,8 +3827,8 @@
       "source_location": "L2",
       "_origin": "ast",
       "id": "jkt_web_src_app_core_models_site_tracking_sitetracking",
-      "community": 159,
-      "community_name": "TrackingService",
+      "community": 22,
+      "community_name": "Edition",
       "norm_label": "sitetracking"
     },
     {
@@ -3828,7 +3861,7 @@
       "_origin": "ast",
       "id": "jkt_web_src_app_core_seo_service",
       "community": 6,
-      "community_name": "seo.service.ts",
+      "community_name": "dynamic-page.component.ts",
       "norm_label": "seo.service.ts"
     },
     {
@@ -3839,7 +3872,7 @@
       "_origin": "ast",
       "id": "jkt_web_src_app_core_seo_service_upsertmeta",
       "community": 6,
-      "community_name": "seo.service.ts",
+      "community_name": "dynamic-page.component.ts",
       "norm_label": "upsertmeta()"
     },
     {
@@ -3850,7 +3883,7 @@
       "_origin": "ast",
       "id": "jkt_web_src_app_core_seo_service_seoservice",
       "community": 6,
-      "community_name": "seo.service.ts",
+      "community_name": "dynamic-page.component.ts",
       "norm_label": "seoservice"
     },
     {
@@ -3861,7 +3894,7 @@
       "_origin": "ast",
       "id": "jkt_web_src_app_core_seo_service_ts_injectable",
       "community": 6,
-      "community_name": "seo.service.ts",
+      "community_name": "dynamic-page.component.ts",
       "norm_label": "injectable"
     },
     {
@@ -3872,7 +3905,7 @@
       "_origin": "ast",
       "id": "jkt_web_src_app_core_seo_service_ts_inject",
       "community": 6,
-      "community_name": "seo.service.ts",
+      "community_name": "dynamic-page.component.ts",
       "norm_label": "inject"
     },
     {
@@ -3883,7 +3916,7 @@
       "_origin": "ast",
       "id": "jkt_web_src_app_core_seo_service_seoservice_constructor",
       "community": 6,
-      "community_name": "seo.service.ts",
+      "community_name": "dynamic-page.component.ts",
       "norm_label": ".constructor()"
     },
     {
@@ -3894,7 +3927,7 @@
       "_origin": "ast",
       "id": "jkt_web_src_app_core_seo_service_seoservice_apply",
       "community": 6,
-      "community_name": "seo.service.ts",
+      "community_name": "dynamic-page.component.ts",
       "norm_label": ".apply()"
     },
     {
@@ -3904,8 +3937,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "jkt_web_src_app_core_tenant_service",
-      "community": 22,
-      "community_name": "Edition",
+      "community": 6,
+      "community_name": "dynamic-page.component.ts",
       "norm_label": "tenant.service.ts"
     },
     {
@@ -3915,8 +3948,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "jkt_web_src_app_core_tenant_service_tenantservice",
-      "community": 187,
-      "community_name": "TenantService",
+      "community": 6,
+      "community_name": "dynamic-page.component.ts",
       "norm_label": "tenantservice"
     },
     {
@@ -3926,8 +3959,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "jkt_web_src_app_core_tenant_service_ts_injectable",
-      "community": 187,
-      "community_name": "TenantService",
+      "community": 6,
+      "community_name": "dynamic-page.component.ts",
       "norm_label": "injectable"
     },
     {
@@ -3937,8 +3970,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "jkt_web_src_app_core_tenant_service_tenantservice_editionslug",
-      "community": 187,
-      "community_name": "TenantService",
+      "community": 6,
+      "community_name": "dynamic-page.component.ts",
       "norm_label": ".editionslug()"
     },
     {
@@ -3948,8 +3981,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "jkt_web_src_app_core_tenant_service_tenantservice_edition",
-      "community": 187,
-      "community_name": "TenantService",
+      "community": 6,
+      "community_name": "dynamic-page.component.ts",
       "norm_label": ".edition$()"
     },
     {
@@ -3959,8 +3992,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "jkt_web_src_app_core_theme_service",
-      "community": 22,
-      "community_name": "Edition",
+      "community": 137,
+      "community_name": "ThemeService",
       "norm_label": "theme.service.ts"
     },
     {
@@ -4036,8 +4069,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "jkt_web_src_app_core_tracking_service",
-      "community": 159,
-      "community_name": "TrackingService",
+      "community": 22,
+      "community_name": "Edition",
       "norm_label": "tracking.service.ts"
     },
     {
@@ -4235,7 +4268,7 @@
       "_origin": "ast",
       "id": "jkt_web_src_app_layout_external_link_dialog_external_link_dialog_component",
       "community": 130,
-      "community_name": "RevealDirective",
+      "community_name": "ExternalLinkDialogComponent",
       "norm_label": "external-link-dialog.component.ts"
     },
     {
@@ -4246,7 +4279,7 @@
       "_origin": "ast",
       "id": "jkt_web_src_app_layout_external_link_dialog_external_link_dialog_component_externallinkdialogcomponent",
       "community": 130,
-      "community_name": "RevealDirective",
+      "community_name": "ExternalLinkDialogComponent",
       "norm_label": "externallinkdialogcomponent"
     },
     {
@@ -4257,7 +4290,7 @@
       "_origin": "ast",
       "id": "jkt_web_src_app_layout_external_link_dialog_external_link_dialog_component_ts_component",
       "community": 130,
-      "community_name": "RevealDirective",
+      "community_name": "ExternalLinkDialogComponent",
       "norm_label": "component"
     },
     {
@@ -4268,7 +4301,7 @@
       "_origin": "ast",
       "id": "input",
       "community": 130,
-      "community_name": "RevealDirective",
+      "community_name": "ExternalLinkDialogComponent",
       "norm_label": "input"
     },
     {
@@ -4279,7 +4312,7 @@
       "_origin": "ast",
       "id": "output",
       "community": 130,
-      "community_name": "RevealDirective",
+      "community_name": "ExternalLinkDialogComponent",
       "norm_label": "output"
     },
     {
@@ -4290,7 +4323,7 @@
       "_origin": "ast",
       "id": "jkt_web_src_app_layout_external_link_dialog_external_link_dialog_component_ts_inject",
       "community": 130,
-      "community_name": "RevealDirective",
+      "community_name": "ExternalLinkDialogComponent",
       "norm_label": "inject"
     },
     {
@@ -4301,7 +4334,7 @@
       "_origin": "ast",
       "id": "jkt_web_src_app_layout_external_link_dialog_external_link_dialog_component_externallinkdialogcomponent_constructor",
       "community": 130,
-      "community_name": "RevealDirective",
+      "community_name": "ExternalLinkDialogComponent",
       "norm_label": ".constructor()"
     },
     {
@@ -4312,7 +4345,7 @@
       "_origin": "ast",
       "id": "jkt_web_src_app_layout_external_link_dialog_external_link_dialog_component_externallinkdialogcomponent_cancel",
       "community": 130,
-      "community_name": "RevealDirective",
+      "community_name": "ExternalLinkDialogComponent",
       "norm_label": ".cancel()"
     },
     {
@@ -4323,7 +4356,7 @@
       "_origin": "ast",
       "id": "jkt_web_src_app_layout_external_link_dialog_external_link_dialog_component_externallinkdialogcomponent_confirm",
       "community": 130,
-      "community_name": "RevealDirective",
+      "community_name": "ExternalLinkDialogComponent",
       "norm_label": ".confirm()"
     },
     {
@@ -4454,8 +4487,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "jkt_web_src_app_pages_contact_page_contact_page_component",
-      "community": 6,
-      "community_name": "seo.service.ts",
+      "community": 173,
+      "community_name": "RevealDirective",
       "norm_label": "contact-page.component.ts"
     },
     {
@@ -4465,8 +4498,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "jkt_web_src_app_pages_contact_page_contact_page_component_contactpagecomponent",
-      "community": 6,
-      "community_name": "seo.service.ts",
+      "community": 173,
+      "community_name": "RevealDirective",
       "norm_label": "contactpagecomponent"
     },
     {
@@ -4476,8 +4509,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "jkt_web_src_app_pages_contact_page_contact_page_component_ts_component",
-      "community": 6,
-      "community_name": "seo.service.ts",
+      "community": 173,
+      "community_name": "RevealDirective",
       "norm_label": "component"
     },
     {
@@ -4487,8 +4520,8 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "jkt_web_src_app_pages_contact_page_contact_page_component_contactpagecomponent_constructor",
-      "community": 6,
-      "community_name": "seo.service.ts",
+      "community": 173,
+      "community_name": "RevealDirective",
       "norm_label": ".constructor()"
     },
     {
@@ -4553,8 +4586,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "jkt_web_src_app_pages_dynamic_page_dynamic_page_component",
-      "community": 22,
-      "community_name": "Edition",
+      "community": 6,
+      "community_name": "dynamic-page.component.ts",
       "norm_label": "dynamic-page.component.ts"
     },
     {
@@ -4686,7 +4719,7 @@
       "_origin": "ast",
       "id": "jkt_web_src_app_pages_partners_page_partners_page_component",
       "community": 130,
-      "community_name": "RevealDirective",
+      "community_name": "ExternalLinkDialogComponent",
       "norm_label": "partners-page.component.ts"
     },
     {
@@ -4697,7 +4730,7 @@
       "_origin": "ast",
       "id": "jkt_web_src_app_pages_partners_page_partners_page_component_partnerlogo",
       "community": 130,
-      "community_name": "RevealDirective",
+      "community_name": "ExternalLinkDialogComponent",
       "norm_label": "partnerlogo"
     },
     {
@@ -4708,7 +4741,7 @@
       "_origin": "ast",
       "id": "jkt_web_src_app_pages_partners_page_partners_page_component_dummylogo",
       "community": 130,
-      "community_name": "RevealDirective",
+      "community_name": "ExternalLinkDialogComponent",
       "norm_label": "dummylogo()"
     },
     {
@@ -4719,7 +4752,7 @@
       "_origin": "ast",
       "id": "jkt_web_src_app_pages_partners_page_partners_page_component_partnerspagecomponent",
       "community": 130,
-      "community_name": "RevealDirective",
+      "community_name": "ExternalLinkDialogComponent",
       "norm_label": "partnerspagecomponent"
     },
     {
@@ -4730,7 +4763,7 @@
       "_origin": "ast",
       "id": "jkt_web_src_app_pages_partners_page_partners_page_component_ts_component",
       "community": 130,
-      "community_name": "RevealDirective",
+      "community_name": "ExternalLinkDialogComponent",
       "norm_label": "component"
     },
     {
@@ -4741,7 +4774,7 @@
       "_origin": "ast",
       "id": "jkt_web_src_app_pages_partners_page_partners_page_component_partnerspagecomponent_constructor",
       "community": 130,
-      "community_name": "RevealDirective",
+      "community_name": "ExternalLinkDialogComponent",
       "norm_label": ".constructor()"
     },
     {
@@ -4752,7 +4785,7 @@
       "_origin": "ast",
       "id": "jkt_web_src_app_pages_partners_page_partners_page_component_partnerspagecomponent_openexternal",
       "community": 130,
-      "community_name": "RevealDirective",
+      "community_name": "ExternalLinkDialogComponent",
       "norm_label": ".openexternal()"
     },
     {
@@ -4825,7 +4858,7 @@
       "label": "SchedulePageComponent",
       "file_type": "code",
       "source_file": "jkt-web/src/app/pages/schedule-page/schedule-page.component.ts",
-      "source_location": "L132",
+      "source_location": "L130",
       "_origin": "ast",
       "id": "jkt_web_src_app_pages_schedule_page_schedule_page_component_schedulepagecomponent",
       "community": 154,
@@ -4847,7 +4880,7 @@
       "label": ".constructor()",
       "file_type": "code",
       "source_file": "jkt-web/src/app/pages/schedule-page/schedule-page.component.ts",
-      "source_location": "L142",
+      "source_location": "L140",
       "_origin": "ast",
       "id": "jkt_web_src_app_pages_schedule_page_schedule_page_component_schedulepagecomponent_constructor",
       "community": 154,
@@ -4858,7 +4891,7 @@
       "label": ".openExternal()",
       "file_type": "code",
       "source_file": "jkt-web/src/app/pages/schedule-page/schedule-page.component.ts",
-      "source_location": "L169",
+      "source_location": "L167",
       "_origin": "ast",
       "id": "jkt_web_src_app_pages_schedule_page_schedule_page_component_schedulepagecomponent_openexternal",
       "community": 154,
@@ -4883,7 +4916,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "jkt_web_src_app_shared_directives_reveal_directive_revealdirective",
-      "community": 130,
+      "community": 173,
       "community_name": "RevealDirective",
       "norm_label": "revealdirective"
     },
@@ -4894,7 +4927,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "directive",
-      "community": 130,
+      "community": 173,
       "community_name": "RevealDirective",
       "norm_label": "directive"
     },
@@ -4905,7 +4938,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "jkt_web_src_app_shared_directives_reveal_directive_revealdirective_constructor",
-      "community": 130,
+      "community": 173,
       "community_name": "RevealDirective",
       "norm_label": ".constructor()"
     },
@@ -4916,7 +4949,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "jkt_web_src_app_shared_directives_reveal_directive_revealdirective_ngondestroy",
-      "community": 130,
+      "community": 173,
       "community_name": "RevealDirective",
       "norm_label": ".ngondestroy()"
     },
@@ -4927,7 +4960,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "jkt_web_src_app_shared_directives_reveal_directive_revealdirective_setup",
-      "community": 130,
+      "community": 173,
       "community_name": "RevealDirective",
       "norm_label": ".setup()"
     },
@@ -4938,7 +4971,7 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "jkt_web_src_app_shared_directives_reveal_directive_revealdirective_isinview",
-      "community": 130,
+      "community": 173,
       "community_name": "RevealDirective",
       "norm_label": ".isinview()"
     },
@@ -5012,7 +5045,7 @@
       "label": "environment",
       "file_type": "code",
       "source_file": "jkt-web/src/environments/environment.prod.ts",
-      "source_location": "L9",
+      "source_location": "L11",
       "_origin": "ast",
       "id": "jkt_web_src_environments_environment_prod_environment",
       "community": 185,
@@ -5070,8 +5103,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "jkt_web_src_main",
-      "community": 10,
-      "community_name": "app.ts",
+      "community": 141,
+      "community_name": "app.config.ts",
       "norm_label": "main.ts"
     },
     {
@@ -5122,7 +5155,7 @@
       "label": "angularApp",
       "file_type": "code",
       "source_file": "jkt-web/src/server.ts",
-      "source_location": "L26",
+      "source_location": "L33",
       "_origin": "ast",
       "id": "jkt_web_src_server_angularapp",
       "community": 138,
@@ -5133,7 +5166,7 @@
       "label": "reqHandler",
       "file_type": "code",
       "source_file": "jkt-web/src/server.ts",
-      "source_location": "L74",
+      "source_location": "L81",
       "_origin": "ast",
       "id": "jkt_web_src_server_reqhandler",
       "community": 138,
@@ -7633,8 +7666,8 @@
       "source_location": "L1801",
       "_origin": "ast",
       "id": "docs_llmfull_primeng_migration_primeng_v22",
-      "community": 186,
-      "community_name": "Migration - PrimeNG v22",
+      "community": 108,
+      "community_name": "llmfull-primeng.md",
       "norm_label": "migration - primeng v22"
     },
     {
@@ -7644,8 +7677,8 @@
       "source_location": "L1805",
       "_origin": "ast",
       "id": "docs_llmfull_primeng_deprecations",
-      "community": 186,
-      "community_name": "Migration - PrimeNG v22",
+      "community": 108,
+      "community_name": "llmfull-primeng.md",
       "norm_label": "deprecations"
     },
     {
@@ -7655,8 +7688,8 @@
       "source_location": "L1809",
       "_origin": "ast",
       "id": "docs_llmfull_primeng_overview_1809",
-      "community": 186,
-      "community_name": "Migration - PrimeNG v22",
+      "community": 108,
+      "community_name": "llmfull-primeng.md",
       "norm_label": "overview"
     },
     {
@@ -7666,8 +7699,8 @@
       "source_location": "L1813",
       "_origin": "ast",
       "id": "docs_llmfull_primeng_removals",
-      "community": 186,
-      "community_name": "Migration - PrimeNG v22",
+      "community": 108,
+      "community_name": "llmfull-primeng.md",
       "norm_label": "removals"
     },
     {
@@ -7677,8 +7710,8 @@
       "source_location": "L1819",
       "_origin": "ast",
       "id": "docs_llmfull_primeng_migration_primeng_v21",
-      "community": 108,
-      "community_name": "llmfull-primeng.md",
+      "community": 186,
+      "community_name": "Migration - PrimeNG v21",
       "norm_label": "migration - primeng v21"
     },
     {
@@ -7688,8 +7721,8 @@
       "source_location": "L1823",
       "_origin": "ast",
       "id": "docs_llmfull_primeng_breaking",
-      "community": 108,
-      "community_name": "llmfull-primeng.md",
+      "community": 186,
+      "community_name": "Migration - PrimeNG v21",
       "norm_label": "breaking"
     },
     {
@@ -7699,8 +7732,8 @@
       "source_location": "L1827",
       "_origin": "ast",
       "id": "docs_llmfull_primeng_deprecations_1827",
-      "community": 108,
-      "community_name": "llmfull-primeng.md",
+      "community": 186,
+      "community_name": "Migration - PrimeNG v21",
       "norm_label": "deprecations"
     },
     {
@@ -7710,8 +7743,8 @@
       "source_location": "L1831",
       "_origin": "ast",
       "id": "docs_llmfull_primeng_removals_1831",
-      "community": 108,
-      "community_name": "llmfull-primeng.md",
+      "community": 186,
+      "community_name": "Migration - PrimeNG v21",
       "norm_label": "removals"
     },
     {
@@ -7721,8 +7754,8 @@
       "source_location": "L1835",
       "_origin": "ast",
       "id": "docs_llmfull_primeng_whatsnew",
-      "community": 108,
-      "community_name": "llmfull-primeng.md",
+      "community": 186,
+      "community_name": "Migration - PrimeNG v21",
       "norm_label": "whatsnew"
     },
     {
@@ -28846,10 +28879,21 @@
       "norm_label": "deploy on dokploy (compose)"
     },
     {
-      "label": "Recommended settings",
+      "label": "Domains",
       "file_type": "document",
       "source_file": "jkt-web/DOKPLOY.md",
       "source_location": "L5",
+      "_origin": "ast",
+      "id": "jkt_web_dokploy_domains",
+      "community": 146,
+      "community_name": "Deploy on Dokploy (Compose)",
+      "norm_label": "domains"
+    },
+    {
+      "label": "Recommended settings",
+      "file_type": "document",
+      "source_file": "jkt-web/DOKPLOY.md",
+      "source_location": "L17",
       "_origin": "ast",
       "id": "jkt_web_dokploy_recommended_settings",
       "community": 146,
@@ -28860,7 +28904,7 @@
       "label": "If build fails (OOM)",
       "file_type": "document",
       "source_file": "jkt-web/DOKPLOY.md",
-      "source_location": "L18",
+      "source_location": "L34",
       "_origin": "ast",
       "id": "jkt_web_dokploy_if_build_fails_oom",
       "community": 146,
@@ -28871,7 +28915,7 @@
       "label": "Alternative: Dockerfile-only app",
       "file_type": "document",
       "source_file": "jkt-web/DOKPLOY.md",
-      "source_location": "L23",
+      "source_location": "L39",
       "_origin": "ast",
       "id": "jkt_web_dokploy_alternative_dockerfile_only_app",
       "community": 146,
@@ -29379,7 +29423,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "jkt-web/angular.json",
-      "source_location": "L110",
+      "source_location": "L112",
       "weight": 1.0,
       "_origin": "ast",
       "source": "jkt_web_angular_jkt_web_architect",
@@ -29401,7 +29445,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "jkt-web/angular.json",
-      "source_location": "L80",
+      "source_location": "L82",
       "weight": 1.0,
       "_origin": "ast",
       "source": "jkt_web_angular_architect_build",
@@ -29412,7 +29456,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "jkt-web/angular.json",
-      "source_location": "L108",
+      "source_location": "L110",
       "weight": 1.0,
       "_origin": "ast",
       "source": "jkt_web_angular_architect_build",
@@ -29500,7 +29544,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "jkt-web/angular.json",
-      "source_location": "L76",
+      "source_location": "L78",
       "weight": 1.0,
       "_origin": "ast",
       "source": "jkt_web_angular_build_options",
@@ -29585,6 +29629,18 @@
       "context": "import",
       "_origin": "ast",
       "source": "jkt_web_angular_security_allowedhosts",
+      "target": "ref_jakartaonerunningseries_com",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "jkt-web/angular.json",
+      "source_location": "L69",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast",
+      "source": "jkt_web_angular_security_allowedhosts",
       "target": "ref_localhost",
       "confidence_score": 1.0
     },
@@ -29604,7 +29660,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "jkt-web/angular.json",
-      "source_location": "L77",
+      "source_location": "L79",
       "weight": 1.0,
       "_origin": "ast",
       "source": "jkt_web_angular_options_ssr",
@@ -29615,7 +29671,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "jkt-web/angular.json",
-      "source_location": "L102",
+      "source_location": "L104",
       "weight": 1.0,
       "_origin": "ast",
       "source": "jkt_web_angular_build_configurations",
@@ -29626,7 +29682,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "jkt-web/angular.json",
-      "source_location": "L81",
+      "source_location": "L83",
       "weight": 1.0,
       "_origin": "ast",
       "source": "jkt_web_angular_build_configurations",
@@ -29637,7 +29693,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "jkt-web/angular.json",
-      "source_location": "L88",
+      "source_location": "L90",
       "weight": 1.0,
       "_origin": "ast",
       "source": "jkt_web_angular_configurations_production",
@@ -29648,7 +29704,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "jkt-web/angular.json",
-      "source_location": "L114",
+      "source_location": "L116",
       "weight": 1.0,
       "_origin": "ast",
       "source": "jkt_web_angular_configurations_production",
@@ -29659,7 +29715,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "jkt-web/angular.json",
-      "source_location": "L82",
+      "source_location": "L84",
       "weight": 1.0,
       "_origin": "ast",
       "source": "jkt_web_angular_configurations_production",
@@ -29670,7 +29726,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "jkt-web/angular.json",
-      "source_location": "L100",
+      "source_location": "L102",
       "weight": 1.0,
       "_origin": "ast",
       "source": "jkt_web_angular_configurations_production",
@@ -29681,7 +29737,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "jkt-web/angular.json",
-      "source_location": "L113",
+      "source_location": "L115",
       "weight": 1.0,
       "_origin": "ast",
       "source": "jkt_web_angular_serve_configurations",
@@ -29692,7 +29748,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "jkt-web/angular.json",
-      "source_location": "L117",
+      "source_location": "L119",
       "weight": 1.0,
       "_origin": "ast",
       "source": "jkt_web_angular_configurations_development",
@@ -29703,7 +29759,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "jkt-web/angular.json",
-      "source_location": "L104",
+      "source_location": "L106",
       "weight": 1.0,
       "_origin": "ast",
       "source": "jkt_web_angular_configurations_development",
@@ -29714,7 +29770,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "jkt-web/angular.json",
-      "source_location": "L103",
+      "source_location": "L105",
       "weight": 1.0,
       "_origin": "ast",
       "source": "jkt_web_angular_configurations_development",
@@ -29725,7 +29781,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "jkt-web/angular.json",
-      "source_location": "L105",
+      "source_location": "L107",
       "weight": 1.0,
       "_origin": "ast",
       "source": "jkt_web_angular_configurations_development",
@@ -29736,7 +29792,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "jkt-web/angular.json",
-      "source_location": "L116",
+      "source_location": "L118",
       "weight": 1.0,
       "_origin": "ast",
       "source": "jkt_web_angular_serve_configurations",
@@ -29747,7 +29803,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "jkt-web/angular.json",
-      "source_location": "L111",
+      "source_location": "L113",
       "weight": 1.0,
       "_origin": "ast",
       "source": "jkt_web_angular_architect_serve",
@@ -29758,7 +29814,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "jkt-web/angular.json",
-      "source_location": "L112",
+      "source_location": "L114",
       "weight": 1.0,
       "_origin": "ast",
       "source": "jkt_web_angular_architect_serve",
@@ -29769,7 +29825,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "jkt-web/angular.json",
-      "source_location": "L120",
+      "source_location": "L122",
       "weight": 1.0,
       "_origin": "ast",
       "source": "jkt_web_angular_architect_serve",
@@ -32680,7 +32736,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "jkt-web/src/app/blocks/edition-cards/edition-cards-block.component.ts",
-      "source_location": "L54",
+      "source_location": "L59",
       "weight": 1.0,
       "_origin": "ast",
       "source": "jkt_web_src_app_blocks_edition_cards_edition_cards_block_component_editioncardsblockcomponent_daterangelabel",
@@ -32702,11 +32758,22 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "jkt-web/src/app/blocks/edition-cards/edition-cards-block.component.ts",
-      "source_location": "L53",
+      "source_location": "L58",
       "weight": 1.0,
       "_origin": "ast",
       "source": "jkt_web_src_app_blocks_edition_cards_edition_cards_block_component_editioncardsblockcomponent",
       "target": "jkt_web_src_app_blocks_edition_cards_edition_cards_block_component_editioncardsblockcomponent_daterangelabel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "jkt-web/src/app/blocks/edition-cards/edition-cards-block.component.ts",
+      "source_location": "L51",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "jkt_web_src_app_blocks_edition_cards_edition_cards_block_component_editioncardsblockcomponent",
+      "target": "jkt_web_src_app_blocks_edition_cards_edition_cards_block_component_editioncardsblockcomponent_stageindex",
       "confidence_score": 1.0
     },
     {
@@ -32773,7 +32840,19 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "jkt-web/src/app/blocks/edition-cards/edition-cards-block.component.ts",
-      "source_location": "L53",
+      "source_location": "L51",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "jkt_web_src_app_blocks_edition_cards_edition_cards_block_component_editioncardsblockcomponent_stageindex",
+      "target": "jkt_web_src_app_core_models_edition_edition",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "jkt-web/src/app/blocks/edition-cards/edition-cards-block.component.ts",
+      "source_location": "L58",
       "weight": 1.0,
       "_origin": "ast",
       "source": "jkt_web_src_app_blocks_edition_cards_edition_cards_block_component_editioncardsblockcomponent_daterangelabel",
@@ -34144,7 +34223,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "jkt-web/src/app/core/api/cms-host.interceptor.ts",
-      "source_location": "L15",
+      "source_location": "L45",
       "weight": 1.0,
       "_origin": "ast",
       "source": "jkt_web_src_app_core_api_cms_host_interceptor",
@@ -34152,11 +34231,22 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jkt-web/src/app/core/api/cms-host.interceptor.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "jkt_web_src_app_core_api_cms_host_interceptor",
+      "target": "jkt_web_src_app_core_api_cms_host_interceptor_resolvetenanthost",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "jkt-web/src/app/core/api/cms-host.interceptor.ts",
-      "source_location": "L3",
+      "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
       "source": "jkt_web_src_app_core_api_cms_host_interceptor",
@@ -34168,11 +34258,23 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "jkt-web/src/app/core/api/cms-host.interceptor.ts",
-      "source_location": "L3",
+      "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
       "source": "jkt_web_src_app_core_api_cms_host_interceptor",
       "target": "jkt_web_src_environments_environment_environment",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jkt-web/src/app/core/api/cms-host.interceptor.ts",
+      "source_location": "L52",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "jkt_web_src_app_core_api_cms_host_interceptor_cmshostinterceptor",
+      "target": "jkt_web_src_app_core_api_cms_host_interceptor_resolvetenanthost",
       "confidence_score": 1.0
     },
     {
@@ -34812,7 +34914,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "jkt-web/src/app/core/data/jktone-stages.ts",
-      "source_location": "L231",
+      "source_location": "L242",
       "weight": 1.0,
       "_origin": "ast",
       "source": "jkt_web_src_app_core_data_jktone_stages",
@@ -35011,7 +35113,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "jkt-web/src/app/pages/schedule-page/schedule-page.component.ts",
-      "source_location": "L121",
+      "source_location": "L119",
       "weight": 1.0,
       "_origin": "ast",
       "source": "jkt_web_src_app_pages_schedule_page_schedule_page_component_toscheduleviewfromedition",
@@ -38886,7 +38988,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "jkt-web/src/app/pages/schedule-page/schedule-page.component.ts",
-      "source_location": "L132",
+      "source_location": "L130",
       "weight": 1.0,
       "_origin": "ast",
       "source": "jkt_web_src_app_pages_schedule_page_schedule_page_component",
@@ -38955,7 +39057,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "jkt-web/src/app/pages/schedule-page/schedule-page.component.ts",
-      "source_location": "L106",
+      "source_location": "L104",
       "weight": 1.0,
       "_origin": "ast",
       "source": "jkt_web_src_app_pages_schedule_page_schedule_page_component_toscheduleviewfromedition",
@@ -38979,7 +39081,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "jkt-web/src/app/pages/schedule-page/schedule-page.component.ts",
-      "source_location": "L160",
+      "source_location": "L158",
       "weight": 1.0,
       "_origin": "ast",
       "source": "jkt_web_src_app_pages_schedule_page_schedule_page_component_schedulepagecomponent_constructor",
@@ -38990,7 +39092,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "jkt-web/src/app/pages/schedule-page/schedule-page.component.ts",
-      "source_location": "L142",
+      "source_location": "L140",
       "weight": 1.0,
       "_origin": "ast",
       "source": "jkt_web_src_app_pages_schedule_page_schedule_page_component_schedulepagecomponent",
@@ -39001,7 +39103,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "jkt-web/src/app/pages/schedule-page/schedule-page.component.ts",
-      "source_location": "L169",
+      "source_location": "L167",
       "weight": 1.0,
       "_origin": "ast",
       "source": "jkt_web_src_app_pages_schedule_page_schedule_page_component_schedulepagecomponent",
@@ -39012,7 +39114,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "jkt-web/src/app/pages/schedule-page/schedule-page.component.ts",
-      "source_location": "L125",
+      "source_location": "L123",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
@@ -39172,7 +39274,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "jkt-web/src/environments/environment.prod.ts",
-      "source_location": "L9",
+      "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
       "source": "jkt_web_src_environments_environment_prod",
@@ -39205,7 +39307,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "jkt-web/src/server.ts",
-      "source_location": "L26",
+      "source_location": "L33",
       "weight": 1.0,
       "_origin": "ast",
       "source": "jkt_web_src_server",
@@ -39238,7 +39340,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "jkt-web/src/server.ts",
-      "source_location": "L74",
+      "source_location": "L81",
       "weight": 1.0,
       "_origin": "ast",
       "source": "jkt_web_src_server",
@@ -63108,7 +63210,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "jkt-web/DOKPLOY.md",
-      "source_location": "L23",
+      "source_location": "L39",
       "weight": 1.0,
       "_origin": "ast",
       "source": "jkt_web_dokploy_deploy_on_dokploy_compose",
@@ -63119,7 +63221,18 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "jkt-web/DOKPLOY.md",
-      "source_location": "L18",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "jkt_web_dokploy_deploy_on_dokploy_compose",
+      "target": "jkt_web_dokploy_domains",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jkt-web/DOKPLOY.md",
+      "source_location": "L34",
       "weight": 1.0,
       "_origin": "ast",
       "source": "jkt_web_dokploy_deploy_on_dokploy_compose",
@@ -63130,7 +63243,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "jkt-web/DOKPLOY.md",
-      "source_location": "L5",
+      "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast",
       "source": "jkt_web_dokploy_deploy_on_dokploy_compose",
@@ -63238,5 +63351,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "238b79f327c48f0c58e05b4769f7931aff37c698"
+  "built_at_commit": "319e9605dd4a05b9d3d13496cc1a99a47c36742c"
 }
