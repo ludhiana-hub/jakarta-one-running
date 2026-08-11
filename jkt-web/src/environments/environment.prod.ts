@@ -1,10 +1,12 @@
 /**
- * Production environment.
+ * Production / staging build (same bundle).
  *
- * The landing deploy runs without a publicly reachable CMS, so it serves
- * bundled fixtures instead of calling the Laravel API. Flip `useCmsApi` to
- * true and point the URLs at the CMS once it is deployed behind the same
- * domain.
+ * Hostnames:
+ * - Production: jakartaonerunningseries.com (+ www)
+ * - Staging:    staging.jakartaonerunningseries.com
+ *
+ * `cmsHost` is the fallback when the request host cannot be read; runtime
+ * prefers the actual Host / browser hostname (see cmsHostInterceptor).
  */
 export const environment = {
   production: true,
@@ -14,6 +16,6 @@ export const environment = {
   apiUrlServer: '/api/v1',
   /** When true, use HttpBlockRepository instead of bundled fixtures. */
   useCmsApi: false,
-  /** Tenant hostname sent as `?host=` on every CMS API call. */
-  cmsHost: 'jakartaonerunning.id',
+  /** Fallback tenant hostname if request host is unavailable. */
+  cmsHost: 'jakartaonerunningseries.com',
 };

@@ -70,7 +70,9 @@
                 "localhost",
                 "127.0.0.1",
                 "*.sslip.io",
-                "103.55.37.253"
+                "103.55.37.253",
+                "jakartaonerunningseries.com",
+                "*.jakartaonerunningseries.com"
               ]
             },
             "ssr": {

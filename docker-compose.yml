@@ -13,7 +13,7 @@ services:
       dockerfile: Dockerfile
       args:
         # bust cache when you need a fresh ng build
-        BUILD_ID: "${BUILD_ID:-3}"
+        BUILD_ID: "${BUILD_ID:-4}"
     restart: unless-stopped
     ports:
       # host:container — proves Angular works even if Traefik is wrong
@@ -23,7 +23,7 @@ services:
       HOST: "0.0.0.0"
       NODE_ENV: production
       # Angular SSR host allowlist (comma-separated). Supports *.domain wildcards.
-      NG_ALLOWED_HOSTS: "localhost,127.0.0.1,*.sslip.io,103.55.37.253"
+      NG_ALLOWED_HOSTS: "localhost,127.0.0.1,*.sslip.io,103.55.37.253,jakartaonerunningseries.com,*.jakartaonerunningseries.com"
     networks:
       - dokploy-network
     labels:

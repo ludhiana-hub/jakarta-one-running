@@ -20,7 +20,14 @@ function resolveAllowedHosts(): string[] {
       .map((h) => h.trim())
       .filter(Boolean);
   }
-  return ['localhost', '127.0.0.1', '*.sslip.io', '103.55.37.253'];
+  return [
+    'localhost',
+    '127.0.0.1',
+    '*.sslip.io',
+    '103.55.37.253',
+    'jakartaonerunningseries.com',
+    '*.jakartaonerunningseries.com',
+  ];
 }
 
 const angularApp = new AngularNodeAppEngine({

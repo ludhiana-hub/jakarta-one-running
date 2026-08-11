@@ -12,6 +12,7 @@ services:
       PORT: "4000"
       HOST: "0.0.0.0"
       NODE_ENV: production
+      NG_ALLOWED_HOSTS: "localhost,127.0.0.1,*.sslip.io,103.55.37.253,jakartaonerunningseries.com,*.jakartaonerunningseries.com"
     healthcheck:
       test:
         [
