@@ -10,7 +10,7 @@ import {
 import { BlockRepository } from '../../core/api/block.repository';
 import { Edition } from '../../core/models/edition';
 import { SeoService } from '../../core/seo.service';
-import { ExternalLinkDialogComponent } from '../../layout/external-link-dialog/external-link-dialog.component';
+import { ExternalLinkService } from '../../core/external-link.service';
 import { RevealDirective } from '../../shared/directives/reveal.directive';
 import { catchError, map, of, take } from 'rxjs';
 
@@ -123,16 +123,14 @@ function toScheduleViewFromEdition(edition: Edition, index: number): ScheduleSta
 @Component({
   selector: 'app-schedule-page',
   standalone: true,
-  imports: [RouterLink, NgOptimizedImage, ExternalLinkDialogComponent, RevealDirective],
+  imports: [RouterLink, NgOptimizedImage, RevealDirective],
   templateUrl: './schedule-page.component.html',
   styleUrl: './schedule-page.component.scss',
 })
 export class SchedulePageComponent {
   private readonly seo = inject(SeoService);
   private readonly repo = inject(BlockRepository);
-
-  protected dialogVisible = false;
-  protected pendingUrl: string | null = null;
+  private readonly externalLinks = inject(ExternalLinkService);
 
   /** Seeded from brief catalog so the timeline never goes blank if CMS is empty. */
   protected stages: ScheduleStageView[] = JKTONE_STAGES.map(toScheduleView);
@@ -165,7 +163,6 @@ export class SchedulePageComponent {
   }
 
   openExternal(url: string): void {
-    this.pendingUrl = url;
-    this.dialogVisible = true;
+    this.externalLinks.openRegistration(url);
   }
 }

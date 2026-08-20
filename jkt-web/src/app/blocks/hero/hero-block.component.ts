@@ -1,7 +1,9 @@
 import { NgOptimizedImage } from '@angular/common';
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
+import { isRegistrationUrl } from '../../core/data/registration-waiver';
+import { ExternalLinkService } from '../../core/external-link.service';
 import { HeroBlockData } from '../../core/models/blocks/hero.block';
 import { TrPipe } from '../../shared/pipes/tr.pipe';
 
@@ -13,10 +15,21 @@ import { TrPipe } from '../../shared/pipes/tr.pipe';
   styleUrl: './hero-block.component.scss',
 })
 export class HeroBlockComponent {
+  private readonly externalLinks = inject(ExternalLinkService);
+
   data = input.required<HeroBlockData>();
 
   isInternalUrl(url: string): boolean {
     return url.startsWith('/');
+  }
+
+  openExternal(url: string, event: Event): void {
+    event.preventDefault();
+    if (isRegistrationUrl(url)) {
+      this.externalLinks.openRegistration(url);
+      return;
+    }
+    this.externalLinks.open(url);
   }
 
   onMedalMove(ev: MouseEvent): void {

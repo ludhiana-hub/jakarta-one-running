@@ -240,8 +240,8 @@
     "semantic_hash": ""
   },
   "jkt-web/src/app/layout/external-link-dialog/external-link-dialog.component.ts": {
-    "mtime": 1787238987.86276,
-    "ast_hash": "a9c6180406ce5107de47ca140b2f5c08",
+    "mtime": 1787237872.8291745,
+    "ast_hash": "b0b3d1986530669affa9e944f1d43d52",
     "semantic_hash": ""
   },
   "jkt-web/src/app/layout/footer/footer.component.ts": {
@@ -420,8 +420,8 @@
     "semantic_hash": ""
   },
   "jkt-web/src/app/layout/external-link-dialog/external-link-dialog.component.html": {
-    "mtime": 1787238987.8377662,
-    "ast_hash": "33847ad121da2a494d09d7f57e13e7d9",
+    "mtime": 1787238051.136212,
+    "ast_hash": "47b8aef6beaaacad81dc5e064ae2cbb2",
     "semantic_hash": ""
   },
   "jkt-web/src/app/layout/footer/footer.component.html": {
@@ -905,8 +905,8 @@
     "semantic_hash": ""
   },
   "jkt-web/src/app/core/data/registration-waiver.ts": {
-    "mtime": 1787238979.3646066,
-    "ast_hash": "2d0cb9da2c0af28619bb33e3b5f80891",
+    "mtime": 1787237652.3471172,
+    "ast_hash": "4de113ca13845324422637f287d7f3a3",
     "semantic_hash": ""
   },
   "jkt-web/src/app/core/external-link.service.ts": {

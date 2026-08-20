@@ -9,17 +9,17 @@
       "children": []
     },
     {
-      "label": { "id": "Jadwal", "en": "Schedule" },
+      "label": { "id": "Mitra", "en": "Partners" },
       "type": "page",
-      "url": "/schedule",
+      "url": "/partners",
       "linkable_type": null,
       "linkable_id": null,
       "children": []
     },
     {
-      "label": { "id": "Mitra", "en": "Partners" },
+      "label": { "id": "Jadwal", "en": "Schedule" },
       "type": "page",
-      "url": "/partners",
+      "url": "/schedule",
       "linkable_type": null,
       "linkable_id": null,
       "children": []

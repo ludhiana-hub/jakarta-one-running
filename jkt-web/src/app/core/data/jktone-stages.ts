@@ -152,7 +152,7 @@ export const JKTONE_STAGES: readonly JktoneStage[] = [
     rpcAddress: 'Jl. Lapangan Banteng Selatan, Sawah Besar, Jakarta Pusat',
     routeSummary:
       'Start at Lapangan Banteng toward Jl. Gambir Raya and Jl. Ir. H. Juanda, U-turn at Harmoni, return past Pasar Baru and the Central Post Office, then finish at Lapangan Banteng.',
-    accent: '#0072B5',
+    accent: '#00507A',
     registrationUrl: 'https://jkt499k.bigtix.io/en',
     priceIdr: 195000,
     runners: 10000,

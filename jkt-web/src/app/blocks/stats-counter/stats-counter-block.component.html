@@ -3,7 +3,7 @@
     @for (item of data().items; track item.id; let i = $index) {
       <div
         class="glass-tier-2 noise-overlay rounded p-4 stats-animate sm:p-6 lg:p-8"
-        [style.animationDelay.ms]="i * 80"
+        [style.animationDelay.ms]="i * 40"
       >
         <p class="mb-2 font-label text-xs font-semibold uppercase tracking-[0.1em] sm:text-sm" [class]="accentClass(i)">
           {{ item.label | tr }}

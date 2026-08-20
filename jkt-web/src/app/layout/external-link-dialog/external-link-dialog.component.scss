@@ -1,0 +1,69 @@
+/* Solid panel — no backdrop-filter (glass blur makes nested scroll janky). */
+.dialog-shell {
+  background: #ffffff;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 1) inset,
+    0 18px 44px rgba(28, 32, 48, 0.16),
+    0 6px 14px rgba(28, 32, 48, 0.08);
+}
+
+/*
+ * Dedicated scrollport: compositor-friendly, momentum on iOS,
+ * no scroll chaining to the page behind the modal.
+ */
+.waiver-scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  max-height: min(52svh, 420px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
+  scrollbar-gutter: stable;
+  /* Prefer native wheel feel — CSS scroll-behavior:smooth feels laggy here */
+  scroll-behavior: auto;
+  background: #f7f7f9;
+  /* Promote to own layer so paint stays off the dialog chrome */
+  transform: translateZ(0);
+  will-change: scroll-position;
+}
+
+@media (min-width: 640px) {
+  .waiver-scroll {
+    max-height: min(56svh, 460px);
+  }
+}
+
+/* Thin, readable scrollbar (Chromium / Firefox) */
+.waiver-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(20, 22, 32, 0.35) transparent;
+}
+
+.waiver-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.waiver-scroll::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 6px 0;
+}
+
+.waiver-scroll::-webkit-scrollbar-thumb {
+  background: rgba(20, 22, 32, 0.28);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.waiver-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(20, 22, 32, 0.45);
+  background-clip: padding-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .waiver-scroll {
+    will-change: auto;
+  }
+}

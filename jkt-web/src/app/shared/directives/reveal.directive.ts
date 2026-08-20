@@ -11,6 +11,7 @@ import { isPlatformBrowser } from '@angular/common';
 /**
  * Scroll-reveal: fades/slides content in when it enters the viewport.
  * SSR-safe: no opacity:0 on first paint (avoids shrink/pop glitch on refresh).
+ * Tuned for mobile: earlier trigger, no heavy work once visible.
  */
 @Directive({
   selector: '[appReveal]',
@@ -47,6 +48,7 @@ export class RevealDirective implements OnDestroy {
     }
 
     node.classList.add('reveal');
+    const isMobile = window.matchMedia('(max-width: 767px)').matches;
     this.observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
@@ -56,7 +58,11 @@ export class RevealDirective implements OnDestroy {
           }
         }
       },
-      { threshold: 0.12, rootMargin: '0px 0px -8% 0px' },
+      {
+        threshold: isMobile ? 0.06 : 0.1,
+        // Start a bit earlier so content is mid-fade when it reaches the thumb zone
+        rootMargin: isMobile ? '0px 0px -4% 0px' : '0px 0px -6% 0px',
+      },
     );
     this.observer.observe(node);
   }
@@ -64,6 +70,6 @@ export class RevealDirective implements OnDestroy {
   private isInView(node: HTMLElement): boolean {
     const rect = node.getBoundingClientRect();
     const vh = window.innerHeight || document.documentElement.clientHeight;
-    return rect.top < vh * 0.92 && rect.bottom > 0;
+    return rect.top < vh * 0.94 && rect.bottom > 0;
   }
 }

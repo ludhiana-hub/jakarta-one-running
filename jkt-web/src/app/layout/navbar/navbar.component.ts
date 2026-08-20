@@ -14,13 +14,13 @@ import { filter, fromEvent, take } from 'rxjs';
 
 import { BlockRepository } from '../../core/api/block.repository';
 import { DEFAULT_MENU } from '../../core/data/default-menu';
+import { ExternalLinkService } from '../../core/external-link.service';
 import { MenuItem } from '../../core/models/menu-response';
-import { ExternalLinkDialogComponent } from '../external-link-dialog/external-link-dialog.component';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, NgOptimizedImage, ExternalLinkDialogComponent],
+  imports: [RouterLink, RouterLinkActive, NgOptimizedImage],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
 })
@@ -30,10 +30,9 @@ export class NavbarComponent {
   private readonly platformId = inject(PLATFORM_ID);
   private readonly router = inject(Router);
   private readonly repo = inject(BlockRepository);
+  private readonly externalLinks = inject(ExternalLinkService);
 
   protected readonly menuOpen = signal(false);
-  protected dialogVisible = false;
-  protected pendingUrl: string | null = null;
 
   // Seeded with the built-in menu so the navbar is never empty, then replaced
   // once the CMS responds with a non-empty menu.
@@ -96,15 +95,19 @@ export class NavbarComponent {
 
   // A menu item's `url` is either a relative Angular route (e.g. "/schedule",
   // resolved server-side from a CMS page or authored directly) or an
-  // absolute outbound URL — only the latter should show the "leaving this
-  // site" confirmation dialog.
+  // absolute outbound URL — only the latter should show the confirmation dialog.
   isInternal(item: MenuItem): boolean {
     return !!item.url && item.url.startsWith('/');
   }
 
   openExternal(url: string): void {
     this.closeMenu();
-    this.pendingUrl = url;
-    this.dialogVisible = true;
+    this.externalLinks.open(url);
+  }
+
+  /** Navbar Register CTA — always waiver + consent log. */
+  openRegister(url: string): void {
+    this.closeMenu();
+    this.externalLinks.openRegistration(url);
   }
 }

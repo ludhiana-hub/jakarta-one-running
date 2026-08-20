@@ -39,7 +39,7 @@ const DEV_BLOCKS: PageBlock[] = [
           slug: 'central',
           name: { id: 'Central' },
           race_date: '2026-07-05',
-          theme: { accent: '#0072B5' },
+          theme: { accent: '#00507A' },
           registration_phases: [],
         },
       ],

@@ -50,7 +50,7 @@
           <button
             type="button"
             class="btn-cta btn-cta-pill bg-ember text-white max-md:px-3 max-md:text-xs"
-            (click)="openExternal(cta.url!)"
+            (click)="openRegister(cta.url!)"
           >
             {{ cta.label.en ?? cta.label.id }}
           </button>
@@ -115,7 +115,7 @@
         <button
           type="button"
           class="btn-cta btn-cta-lg mt-6 w-full"
-          (click)="openExternal(cta.url!)"
+          (click)="openRegister(cta.url!)"
         >
           {{ cta.label.en ?? cta.label.id }}
         </button>
@@ -123,9 +123,3 @@
     }
   </nav>
 </aside>
-
-<app-external-link-dialog
-  [visible]="dialogVisible"
-  [pendingUrl]="pendingUrl"
-  (visibleChange)="dialogVisible = $event"
-/>

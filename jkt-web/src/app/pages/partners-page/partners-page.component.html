@@ -30,7 +30,7 @@
       <div class="flex justify-center">
         <a
           href="#"
-          class="glass-tier-3 group flex w-full max-w-3xl cursor-pointer flex-col items-center gap-4 rounded p-5 transition-all duration-500 hover:-translate-y-1 sm:gap-6 sm:p-8"
+          class="glass-tier-3 group flex w-full max-w-3xl cursor-pointer flex-col items-center gap-4 rounded p-5 transition-all duration-300 sm:gap-6 sm:p-8 [@media(hover:hover)]:hover:-translate-y-1"
           (click)="$event.preventDefault(); openExternal(titleSponsor.url)"
         >
           <div class="flex aspect-[21/9] w-full items-center justify-center p-2 sm:p-4 md:p-8">
@@ -188,9 +188,3 @@
     </section>
   </div>
 </div>
-
-<app-external-link-dialog
-  [visible]="dialogVisible"
-  [pendingUrl]="pendingUrl"
-  (visibleChange)="dialogVisible = $event"
-/>

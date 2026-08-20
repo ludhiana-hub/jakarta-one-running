@@ -1,11 +1,11 @@
 # Graph Report - project-bms  (2026-08-20)
 
 ## Corpus Check
-- 122 files · ~576,533 words
+- 122 files · ~576,386 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2658 nodes · 3095 edges · 191 communities (180 shown, 11 thin omitted)
+- 2658 nodes · 3093 edges · 193 communities (172 shown, 21 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 2 edges (avg confidence: 0.65)
 - Token cost: 0 input · 0 output
 
@@ -17,7 +17,7 @@
 ## Community Hubs (Navigation)
 - Angular Table Component
 - Angular TreeTable Component
-- TranslatedString
+- DynamicPageComponent
 - devDependencies
 - Angular Slider Component
 - dependencies
@@ -49,14 +49,14 @@
 - Angular Checkbox Component
 - Angular RadioButton Component
 - Angular Icon Library - PrimeNG
-- page-block.ts
+- dev-blocks.component.ts
 - Angular InputText Component
 - Angular ToggleSwitch Component
 - Angular Menu Component
 - Angular SelectButton Component
 - Angular Speed Dial Component
 - Angular ToggleButton Component
-- tr.pipe.ts
+- fixture.repository.spec.ts
 - Angular FileUpload Component
 - Angular Accordion Component
 - Angular Avatar Component
@@ -145,20 +145,20 @@
 - Animations - PrimeNG
 - Angular Dynamic Dialog Component
 - Angular StyleClass Component
-- app.config.ts
+- PartnersPageComponent
 - Angular Animate On Scroll Directive
 - Migration - PrimeNG v20
 - Global Constraints
 - Global Constraints
 - Mobile Responsive (Scope A) — Design Spec
 - allowedHosts
-- navbar.component.ts
+- GalleryGridBlockComponent
 - server.ts
 - Angular Drag and Drop Component
 - Unstyled Mode
-- TrackingService
+- ContactPageComponent
 - process_mascot.py
-- stats-counter.block.ts
+- @angular/platform-browser
 - Select
 - Message
 - Deploy on Dokploy (Compose)
@@ -174,8 +174,6 @@
 - Table
 - Toast
 - Overlay
-- HttpBlockRepository
-- series-timeline.block.ts
 - require
 - Theming
 - Theming
@@ -187,24 +185,28 @@
 - Theming
 - ExternalLinkService
 - edition-cards-block.component.ts
-- dynamic-page.component.ts
 - RevealDirective
 - FilterService - PrimeNG
 - production
 - jkt-web
 - Theming
-- edition-detail-block.component.ts
+- package.json
 - index.ts
 - jakarta-one/landing.config.ts
 - jakarta-one/README.md
 - _template/landing.config.ts
 - _template/README.md
 - environment.prod.ts
-- legal-document-block.component.ts
+- Migration - PrimeNG v21
 - LLMs.txt - PrimeNG
-- RichTextMediaBlockData
-- Custom Icons - PrimeNG
-- TenantService
+- express
+- @fontsource/jetbrains-mono
+- @fontsource-variable/plus-jakarta-sans
+- leaflet
+- @primeuix/themes
+- rxjs
+- vitest
+- @angular/ssr
 
 ## God Nodes (most connected - your core abstractions)
 1. `Angular Table Component` - 60 edges
@@ -219,21 +221,21 @@
 10. `Angular InputNumber Component` - 24 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `SeriesTimelineItem` --references--> `TranslatedString`  [EXTRACTED]
-  jkt-web/src/app/core/models/blocks/series-timeline.block.ts → jkt-web/src/app/core/models/translated.ts
-- `StatsCounterItem` --references--> `TranslatedString`  [EXTRACTED]
-  jkt-web/src/app/core/models/blocks/stats-counter.block.ts → jkt-web/src/app/core/models/translated.ts
-- `HttpBlockRepository` --inherits--> `BlockRepository`  [EXTRACTED]
-  jkt-web/src/app/core/api/http-block.repository.ts → jkt-web/src/app/core/api/block.repository.ts
-- `CtaBannerBlockData` --references--> `TranslatedString`  [EXTRACTED]
-  jkt-web/src/app/core/models/blocks/cta-banner.block.ts → jkt-web/src/app/core/models/translated.ts
-- `EditionCardsBlockData` --references--> `TranslatedString`  [EXTRACTED]
-  jkt-web/src/app/core/models/blocks/edition-cards.block.ts → jkt-web/src/app/core/models/translated.ts
+- `MilestoneItem` --references--> `TranslatedString`  [EXTRACTED]
+  jkt-web/src/app/core/models/blocks/milestone.block.ts → jkt-web/src/app/core/models/translated.ts
+- `HomePageComponent` --references--> `CtaBannerBlockData`  [EXTRACTED]
+  jkt-web/src/app/pages/home-page/home-page.component.ts → jkt-web/src/app/core/models/blocks/cta-banner.block.ts
+- `HomePageComponent` --references--> `EditionCardsBlockData`  [EXTRACTED]
+  jkt-web/src/app/pages/home-page/home-page.component.ts → jkt-web/src/app/core/models/blocks/edition-cards.block.ts
+- `FaqItem` --references--> `TranslatedString`  [EXTRACTED]
+  jkt-web/src/app/core/models/blocks/faq-accordion.block.ts → jkt-web/src/app/core/models/translated.ts
+- `GalleryImageItem` --references--> `TranslatedString`  [EXTRACTED]
+  jkt-web/src/app/core/models/blocks/gallery-grid.block.ts → jkt-web/src/app/core/models/translated.ts
 
 ## Import Cycles
 - None detected.
 
-## Communities (191 total, 11 thin omitted)
+## Communities (193 total, 21 thin omitted)
 
 ### Community 0 - "Angular Table Component"
 Cohesion: 0.04
@@ -243,21 +245,21 @@ Nodes (55): Accessibility, Advanced, Advanced, Angular Table Component, Basic, c
 Cohesion: 0.04
 Nodes (49): Accessibility, Advanced, Angular TreeTable Component, Basic, Basic, Column Group, Column Toggle, columnresizeexpand-doc (+41 more)
 
-### Community 2 - "TranslatedString"
-Cohesion: 0.22
-Nodes (10): FaqItem, GalleryImageItem, InteractiveMapBlockData, MapMarkerItem, MilestoneItem, SponsorLogoItem, SponsorTierItem, ParkingInfoItem (+2 more)
+### Community 2 - "DynamicPageComponent"
+Cohesion: 0.33
+Nodes (4): DynamicPageComponent, TRUSTED_PREVIEW_ORIGINS, Component, routes
 
 ### Community 3 - "devDependencies"
-Cohesion: 0.05
-Nodes (40): @angular/build, @angular/cli, @angular/compiler-cli, devDependencies, @angular/build, @angular/cli, @angular/compiler-cli, postcss (+32 more)
+Cohesion: 0.07
+Nodes (27): @angular/build, @angular/cli, @angular/compiler-cli, devDependencies, @angular/build, @angular/cli, @angular/compiler-cli, postcss (+19 more)
 
 ### Community 4 - "Angular Slider Component"
 Cohesion: 0.05
 Nodes (40): Accessibility, Accessibility, Angular Inplace Component, Angular Slider Component, Basic, Basic, Controlled, Controlled (+32 more)
 
 ### Community 5 - "dependencies"
-Cohesion: 0.05
-Nodes (39): @angular/common, @angular/compiler, @angular/core, @angular/forms, @angular/platform-browser, @angular/platform-server, @angular/router, @angular/ssr (+31 more)
+Cohesion: 0.09
+Nodes (23): @angular/common, @angular/compiler, @angular/core, @angular/forms, @angular/platform-server, @angular/router, @fontsource-variable/bricolage-grotesque, dependencies (+15 more)
 
 ### Community 6 - "ThemeService"
 Cohesion: 0.40
@@ -276,8 +278,8 @@ Cohesion: 0.06
 Nodes (31): Architecture, Basefontsize, Bootstrap, Colors, Colorscheme, Component, Darkmode, Definepreset (+23 more)
 
 ### Community 10 - "app.ts"
-Cohesion: 0.17
-Nodes (8): App, appConfig, config, serverConfig, serverRoutes, Component, FooterComponent, Component
+Cohesion: 0.06
+Nodes (20): App, appConfig, config, serverConfig, serverRoutes, Component, isRegistrationUrl(), REGISTRATION_WAIVER_EN (+12 more)
 
 ### Community 11 - "Angular DatePicker Component"
 Cohesion: 0.07
@@ -316,16 +318,16 @@ Cohesion: 0.07
 Nodes (27): Accessibility, Angular InputMask Component, AutoClear, Basic, clearicon-doc, CSS Classes, Disabled, Emits (+19 more)
 
 ### Community 20 - "home-page.component.ts"
-Cohesion: 0.11
-Nodes (11): CtaBannerBlockComponent, Component, HeroBlockComponent, Component, MilestoneBlockComponent, Component, CtaBannerBlockData, HeroBlockData (+3 more)
+Cohesion: 0.09
+Nodes (15): CtaBannerBlockComponent, Component, HeroBlockComponent, Component, MilestoneBlockComponent, Component, RichTextMediaBlockComponent, Component (+7 more)
 
 ### Community 21 - "Angular AutoComplete Component"
 Cohesion: 0.09
 Nodes (23): Accessibility, Angular AutoComplete Component, Basic, clear-icon-doc, custom-group-doc, custom-option-doc, Disabled, Dropdown (+15 more)
 
 ### Community 22 - "Edition"
-Cohesion: 0.22
-Nodes (8): BlockRepository, FixtureBlockRepository, Injectable, Edition, MenuResponse, RegistrationPhase, SiteResponse, SiteTracking
+Cohesion: 0.09
+Nodes (20): routes, BlockRepository, cmsHostInterceptor(), resolveTenantHost(), FixtureBlockRepository, Injectable, HttpBlockRepository, Injectable (+12 more)
 
 ### Community 23 - "Angular InputTags Component"
 Cohesion: 0.08
@@ -371,9 +373,9 @@ Nodes (22): Accessibility, Angular RadioButton Component, Basic, Card, CSS Class
 Cohesion: 0.09
 Nodes (22): Accessibility, Angular Icon Library - PrimeNG, Angular Stepper Component, basic-doc, Color, CSS Classes, Design Tokens, Download (+14 more)
 
-### Community 34 - "page-block.ts"
-Cohesion: 0.16
-Nodes (8): JsonLdService, SportsEventJsonLd, Inject, Injectable, PageBlock, DEV_BLOCKS, DevBlocksComponent, Component
+### Community 34 - "dev-blocks.component.ts"
+Cohesion: 0.18
+Nodes (7): JsonLdService, SportsEventJsonLd, Inject, Injectable, DEV_BLOCKS, DevBlocksComponent, Component
 
 ### Community 35 - "Angular InputText Component"
 Cohesion: 0.10
@@ -399,9 +401,9 @@ Nodes (20): Accessibility, Angular Speed Dial Component, Basic, Circle, CSS Clas
 Cohesion: 0.10
 Nodes (20): Accessibility, Angular ToggleButton Component, Basic, CSS Classes, Customized, Design Tokens, Disabled, Emits (+12 more)
 
-### Community 41 - "tr.pipe.ts"
-Cohesion: 0.21
-Nodes (8): SponsorWallBlockComponent, Component, AppLocale, LocaleService, Injectable, pickTranslated(), TrPipe, Pipe
+### Community 41 - "fixture.repository.spec.ts"
+Cohesion: 0.25
+Nodes (4): AppLocale, LocaleService, Injectable, pickTranslated()
 
 ### Community 42 - "Angular FileUpload Component"
 Cohesion: 0.11
@@ -669,7 +671,7 @@ Nodes (11): options, assets, browser, inlineStyleLanguage, outputMode, server, s
 
 ### Community 108 - "llmfull-primeng.md"
 Cohesion: 0.13
-Nodes (14): Breaking, Components, Configuration, Deprecations, Deprecations, Guide Pages, Migration - PrimeNG v21, Migration - PrimeNG v22 (+6 more)
+Nodes (14): Components, Configuration, Custom Icons - PrimeNG, Deprecations, Fontawesome, Guide Pages, Image, Material (+6 more)
 
 ### Community 109 - "Angular ImageCompare Component"
 Cohesion: 0.18
@@ -682,10 +684,6 @@ Nodes (11): Accessibility, Angular Scroll Top Component, Basic, CSS Classes, Pas
 ### Community 111 - "Angular Terminal Component"
 Cohesion: 0.18
 Nodes (11): Accessibility, Angular Terminal Component, Basic, CSS Classes, Design Tokens, File System, Pass Through Options, preview-doc (+3 more)
-
-### Community 112 - "BlockRendererComponent"
-Cohesion: 0.14
-Nodes (6): BlockRendererComponent, Component, GalleryGridBlockComponent, Component, GalleryGridBlockData, SponsorWallBlockData
 
 ### Community 113 - "Angular Ifta Label Component"
 Cohesion: 0.20
@@ -736,8 +734,8 @@ Cohesion: 0.25
 Nodes (7): Additional Resources, Building, Code scaffolding, Development server, JktWeb, Running end-to-end tests, Running unit tests
 
 ### Community 125 - "block-renderer.component.ts"
-Cohesion: 0.16
-Nodes (11): EmbedBlockComponent, Component, FaqAccordionBlockComponent, Component, InteractiveMapBlockComponent, Component, TransportationInfoBlockComponent, Component (+3 more)
+Cohesion: 0.08
+Nodes (41): EditionDetailBlockComponent, Component, EmbedBlockComponent, Component, FaqAccordionBlockComponent, Component, InteractiveMapBlockComponent, Component (+33 more)
 
 ### Community 126 - "Accessibility - PrimeNG"
 Cohesion: 0.29
@@ -754,10 +752,6 @@ Nodes (7): Angular Dynamic Dialog Component, Closing a Dialog, Customization, Ex
 ### Community 129 - "Angular StyleClass Component"
 Cohesion: 0.29
 Nodes (7): Angular StyleClass Component, Animation, Basic, Hide On Resize, preview-doc, Selector, Toggle Class
-
-### Community 130 - "app.config.ts"
-Cohesion: 0.22
-Nodes (6): routes, ContactFormComponent, Component, cmsHostInterceptor(), resolveTenantHost(), environment
 
 ### Community 131 - "Angular Animate On Scroll Directive"
 Cohesion: 0.33
@@ -783,10 +777,6 @@ Nodes (5): Approach, Goal, Mobile Responsive (Scope A) — Design Spec, Out of s
 Cohesion: 0.29
 Nodes (7): security, allowedHosts, 103.55.37.253, 127.0.0.1, jakartaonerunningseries.com, localhost, *.sslip.io
 
-### Community 137 - "navbar.component.ts"
-Cohesion: 0.27
-Nodes (4): DEFAULT_MENU, MenuItem, NavbarComponent, Component
-
 ### Community 138 - "server.ts"
 Cohesion: 0.33
 Nodes (4): angularApp, app, browserDistFolder, reqHandler
@@ -799,17 +789,9 @@ Nodes (5): Angular Drag and Drop Component, Basic, DataTable, Drag Handle, Drop 
 Cohesion: 0.40
 Nodes (5): Architecture, Example, Global, Setup, Unstyled Mode
 
-### Community 141 - "TrackingService"
-Cohesion: 0.31
-Nodes (3): TrackingService, Inject, Injectable
-
 ### Community 142 - "process_mascot.py"
 Cohesion: 0.50
 Nodes (4): main(), Crop Bang Sob mascot: remove credits/logo, make white transparent., row_nw(), ndarray
-
-### Community 143 - "stats-counter.block.ts"
-Cohesion: 0.25
-Nodes (4): StatsCounterBlockComponent, Component, StatsCounterBlockData, StatsCounterItem
 
 ### Community 144 - "Select"
 Cohesion: 0.40
@@ -871,10 +853,6 @@ Nodes (4): Emits, Props, Templates, Toast
 Cohesion: 0.50
 Nodes (4): Emits, Overlay, Props, Templates
 
-### Community 160 - "series-timeline.block.ts"
-Cohesion: 0.33
-Nodes (4): SeriesTimelineBlockComponent, Component, SeriesTimelineBlockData, SeriesTimelineItem
-
 ### Community 162 - "Theming"
 Cohesion: 0.67
 Nodes (3): CSS Classes, Design Tokens, Theming
@@ -904,16 +882,16 @@ Cohesion: 0.67
 Nodes (3): CSS Classes, Design Tokens, Theming
 
 ### Community 171 - "ExternalLinkService"
-Cohesion: 0.14
-Nodes (9): isRegistrationUrl(), REGISTRATION_WAIVER_EN, REGISTRATION_WAIVER_ID, WaiverSection, ExternalLinkService, Injectable, ExternalLinkDialogComponent, Component (+1 more)
+Cohesion: 0.29
+Nodes (4): DEFAULT_MENU, ExternalLinkService, Injectable, MenuItem
 
 ### Community 172 - "edition-cards-block.component.ts"
-Cohesion: 0.24
-Nodes (6): EditionCardsBlockComponent, formatDate(), SHORT_MONTHS_ID, Component, EditionCardItem, EditionCardsBlockData
+Cohesion: 0.27
+Nodes (5): EditionCardsBlockComponent, formatDate(), SHORT_MONTHS_ID, Component, EditionCardItem
 
-### Community 173 - "dynamic-page.component.ts"
-Cohesion: 0.10
-Nodes (15): PageResponse, SeoData, SeoService, Inject, Injectable, upsertMeta(), ContactPageComponent, Component (+7 more)
+### Community 173 - "RevealDirective"
+Cohesion: 0.13
+Nodes (8): Directive, ContactFormComponent, Component, SeoService, Inject, Injectable, PartnerLogo, RevealDirective
 
 ### Community 175 - "FilterService - PrimeNG"
 Cohesion: 0.40
@@ -931,30 +909,22 @@ Nodes (5): prefix, projectType, root, sourceRoot, jkt-web
 Cohesion: 0.67
 Nodes (3): CSS Classes, Design Tokens, Theming
 
-### Community 179 - "edition-detail-block.component.ts"
-Cohesion: 0.40
-Nodes (3): EditionDetailBlockComponent, Component, EditionDetailBlockData
+### Community 179 - "package.json"
+Cohesion: 0.17
+Nodes (11): name, packageManager, private, scripts, build, ng, serve:ssr:jkt-web, start (+3 more)
 
-### Community 186 - "legal-document-block.component.ts"
+### Community 186 - "Migration - PrimeNG v21"
 Cohesion: 0.40
-Nodes (3): LegalDocumentBlockComponent, Component, LegalDocumentBlockData
+Nodes (5): Breaking, Deprecations, Migration - PrimeNG v21, Removals, Whatsnew
 
 ### Community 187 - "LLMs.txt - PrimeNG"
 Cohesion: 0.50
 Nodes (4): LLMs.txt - PrimeNG, Llmsfulltxt, Llmstxt, Markdownextension
 
-### Community 188 - "RichTextMediaBlockData"
-Cohesion: 0.40
-Nodes (3): RichTextMediaBlockComponent, Component, RichTextMediaBlockData
-
-### Community 189 - "Custom Icons - PrimeNG"
-Cohesion: 0.40
-Nodes (5): Custom Icons - PrimeNG, Fontawesome, Image, Material, Svg
-
 ## Knowledge Gaps
 - **1889 isolated node(s):** `laravel/mcp`, `$schema`, `version`, `packageManager`, `newProjectRoot` (+1884 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **11 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **21 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
@@ -972,4 +942,4 @@ _Questions this graph is uniquely positioned to answer:_
 - **Should `Angular TreeTable Component` be split into smaller, more focused modules?**
   _Cohesion score 0.04081632653061224 - nodes in this community are weakly interconnected._
 - **Should `devDependencies` be split into smaller, more focused modules?**
-  _Cohesion score 0.04878048780487805 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07407407407407407 - nodes in this community are weakly interconnected._

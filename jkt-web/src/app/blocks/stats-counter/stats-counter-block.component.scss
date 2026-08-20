@@ -1,17 +1,23 @@
 @keyframes statsIn {
   from {
     opacity: 0.01;
-    transform: translateY(12px);
+    transform: translate3d(0, 8px, 0);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
 .stats-animate {
   /* forwards only — `both` applied the "from" state before paint (= flash on refresh) */
-  animation: statsIn 500ms ease-out forwards;
+  animation: statsIn 280ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@media (max-width: 767px) {
+  .stats-animate {
+    animation-duration: 200ms;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

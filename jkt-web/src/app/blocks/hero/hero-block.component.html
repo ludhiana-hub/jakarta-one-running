@@ -54,8 +54,7 @@
         } @else {
           <a
             [href]="data().cta_url"
-            target="_blank"
-            rel="noopener"
+            (click)="openExternal(data().cta_url, $event)"
             class="btn-cta btn-cta-lg w-full justify-center font-display sm:w-auto"
           >
             {{ data().cta_label | tr }}

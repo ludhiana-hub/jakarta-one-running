@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { SeoService } from '../../core/seo.service';
-import { ExternalLinkDialogComponent } from '../../layout/external-link-dialog/external-link-dialog.component';
+import { ExternalLinkService } from '../../core/external-link.service';
 import { RevealDirective } from '../../shared/directives/reveal.directive';
 
 export interface PartnerLogo {
@@ -27,15 +27,14 @@ function dummyLogo(name: string, accent = '#141418'): string {
 @Component({
   selector: 'app-partners-page',
   standalone: true,
-  imports: [RouterLink, ExternalLinkDialogComponent, RevealDirective],
+  imports: [RouterLink, RevealDirective],
   templateUrl: './partners-page.component.html',
   styleUrl: './partners-page.component.scss',
 })
 export class PartnersPageComponent {
   private readonly seo = inject(SeoService);
+  private readonly externalLinks = inject(ExternalLinkService);
 
-  protected dialogVisible = false;
-  protected pendingUrl: string | null = null;
   protected readonly titleSponsor: PartnerLogo = {
     id: 'title',
     name: 'OmniAthletic Global',
@@ -67,7 +66,7 @@ export class PartnersPageComponent {
       imageUrl: '/assets/sponsors/platinum-chrono.svg',
       url: 'https://example.com/partners/chronotech',
       role: 'Tech & Timing',
-      roleColor: '#0072B5',
+      roleColor: '#00507A',
     },
     {
       id: 'pl-pulse',
@@ -96,7 +95,7 @@ export class PartnersPageComponent {
     { id: 'gd-urban', name: 'UrbanStride', imageUrl: dummyLogo('URBANSTRIDE', '#141418'), url: '#' },
     { id: 'gd-coral', name: 'Coral Hydrate', imageUrl: dummyLogo('CORAL', '#4DD0E1'), url: '#' },
     { id: 'gd-apex', name: 'Apex Insoles', imageUrl: dummyLogo('APEX', '#ffb3b2'), url: '#' },
-    { id: 'gd-harbor', name: 'Harbor Tel', imageUrl: dummyLogo('HARBOR', '#0072B5'), url: '#' },
+    { id: 'gd-harbor', name: 'Harbor Tel', imageUrl: dummyLogo('HARBOR', '#00507A'), url: '#' },
     { id: 'gd-leaf', name: 'LeafFit', imageUrl: dummyLogo('LEAFFIT', '#C4D600'), url: '#' },
     { id: 'gd-quanta', name: 'Quanta Wear', imageUrl: dummyLogo('QUANTA', '#141418'), url: '#' },
     { id: 'gd-zenith', name: 'Zenith Foam', imageUrl: dummyLogo('ZENITH', '#ffb3b2'), url: '#' },
@@ -107,12 +106,12 @@ export class PartnersPageComponent {
     { id: 'of-runway', name: 'Runway Labs', imageUrl: dummyLogo('RUNWAY', '#4DD0E1'), url: '#' },
     { id: 'of-monas', name: 'Monas Photo', imageUrl: dummyLogo('MONAS PIC', '#ffb3b2'), url: '#' },
     { id: 'of-swift', name: 'Swift Print', imageUrl: dummyLogo('SWIFT PRINT', '#C4D600'), url: '#' },
-    { id: 'of-bay', name: 'Bay Security', imageUrl: dummyLogo('BAY SEC', '#0072B5'), url: '#' },
+    { id: 'of-bay', name: 'Bay Security', imageUrl: dummyLogo('BAY SEC', '#00507A'), url: '#' },
     { id: 'of-orbit', name: 'Orbit Maps', imageUrl: dummyLogo('ORBIT MAPS', '#4DD0E1'), url: '#' },
     { id: 'of-kite', name: 'Kite Events', imageUrl: dummyLogo('KITE', '#141418'), url: '#' },
     { id: 'of-ridge', name: 'Ridge Medical', imageUrl: dummyLogo('RIDGE MED', '#ffb3b2'), url: '#' },
     { id: 'of-lotus', name: 'Lotus Catering', imageUrl: dummyLogo('LOTUS', '#C4D600'), url: '#' },
-    { id: 'of-nova', name: 'Nova Timing', imageUrl: dummyLogo('NOVA TIME', '#0072B5'), url: '#' },
+    { id: 'of-nova', name: 'Nova Timing', imageUrl: dummyLogo('NOVA TIME', '#00507A'), url: '#' },
   ];
 
   protected readonly community: PartnerLogo[] = [
@@ -175,7 +174,6 @@ export class PartnersPageComponent {
 
   openExternal(url: string): void {
     if (!url || url === '#') return;
-    this.pendingUrl = url;
-    this.dialogVisible = true;
+    this.externalLinks.open(url);
   }
 }

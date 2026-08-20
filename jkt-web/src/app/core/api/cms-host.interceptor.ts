@@ -3,6 +3,14 @@ import { HttpInterceptorFn } from '@angular/common/http';
 
 import { environment } from '../../../environments/environment';
 
+function normalizeTenantHost(hostname: string): string {
+  const host = hostname.split(':')[0]!.trim().toLowerCase();
+  if (host === '127.0.0.1' || host === '::1') {
+    return environment.cmsHost || 'localhost';
+  }
+  return host;
+}
+
 /**
  * Resolves the public hostname for CMS tenant lookup.
  * Staging (`staging.…`) and production apex share one deploy — use the
@@ -13,15 +21,15 @@ function resolveTenantHost(): string {
   if (request) {
     const forwarded = request.headers.get('x-forwarded-host')?.split(',')[0]?.trim();
     if (forwarded) {
-      return forwarded.split(':')[0]!;
+      return normalizeTenantHost(forwarded);
     }
     const hostHeader = request.headers.get('host')?.split(':')[0]?.trim();
     if (hostHeader) {
-      return hostHeader;
+      return normalizeTenantHost(hostHeader);
     }
     try {
       const hostname = new URL(request.url).hostname;
-      if (hostname) return hostname;
+      if (hostname) return normalizeTenantHost(hostname);
     } catch {
       // ignore invalid URL
     }
@@ -30,7 +38,7 @@ function resolveTenantHost(): string {
   const doc = inject(DOCUMENT, { optional: true });
   const browserHost = doc?.defaultView?.location?.hostname?.trim();
   if (browserHost) {
-    return browserHost;
+    return normalizeTenantHost(browserHost);
   }
 
   return environment.cmsHost;
