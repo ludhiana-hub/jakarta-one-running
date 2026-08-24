@@ -63,9 +63,9 @@ export class HomePageComponent {
   };
 
   protected readonly jaro: RichTextMediaBlockData = {
-    title: { id: 'JARO THE CROC' },
+    title: { id: 'Bang Sob' },
     body: {
-      id: 'Jaro is the official mascot of Jakarta One Running Series, a crocodile rooted in the city’s rivers and its resilience. Loyal, resilient, strong, patient and adaptive. Meet Jaro at every starting line as you run through all five regions.',
+      id: 'Bang Sob is the official mascot of Jakarta One Running Series, a crocodile rooted in the city’s rivers and its resilience. Loyal, resilient, strong, patient and adaptive. Meet Jaro at every starting line as you run through all five regions.',
     },
     // New filename busts CDN/browser cache of the old running-bib artwork.
     media_image: '/assets/prototype/bangsob-mascot.png',

@@ -48,9 +48,31 @@ app.use(
 );
 
 /**
+ * Halaman-halaman ini boleh di-cache publik (kontennya sama untuk semua
+ * visitor di detik yang sama) — dipakai untuk meredam burst traffic saat
+ * window pembukaan tiket, supaya Cloudflare bisa serve dari edge tanpa
+ * hit origin (Node SSR + CMS API) di setiap request.
+ */
+function isCacheableSsrRequest(req: express.Request): boolean {
+  if (req.method !== 'GET') return false;
+  if (req.path === '/dev/blocks' || req.path.startsWith('/dev/blocks/')) return false;
+  if ('preview_token' in req.query) return false;
+  return true;
+}
+
+/**
  * Handle all other requests by rendering the Angular application.
  */
 app.use((req, res, next) => {
+  if (isCacheableSsrRequest(req)) {
+    // Browser tidak nyimpen lama (max-age=0); Cloudflare edge (s-maxage) boleh
+    // nyimpen render HTML 60s dan serve versi stale sampai 300s sambil
+    // revalidate di background. Butuh Cache Rule di dashboard Cloudflare agar
+    // HTML benar-benar dianggap cache-eligible (default Cloudflare tidak
+    // cache text/html).
+    res.set('Cache-Control', 'public, max-age=0, s-maxage=60, stale-while-revalidate=300');
+  }
+
   angularApp
     .handle(req)
     .then((response) =>
