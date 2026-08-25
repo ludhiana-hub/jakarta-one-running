@@ -158,6 +158,8 @@ export class SchedulePageComponent {
       og_image: '/assets/prototype/hero-medal.png',
       noindex: false,
       canonical_url: '/schedule',
+      keywords:
+        'jadwal lari jakarta 2026, race calendar jakarta, lari jakarta selatan, lari jakarta utara, lari jakarta barat, lari jakarta timur, lari jakarta pusat, tiket bundling lari, jadwal event lari',
     });
 
     // Prefer CMS/fixture editions so schedule + registration URLs are editable

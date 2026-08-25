@@ -10,5 +10,7 @@ export interface SeoData {
    * Keep optional so fixture-first prototype stays lightweight.
    */
   canonical_url?: string;
+  /** Comma-separated keywords, used for the `keywords` meta tag. */
+  keywords?: string;
 }
 

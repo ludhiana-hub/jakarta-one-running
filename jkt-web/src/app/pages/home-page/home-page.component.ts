@@ -112,6 +112,8 @@ export class HomePageComponent {
       og_image: '/assets/prototype/hero-home-bg.jpg',
       noindex: false,
       canonical_url: '/',
+      keywords:
+        'lari jakarta, running series jakarta, event lari 2026, lomba lari 5k, marathon jakarta, tiket lari jakarta, jakarta one running series, race jakarta 2026, lari akhir tahun jakarta',
     });
 
     this.jsonLd.setSportsEvent({

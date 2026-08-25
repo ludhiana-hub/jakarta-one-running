@@ -1,6 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { Inject, Injectable, PLATFORM_ID, Renderer2, RendererFactory2 } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { Inject, Injectable, Renderer2, RendererFactory2 } from '@angular/core';
 
 export interface SportsEventJsonLd {
   name: string;
@@ -17,14 +16,12 @@ export class JsonLdService {
   constructor(
     rendererFactory: RendererFactory2,
     @Inject(DOCUMENT) private readonly document: Document,
-    @Inject(PLATFORM_ID) private readonly platformId: Object,
   ) {
     this.renderer = rendererFactory.createRenderer(null, null);
   }
 
+  /** Runs on server + browser render — Googlebot reads structured data from the SSR HTML, not post-hydration. */
   setSportsEvent(data: SportsEventJsonLd): void {
-    if (!isPlatformBrowser(this.platformId)) return;
-
     const payload = {
       '@context': 'https://schema.org',
       '@type': 'SportsEvent',

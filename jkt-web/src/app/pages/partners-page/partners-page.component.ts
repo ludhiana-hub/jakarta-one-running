@@ -51,6 +51,7 @@ export class PartnersPageComponent {
       og_image: '/assets/prototype/hero-medal.png',
       noindex: false,
       canonical_url: '/partners',
+      keywords: 'sponsor lari jakarta, partner event lari, mitra jakarta one running series, sponsorship event olahraga jakarta',
     });
   }
 
