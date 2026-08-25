@@ -99,7 +99,9 @@ function toScheduleViewFromEdition(edition: Edition, index: number): ScheduleSta
 
   const venueAddress = edition.venue_address ?? '';
   const rpcAddress = edition.rpc_address ?? '';
-  const routeSummary = edition.route_description?.id ?? '';
+  const routeSummary = edition.route_description?.id
+    ? `${edition.route_description.id} (To Be Confirmed)`
+    : 'To Be Confirmed';
 
   const villageOpen = formatTimeShort(edition.village_open);
   const villageClose = formatTimeShort(edition.village_close);
