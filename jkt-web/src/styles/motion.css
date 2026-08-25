@@ -81,6 +81,21 @@ footer,
 .reveal-stagger > .reveal:nth-child(4) {
   --reveal-delay: 120ms;
 }
+.reveal-stagger > .reveal:nth-child(5) {
+  --reveal-delay: 160ms;
+}
+.reveal-stagger > .reveal:nth-child(6) {
+  --reveal-delay: 200ms;
+}
+.reveal-stagger > .reveal:nth-child(7) {
+  --reveal-delay: 240ms;
+}
+.reveal-stagger > .reveal:nth-child(8) {
+  --reveal-delay: 280ms;
+}
+.reveal-stagger > .reveal:nth-child(n + 9) {
+  --reveal-delay: 320ms;
+}
 
 /* Dialog enter — shared by external-link / waiver modal */
 .dialog-backdrop {
@@ -120,7 +135,12 @@ footer,
 
   .reveal-stagger > .reveal:nth-child(2),
   .reveal-stagger > .reveal:nth-child(3),
-  .reveal-stagger > .reveal:nth-child(4) {
+  .reveal-stagger > .reveal:nth-child(4),
+  .reveal-stagger > .reveal:nth-child(5),
+  .reveal-stagger > .reveal:nth-child(6),
+  .reveal-stagger > .reveal:nth-child(7),
+  .reveal-stagger > .reveal:nth-child(8),
+  .reveal-stagger > .reveal:nth-child(n + 9) {
     --reveal-delay: 0ms;
   }
 

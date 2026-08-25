@@ -2,14 +2,14 @@
   "page": {
     "slug": "syarat-ketentuan",
     "title": {
-      "id": "Syarat & Ketentuan"
+      "id": "Event Waiver"
     },
     "seo": {
       "meta_title": {
-        "id": "Jakarta One Running Series | Syarat & Ketentuan"
+        "id": "Jakarta One Running Series | Event Waiver"
       },
       "meta_description": {
-        "id": "Dokumen syarat dan ketentuan untuk peserta Jakarta One Running Series."
+        "id": "Running event waiver agreement for Jakarta One Running Series participants."
       },
       "og_image": "https://example.com/og/terms.png",
       "noindex": false
@@ -21,9 +21,9 @@
       "type": "legal_document",
       "data": {
         "title": {
-          "id": "Ringkasan Ketentuan"
+          "id": "Running Event Waiver"
         },
-        "content_html": "<p>Dengan mendaftar, peserta menyetujui ketentuan umum penyelenggara.</p><ul><li>Prototipe ini masih bersifat fixture-first (tanpa integrasi pembayaran).</li><li>Setiap etape dapat memiliki informasi jadwal yang berbeda.</li><li>Peserta wajib mengikuti arahan panitia demi keselamatan bersama.</li></ul>"
+        "content_html": "<p><strong>PLEASE READ CAREFULLY BEFORE SIGNING. THIS WAIVER AGREEMENT WILL AFFECT YOUR LEGAL RIGHTS AND WILL LIMIT OR ELIMINATE YOUR ABILITY TO BRING A FUTURE LAWSUIT. THIS WAIVER AGREEMENT HAS BEEN REVIEWED BY LEGAL.</strong></p><p>I know that running is a potentially hazardous activity. I should not enter and run unless I am medically able and properly trained. I agree to abide by any decision of a race official relative to my ability to safely complete the run.</p><p>I hereby certify that I am in good health and I have trained to run the distance of the race, which I am entering. I assume all risks associated with running in this event including, but not limited to: falls, contact with other participants, the effects of weather, including high heat and/or humidity, traffic and the conditions of the road, all such risks being known and appreciated by me. Having read this waiver and knowing these facts and in consideration of your accepting my entry into this running race, I, for myself and anyone entitled to act on my behalf, waive and release running organisation, race management, event management, event organizer, its officers, club, sponsors, vendors, directors, agents, volunteers and employees, all states, cities, countries or other governmental bodies or locations in which events or segments of events are held, all sponsors, their representatives and successors, assigns, sponsors and representatives of and from any and all claims, actions, causes of action, demands, rights, damages, costs, loss of service, expenses and compensation whatsoever which may arise or in the future accrue on account of or in any way growing out of any and all known and unknown, seen and unforeseen, bodily and personal injuries/illnesses, property loss or damage, or the consequences which result from or in any way relate to my participation in the Race, including but not limited to any claims related to course design or condition, weather, the acts of spectators or other participants, or that are based on the ordinary negligence on the part of the Event promotor, its agents, volunteers, directors, officers, employees or other parties named above.</p><p>I grant permission to all of the foregoing to use any photographs, motion pictures, recordings, or any other record of this event for any legitimate purpose. I understand that bicycles, skateboards, roller skates or inline skates are not allowed in the event and I will abide by this guideline.</p><p>I authorize any healthcare provider to release any and all information pertaining to my healthcare, medical condition and medical treatment as a result of my participation in this event, to all committee Jakarta One Running Series event and its staff. I declare that any of the submitted data is correct and I am aware that any participant in this event can only join with a registration under his/her real identity.</p>"
       }
     }
   ]

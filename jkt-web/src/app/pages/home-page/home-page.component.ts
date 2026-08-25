@@ -46,7 +46,7 @@ export class HomePageComponent {
     badge: { id: 'Jakarta 500th Anniversary' },
     title: { id: 'ONE CITY, ONE CELEBRATION' },
     tagline: {
-      id: '500 years of Jakarta, 5 regions, 5.00 km each. One running series across the capital, with five medals to collect and one celebration to finish.',
+      id: '<strong>500 years of Jakarta, 5 regions, 5.00 km</strong> each. One running series across the capital, with five medals to collect and one celebration to finish.',
     },
     bg_image: '/assets/prototype/hero-home-bg.jpg',
     cta_label: { id: 'Join the Series' },
@@ -67,8 +67,7 @@ export class HomePageComponent {
     body: {
       id: 'Bang Sob is the official mascot of Jakarta One Running Series, a crocodile rooted in the city’s rivers and its resilience. Loyal, resilient, strong, patient and adaptive. Meet Jaro at every starting line as you run through all five regions.',
     },
-    // New filename busts CDN/browser cache of the old running-bib artwork.
-    media_image: '/assets/prototype/bangsob-mascot.png',
+    media_image: '/assets/prototype/bangsob.png',
     media_alt: { id: 'Jaro the Croc mascot' },
   };
 
@@ -106,7 +105,7 @@ export class HomePageComponent {
 
   constructor() {
     this.seo.apply({
-      meta_title: { id: 'Jakarta One Running 2026 | One City, One Celebration' },
+      meta_title: { id: 'Jakarta One Running Series 2026 | One City, One Celebration' },
       meta_description: {
         id: '500 years of Jakarta, 5 regions, 5.00 km each. One running series from South in November 2026 to the Central championship in June 2027.',
       },

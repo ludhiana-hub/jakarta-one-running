@@ -7,9 +7,11 @@
 
   <div class="relative mx-auto max-w-7xl px-4 pb-16 pt-24 sm:px-6 sm:pb-24 sm:pt-32 md:px-8">
     <header class="relative mb-10 text-center sm:mb-14" appReveal>
-      <p class="mb-3 font-label text-xs font-semibold uppercase tracking-[0.2em] text-primary sm:text-sm">
-        Get in touch
-      </p>
+      <div
+        class="glass-tier-1 mb-6 inline-flex items-center gap-2 rounded px-3 py-1.5 font-label text-xs font-semibold uppercase tracking-[0.12em] text-primary sm:mb-8 sm:px-4"
+      >
+        Get in Touch
+      </div>
       <h1 class="mb-3 font-display text-4xl tracking-tighter text-chalk sm:mb-4 sm:text-5xl md:text-7xl">
         Contact <span class="text-primary">Us</span>
       </h1>
@@ -30,7 +32,7 @@
           </p>
         </div>
 
-        <div class="grid grid-cols-1 gap-3 sm:grid-cols-3 lg:col-span-8">
+        <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:col-span-8">
           @for (item of contacts; track item.id) {
             <a
               [href]="item.href"
@@ -139,10 +141,6 @@
           </div>
         </div>
       </section>
-    </div>
-
-    <div class="mt-6 sm:mt-8" appReveal>
-      <app-contact-form />
     </div>
   </div>
 </div>

@@ -8,6 +8,11 @@
 
   <div class="relative mx-auto max-w-7xl px-4 pb-16 pt-24 sm:px-6 sm:pb-24 sm:pt-32 md:px-8">
     <header class="relative mb-10 text-center sm:mb-16" appReveal>
+      <div
+        class="glass-tier-1 mb-6 inline-flex items-center gap-2 rounded px-3 py-1.5 font-label text-xs font-semibold uppercase tracking-[0.12em] text-primary sm:mb-8 sm:px-4"
+      >
+        Our Partners
+      </div>
       <h1 class="mb-3 font-display text-4xl tracking-tighter text-chalk sm:mb-4 sm:text-5xl md:text-7xl">
         Our <span class="text-primary">Ecosystem</span>
       </h1>
@@ -17,123 +22,50 @@
       </p>
     </header>
 
-    <!-- Title sponsor stays featured -->
-    <section class="mb-12 sm:mb-16" appReveal>
-      <div class="mb-5 flex items-center gap-3 sm:mb-6 sm:gap-4">
-        <div class="h-px flex-grow bg-glass-border"></div>
-        <h2 class="shrink-0 font-display text-xs uppercase tracking-widest text-chalk/70 sm:text-sm md:text-base">
-          Title Sponsor
-        </h2>
-        <div class="h-px flex-grow bg-glass-border"></div>
-      </div>
-
-      <div class="flex justify-center">
-        <a
-          href="#"
-          class="glass-tier-3 group flex w-full max-w-3xl cursor-pointer flex-col items-center gap-4 rounded p-5 transition-all duration-300 sm:gap-6 sm:p-8 [@media(hover:hover)]:hover:-translate-y-1"
-          (click)="$event.preventDefault(); openExternal(titleSponsor.url)"
-        >
-          <div class="flex aspect-[21/9] w-full items-center justify-center p-2 sm:p-4 md:p-8">
-            <img
-              [src]="titleSponsor.imageUrl"
-              width="480"
-              height="160"
-              class="max-h-20 w-auto object-contain opacity-90 transition-opacity group-hover:opacity-100 sm:max-h-28 md:max-h-32"
-              [alt]="titleSponsor.name"
-            />
-          </div>
-          <div class="px-2 text-center sm:px-4 md:px-8">
-            <h3 class="mb-2 font-display text-xl text-primary sm:text-2xl md:text-3xl">
-              {{ titleSponsor.name }}
-            </h3>
-            @if (titleSponsor.tagline) {
-              <p class="font-body text-sm text-on-surface-variant italic sm:text-base">{{ titleSponsor.tagline }}</p>
-            }
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <!-- Platinum: static featured strip (few logos, no auto-scroll) -->
-    <section class="mb-10 sm:mb-14" appReveal>
-      <div class="mb-5 flex items-center gap-3 sm:mb-6 sm:gap-4">
-        <div class="h-px flex-grow bg-glass-border"></div>
-        <h2 class="shrink-0 font-display text-xs uppercase tracking-widest text-chalk/70 sm:text-sm md:text-base">
-          Platinum Partners
-        </h2>
-        <div class="h-px flex-grow bg-glass-border"></div>
-      </div>
-      <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-5 md:gap-4">
-        @for (partner of platinum; track partner.id) {
+    <!-- Featured partners -->
+    <section class="mb-10 sm:mb-14">
+      <div class="reveal-stagger grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6 md:grid-cols-6">
+        @for (partner of featuredPartners; track partner.id) {
           <a
             href="#"
-            class="glass-tier-1 group flex flex-col items-center justify-center rounded border border-glass-border p-4 transition hover:border-primary/40 hover:bg-black/5 sm:p-5"
+            class="group flex items-center justify-center rounded-lg bg-white p-6 shadow-sm ring-1 ring-black/5 transition hover:-translate-y-0.5 hover:shadow-md sm:p-8"
             (click)="$event.preventDefault(); openExternal(partner.url)"
+            appReveal
           >
             <img
               [src]="partner.imageUrl"
-              width="200"
-              height="80"
-              class="mb-3 max-h-10 w-auto object-contain opacity-80 transition group-hover:opacity-100 sm:max-h-12"
+              width="240"
+              height="100"
+              class="max-h-16 w-auto object-contain opacity-90 transition group-hover:opacity-100 sm:max-h-20"
               [alt]="partner.name"
               loading="lazy"
             />
-            <span class="text-center font-body text-xs text-chalk/90 sm:text-sm">{{ partner.name }}</span>
-            @if (partner.role) {
-              <span
-                class="mt-1 text-center font-label text-xs font-semibold uppercase tracking-[0.1em]"
-                [style.color]="partner.roleColor ?? '#ffb3b2'"
-              >
-                {{ partner.role }}
-              </span>
-            }
           </a>
         }
       </div>
     </section>
 
-    <!-- Auto-scrolling logo bands -->
-    <section class="mb-14 space-y-8 sm:mb-20 sm:space-y-10" appReveal>
-      <div class="text-center">
-        <h2 class="font-display text-2xl text-chalk sm:text-3xl">Partners in Motion</h2>
-        <p class="mt-2 font-body text-sm text-on-surface-variant">
-          Logos scroll slowly. Hover to pause.
-        </p>
+    <!-- Partners -->
+    <section class="mb-14 sm:mb-20">
+      <div class="reveal-stagger flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+        @for (partner of partners; track partner.id) {
+          <a
+            href="#"
+            class="group flex items-center justify-center rounded-lg bg-white p-4 shadow-sm ring-1 ring-black/5 transition hover:-translate-y-0.5 hover:shadow-md sm:p-5"
+            (click)="$event.preventDefault(); openExternal(partner.url)"
+            appReveal
+          >
+            <img
+              [src]="partner.imageUrl"
+              width="200"
+              height="80"
+              class="max-h-10 w-auto object-contain opacity-90 transition group-hover:opacity-100 sm:max-h-12"
+              [alt]="partner.name"
+              loading="lazy"
+            />
+          </a>
+        }
       </div>
-
-      @for (row of marqueeRows; track row.id) {
-        <div class="marquee-section">
-          <div class="mb-3 flex items-center gap-3 px-1">
-            <h3 class="shrink-0 font-label text-xs font-semibold uppercase tracking-[0.12em] text-mist sm:text-sm">
-              {{ row.label }}
-            </h3>
-            <div class="h-px flex-grow bg-glass-border"></div>
-          </div>
-          <div class="marquee" [class.marquee--reverse]="row.reverse">
-            <div class="marquee__track" [style.--marquee-duration]="row.logos.length * 4 + 's'">
-              @for (partner of row.loop; track $index) {
-                <a
-                  href="#"
-                  class="marquee__item glass-tier-1 group flex shrink-0 flex-col items-center justify-center rounded border border-glass-border px-5 py-4"
-                  (click)="$event.preventDefault(); openExternal(partner.url)"
-                >
-                  <img
-                    [src]="partner.imageUrl"
-                    width="180"
-                    height="72"
-                    class="max-h-9 w-auto max-w-[140px] object-contain opacity-75 transition group-hover:opacity-100 sm:max-h-11"
-                    [alt]="partner.name"
-                    loading="lazy"
-                  />
-                  <span class="mt-2 max-w-[140px] truncate text-center font-body text-xs text-chalk/80">
-                    {{ partner.name }}
-                  </span>
-                </a>
-              }
-            </div>
-          </div>
-        </div>
-      }
     </section>
 
     <!-- CTA -->
@@ -151,13 +83,13 @@
         </p>
         <div class="flex flex-col gap-3 sm:flex-row sm:gap-4">
           <a
-            routerLink="/kontak"
+            routerLink="/contact"
             class="btn-cta btn-cta-lg w-full text-center sm:w-auto"
           >
             Talk Sponsorship →
           </a>
           <a
-            routerLink="/kontak"
+            routerLink="/contact"
             class="glass-tier-1 rounded border border-glass-border px-6 py-3.5 text-center font-bold text-chalk transition-all hover:bg-black/5 sm:px-10 sm:py-4"
           >
             Contact Us

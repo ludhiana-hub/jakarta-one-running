@@ -1,4 +1,4 @@
-<div class="w-full">
+<div class="w-full overflow-x-hidden pt-24 sm:pt-32">
   @if (page(); as current) {
     @for (block of current.blocks; track block.id) {
       <app-block-renderer [block]="block" />

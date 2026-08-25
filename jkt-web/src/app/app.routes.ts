@@ -29,7 +29,7 @@ export const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'galeri',
+    path: 'gallery',
     data: { pageSlug: 'galeri' },
     loadChildren: () => import('./pages/dynamic-page/dynamic-page.routes').then((m) => m.routes),
   },
@@ -39,12 +39,12 @@ export const routes: Routes = [
     loadChildren: () => import('./pages/dynamic-page/dynamic-page.routes').then((m) => m.routes),
   },
   {
-    path: 'syarat-ketentuan',
+    path: 'event-waiver',
     data: { pageSlug: 'syarat-ketentuan' },
     loadChildren: () => import('./pages/dynamic-page/dynamic-page.routes').then((m) => m.routes),
   },
   {
-    path: 'kontak',
+    path: 'contact',
     loadComponent: () =>
       import('./pages/contact-page/contact-page.component').then((m) => m.ContactPageComponent),
   },
@@ -61,6 +61,21 @@ export const routes: Routes = [
   {
     path: 'etape',
     redirectTo: '/schedule',
+    pathMatch: 'full',
+  },
+  {
+    path: 'galeri',
+    redirectTo: '/gallery',
+    pathMatch: 'full',
+  },
+  {
+    path: 'syarat-ketentuan',
+    redirectTo: '/event-waiver',
+    pathMatch: 'full',
+  },
+  {
+    path: 'kontak',
+    redirectTo: '/contact',
     pathMatch: 'full',
   },
   // Catch-all for CMS-authored pages. Must stay LAST so it never shadows the

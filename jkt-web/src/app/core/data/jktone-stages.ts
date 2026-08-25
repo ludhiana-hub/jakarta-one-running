@@ -53,7 +53,7 @@ export const JKTONE_STAGES: readonly JktoneStage[] = [
     routeSummary:
       'Start at SCBD, follow a smooth city loop across South Jakarta, and return to SCBD for your finish.',
     accent: '#C4D600',
-    registrationUrl: 'https://jkt499k.bigtix.io/en',
+    registrationUrl: 'https://id.bookmyshow.com/en/collections/onerunningseries',
     priceIdr: 195000,
     runners: 10000,
     raceVillage: '04.30–11.00',
@@ -78,7 +78,7 @@ export const JKTONE_STAGES: readonly JktoneStage[] = [
     routeSummary:
       'Start at Ancol, head east on Jl. Lodan Raya toward Jl. R.E. Martadinata, loop through Ancol Selatan, Griya Utama and Benyamin Sueb, then finish at Ancol.',
     accent: '#4DD0E1',
-    registrationUrl: 'https://jkt499k.bigtix.io/en',
+    registrationUrl: 'https://id.bookmyshow.com/en/collections/onerunningseries',
     priceIdr: 195000,
     runners: 10000,
     raceVillage: '04.30–11.00',
@@ -103,7 +103,7 @@ export const JKTONE_STAGES: readonly JktoneStage[] = [
     routeSummary:
       'Start in Puri, follow a 5.00 km loop through West Jakarta corridors, then finish back at the Puri start area.',
     accent: '#CC0000',
-    registrationUrl: 'https://jkt499k.bigtix.io/en',
+    registrationUrl: 'https://id.bookmyshow.com/en/collections/onerunningseries',
     priceIdr: 195000,
     runners: 10000,
     raceVillage: '04.30–11.00',
@@ -128,7 +128,7 @@ export const JKTONE_STAGES: readonly JktoneStage[] = [
     routeSummary:
       'Start at the Velodrome, run through Jakarta’s eastern corridors, and return for a fast finish at the Velodrome.',
     accent: '#8C8C8C',
-    registrationUrl: 'https://jkt499k.bigtix.io/en',
+    registrationUrl: 'https://id.bookmyshow.com/en/collections/onerunningseries',
     priceIdr: 195000,
     runners: 10000,
     raceVillage: '04.30–11.00',
@@ -153,7 +153,7 @@ export const JKTONE_STAGES: readonly JktoneStage[] = [
     routeSummary:
       'Start at Lapangan Banteng toward Jl. Gambir Raya and Jl. Ir. H. Juanda, U-turn at Harmoni, return past Pasar Baru and the Central Post Office, then finish at Lapangan Banteng.',
     accent: '#00507A',
-    registrationUrl: 'https://jkt499k.bigtix.io/en',
+    registrationUrl: 'https://id.bookmyshow.com/en/collections/onerunningseries',
     priceIdr: 195000,
     runners: 10000,
     raceVillage: '04.30–11.00',

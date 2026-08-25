@@ -33,7 +33,7 @@ export const DEFAULT_MENU: MenuItem[] = [
   {
     label: { id: 'Kontak', en: 'Contact' },
     type: 'page',
-    url: '/kontak',
+    url: '/contact',
     linkable_type: null,
     linkable_id: null,
     children: [],
@@ -41,7 +41,7 @@ export const DEFAULT_MENU: MenuItem[] = [
   {
     label: { id: 'Daftar', en: 'Register' },
     type: 'external',
-    url: 'https://jkt499k.bigtix.io/en',
+    url: 'https://id.bookmyshow.com/en/collections/onerunningseries',
     linkable_type: null,
     linkable_id: null,
     children: [],

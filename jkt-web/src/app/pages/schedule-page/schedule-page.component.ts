@@ -14,6 +14,15 @@ import { ExternalLinkService } from '../../core/external-link.service';
 import { RevealDirective } from '../../shared/directives/reveal.directive';
 import { catchError, map, of, take } from 'rxjs';
 
+/** Region photo per stage, keyed by slug — independent of data source (local catalog or CMS). */
+const STAGE_IMAGES: Record<string, string> = {
+  south: '/assets/prototype/jaksel.webp',
+  north: '/assets/prototype/jakut.webp',
+  west: '/assets/prototype/jakbar.webp',
+  east: '/assets/prototype/jaktim.webp',
+  central: '/assets/prototype/jakpus.webp',
+};
+
 export interface ScheduleStageView {
   slug: string;
   index: number;
@@ -35,6 +44,7 @@ export interface ScheduleStageView {
   raceFinish: string;
   cot: string;
   priceLabel: string;
+  imageUrl: string;
 }
 
 function toScheduleView(stage: JktoneStage, index: number): ScheduleStageView {
@@ -59,6 +69,7 @@ function toScheduleView(stage: JktoneStage, index: number): ScheduleStageView {
     raceFinish: stage.raceFinish,
     cot: stage.cot,
     priceLabel: formatPriceIdr(stage.priceIdr),
+    imageUrl: STAGE_IMAGES[stage.slug] ?? '/assets/prototype/hero-medal.png',
   };
 }
 
@@ -117,6 +128,7 @@ function toScheduleViewFromEdition(edition: Edition, index: number): ScheduleSta
     raceFinish: formatTimeShort(edition.race_finish),
     cot: edition.cot_minutes ? `${edition.cot_minutes} min` : '',
     priceLabel: price ? formatPriceIdr(price) : formatPriceIdr(0),
+    imageUrl: STAGE_IMAGES[edition.slug] ?? '/assets/prototype/hero-medal.png',
   };
 }
 
@@ -137,7 +149,7 @@ export class SchedulePageComponent {
 
   constructor() {
     this.seo.apply({
-      meta_title: { id: 'Schedule | Jakarta One Running 2026' },
+      meta_title: { id: 'Schedule | Jakarta One Running Series 2026' },
       meta_description: {
         id: 'Race calendar for five Jakarta One stages, from South on 1 November 2026 to the Central championship on 6 June 2027.',
       },

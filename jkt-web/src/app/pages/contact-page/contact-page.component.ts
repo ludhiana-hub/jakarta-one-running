@@ -2,13 +2,12 @@ import { Component, inject } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 import { SeoService } from '../../core/seo.service';
-import { ContactFormComponent } from '../../blocks/contact-form/contact-form.component';
 import { RevealDirective } from '../../shared/directives/reveal.directive';
 
 @Component({
   selector: 'app-contact-page',
   standalone: true,
-  imports: [ContactFormComponent, RevealDirective],
+  imports: [RevealDirective],
   templateUrl: './contact-page.component.html',
   styleUrl: './contact-page.component.scss',
 })
@@ -38,22 +37,15 @@ export class ContactPageComponent {
     {
       id: 'email',
       label: 'Email',
-      value: 'hello@jakartaonerunning.id',
-      href: 'mailto:hello@jakartaonerunning.id',
+      value: 'info@jakartaonerunningseries.com',
+      href: 'mailto:info@jakartaonerunningseries.com',
       hint: 'Partnership, media, and general inquiries',
-    },
-    {
-      id: 'wa',
-      label: 'WhatsApp',
-      value: '+62 812-0000-2026',
-      href: 'https://wa.me/6281200002026',
-      hint: 'Weekdays 09.00 – 17.00 WIB',
     },
     {
       id: 'ig',
       label: 'Instagram',
-      value: '@jakartaonerunning',
-      href: 'https://www.instagram.com/jakartaonerunning',
+      value: '@jakartaonerunningseries',
+      href: 'https://www.instagram.com/jakartaonerunningseries',
       hint: 'Race updates and stage announcements',
     },
   ] as const;

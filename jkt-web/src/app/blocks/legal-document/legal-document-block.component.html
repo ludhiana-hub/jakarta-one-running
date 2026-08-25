@@ -1,9 +1,14 @@
-<section class="my-12 px-4 bg-void">
-  <div class="max-w-4xl mx-auto py-14">
-    <h2 class="font-display text-chalk text-3xl md:text-4xl font-semibold">
+<section class="my-12 px-4">
+  <div class="mx-auto max-w-4xl">
+    <div
+      class="glass-tier-1 mb-6 inline-flex items-center gap-2 rounded px-3 py-1.5 font-label text-xs font-semibold uppercase tracking-[0.12em] text-primary sm:mb-8 sm:px-4"
+    >
+      Before You Register
+    </div>
+    <h2 class="font-display text-3xl font-semibold text-chalk md:text-4xl">
       {{ data().title | tr }}
     </h2>
 
-    <div class="mt-8 text-mist leading-relaxed text-base" [innerHTML]="data().content_html"></div>
+    <div class="glass-tier2 legal-content mt-6 p-6 leading-relaxed text-mist sm:p-8" [innerHTML]="data().content_html"></div>
   </div>
 </section>

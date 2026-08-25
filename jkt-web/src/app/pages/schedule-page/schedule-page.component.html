@@ -60,6 +60,23 @@
                 <span class="stage-card__decor" aria-hidden="true"></span>
                 <span class="stage-card__numeral" aria-hidden="true">{{ stage.pad }}</span>
 
+                <div
+                  class="relative mb-5 flex h-64 w-full items-center justify-center overflow-hidden rounded bg-gradient-to-br from-black/[0.03] via-black/[0.06] to-black/[0.03] sm:mb-6 sm:h-80"
+                >
+                  <img
+                    [ngSrc]="stage.imageUrl"
+                    width="640"
+                    height="960"
+                    class="h-full w-auto object-contain"
+                    [alt]="stage.title"
+                  />
+                  <span
+                    class="stage-badge stage-badge--date absolute bottom-3 left-3 sm:bottom-4 sm:left-4"
+                  >
+                    {{ stage.title }}
+                  </span>
+                </div>
+
                 <div class="mb-4 flex items-start justify-between gap-3 sm:mb-5">
                   <div class="min-w-0">
                     <span class="stage-badge stage-badge--date mb-2">{{ stage.monthLabel }}</span>
@@ -195,13 +212,13 @@
                   </button>
                 </div>
                 <div
-                  class="relative aspect-square w-full max-w-[16rem] overflow-hidden rounded border border-glass-border sm:w-64"
+                  class="relative flex h-64 w-full max-w-[16rem] items-center justify-center overflow-hidden rounded border border-glass-border bg-gradient-to-br from-black/[0.03] via-black/[0.06] to-black/[0.03] sm:h-72 sm:w-64"
                 >
                   <img
-                    ngSrc="/assets/prototype/hero-medal.png"
-                    width="512"
-                    height="512"
-                    class="h-full w-full object-cover"
+                    [ngSrc]="stage.imageUrl"
+                    width="640"
+                    height="960"
+                    class="h-full w-auto object-contain"
                     alt="Championship Medal"
                   />
                   <div
@@ -221,32 +238,56 @@
     </div>
 
     <section class="mt-16 sm:mt-32" appReveal>
-      <div
-        class="pass-panel glass-tier-2 relative overflow-hidden rounded border border-glass-border p-6 text-center sm:p-12"
-      >
+      <div class="pass-panel glass-tier-2 relative overflow-hidden rounded border border-glass-border">
         <span class="pass-panel__decor" aria-hidden="true"></span>
         <div
           class="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-transparent via-ember to-transparent"
         ></div>
-        <h2 class="mb-4 font-display text-3xl text-chalk sm:mb-6 sm:text-4xl">One Pass. All Stages.</h2>
-        <p class="mx-auto mb-8 max-w-xl font-body text-base text-on-surface-variant sm:mb-10 sm:text-lg">
-          Simplify your season. The Season Pass covers all five stages, priority corral placement,
-          and the exclusive series jacket.
-        </p>
-        <div class="flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-6">
-          <button
-            type="button"
-            class="btn-cta btn-cta-xl w-full sm:w-auto"
-            (click)="openExternal('https://jkt499k.bigtix.io/en')"
+
+        <div class="flex flex-col items-center gap-8 p-6 text-center sm:p-12 md:flex-row md:gap-12 md:text-left">
+          <div
+            class="flex aspect-square w-full max-w-[220px] shrink-0 items-center justify-center overflow-hidden rounded-lg border border-dashed border-glass-border bg-black/5 sm:max-w-[260px]"
           >
-            Buy Season Pass
-          </button>
-          <a
-            routerLink="/kontak"
-            class="rounded border border-glass-border bg-black/5 px-6 py-3.5 text-center font-bold text-chalk transition-all hover:bg-black/10 sm:px-12 sm:py-4"
-          >
-            Ask a Question
-          </a>
+            <img
+              ngSrc="/assets/prototype/bundling-tumbler.png"
+              width="520"
+              height="520"
+              class="h-full w-full object-contain p-6"
+              alt="Special Edition Tumbler"
+            />
+          </div>
+
+          <div class="min-w-0 flex-1">
+            <div
+              class="glass-tier-1 mb-4 inline-flex items-center gap-2 rounded px-3 py-1.5 font-label text-xs font-semibold uppercase tracking-[0.12em] text-primary sm:mb-6 sm:px-4"
+            >
+              🎁 Free Special Edition Tumbler
+            </div>
+            <h2 class="mb-4 font-display text-3xl text-chalk sm:mb-6 sm:text-4xl">Bundling All Races</h2>
+            <p class="mx-auto mb-8 max-w-xl font-body text-base text-on-surface-variant sm:mb-10 sm:text-lg md:mx-0">
+              Simplify your season. The Bundling covers all five stages, priority corral placement,
+              and the exclusive series jacket. Plus, get a
+              <strong class="font-semibold text-primary">free Special Edition Tumbler</strong>,
+              only for Bundling runners.
+            </p>
+            <div
+              class="flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-6 md:justify-start"
+            >
+              <button
+                type="button"
+                class="btn-cta btn-cta-xl w-full sm:w-auto"
+                (click)="openExternal('https://id.bookmyshow.com/en/collections/onerunningseries')"
+              >
+                Buy Bundling Ticket
+              </button>
+              <a
+                routerLink="/contact"
+                class="rounded border border-glass-border bg-black/5 px-6 py-3.5 text-center font-bold text-chalk transition-all hover:bg-black/10 sm:px-12 sm:py-4"
+              >
+                Ask a Question
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
