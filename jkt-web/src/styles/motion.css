@@ -130,18 +130,34 @@ footer,
   /* Shorter travel + duration keeps scrolling on phones feeling immediate */
   .reveal {
     transform: translate3d(0, 6px, 0);
-    transition-duration: 0.2s;
+    transition-duration: 0.24s;
   }
 
-  .reveal-stagger > .reveal:nth-child(2),
-  .reveal-stagger > .reveal:nth-child(3),
-  .reveal-stagger > .reveal:nth-child(4),
-  .reveal-stagger > .reveal:nth-child(5),
-  .reveal-stagger > .reveal:nth-child(6),
-  .reveal-stagger > .reveal:nth-child(7),
-  .reveal-stagger > .reveal:nth-child(8),
+  /* Keep a light stagger on mobile too — zeroing it made grids of logos
+     pop in all at once instead of a smooth wave. */
+  .reveal-stagger > .reveal:nth-child(2) {
+    --reveal-delay: 20ms;
+  }
+  .reveal-stagger > .reveal:nth-child(3) {
+    --reveal-delay: 40ms;
+  }
+  .reveal-stagger > .reveal:nth-child(4) {
+    --reveal-delay: 60ms;
+  }
+  .reveal-stagger > .reveal:nth-child(5) {
+    --reveal-delay: 80ms;
+  }
+  .reveal-stagger > .reveal:nth-child(6) {
+    --reveal-delay: 100ms;
+  }
+  .reveal-stagger > .reveal:nth-child(7) {
+    --reveal-delay: 120ms;
+  }
+  .reveal-stagger > .reveal:nth-child(8) {
+    --reveal-delay: 140ms;
+  }
   .reveal-stagger > .reveal:nth-child(n + 9) {
-    --reveal-delay: 0ms;
+    --reveal-delay: 160ms;
   }
 
   .dialog-panel {

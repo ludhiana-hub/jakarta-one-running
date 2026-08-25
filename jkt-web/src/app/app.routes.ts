@@ -30,8 +30,10 @@ export const routes: Routes = [
   },
   {
     path: 'gallery',
-    data: { pageSlug: 'galeri' },
-    loadChildren: () => import('./pages/dynamic-page/dynamic-page.routes').then((m) => m.routes),
+    loadComponent: () =>
+      import('./pages/coming-soon-page/coming-soon-page.component').then(
+        (m) => m.ComingSoonPageComponent,
+      ),
   },
   {
     path: 'faq',

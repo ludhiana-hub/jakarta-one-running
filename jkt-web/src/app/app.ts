@@ -4,12 +4,19 @@ import { RouterOutlet } from '@angular/router';
 import { TrackingService } from './core/tracking.service';
 import { ExternalLinkDialogComponent } from './layout/external-link-dialog/external-link-dialog.component';
 import { FooterComponent } from './layout/footer/footer.component';
+import { ImageLightboxComponent } from './layout/image-lightbox/image-lightbox.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, FooterComponent, ExternalLinkDialogComponent],
+  imports: [
+    RouterOutlet,
+    NavbarComponent,
+    FooterComponent,
+    ExternalLinkDialogComponent,
+    ImageLightboxComponent,
+  ],
   templateUrl: './app.html',
 })
 export class App {

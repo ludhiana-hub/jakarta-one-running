@@ -11,6 +11,7 @@ import { BlockRepository } from '../../core/api/block.repository';
 import { Edition } from '../../core/models/edition';
 import { SeoService } from '../../core/seo.service';
 import { ExternalLinkService } from '../../core/external-link.service';
+import { ImageLightboxService } from '../../core/image-lightbox.service';
 import { RevealDirective } from '../../shared/directives/reveal.directive';
 import { catchError, map, of, take } from 'rxjs';
 
@@ -145,6 +146,7 @@ export class SchedulePageComponent {
   private readonly seo = inject(SeoService);
   private readonly repo = inject(BlockRepository);
   private readonly externalLinks = inject(ExternalLinkService);
+  private readonly lightbox = inject(ImageLightboxService);
 
   /** Seeded from brief catalog so the timeline never goes blank if CMS is empty. */
   protected stages: ScheduleStageView[] = JKTONE_STAGES.map(toScheduleView);
@@ -180,5 +182,9 @@ export class SchedulePageComponent {
 
   openExternal(url: string): void {
     this.externalLinks.openRegistration(url);
+  }
+
+  openImage(url: string, alt: string): void {
+    this.lightbox.open(url, alt);
   }
 }

@@ -1,0 +1,36 @@
+@if (visible()) {
+  <div
+    class="lightbox-backdrop"
+    (click)="onBackdropClick($event)"
+    (keydown)="onKeydown($event)"
+    (wheel)="onWheel($event)"
+    tabindex="0"
+    role="dialog"
+    aria-modal="true"
+    [attr.aria-label]="alt() || 'Image preview'"
+  >
+    <div class="lightbox-toolbar">
+      <button type="button" class="lightbox-btn" (click)="zoomOut()" aria-label="Zoom out">−</button>
+      <button type="button" class="lightbox-btn" (click)="zoomIn()" aria-label="Zoom in">+</button>
+      <button type="button" class="lightbox-btn lightbox-btn--close" (click)="close()" aria-label="Close">✕</button>
+    </div>
+
+    <div
+      class="lightbox-stage"
+      (pointerdown)="onPointerDown($event)"
+      (pointermove)="onPointerMove($event)"
+      (pointerup)="onPointerUp()"
+      (pointercancel)="onPointerUp()"
+      (dblclick)="toggleZoom()"
+    >
+      <img
+        [src]="imageUrl()"
+        [alt]="alt()"
+        class="lightbox-image"
+        [class.lightbox-image--zoomed]="zoom() > 1"
+        [style.transform]="'translate(' + panX() + 'px, ' + panY() + 'px) scale(' + zoom() + ')'"
+        draggable="false"
+      />
+    </div>
+  </div>
+}
