@@ -5,6 +5,11 @@
 #   http://YOUR_VPS_IP:4000
 #
 # Domains UI: Service = landing, Container Port = 4000, then Redeploy
+#
+# Running a second instance of this compose (e.g. a staging app in Dokploy)
+# alongside production on the same host? Set HOST_PORT in that app's Dokploy
+# environment (e.g. HOST_PORT=4001) so it doesn't collide with prod's 4000.
+# Leave it unset for production — it defaults to 4000, unchanged.
 
 services:
   landing:
@@ -17,7 +22,7 @@ services:
     restart: unless-stopped
     ports:
       # host:container — proves Angular works even if Traefik is wrong
-      - "4000:4000"
+      - "${HOST_PORT:-4000}:4000"
     environment:
       PORT: "4000"
       HOST: "0.0.0.0"
