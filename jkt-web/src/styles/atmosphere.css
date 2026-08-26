@@ -204,20 +204,11 @@
     animation: none !important;
   }
 
+  /* Blurred orbs on a `position: fixed` layer force a GPU repaint every
+     scroll frame on many mobile browsers — that's what made the hero→stats
+     scroll feel choppy. The gradient below replaces them on mobile. */
   .atmosphere-orb {
-    filter: blur(40px);
-    opacity: 0.4;
-  }
-
-  .atmosphere-orb-c {
     display: none;
-  }
-
-  .atmosphere-orb-a,
-  .atmosphere-orb-b,
-  .atmosphere-orb-c {
-    animation: none !important;
-    transform: none !important;
   }
 
   .atmosphere {
