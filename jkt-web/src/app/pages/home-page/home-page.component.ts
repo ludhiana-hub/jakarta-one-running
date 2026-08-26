@@ -113,7 +113,7 @@ export class HomePageComponent {
       noindex: false,
       canonical_url: '/',
       keywords:
-        'lari jakarta, running series jakarta, event lari 2026, lomba lari 5k, marathon jakarta, tiket lari jakarta, jakarta one running series, race jakarta 2026, lari akhir tahun jakarta',
+        'lari jakarta, running series jakarta, event lari 2026, lomba lari 5k, lari 5k jakarta, tiket lari jakarta, jakarta one running series, race jakarta 2026, lari akhir tahun jakarta',
     });
 
     this.jsonLd.setSportsEvent({
