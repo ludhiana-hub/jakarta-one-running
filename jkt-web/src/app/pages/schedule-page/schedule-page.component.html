@@ -162,15 +162,15 @@
                 <button
                   type="button"
                   class="group relative flex h-64 w-full cursor-zoom-in items-center justify-center overflow-hidden rounded border border-glass-border bg-gradient-to-br from-black/[0.03] via-black/[0.06] to-black/[0.03] sm:h-80 md:h-80 md:w-72 lg:h-96 lg:w-80"
-                  (click)="openImage(stage.imageUrl, 'Championship Medal')"
-                  aria-label="View Championship Medal fullscreen"
+                  (click)="openImage(stage.imageUrl, 'Championship Stage')"
+                  aria-label="View Championship Stage fullscreen"
                 >
                   <img
                     [ngSrc]="stage.imageUrl"
                     width="640"
                     height="960"
                     class="h-full w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-                    alt="Championship Medal"
+                    alt="Championship Stage"
                   />
                   <div
                     class="absolute inset-0 bg-gradient-to-t from-chalk/70 to-transparent opacity-70"
@@ -178,7 +178,7 @@
                   <div
                     class="absolute right-4 bottom-4 left-4 text-center font-label text-xs font-semibold uppercase tracking-[0.12em] text-white"
                   >
-                    Championship Medal
+                    Championship Stage
                   </div>
                 </button>
                 <div class="flex-1 text-center md:text-left">

@@ -56,7 +56,7 @@ export class ContactPageComponent {
       meta_description: {
         id: 'Reach the Jakarta One Running Series team. Find the championship venue, open Google Maps, or send a message.',
       },
-      og_image: '/assets/prototype/hero-medal.png',
+      og_image: '/assets/prototype/hero-home-bg.jpg',
       noindex: false,
       canonical_url: '/contact',
       keywords: 'kontak jakarta one running series, hubungi panitia lari, alamat event lari jakarta, customer service lari jakarta',

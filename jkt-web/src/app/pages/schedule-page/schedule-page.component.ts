@@ -70,7 +70,7 @@ function toScheduleView(stage: JktoneStage, index: number): ScheduleStageView {
     raceFinish: stage.raceFinish,
     cot: stage.cot,
     priceLabel: formatPriceIdr(stage.priceIdr),
-    imageUrl: STAGE_IMAGES[stage.slug] ?? '/assets/prototype/hero-medal.png',
+    imageUrl: STAGE_IMAGES[stage.slug] ?? '/assets/prototype/jakpus.webp',
   };
 }
 
@@ -131,7 +131,7 @@ function toScheduleViewFromEdition(edition: Edition, index: number): ScheduleSta
     raceFinish: formatTimeShort(edition.race_finish),
     cot: edition.cot_minutes ? `${edition.cot_minutes} min` : '',
     priceLabel: price ? formatPriceIdr(price) : formatPriceIdr(0),
-    imageUrl: STAGE_IMAGES[edition.slug] ?? '/assets/prototype/hero-medal.png',
+    imageUrl: STAGE_IMAGES[edition.slug] ?? '/assets/prototype/jakpus.webp',
   };
 }
 
@@ -157,7 +157,7 @@ export class SchedulePageComponent {
       meta_description: {
         id: 'Race calendar for five Jakarta One stages, from South on 1 November 2026 to the Central championship on 6 June 2027.',
       },
-      og_image: '/assets/prototype/hero-medal.png',
+      og_image: '/assets/prototype/hero-home-bg.jpg',
       noindex: false,
       canonical_url: '/schedule',
       keywords:

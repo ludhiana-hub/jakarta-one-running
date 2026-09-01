@@ -48,7 +48,7 @@ export class PartnersPageComponent {
       meta_description: {
         id: 'Government and corporate partners powering Jakarta One Running Series 2026.',
       },
-      og_image: '/assets/prototype/hero-medal.png',
+      og_image: '/assets/prototype/hero-home-bg.jpg',
       noindex: false,
       canonical_url: '/partners',
       keywords: 'sponsor lari jakarta, partner event lari, mitra jakarta one running series, sponsorship event olahraga jakarta',
