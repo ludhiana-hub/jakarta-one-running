@@ -23,7 +23,7 @@ describe('PartnersPageComponent', () => {
     expect(partners[wikinaraIndex + 1]).toEqual({
       id: 'cp-connectx',
       name: 'ConnectX',
-      imageUrl: '/assets/sponsors/connectx.svg',
+      imageUrl: '/assets/sponsors/connectx.svg?v=e52c4de',
       url: '#',
     });
   });
