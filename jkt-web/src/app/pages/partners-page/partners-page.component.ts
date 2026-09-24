@@ -40,6 +40,7 @@ export class PartnersPageComponent {
     { id: 'cp-kliktron', name: 'Kliktron', imageUrl: '/assets/sponsors/kliktron.webp', url: '#' },
     { id: 'cp-ibunda', name: 'Ibunda', imageUrl: '/assets/sponsors/ibunda.webp', url: '#' },
     { id: 'cp-wikinara', name: 'Wikinara', imageUrl: '/assets/sponsors/wikinara-logo.webp', url: '#' },
+    { id: 'cp-connectx', name: 'ConnectX', imageUrl: '/assets/sponsors/connectx.svg', url: '#' },
   ];
 
   constructor() {
