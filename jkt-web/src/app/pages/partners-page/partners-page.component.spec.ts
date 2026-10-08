@@ -8,7 +8,7 @@ import { SeoService } from '../../core/seo.service';
 import { PartnerLogo, PartnersPageComponent } from './partners-page.component';
 
 describe('PartnersPageComponent', () => {
-  it('lists ConnectX immediately after Wikinara', () => {
+  it('lists ConnectX immediately after Mazda', () => {
     const injector = Injector.create({
       providers: [
         { provide: SeoService, useValue: { apply: vi.fn() } },
@@ -17,10 +17,10 @@ describe('PartnersPageComponent', () => {
     });
     const component = runInInjectionContext(injector, () => new PartnersPageComponent());
     const partners = (component as unknown as { partners: PartnerLogo[] }).partners;
-    const wikinaraIndex = partners.findIndex((partner) => partner.id === 'cp-wikinara');
+    const mazdaIndex = partners.findIndex((partner) => partner.id === 'cp-mazda');
 
-    expect(wikinaraIndex).toBeGreaterThanOrEqual(0);
-    expect(partners[wikinaraIndex + 1]).toEqual({
+    expect(mazdaIndex).toBeGreaterThanOrEqual(0);
+    expect(partners[mazdaIndex + 1]).toEqual({
       id: 'cp-connectx',
       name: 'ConnectX',
       imageUrl: '/assets/sponsors/connectx.svg?v=e52c4de',

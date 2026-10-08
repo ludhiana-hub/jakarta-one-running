@@ -39,7 +39,7 @@ export class PartnersPageComponent {
     { id: 'cp-jabra', name: 'Jabra', imageUrl: '/assets/sponsors/jabra.webp', url: '#' },
     { id: 'cp-kliktron', name: 'Kliktron', imageUrl: '/assets/sponsors/kliktron.webp', url: '#' },
     { id: 'cp-ibunda', name: 'Ibunda', imageUrl: '/assets/sponsors/ibunda.webp', url: '#' },
-    { id: 'cp-wikinara', name: 'Wikinara', imageUrl: '/assets/sponsors/wikinara-logo.webp', url: '#' },
+    { id: 'cp-mazda', name: 'Mazda', imageUrl: '/assets/sponsors/mazda.png', url: '#' },
     { id: 'cp-connectx', name: 'ConnectX', imageUrl: '/assets/sponsors/connectx.svg?v=e52c4de', url: '#' },
   ];
 
