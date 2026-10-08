@@ -5,7 +5,7 @@ import {
   writeResponseToNodeResponse,
 } from '@angular/ssr/node';
 import express from 'express';
-import { join } from 'node:path';
+import { basename, join } from 'node:path';
 
 const browserDistFolder = join(import.meta.dirname, '../browser');
 
@@ -36,6 +36,9 @@ const angularApp = new AngularNodeAppEngine({
   trustProxyHeaders: ['x-forwarded-host', 'x-forwarded-proto', 'x-forwarded-port'],
 });
 
+/** Un-hashed files crawlers re-read and that we edit in place — keep their cache short. */
+const SHORT_CACHE_FILES = new Set(['sitemap.xml', 'robots.txt', 'llms.txt']);
+
 /**
  * Serve static files from /browser
  */
@@ -44,6 +47,11 @@ app.use(
     maxAge: '1y',
     index: false,
     redirect: false,
+    setHeaders: (res, filePath) => {
+      if (SHORT_CACHE_FILES.has(basename(filePath))) {
+        res.setHeader('Cache-Control', 'public, max-age=3600');
+      }
+    },
   }),
 );
 
