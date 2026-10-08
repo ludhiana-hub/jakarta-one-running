@@ -2,10 +2,7 @@ import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable } from '@angular/core';
 
 import { SeoData } from './models/seo';
-
-/** Canonical production origin, used to build absolute URLs for og:*, twitter:*, and canonical. */
-const SITE_URL = 'https://jakartaonerunningseries.com';
-const SITE_NAME = 'Jakarta One Running Series';
+import { absoluteUrl as toAbsoluteUrl, SITE_NAME } from './seo/site-info';
 
 function upsertMeta(document: Document, key: { name?: string; property?: string }, content: string) {
   const selector = key.name
@@ -19,12 +16,6 @@ function upsertMeta(document: Document, key: { name?: string; property?: string 
     document.head.appendChild(el);
   }
   el.setAttribute('content', content);
-}
-
-function toAbsoluteUrl(path: string): string {
-  if (!path) return '';
-  if (/^https?:\/\//i.test(path)) return path;
-  return `${SITE_URL}${path.startsWith('/') ? '' : '/'}${path}`;
 }
 
 @Injectable({ providedIn: 'root' })

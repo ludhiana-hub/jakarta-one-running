@@ -16,6 +16,7 @@ import { MilestoneBlockData } from '../../core/models/blocks/milestone.block';
 import { CtaBannerBlockData } from '../../core/models/blocks/cta-banner.block';
 import { SeoService } from '../../core/seo.service';
 import { JsonLdService } from '../../core/json-ld.service';
+import { homeGraph } from '../../core/seo/structured-data';
 import { TenantService } from '../../core/tenant.service';
 import { ThemeService } from '../../core/theme.service';
 import { RevealDirective } from '../../shared/directives/reveal.directive';
@@ -48,7 +49,7 @@ export class HomePageComponent {
     tagline: {
       id: '<strong>500 years of Jakarta, 5 regions, 5.00 km</strong> each. One running series across the capital, with five medals to collect and one celebration to finish.',
     },
-    bg_image: '/assets/prototype/hero-home-bg.jpg',
+    bg_image: '/assets/prototype/hero-home-bg.webp',
     cta_label: { id: 'Join the Series' },
     cta_url: '/schedule',
   };
@@ -116,11 +117,7 @@ export class HomePageComponent {
         'lari jakarta, running series jakarta, event lari 2026, lomba lari 5k, lari 5k jakarta, tiket lari jakarta, jakarta one running series, race jakarta 2026, lari akhir tahun jakarta',
     });
 
-    this.jsonLd.setSportsEvent({
-      name: 'Jakarta One Running Series',
-      startDate: '2026-11-01T00:00:00.000Z',
-      locationName: 'Jakarta',
-    });
+    this.jsonLd.setPage(homeGraph());
 
     this.tenant.edition$().pipe(take(1)).subscribe((edition) => this.theme.applyEdition(edition));
   }

@@ -4,6 +4,7 @@ import { Injector, runInInjectionContext } from '@angular/core';
 import { describe, expect, it, vi } from 'vitest';
 
 import { ExternalLinkService } from '../../core/external-link.service';
+import { JsonLdService } from '../../core/json-ld.service';
 import { SeoService } from '../../core/seo.service';
 import { PartnerLogo, PartnersPageComponent } from './partners-page.component';
 
@@ -12,6 +13,7 @@ describe('PartnersPageComponent', () => {
     const injector = Injector.create({
       providers: [
         { provide: SeoService, useValue: { apply: vi.fn() } },
+        { provide: JsonLdService, useValue: { setPage: vi.fn() } },
         { provide: ExternalLinkService, useValue: { open: vi.fn() } },
       ],
     });

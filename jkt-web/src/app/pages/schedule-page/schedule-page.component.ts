@@ -10,6 +10,8 @@ import {
 import { BlockRepository } from '../../core/api/block.repository';
 import { Edition } from '../../core/models/edition';
 import { SeoService } from '../../core/seo.service';
+import { JsonLdService } from '../../core/json-ld.service';
+import { scheduleGraph } from '../../core/seo/structured-data';
 import { ExternalLinkService } from '../../core/external-link.service';
 import { ImageLightboxService } from '../../core/image-lightbox.service';
 import { RevealDirective } from '../../shared/directives/reveal.directive';
@@ -144,6 +146,7 @@ function toScheduleViewFromEdition(edition: Edition, index: number): ScheduleSta
 })
 export class SchedulePageComponent {
   private readonly seo = inject(SeoService);
+  private readonly jsonLd = inject(JsonLdService);
   private readonly repo = inject(BlockRepository);
   private readonly externalLinks = inject(ExternalLinkService);
   private readonly lightbox = inject(ImageLightboxService);
@@ -163,6 +166,8 @@ export class SchedulePageComponent {
       keywords:
         'jadwal lari jakarta 2026, race calendar jakarta, lari jakarta selatan, lari jakarta utara, lari jakarta barat, lari jakarta timur, lari jakarta pusat, tiket bundling lari, jadwal event lari',
     });
+
+    this.jsonLd.setPage(scheduleGraph());
 
     // Prefer CMS/fixture editions so schedule + registration URLs are editable
     // in Filament. Keep the local catalog as a safety net.

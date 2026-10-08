@@ -2,6 +2,8 @@ import { Component, inject } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 import { SeoService } from '../../core/seo.service';
+import { JsonLdService } from '../../core/json-ld.service';
+import { contactGraph } from '../../core/seo/structured-data';
 import { RevealDirective } from '../../shared/directives/reveal.directive';
 
 @Component({
@@ -13,6 +15,7 @@ import { RevealDirective } from '../../shared/directives/reveal.directive';
 })
 export class ContactPageComponent {
   private readonly seo = inject(SeoService);
+  private readonly jsonLd = inject(JsonLdService);
   private readonly sanitizer = inject(DomSanitizer);
 
   /** Championship venue used as the series reference location. */
@@ -61,5 +64,7 @@ export class ContactPageComponent {
       canonical_url: '/contact',
       keywords: 'kontak jakarta one running series, hubungi panitia lari, alamat event lari jakarta, customer service lari jakarta',
     });
+
+    this.jsonLd.setPage(contactGraph());
   }
 }

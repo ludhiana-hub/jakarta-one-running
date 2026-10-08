@@ -11,6 +11,7 @@ import { ThemeService } from '../../core/theme.service';
 import { PageResponse } from '../../core/models/page-response';
 import { BlockRendererComponent } from '../../blocks/block-renderer/block-renderer.component';
 import { JsonLdService } from '../../core/json-ld.service';
+import { cmsPageGraph } from '../../core/seo/structured-data';
 import { environment } from '../../../environments/environment';
 
 /** Origins allowed to post live-preview messages into this window. */
@@ -76,6 +77,12 @@ export class DynamicPageComponent {
     }
   }
 
+  /** Public URL path (not the CMS slug: /event-waiver is served from slug `syarat-ketentuan`). */
+  private currentPath(): string {
+    const segments = this.route.snapshot.pathFromRoot.flatMap((r) => r.url.map((s) => s.path));
+    return `/${segments.join('/')}`;
+  }
+
   private loadPage(slug: string, options: { asOverride?: boolean } = {}): void {
     this.repo
       .page(slug)
@@ -91,12 +98,22 @@ export class DynamicPageComponent {
           this.seo.apply(page.page.seo);
         }
 
-        if (slug === 'home') {
-          this.jsonLd.setSportsEvent({
-            name: 'Jakarta One Running Series',
-            startDate: '2026-05-10T06:00:00.000Z',
-            locationName: 'Jakarta',
-          });
+        if (page && !page.page.seo?.noindex && !page.page.noindex) {
+          this.jsonLd.setPage(
+            cmsPageGraph({
+              path: this.currentPath(),
+              title: page.page.seo?.meta_title?.id || page.page.title.id,
+              description: page.page.seo?.meta_description?.id ?? '',
+              faqItems: page.blocks.flatMap((block) =>
+                block.type === 'faq_accordion'
+                  ? block.data.items.map((item) => ({
+                      question: item.question.id,
+                      answer: item.answer.id,
+                    }))
+                  : [],
+              ),
+            }),
+          );
         }
       });
   }

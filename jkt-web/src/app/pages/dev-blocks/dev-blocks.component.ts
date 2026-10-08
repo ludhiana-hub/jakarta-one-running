@@ -1,8 +1,7 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { PageBlock } from '../../core/models/blocks/page-block';
 import { BlockRendererComponent } from '../../blocks/block-renderer/block-renderer.component';
-import { JsonLdService } from '../../core/json-ld.service';
 
 const DEV_BLOCKS: PageBlock[] = [
   {
@@ -162,16 +161,6 @@ const DEV_BLOCKS: PageBlock[] = [
   templateUrl: './dev-blocks.component.html',
 })
 export class DevBlocksComponent {
-  private readonly jsonLd = inject(JsonLdService);
-
   protected readonly blocks = DEV_BLOCKS;
 
-  constructor() {
-    this.jsonLd.setSportsEvent({
-      name: 'Jakarta One Running Series',
-      startDate: '2026-05-10T06:00:00.000Z',
-      locationName: 'Jakarta',
-      url: 'https://example.com',
-    });
-  }
 }

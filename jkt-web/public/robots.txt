@@ -2,4 +2,37 @@ User-agent: *
 Allow: /
 Disallow: /dev/
 
+# AI search and assistant crawlers are welcome on public pages.
+User-agent: GPTBot
+Allow: /
+Disallow: /dev/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /dev/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /dev/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /dev/
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /dev/
+
+User-agent: Claude-User
+Allow: /
+Disallow: /dev/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /dev/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /dev/
+
 Sitemap: https://jakartaonerunningseries.com/sitemap.xml

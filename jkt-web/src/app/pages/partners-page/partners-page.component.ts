@@ -2,6 +2,8 @@ import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { SeoService } from '../../core/seo.service';
+import { JsonLdService } from '../../core/json-ld.service';
+import { partnersGraph } from '../../core/seo/structured-data';
 import { ExternalLinkService } from '../../core/external-link.service';
 import { RevealDirective } from '../../shared/directives/reveal.directive';
 
@@ -21,6 +23,7 @@ export interface PartnerLogo {
 })
 export class PartnersPageComponent {
   private readonly seo = inject(SeoService);
+  private readonly jsonLd = inject(JsonLdService);
   private readonly externalLinks = inject(ExternalLinkService);
 
   /** Featured: government partners — larger cards, top section. */
@@ -39,7 +42,7 @@ export class PartnersPageComponent {
     { id: 'cp-jabra', name: 'Jabra', imageUrl: '/assets/sponsors/jabra.webp', url: '#' },
     { id: 'cp-kliktron', name: 'Kliktron', imageUrl: '/assets/sponsors/kliktron.webp', url: '#' },
     { id: 'cp-ibunda', name: 'Ibunda', imageUrl: '/assets/sponsors/ibunda.webp', url: '#' },
-    { id: 'cp-mazda', name: 'Mazda', imageUrl: '/assets/sponsors/mazda.png', url: '#' },
+    { id: 'cp-mazda', name: 'Mazda', imageUrl: '/assets/sponsors/mazda.webp', url: '#' },
     { id: 'cp-connectx', name: 'ConnectX', imageUrl: '/assets/sponsors/connectx.svg?v=e52c4de', url: '#' },
   ];
 
@@ -54,6 +57,10 @@ export class PartnersPageComponent {
       canonical_url: '/partners',
       keywords: 'sponsor lari jakarta, partner event lari, mitra jakarta one running series, sponsorship event olahraga jakarta',
     });
+
+    this.jsonLd.setPage(
+      partnersGraph([...this.featuredPartners, ...this.partners].map((partner) => partner.name)),
+    );
   }
 
   openExternal(url: string): void {
