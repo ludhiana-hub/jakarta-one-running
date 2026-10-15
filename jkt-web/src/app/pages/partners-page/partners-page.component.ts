@@ -95,7 +95,7 @@ export class PartnersPageComponent {
       groups: [
         { id: 'sp-miels', caption: 'Official Body Care Partner', wide: true, partners: [
             { id: 'miels', name: 'Miels', imageUrl: '/assets/sponsors/miels.webp', url: '#', imageClass: 'h-8 sm:h-11' },
-            { id: 'louis-merry', name: 'Louis Merry', imageUrl: '/assets/sponsors/louis-merry.webp', url: '#', imageClass: 'h-16 sm:h-20' },
+            { id: 'louis-merry', name: 'Louis Merry', imageUrl: '/assets/sponsors/louis-merry.webp?v=2', url: '#', imageClass: 'h-10 sm:h-14' },
           ],
         },
         { id: 'sp-ibunda', caption: 'Official Psychology Partner', partners: [{ id: 'ibunda', name: 'Ibunda', imageUrl: '/assets/sponsors/ibunda.webp', url: '#' }] },

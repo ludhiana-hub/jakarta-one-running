@@ -26,6 +26,9 @@ const STAGE_IMAGES: Record<string, string> = {
   central: '/assets/prototype/jakpus.webp',
 };
 
+/** Stages whose start-line venue is final, so the "To Be Confirmed" badge is hidden. */
+const CONFIRMED_VENUE_SLUGS = new Set(['south']);
+
 export interface ScheduleStageView {
   slug: string;
   index: number;
@@ -34,6 +37,7 @@ export interface ScheduleStageView {
   monthLabel: string;
   description: string;
   venue: string;
+  venueConfirmed: boolean;
   venueAddress: string;
   rpcVenue: string;
   rpcAddress: string;
@@ -59,6 +63,7 @@ function toScheduleView(stage: JktoneStage, index: number): ScheduleStageView {
     monthLabel: stage.monthLabel,
     description: stage.description,
     venue: stage.venue,
+    venueConfirmed: CONFIRMED_VENUE_SLUGS.has(stage.slug),
     venueAddress: stage.venueAddress,
     rpcVenue: stage.rpcVenue,
     rpcAddress: stage.rpcAddress,
@@ -120,6 +125,7 @@ function toScheduleViewFromEdition(edition: Edition, index: number): ScheduleSta
     monthLabel: formatWibDateLabel(edition.race_date),
     description: edition.description ?? '',
     venue: edition.venue?.id ?? '',
+    venueConfirmed: CONFIRMED_VENUE_SLUGS.has(edition.slug),
     venueAddress,
     rpcVenue: edition.rpc_venue ?? '',
     rpcAddress,

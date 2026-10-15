@@ -103,7 +103,9 @@
                     <span class="stage-badge stage-badge--ghost mb-2">Start Line</span>
                     <p class="mt-1 flex flex-wrap items-center gap-2 font-body text-sm font-semibold text-chalk">
                       {{ stage.venue }}
-                      <span class="stage-badge stage-badge--tbc">To Be Confirmed</span>
+                      @if (!stage.venueConfirmed) {
+                        <span class="stage-badge stage-badge--tbc">To Be Confirmed</span>
+                      }
                     </p>
                     <p class="font-body text-sm text-mist">{{ stage.venueAddress }}</p>
                   </div>
@@ -203,7 +205,9 @@
                       <span class="stage-badge stage-badge--ghost mb-2">Start Line</span>
                       <p class="mt-1 flex flex-wrap items-center justify-center gap-2 font-body text-sm font-semibold text-chalk md:justify-start">
                         {{ stage.venue }}
-                        <span class="stage-badge stage-badge--tbc">To Be Confirmed</span>
+                        @if (!stage.venueConfirmed) {
+                          <span class="stage-badge stage-badge--tbc">To Be Confirmed</span>
+                        }
                       </p>
                       <p class="font-body text-sm text-mist">{{ stage.venueAddress }}</p>
                     </div>
