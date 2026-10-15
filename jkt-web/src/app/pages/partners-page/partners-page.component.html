@@ -22,51 +22,50 @@
       </p>
     </header>
 
-    <!-- Featured partners -->
-    <section class="mb-10 sm:mb-14">
-      <div class="reveal-stagger grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6 md:grid-cols-6">
-        @for (partner of featuredPartners; track partner.id) {
-          <a
-            href="#"
-            class="group flex items-center justify-center rounded-lg bg-white p-6 shadow-sm ring-1 ring-black/5 transition hover:-translate-y-0.5 hover:shadow-md sm:p-8"
-            (click)="$event.preventDefault(); openExternal(partner.url)"
-            appReveal
-          >
-            <img
-              [src]="partner.imageUrl"
-              width="240"
-              height="100"
-              class="max-h-16 w-auto object-contain opacity-90 transition group-hover:opacity-100 sm:max-h-20"
-              [alt]="partner.name"
-              loading="lazy"
-            />
-          </a>
-        }
-      </div>
-    </section>
-
-    <!-- Partners -->
-    <section class="mb-14 sm:mb-20">
-      <div class="reveal-stagger flex flex-wrap items-center justify-center gap-3 sm:gap-4">
-        @for (partner of partners; track partner.id) {
-          <a
-            href="#"
-            class="group flex items-center justify-center rounded-lg bg-white p-4 shadow-sm ring-1 ring-black/5 transition hover:-translate-y-0.5 hover:shadow-md sm:p-5"
-            (click)="$event.preventDefault(); openExternal(partner.url)"
-            appReveal
-          >
-            <img
-              [src]="partner.imageUrl"
-              width="200"
-              height="80"
-              class="max-h-10 w-auto object-contain opacity-90 transition group-hover:opacity-100 sm:max-h-12"
-              [alt]="partner.name"
-              loading="lazy"
-            />
-          </a>
-        }
-      </div>
-    </section>
+    <!-- Partner tiers: stakeholders first, then venue, main, supporting and media/community -->
+    <div class="mb-14 flex flex-col gap-10 sm:mb-20 sm:gap-14">
+      @for (tier of tiers; track tier.id) {
+        <section [attr.aria-label]="tier.id + ' partners'">
+          <div class="reveal-stagger flex flex-wrap items-stretch justify-center gap-3 sm:gap-5">
+            @for (group of tier.groups; track group.id; let i = $index; let last = $last) {
+              <div
+                class="flex flex-col items-center gap-4 rounded-lg bg-white p-4 text-center shadow-sm ring-1 ring-black/5 sm:p-6"
+                [class]="cardClass(tier.size, group.wide)"
+                appReveal
+              >
+                @if (group.caption) {
+                  <span
+                    class="font-label text-[10px] font-semibold uppercase tracking-[0.1em] text-neutral-500 sm:text-xs"
+                    >{{ group.caption }}</span
+                  >
+                }
+                <div class="flex w-full flex-1 flex-wrap items-center justify-center gap-x-8 gap-y-6 sm:flex-nowrap sm:gap-x-8 md:gap-x-12">
+                  @for (partner of group.partners; track partner.id) {
+                    <a
+                      href="#"
+                      class="flex min-w-0 items-center justify-center"
+                      (click)="$event.preventDefault(); openExternal(partner.url)"
+                    >
+                      <img
+                        [src]="partner.imageUrl"
+                        [alt]="partner.name"
+                        class="w-auto min-w-0 max-w-full shrink object-contain opacity-90 transition hover:opacity-100"
+                        [class]="partner.imageClass ?? imageClass(tier.size)"
+                        [attr.loading]="tier.size === 'stakeholder' || tier.size === 'venue' ? 'eager' : 'lazy'"
+                        decoding="async"
+                      />
+                    </a>
+                  }
+                </div>
+              </div>
+              @if (tier.perRow && (i + 1) % tier.perRow === 0 && !last) {
+                <div class="basis-full" aria-hidden="true"></div>
+              }
+            }
+          </div>
+        </section>
+      }
+    </div>
 
     <!-- CTA -->
     <section class="glass-tier-2 relative overflow-hidden rounded p-6 sm:p-10 md:p-20" appReveal>
