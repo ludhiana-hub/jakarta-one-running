@@ -28,12 +28,10 @@ describe('PartnersPageComponent', () => {
     expect(tiers().map((tier) => tier.id)).toEqual(['stakeholder', 'venue', 'main', 'supporting', 'media']);
   });
 
-  it('lists ConnectX immediately after Mazda in the main tier', () => {
+  it('lists the main tier as Mazda, IHC, ConnectX, Kliktron, Jabra', () => {
     const main = tiers().find((tier) => tier.id === 'main')!.groups.flatMap((group) => group.partners);
-    const mazdaIndex = main.findIndex((partner) => partner.id === 'mazda');
 
-    expect(mazdaIndex).toBeGreaterThanOrEqual(0);
-    expect(main[mazdaIndex + 1].id).toBe('connectx');
+    expect(main.map((partner) => partner.id)).toEqual(['mazda', 'ihc', 'connectx', 'kliktron', 'jabra']);
   });
 
   it('groups all stakeholders and both media logos into one card each', () => {
@@ -52,8 +50,8 @@ describe('PartnersPageComponent', () => {
     const ids = partners.map((partner) => partner.id);
 
     expect(new Set(ids).size).toBe(ids.length);
-    for (const partner of partners) {
-      const file = partner.imageUrl.split('?')[0].replace(/^\//, '');
+    for (const partner of partners.filter((p) => p.imageUrl)) {
+      const file = partner.imageUrl!.split('?')[0].replace(/^\//, '');
       expect(existsSync(resolve(process.cwd(), 'public', file)), file).toBe(true);
     }
   });

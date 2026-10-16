@@ -46,14 +46,22 @@
                       class="flex min-w-0 items-center justify-center"
                       (click)="$event.preventDefault(); openExternal(partner.url)"
                     >
-                      <img
-                        [src]="partner.imageUrl"
-                        [alt]="partner.name"
-                        class="w-auto min-w-0 max-w-full shrink object-contain opacity-90 transition hover:opacity-100"
-                        [class]="partner.imageClass ?? imageClass(tier.size)"
-                        [attr.loading]="tier.size === 'stakeholder' || tier.size === 'venue' ? 'eager' : 'lazy'"
-                        decoding="async"
-                      />
+                      @if (partner.imageUrl) {
+                        <img
+                          [src]="partner.imageUrl"
+                          [alt]="partner.name"
+                          class="w-auto min-w-0 max-w-full shrink object-contain opacity-90 transition hover:opacity-100"
+                          [class]="partner.imageClass ?? imageClass(tier.size)"
+                          [attr.loading]="tier.size === 'stakeholder' || tier.size === 'venue' ? 'eager' : 'lazy'"
+                          decoding="async"
+                        />
+                      } @else {
+                        <span
+                          class="flex w-28 items-center justify-center rounded border border-dashed border-neutral-300 px-2 text-center font-label text-[10px] font-semibold uppercase tracking-wide text-neutral-400 sm:w-36"
+                          [class]="imageClass(tier.size)"
+                          >{{ partner.name }}</span
+                        >
+                      }
                     </a>
                   }
                 </div>

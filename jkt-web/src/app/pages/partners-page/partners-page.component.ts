@@ -10,7 +10,8 @@ import { RevealDirective } from '../../shared/directives/reveal.directive';
 export interface PartnerLogo {
   id: string;
   name: string;
-  imageUrl: string;
+  /** Omit while the logo file is not available yet; a placeholder box is shown instead. */
+  imageUrl?: string;
   url: string;
   /** Tailwind height classes that override the tier default, to balance logos of different shapes. */
   imageClass?: string;
@@ -81,8 +82,10 @@ export class PartnersPageComponent {
     {
       id: 'main',
       size: 'main',
+      perRow: 3,
       groups: [
         { id: 'cp-mazda', caption: 'Official Car Partner', partners: [{ id: 'mazda', name: 'Mazda', imageUrl: '/assets/sponsors/mazda.webp', url: '#' }] },
+        { id: 'cp-ihc', caption: 'Official Medical Partner', partners: [{ id: 'ihc', name: 'Indonesia Healthcare Corporation (IHC)', imageUrl: '/assets/sponsors/ihc.webp', url: '#' }] },
         { id: 'cp-connectx', caption: 'Official Networking Partner', partners: [{ id: 'connectx', name: 'ConnectX', imageUrl: '/assets/sponsors/connectx.svg?v=e52c4de', url: '#' }] },
         { id: 'cp-kliktron', caption: 'Official Partner', partners: [{ id: 'kliktron', name: 'Kliktron', imageUrl: '/assets/sponsors/kliktron.webp?v=2', url: '#' }] },
         { id: 'cp-jabra', caption: 'Official Soundwear Partner', partners: [{ id: 'jabra', name: 'Jabra', imageUrl: '/assets/sponsors/jabra.svg', url: '#' }] },
@@ -91,17 +94,23 @@ export class PartnersPageComponent {
     {
       id: 'supporting',
       size: 'supporting',
-      perRow: 3,
+      // 5 + 5 cards (Body Care counts as one wide card), so no row ends with a lone card.
+      perRow: 5,
       groups: [
         { id: 'sp-miels', caption: 'Official Body Care Partner', wide: true, partners: [
             { id: 'miels', name: 'Miels', imageUrl: '/assets/sponsors/miels.webp', url: '#', imageClass: 'h-8 sm:h-11' },
             { id: 'louis-merry', name: 'Louis Merry', imageUrl: '/assets/sponsors/louis-merry.webp?v=2', url: '#', imageClass: 'h-10 sm:h-14' },
           ],
         },
-        { id: 'sp-ibunda', caption: 'Official Psychology Partner', partners: [{ id: 'ibunda', name: 'Ibunda', imageUrl: '/assets/sponsors/ibunda.webp', url: '#' }] },
+        { id: 'sp-torabika', caption: 'Official Coffee Partner', partners: [{ id: 'torabika', name: 'Tora Bika', imageUrl: '/assets/sponsors/torabika.webp', url: '#' }] },
         { id: 'sp-fithub', caption: 'Official Fitness Partner', partners: [{ id: 'fithub', name: 'FitHub', imageUrl: '/assets/sponsors/fithub.webp', url: '#' }] },
         { id: 'sp-strava', caption: 'Official Sports Apps Partner', partners: [{ id: 'strava', name: 'Strava', imageUrl: '/assets/sponsors/strava.webp', url: '#' }] },
         { id: 'sp-scoreid', caption: 'Official Partner', partners: [{ id: 'scoreid', name: 'scoreID', imageUrl: '/assets/sponsors/scoreid.webp', url: '#' }] },
+        { id: 'sp-mobuah', caption: 'Official Juice Partner', partners: [{ id: 'mobuah', name: '100% Mobuah', imageUrl: '/assets/sponsors/mobuah.webp', url: '#', imageClass: 'h-16 sm:h-20' }] },
+        { id: 'sp-merlynn', caption: 'Official Wellness Partner', partners: [{ id: 'merlynn', name: 'Merlynn Park Hotel Jakarta', imageUrl: '/assets/sponsors/merlynn-park-hotel.webp', url: '#' }] },
+        { id: 'sp-hbb', caption: 'Official Snack Partner', partners: [{ id: 'hbb', name: 'Hungry But Busy', imageUrl: '/assets/sponsors/hungry-but-busy.webp', url: '#', imageClass: 'h-16 sm:h-20' }] },
+        { id: 'sp-tujuhkurma', caption: 'Official Partner', partners: [{ id: 'tujuhkurma', name: 'Tujuh Kurma', imageUrl: '/assets/sponsors/tujuh-kurma.webp', url: '#', imageClass: 'h-14 sm:h-[4.5rem]' }] },
+        { id: 'sp-ibunda', caption: 'Official Psychology Partner', partners: [{ id: 'ibunda', name: 'Ibunda', imageUrl: '/assets/sponsors/ibunda.webp', url: '#' }] },
       ],
     },
     {
@@ -146,7 +155,9 @@ export class PartnersPageComponent {
         ? 'basis-full'
         : size === 'media'
           ? 'basis-full sm:basis-[36rem]'
-          : 'basis-full sm:basis-[24rem]';
+          : size === 'supporting'
+            ? 'basis-full sm:basis-[23.25rem]' // two supporting cards (11rem) plus the gap between them
+            : 'basis-full sm:basis-[24rem]';
     }
     switch (size) {
       case 'venue':
@@ -154,7 +165,7 @@ export class PartnersPageComponent {
       case 'main':
         return `${half} sm:basis-52 md:basis-60`;
       case 'supporting':
-        return `${half} sm:basis-44 md:basis-48`;
+        return `${half} sm:basis-44`;
       default:
         return `${half} sm:basis-56 md:basis-64`;
     }
