@@ -17,6 +17,43 @@
     <app-block-rich-text-media [data]="jaro" />
   </div>
 
+  <!-- 3b. Power of attorney download -->
+  <section class="px-4 py-6 sm:px-6 sm:py-8 md:px-8" appReveal>
+    <div
+      class="glass-tier-2 mx-auto flex max-w-[1400px] flex-col gap-6 rounded border border-glass-border p-6 sm:p-8 md:flex-row md:items-center md:justify-between md:gap-10 md:p-10"
+    >
+      <div class="flex items-start gap-4 sm:gap-5">
+        <span
+          class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary sm:h-14 sm:w-14"
+          aria-hidden="true"
+        >
+          <svg class="h-6 w-6 sm:h-7 sm:w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" />
+            <path d="M14 3v5h5" />
+            <path d="M12 11v6m0 0-2.5-2.5M12 17l2.5-2.5" />
+          </svg>
+        </span>
+        <div>
+          <h2 class="font-display text-xl font-bold text-chalk sm:text-2xl">
+            Can’t make it to Race Pack Collection?
+          </h2>
+          <p class="mt-2 max-w-2xl font-body text-sm text-chalk/80 sm:text-base">
+            Someone else can pick up your race pack. Download the power of attorney letter (Surat
+            Kuasa), fill it in, and have your representative bring it together with a photocopy of
+            your KTP.
+          </p>
+        </div>
+      </div>
+      <a
+        href="/assets/documents/surat-kuasa-jors.pdf"
+        download="Surat-Kuasa-JORS.pdf"
+        class="btn-cta btn-cta-lg w-full shrink-0 justify-center font-display md:w-auto"
+      >
+        Download Surat Kuasa (PDF)
+      </a>
+    </div>
+  </section>
+
   <!-- 4. The 5 Stages -->
   <div appReveal>
     <app-block-edition-cards [data]="stages" />
@@ -46,7 +83,18 @@
     <app-block-milestone [data]="milestones" />
   </div>
 
-  <!-- 7. Bottom CTA -->
+  <!-- 7. FAQ -->
+  <section class="px-4 pt-10 sm:px-6 sm:pt-12 md:px-8" appReveal>
+    <div class="mx-auto max-w-4xl">
+      <h2 class="font-display text-2xl font-bold text-chalk sm:text-3xl">FAQ</h2>
+      <p class="mt-2 font-body text-sm text-chalk/80 sm:text-base">
+        Frequently asked questions about registration, race pack collection, and event rules.
+      </p>
+    </div>
+    <app-block-faq-accordion [data]="faq" />
+  </section>
+
+  <!-- 8. Bottom CTA -->
   <div appReveal>
     <app-block-cta-banner [data]="cta" />
   </div>

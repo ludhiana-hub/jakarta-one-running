@@ -7,7 +7,10 @@ import { RichTextMediaBlockComponent } from '../../blocks/rich-text-media/rich-t
 import { EditionCardsBlockComponent } from '../../blocks/edition-cards/edition-cards-block.component';
 import { MilestoneBlockComponent } from '../../blocks/milestone/milestone-block.component';
 import { CtaBannerBlockComponent } from '../../blocks/cta-banner/cta-banner-block.component';
+import { FaqAccordionBlockComponent } from '../../blocks/faq-accordion/faq-accordion-block.component';
 import { JKTONE_MILESTONES, stagesToEditions } from '../../core/data/jktone-stages';
+import { JORS_FAQ } from '../../core/data/jors-faq';
+import { FaqAccordionBlockData } from '../../core/models/blocks/faq-accordion.block';
 import { HeroBlockData } from '../../core/models/blocks/hero.block';
 import { StatsCounterBlockData } from '../../core/models/blocks/stats-counter.block';
 import { RichTextMediaBlockData } from '../../core/models/blocks/rich-text-media.block';
@@ -31,6 +34,7 @@ import { RevealDirective } from '../../shared/directives/reveal.directive';
     EditionCardsBlockComponent,
     MilestoneBlockComponent,
     CtaBannerBlockComponent,
+    FaqAccordionBlockComponent,
     RevealDirective,
   ],
   templateUrl: './home-page.component.html',
@@ -95,6 +99,8 @@ export class HomePageComponent {
     { id: 'wall', label: 'Wall of Spirit' },
   ] as const;
 
+  protected readonly faq: FaqAccordionBlockData = { items: [...JORS_FAQ] };
+
   protected readonly cta: CtaBannerBlockData = {
     title: { id: 'Ready for Jakarta One?' },
     subtitle: {
@@ -117,7 +123,9 @@ export class HomePageComponent {
         'lari jakarta, running series jakarta, event lari 2026, lomba lari 5k, lari 5k jakarta, tiket lari jakarta, jakarta one running series, race jakarta 2026, lari akhir tahun jakarta',
     });
 
-    this.jsonLd.setPage(homeGraph());
+    this.jsonLd.setPage(
+      homeGraph(this.faq.items.map((i) => ({ question: i.question.id, answer: i.answer.id }))),
+    );
 
     this.tenant.edition$().pipe(take(1)).subscribe((edition) => this.theme.applyEdition(edition));
   }

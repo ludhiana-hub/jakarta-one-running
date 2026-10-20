@@ -1,18 +1,69 @@
-<section class="my-12 px-4">
-  <div class="max-w-4xl mx-auto">
-    <div class="glass-tier2 p-7">
-      <p-accordion [multiple]="true">
-        @for (item of data().items; track item.id) {
-          <p-accordion-panel [value]="item.id">
-            <p-accordion-header>
-              <span class="text-chalk font-medium">{{ item.question | tr }}</span>
-            </p-accordion-header>
-            <p-accordion-content>
-              <p class="m-0 text-mist leading-relaxed">{{ item.answer | tr }}</p>
-            </p-accordion-content>
-          </p-accordion-panel>
+<section class="my-8 px-4 sm:px-6 md:px-8">
+  <div class="mx-auto max-w-4xl space-y-8">
+    @for (group of groups(); track group.key) {
+      <div>
+        @if (group.title) {
+          <h3 class="mb-3 font-label text-xs font-bold tracking-widest text-primary uppercase">
+            {{ group.title | tr }}
+          </h3>
         }
-      </p-accordion>
-    </div>
+        <div class="faq-card divide-y divide-glass-border overflow-hidden rounded-xl">
+          @for (item of group.items; track item.id) {
+            <div class="faq-item" [class.is-open]="openIds().has(item.id)">
+              <h4 class="m-0">
+                <button
+                  type="button"
+                  class="faq-trigger flex w-full cursor-pointer items-center justify-between gap-4 min-h-12 px-4 py-3.5 text-left font-body text-[0.9375rem] leading-snug font-semibold break-words text-chalk sm:px-5 sm:py-4 sm:text-base"
+                  [attr.aria-expanded]="openIds().has(item.id)"
+                  [attr.aria-controls]="'faq-panel-' + item.id"
+                  [id]="'faq-trigger-' + item.id"
+                  (click)="toggle(item.id)"
+                >
+                  <span>{{ item.question | tr }}</span>
+                  <svg
+                    class="faq-chevron h-5 w-5 shrink-0 text-mist"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="m5 7.5 5 5 5-5" />
+                  </svg>
+                </button>
+              </h4>
+              <div
+                class="faq-panel"
+                role="region"
+                [id]="'faq-panel-' + item.id"
+                [attr.aria-labelledby]="'faq-trigger-' + item.id"
+              >
+                <div class="faq-panel-inner">
+                  <p
+                    class="m-0 px-4 pb-4 font-body text-sm leading-relaxed break-words text-mist sm:px-5 sm:pb-5 sm:text-base"
+                  >
+                    @for (seg of segments(item.answer | tr); track $index) {
+                      @if (seg.href) {
+                        <a
+                          class="faq-link"
+                          [href]="seg.href"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          >{{ seg.text }}<span class="sr-only"> (membuka tab baru)</span></a
+                        >
+                      } @else {
+                        {{ seg.text }}
+                      }
+                    }
+                  </p>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    }
   </div>
 </section>

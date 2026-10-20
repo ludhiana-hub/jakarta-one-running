@@ -1,0 +1,95 @@
+$ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+/* Opaque surface on purpose: a backdrop-filter card is re-blurred on every frame its height changes. */
+.faq-card {
+  background: #fff;
+  border: 1px solid var(--color-glass-border);
+  box-shadow: var(--shadow-card);
+}
+
+.faq-item {
+  contain: layout paint;
+}
+
+.faq-link {
+  color: var(--brand-primary);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+
+  &:hover {
+    text-decoration-thickness: 2px;
+  }
+}
+
+.faq-trigger {
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+
+  &:hover {
+    background: rgb(20 22 32 / 0.035);
+  }
+
+  &:active {
+    background: rgb(20 22 32 / 0.06);
+  }
+}
+
+.faq-chevron {
+  transition:
+    transform 0.35s $ease,
+    color 0.2s ease;
+}
+
+/* 0fr -> 1fr animates to the content's natural height without measuring it in JS. */
+.faq-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  will-change: grid-template-rows;
+  visibility: hidden;
+  transition:
+    grid-template-rows 0.35s $ease,
+    visibility 0s linear 0.35s;
+}
+
+.faq-panel-inner {
+  min-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition:
+    opacity 0.25s ease,
+    transform 0.35s $ease;
+}
+
+.is-open {
+  .faq-trigger {
+    color: var(--brand-primary);
+  }
+
+  .faq-chevron {
+    transform: rotate(180deg);
+    color: var(--brand-primary);
+  }
+
+  .faq-panel {
+    grid-template-rows: 1fr;
+    visibility: visible;
+    transition-delay: 0s;
+  }
+
+  .faq-panel-inner {
+    opacity: 1;
+    transform: none;
+    transition-delay: 0.05s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-panel,
+  .faq-panel-inner,
+  .faq-chevron {
+    transition: none;
+  }
+}

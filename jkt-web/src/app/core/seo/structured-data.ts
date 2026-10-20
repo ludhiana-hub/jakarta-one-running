@@ -189,12 +189,15 @@ export function faqQuestions(items: readonly FaqInput[]): JsonLdNode[] {
     }));
 }
 
-export function homeGraph(): JsonLdNode[] {
+export function homeGraph(faqItems: readonly FaqInput[] = []): JsonLdNode[] {
+  const questions = faqQuestions(faqItems);
   return [
     webPageNode({
+      type: questions.length ? 'FAQPage' : 'WebPage',
       path: '/',
       name: `${SITE_NAME} 2026 | One City, One Celebration`,
       description: SITE_DESCRIPTION,
+      mainEntity: questions.length ? questions : undefined,
     }),
     eventSeriesNode(),
     breadcrumbNode([{ name: 'Home', path: '/' }]),

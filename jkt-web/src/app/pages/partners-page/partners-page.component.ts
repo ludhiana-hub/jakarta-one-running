@@ -89,6 +89,7 @@ export class PartnersPageComponent {
         { id: 'cp-connectx', caption: 'Official Networking Partner', partners: [{ id: 'connectx', name: 'ConnectX', imageUrl: '/assets/sponsors/connectx.svg?v=e52c4de', url: '#' }] },
         { id: 'cp-kliktron', caption: 'Official Partner', partners: [{ id: 'kliktron', name: 'Kliktron', imageUrl: '/assets/sponsors/kliktron.webp?v=2', url: '#' }] },
         { id: 'cp-jabra', caption: 'Official Soundwear Partner', partners: [{ id: 'jabra', name: 'Jabra', imageUrl: '/assets/sponsors/jabra.svg', url: '#' }] },
+        { id: 'cp-bms', caption: 'Official Ticketing Partner', partners: [{ id: 'bookmyshow', name: 'BookMyShow', imageUrl: '/assets/sponsors/bookmyshow.webp', url: 'https://id.bookmyshow.com/en/collections/onerunningseries' }] },
       ],
     },
     {
