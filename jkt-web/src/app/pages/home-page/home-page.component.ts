@@ -91,12 +91,48 @@ export class HomePageComponent {
     })),
   };
 
-  protected readonly rpcExpo = [
-    { id: 'hydration', label: 'Hydration' },
-    { id: 'gear', label: 'Gear' },
-    { id: 'photo', label: 'Photo' },
-    { id: 'apparel', label: 'Apparel' },
-    { id: 'wall', label: 'Wall of Spirit' },
+  protected readonly rpcVenue = {
+    name: 'Backyard Hotel Borobudur',
+    address:
+      'Jl. Lap. Banteng Selatan No.1, Ps. Baru, Kec. Sawah Besar, Kota Jakarta Pusat, Jakarta 10710',
+    mapsUrl:
+      'https://www.google.com/maps/search/?api=1&query=Backyard+Hotel+Borobudur+Jakarta',
+  } as const;
+
+  protected readonly rpcSchedule = [
+    { id: 'fri', day: 'Friday', date: '30 October 2026', time: '10.00 – 20.00 WIB' },
+    { id: 'sat', day: 'Saturday', date: '31 October 2026', time: '10.00 – 18.00 WIB' },
+  ] as const;
+
+  protected readonly rpcBring = [
+    {
+      id: 'identity',
+      title: 'Identity card',
+      body: 'Bring the KTP / SIM / Passport you used during registration.',
+    },
+    {
+      id: 'eticket',
+      title: 'E-ticket & QR code',
+      body: 'Show the e-ticket and QR code sent to your email.',
+    },
+  ] as const;
+
+  protected readonly rpcNotes = [
+    {
+      id: 'no-race-day',
+      title: 'No collection on race day',
+      body: 'Race packs cannot be collected on 1 November 2026.',
+    },
+    {
+      id: 'no-size-swap',
+      title: 'No jersey size exchange',
+      body: 'The jersey size you selected cannot be exchanged at the RPC.',
+    },
+    {
+      id: 'no-after',
+      title: 'No delivery or collection after the event',
+      body: 'Make sure you collect your race pack on the scheduled dates.',
+    },
   ] as const;
 
   protected readonly faq: FaqAccordionBlockData = { items: [...JORS_FAQ] };
