@@ -27,9 +27,16 @@ const STAGE_IMAGES: Record<string, string> = {
 };
 
 /** Stages whose start-line venue is final, so the "To Be Confirmed" badge is hidden. */
-const CONFIRMED_VENUE_SLUGS = new Set(['south']);
+const CONFIRMED_VENUE_SLUGS = new Set(['south', 'north']);
+
+/** True once the race day (WIB) is before today (WIB). `isoDate` starts with YYYY-MM-DD. */
+function isRaceFinished(isoDate: string): boolean {
+  const fmt = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Bangkok' });
+  return isoDate.slice(0, 10) < fmt.format(new Date());
+}
 
 export interface ScheduleStageView {
+  finished: boolean;
   slug: string;
   index: number;
   pad: string;
@@ -56,6 +63,7 @@ export interface ScheduleStageView {
 
 function toScheduleView(stage: JktoneStage, index: number): ScheduleStageView {
   return {
+    finished: isRaceFinished(stage.raceDate),
     slug: stage.slug,
     index,
     pad: String(index + 1).padStart(2, '0'),
@@ -107,9 +115,13 @@ function toScheduleViewFromEdition(edition: Edition, index: number): ScheduleSta
 
   const venueAddress = edition.venue_address ?? '';
   const rpcAddress = edition.rpc_address ?? '';
-  const routeSummary = edition.route_description?.id
-    ? `${edition.route_description.id} (To Be Confirmed)`
-    : 'To Be Confirmed';
+  const venueConfirmed = CONFIRMED_VENUE_SLUGS.has(edition.slug);
+  const routeBase = edition.route_description?.id ?? '';
+  const routeSummary = venueConfirmed
+    ? routeBase
+    : routeBase
+      ? `${routeBase} (To Be Confirmed)`
+      : 'To Be Confirmed';
 
   const villageOpen = formatTimeShort(edition.village_open);
   const villageClose = formatTimeShort(edition.village_close);
@@ -118,6 +130,7 @@ function toScheduleViewFromEdition(edition: Edition, index: number): ScheduleSta
   const title = /jakarta/i.test(name) ? name : `${name} Jakarta`.trim();
 
   return {
+    finished: isRaceFinished(edition.race_date),
     slug: edition.slug,
     index,
     pad: String(index + 1).padStart(2, '0'),
@@ -125,7 +138,7 @@ function toScheduleViewFromEdition(edition: Edition, index: number): ScheduleSta
     monthLabel: formatWibDateLabel(edition.race_date),
     description: edition.description ?? '',
     venue: edition.venue?.id ?? '',
-    venueConfirmed: CONFIRMED_VENUE_SLUGS.has(edition.slug),
+    venueConfirmed,
     venueAddress,
     rpcVenue: edition.rpc_venue ?? '',
     rpcAddress,

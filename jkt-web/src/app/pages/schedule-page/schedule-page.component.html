@@ -140,14 +140,23 @@
                   <p class="mt-1 font-body text-sm leading-relaxed text-mist">{{ stage.routeSummary }}</p>
                 </div>
 
-                <a
-                  [href]="stage.registrationUrl"
-                  class="btn-stage font-label text-sm"
-                  (click)="$event.preventDefault(); openExternal(stage.registrationUrl)"
-                >
-                  Register for this stage
-                  <span class="btn-stage__arrow" aria-hidden="true">→</span>
-                </a>
+                @if (stage.finished) {
+                  <span
+                    class="inline-flex cursor-not-allowed items-center gap-2 rounded border border-glass-border bg-black/5 px-5 py-3 font-label text-sm font-semibold text-mist"
+                    role="status"
+                  >
+                    <span aria-hidden="true">✓</span> Race Completed
+                  </span>
+                } @else {
+                  <a
+                    [href]="stage.registrationUrl"
+                    class="btn-stage font-label text-sm"
+                    (click)="$event.preventDefault(); openExternal(stage.registrationUrl)"
+                  >
+                    Register for this stage
+                    <span class="btn-stage__arrow" aria-hidden="true">→</span>
+                  </a>
+                }
               </div>
             </div>
           </div>
@@ -237,14 +246,23 @@
                     </span>
                   </div>
 
-                  <button
-                    type="button"
-                    class="btn-bib w-full justify-center sm:w-auto"
-                    (click)="openExternal(stage.registrationUrl)"
-                  >
-                    Register for Championship
-                    <span class="btn-stage__arrow" aria-hidden="true">→</span>
-                  </button>
+                  @if (stage.finished) {
+                    <span
+                      class="inline-flex cursor-not-allowed items-center gap-2 rounded border border-glass-border bg-black/5 px-5 py-3 font-label text-sm font-semibold text-mist"
+                      role="status"
+                    >
+                      <span aria-hidden="true">✓</span> Race Completed
+                    </span>
+                  } @else {
+                    <button
+                      type="button"
+                      class="btn-bib w-full justify-center sm:w-auto"
+                      (click)="openExternal(stage.registrationUrl)"
+                    >
+                      Register for Championship
+                      <span class="btn-stage__arrow" aria-hidden="true">→</span>
+                    </button>
+                  }
                 </div>
               </div>
             </div>
