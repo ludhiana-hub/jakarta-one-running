@@ -85,7 +85,7 @@ export const JORS_FAQ: readonly FaqItem[] = [
     group: { id: 'RACE PACK' },
     question: { id: 'Kapan dan di mana pengambilan paket lomba (Race Pack Collection / RPC)?' },
     answer: {
-      id: 'RPC diadakan di Backyard Hotel Borobudur pada 30 dan 31 Oktober 2026.',
+      id: 'RPC diadakan di Singosari Room, Hotel Borobudur pada 30 dan 31 Oktober 2026.',
     },
   },
   {

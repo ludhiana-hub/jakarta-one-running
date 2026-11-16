@@ -28,10 +28,10 @@ describe('PartnersPageComponent', () => {
     expect(tiers().map((tier) => tier.id)).toEqual(['stakeholder', 'venue', 'main', 'supporting', 'media']);
   });
 
-  it('lists the main tier as Mazda, IHC, ConnectX, Kliktron, Jabra, BookMyShow', () => {
+  it('lists the main tier as Mazda, ConnectX, Kliktron, Jabra, BookMyShow', () => {
     const main = tiers().find((tier) => tier.id === 'main')!.groups.flatMap((group) => group.partners);
 
-    expect(main.map((partner) => partner.id)).toEqual(['mazda', 'ihc', 'connectx', 'kliktron', 'jabra', 'bookmyshow']);
+    expect(main.map((partner) => partner.id)).toEqual(['mazda', 'connectx', 'kliktron', 'jabra', 'bookmyshow']);
   });
 
   it('groups all stakeholders and both media logos into one card each', () => {

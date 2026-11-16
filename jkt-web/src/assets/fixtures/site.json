@@ -65,12 +65,12 @@
       "theme": {
         "accent": "#4DD0E1"
       },
-      "rpc_venue": "Hotel Borobudur",
+      "rpc_venue": "Singosari Room, Hotel Borobudur",
       "rpc_address": "Jl. Lapangan Banteng Selatan, Sawah Besar, Jakarta Pusat",
       "description": "Sea breeze, waterfront skyline and a flat coastal course. The easiest stage to fall in love with running.",
       "village_open": "04:30:00",
       "village_close": "11:00:00",
-      "race_start": "06:30:00",
+      "race_start": "06:00:00",
       "race_finish": "08:00:00",
       "cot_minutes": 90,
       "distance_km": "5.00",
@@ -106,12 +106,12 @@
       "theme": {
         "accent": "#CC0000"
       },
-      "rpc_venue": "Hotel Borobudur",
+      "rpc_venue": "Singosari Room, Hotel Borobudur",
       "rpc_address": "Jl. Lapangan Banteng Selatan, Sawah Besar, Jakarta Pusat",
       "description": "A bright 5.00 km journey through Puri, built for smooth strides and steady pace, with a strong finish at the Puri start area.",
       "village_open": "04:30:00",
       "village_close": "11:00:00",
-      "race_start": "06:30:00",
+      "race_start": "06:00:00",
       "race_finish": "08:00:00",
       "cot_minutes": 90,
       "distance_km": "5.00",
@@ -147,12 +147,12 @@
       "theme": {
         "accent": "#8C8C8C"
       },
-      "rpc_venue": "Hotel Borobudur",
+      "rpc_venue": "Singosari Room, Hotel Borobudur",
       "rpc_address": "Jl. Lapangan Banteng Selatan, Sawah Besar, Jakarta Pusat",
       "description": "A fast, iconic 5.00 km loop designed to kick your run into high gear, with the Velodrome grandstand waiting at the finish.",
       "village_open": "04:30:00",
       "village_close": "11:00:00",
-      "race_start": "06:30:00",
+      "race_start": "06:00:00",
       "race_finish": "08:00:00",
       "cot_minutes": 90,
       "distance_km": "5.00",
@@ -188,12 +188,12 @@
       "theme": {
         "accent": "#00507A"
       },
-      "rpc_venue": "Hotel Borobudur",
+      "rpc_venue": "Singosari Room, Hotel Borobudur",
       "rpc_address": "Jl. Lapangan Banteng Selatan, Sawah Besar, Jakarta Pusat",
       "description": "The grand finale in the heart of the capital, finishing where 500 years of Jakarta history still stands.",
       "village_open": "04:30:00",
       "village_close": "11:00:00",
-      "race_start": "06:30:00",
+      "race_start": "06:00:00",
       "race_finish": "08:00:00",
       "cot_minutes": 90,
       "distance_km": "5.00",

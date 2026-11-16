@@ -49,7 +49,7 @@ export function websiteNode(): JsonLdNode {
   };
 }
 
-/** `2027-06-06T06:30:00+07:00` + finish `08.00` → `2027-06-06T08:00:00+07:00`. */
+/** `2027-06-06T06:00:00+07:00` + finish `08.00` → `2027-06-06T08:00:00+07:00`. */
 function raceEndDate(stage: JktoneStage): string {
   const [hh, mm = '00'] = stage.raceFinish.split('.');
   const offset = stage.raceDate.slice(-6);

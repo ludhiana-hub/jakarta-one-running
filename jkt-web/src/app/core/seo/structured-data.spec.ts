@@ -20,7 +20,9 @@ describe('structured data', () => {
       const node = stageEventNode(stage) as Node;
       expect(node['@type']).toBe('SportsEvent');
       expect(node['startDate']).toBe(stage.raceDate);
-      expect(node['startDate']).toMatch(/T06:30:00\+07:00$/);
+      expect(node['startDate']).toMatch(
+        stage.slug === 'south' ? /T06:30:00\+07:00$/ : /T06:00:00\+07:00$/,
+      );
       expect(node['endDate']).toBe(`${stage.raceDate.slice(0, 10)}T08:00:00+07:00`);
       expect(node['location'].name).toBe(stage.venue);
       expect(node['location'].address.streetAddress).toBe(stage.venueAddress);

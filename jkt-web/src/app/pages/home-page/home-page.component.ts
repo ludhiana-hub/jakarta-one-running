@@ -92,11 +92,11 @@ export class HomePageComponent {
   };
 
   protected readonly rpcVenue = {
-    name: 'Backyard Hotel Borobudur',
+    name: 'Singosari Room, Hotel Borobudur',
     address:
       'Jl. Lap. Banteng Selatan No.1, Ps. Baru, Kec. Sawah Besar, Kota Jakarta Pusat, Jakarta 10710',
     mapsUrl:
-      'https://www.google.com/maps/search/?api=1&query=Backyard+Hotel+Borobudur+Jakarta',
+      'https://www.google.com/maps/search/?api=1&query=Singosari+Room+Hotel+Borobudur+Jakarta',
   } as const;
 
   protected readonly rpcSchedule = [
