@@ -83,8 +83,8 @@ export const JKTONE_STAGES: readonly JktoneStage[] = [
     runners: 10000,
     raceVillage: '04.30–11.00',
     raceStart: '06.00',
-    raceFinish: '08.00',
-    cot: '90 min',
+    raceFinish: '07.15',
+    cot: '75 min',
     isFinale: false,
   },
   {
@@ -108,8 +108,8 @@ export const JKTONE_STAGES: readonly JktoneStage[] = [
     runners: 10000,
     raceVillage: '04.30–11.00',
     raceStart: '06.00',
-    raceFinish: '08.00',
-    cot: '90 min',
+    raceFinish: '07.15',
+    cot: '75 min',
     isFinale: false,
   },
   {
@@ -133,8 +133,8 @@ export const JKTONE_STAGES: readonly JktoneStage[] = [
     runners: 10000,
     raceVillage: '04.30–11.00',
     raceStart: '06.00',
-    raceFinish: '08.00',
-    cot: '90 min',
+    raceFinish: '07.15',
+    cot: '75 min',
     isFinale: false,
   },
   {
@@ -158,8 +158,8 @@ export const JKTONE_STAGES: readonly JktoneStage[] = [
     runners: 10000,
     raceVillage: '04.30–11.00',
     raceStart: '06.00',
-    raceFinish: '08.00',
-    cot: '90 min',
+    raceFinish: '07.15',
+    cot: '75 min',
     isFinale: true,
   },
 ] as const;

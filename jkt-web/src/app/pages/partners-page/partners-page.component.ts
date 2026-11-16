@@ -77,6 +77,7 @@ export class PartnersPageComponent {
       groups: [
         { id: 'vp-scbd', caption: 'Official Venue Partner', partners: [{ id: 'vp-scbd', name: 'SCBD', imageUrl: '/assets/sponsors/scbd.webp', url: '#' }] },
         { id: 'vp-borobudur', caption: 'Official Venue Partner', partners: [{ id: 'vp-borobudur', name: 'Hotel Borobudur Jakarta', imageUrl: '/assets/sponsors/hotel-borobudur.webp', url: '#' }] },
+        { id: 'bp-agi', caption: 'Official Bank Partner', partners: [{ id: 'agi', name: 'Bank Artha Graha Internasional', imageUrl: '/assets/sponsors/agi.webp', url: '#' }] },
       ],
     },
     {
@@ -125,6 +126,7 @@ export class PartnersPageComponent {
           ],
         },
         { id: 'cm-gercep', caption: 'Community Partner', partners: [{ id: 'gercep', name: 'Gercep Runners', imageUrl: '/assets/sponsors/gercep-runners.webp', url: '#', imageClass: 'h-20 sm:h-24' }] },
+        { id: 'cm-ari', caption: 'Community Partner', partners: [{ id: 'ari', name: 'ARI', imageUrl: '/assets/sponsors/ari.webp', url: '#', imageClass: 'h-20 sm:h-24' }] },
       ],
     },
   ];

@@ -23,7 +23,9 @@ describe('structured data', () => {
       expect(node['startDate']).toMatch(
         stage.slug === 'south' ? /T06:30:00\+07:00$/ : /T06:00:00\+07:00$/,
       );
-      expect(node['endDate']).toBe(`${stage.raceDate.slice(0, 10)}T08:00:00+07:00`);
+      expect(node['endDate']).toBe(
+        `${stage.raceDate.slice(0, 10)}T${stage.slug === 'south' ? '08:00' : '07:15'}:00+07:00`,
+      );
       expect(node['location'].name).toBe(stage.venue);
       expect(node['location'].address.streetAddress).toBe(stage.venueAddress);
       expect(node['offers']).toMatchObject({
@@ -39,7 +41,7 @@ describe('structured data', () => {
     const series = eventSeriesNode() as Node;
     expect(series['@type']).toBe('EventSeries');
     expect(series['startDate']).toBe('2026-11-01T06:30:00+07:00');
-    expect(series['endDate']).toBe('2027-06-06T08:00:00+07:00');
+    expect(series['endDate']).toBe('2027-06-06T07:15:00+07:00');
     expect(series['subEvent']).toHaveLength(5);
   });
 

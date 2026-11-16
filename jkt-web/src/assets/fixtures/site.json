@@ -71,8 +71,8 @@
       "village_open": "04:30:00",
       "village_close": "11:00:00",
       "race_start": "06:00:00",
-      "race_finish": "08:00:00",
-      "cot_minutes": 90,
+      "race_finish": "07:15:00",
+      "cot_minutes": 75,
       "distance_km": "5.00",
       "quota": 10000,
       "route_description": {
@@ -112,8 +112,8 @@
       "village_open": "04:30:00",
       "village_close": "11:00:00",
       "race_start": "06:00:00",
-      "race_finish": "08:00:00",
-      "cot_minutes": 90,
+      "race_finish": "07:15:00",
+      "cot_minutes": 75,
       "distance_km": "5.00",
       "quota": 10000,
       "route_description": {
@@ -153,8 +153,8 @@
       "village_open": "04:30:00",
       "village_close": "11:00:00",
       "race_start": "06:00:00",
-      "race_finish": "08:00:00",
-      "cot_minutes": 90,
+      "race_finish": "07:15:00",
+      "cot_minutes": 75,
       "distance_km": "5.00",
       "quota": 10000,
       "route_description": {
@@ -194,8 +194,8 @@
       "village_open": "04:30:00",
       "village_close": "11:00:00",
       "race_start": "06:00:00",
-      "race_finish": "08:00:00",
-      "cot_minutes": 90,
+      "race_finish": "07:15:00",
+      "cot_minutes": 75,
       "distance_km": "5.00",
       "quota": 10000,
       "route_description": {
