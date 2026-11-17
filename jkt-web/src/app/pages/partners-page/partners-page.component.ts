@@ -90,6 +90,7 @@ export class PartnersPageComponent {
         { id: 'cp-kliktron', caption: 'Official Partner', partners: [{ id: 'kliktron', name: 'Kliktron', imageUrl: '/assets/sponsors/kliktron.webp?v=2', url: '#' }] },
         { id: 'cp-jabra', caption: 'Official Soundwear Partner', partners: [{ id: 'jabra', name: 'Jabra', imageUrl: '/assets/sponsors/jabra.svg', url: '#' }] },
         { id: 'cp-bms', caption: 'Official Ticketing Partner', partners: [{ id: 'bookmyshow', name: 'BookMyShow', imageUrl: '/assets/sponsors/bookmyshow.webp', url: 'https://id.bookmyshow.com/en/collections/onerunningseries' }] },
+        { id: 'cp-skorlife', caption: 'Official Partner', partners: [{ id: 'skorlife', name: 'Skorlife', imageUrl: '/assets/sponsors/skorlife.webp', url: '#' }] },
       ],
     },
     {
@@ -110,6 +111,8 @@ export class PartnersPageComponent {
         { id: 'sp-hbb', caption: 'Official Snack Partner', partners: [{ id: 'hbb', name: 'Hungry But Busy', imageUrl: '/assets/sponsors/hungry-but-busy.webp', url: '#', imageClass: 'h-16 sm:h-20' }] },
         { id: 'sp-tujuhkurma', caption: 'Official Partner', partners: [{ id: 'tujuhkurma', name: 'Tujuh Kurma', imageUrl: '/assets/sponsors/tujuh-kurma.webp', url: '#', imageClass: 'h-14 sm:h-[4.5rem]' }] },
         { id: 'sp-ibunda', caption: 'Official Psychology Partner', partners: [{ id: 'ibunda', name: 'Ibunda', imageUrl: '/assets/sponsors/ibunda.webp', url: '#' }] },
+        { id: 'sp-cleo', caption: 'Official Hydration Partner', partners: [{ id: 'cleo', name: 'Cleo', imageUrl: '/assets/sponsors/cleo.png', url: '#' }] },
+        { id: 'sp-isoplus', caption: 'Official Isotonic Partner', partners: [{ id: 'isoplus', name: 'Isoplus', imageUrl: '/assets/sponsors/isoplus.webp', url: '#' }] },
       ],
     },
     {
@@ -127,6 +130,7 @@ export class PartnersPageComponent {
         },
         { id: 'cm-gercep', caption: 'Community Partner', partners: [{ id: 'gercep', name: 'Gercep Runners', imageUrl: '/assets/sponsors/gercep-runners.webp', url: '#', imageClass: 'h-20 sm:h-24' }] },
         { id: 'cm-ari', caption: 'Community Partner', partners: [{ id: 'ari', name: 'ARI', imageUrl: '/assets/sponsors/ari.webp', url: '#', imageClass: 'h-20 sm:h-24' }] },
+        { id: 'cm-urbanstride', caption: 'Community Partner', partners: [{ id: 'urbanstride', name: 'Urban Stride', imageUrl: '/assets/sponsors/urban-stride.jpg', url: '#', imageClass: 'h-20 sm:h-24' }] },
       ],
     },
   ];
