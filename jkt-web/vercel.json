@@ -1,5 +1,16 @@
 {
   "buildCommand": "npx ng build --configuration vercel",
   "outputDirectory": "dist/jkt-web/browser",
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.csr.html" }]
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/maintenance.html",
+      "status": 503,
+      "headers": {
+        "Retry-After": "3600",
+        "Cache-Control": "no-store",
+        "X-Robots-Tag": "noindex, nofollow"
+      }
+    }
+  ]
 }
